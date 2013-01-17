@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restChannelFlow>
+
+
+	<htmlProcessor context="restChannelFlowCtx" id="restChannelFlow">
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="restChannelsOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="restChannelsOp" id="restChannelsOp" type="operation">
+			<transitions>
+				<htmlTransition id="restChannelsOp.opEvt" targetState="OK"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="restChannelFlowCtx" type="op">
+		<refKColl refId="restChannelFlowRecord"/>
+	</context>
+
+	<kColl id="restChannelFlowRecord">
+		<refData refId="restKcollFL" lazy="false"/>
+		<refData refId="listFL"/>
+	</kColl>
+
+	<kColl id="restKcollFL">
+		<refData refId="stringDataFL"/>
+		<refData refId="dateDataFL"/>
+		<refData refId="currencyDataFL"/>
+		<refData refId="numberDataFL"/>
+		<refData refId="booleanDataFL"/>
+		<refData refId="byteArrayDataFL"/>
+		<refData refId="durationDataFL"/>
+		<refData refId="XMLGregorianCalendarDataFL"/>
+		<refData refId="byteDataFL"/>
+		<refData refId="shortDataFL"/>
+		<refData refId="integerDataFL"/>
+		<refData refId="longDataFL"/>
+		<refData refId="FloatDataFL"/>
+		<refData refId="doubleDataFL"/>
+		<refData refId="bigIntegerDataFL"/>
+		<refData refId="bigDecimalDataFL"/>
+	</kColl>
+
+	<iColl id="listFL">
+		<refData refId="restKcollFL" lazy="false"/>
+	</iColl>
+
+	<data id="stringDataFL" value="aaaa" refType="String"/>
+
+	<data id="dateDataFL" refType="Date"/>
+
+	<data id="currencyDataFL" refType="Currency"/>
+
+	<data id="numberDataFL" refType="Number"/>
+
+	<data id="booleanDataFL" refType="Boolean"/>
+
+	<data id="byteArrayDataFL" refType="ByteArray"/>
+
+	<data id="durationDataFL" refType="Duration"/>
+
+	<data id="XMLGregorianCalendarDataFL" refType="XMLGregorianCalendar"/>
+
+	<data id="byteDataFL" refType="Byte"/>
+
+	<data id="shortDataFL" refType="Short"/>
+
+	<data id="integerDataFL" refType="Integer"/>
+
+	<data id="longDataFL" refType="Long"/>
+
+	<data id="FloatDataFL" refType="Float"/>
+
+	<data id="doubleDataFL" refType="Double"/>
+
+	<data id="bigIntegerDataFL" refType="BigInteger"/>
+
+	<data id="bigDecimalDataFL" refType="BigDecimal"/>
+
+</restChannelFlow>

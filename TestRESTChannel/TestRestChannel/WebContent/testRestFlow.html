@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript"
+	data-dojo-config="isDebug: false, async: true, parseOnLoad: true"
+	src="script/dojo/dojo.js"></script>
+<script type="text/javascript">
+	require([ "dojo/parser", "dojo/ready", "dojo/dom", "dijit/registry",
+			"dojo/request/xhr", "dojo/store/JsonRest", "dgrid/GridFromHtml",
+			"dgrid/Keyboard", "dgrid/Selection", "dojo/_base/declare",
+			"dojo/parser",  "dgrid/editor" ], function(dojo, ready, dom, registry, xhr,
+			JsonRest, GridFromHtml, Keyboard, Selection, declare, parser, editor) {
+		xhr("rest/session/establish", {
+			handleAs : "json",
+			method : "post"
+		}).then(function(data) {
+			xhr("rest/operations/restChannelsOp", {
+			//xhr("rest/flows/restTestFlow", {
+				handleAs : "json",
+				method : "post",
+				data : {}
+			}).then(function(data1) {
+				console.log(data1);
+				var store1 = window.store1 = new JsonRest({
+					target : "rest/operations/restChannelsOp/restChannelsData" 
+					//target : "rest/flows/restTestFlow/restTestData"
+				}, function(err1) {
+					console.log("Failed to read operation context data. Error : " + err);
+				}, function(evt1) {
+					console.log(evt1);
+				});
+				//Exposing the global varialbe for dgrid.
+				/*
+				window.dgrid = {
+					GridFromHtml: GridFromHtml,
+					editor: editor
+				};
+				*/
+				console.log("Selection : ", Selection);
+				window.dgrid = {
+					CustomGrid : declare([ GridFromHtml, Keyboard, Selection ]),
+					editor : editor
+				};
+				parser.parse();
+			});
+		}, function(err) {
+			console.log("Failed to establish session. Error : " + err);
+		}, function(evt) {
+			console.log(evt);
+		});
+	});
+</script>
+</head>
+<body>
+	<a href="rest/flows/restTestFlow/restTestData">testFlow</a>
+	<!-- 
+	<table id="grid1" data-dojo-id="grid1" data-dojo-type="dgrid.CustomGrid" data-dojo-props="store: store1, selectionMode: 'multiple', cellNavigation: false">
+		<thead>
+			<tr>
+				<th data-dgrid-column="{ field: 'data1' }">ID</th>
+				<th data-dgrid-column="dgrid.editor({field: 'data2'}, 'text', 'dblclick')">Name</th>
+				<th data-dgrid-column="{ field: 'data3' }">Description</th>
+			</tr>
+		</thead>
+	</table>
+	 -->
+	 <hr />
+	 operations.worklightTestOp
+	<form action="rest/operations/worklightTestOp/worklightTestData" method="get">
+		<input type="submit" value="get"/>
+	</form>
+	 <br />
+	<form action="rest/operations/worklightTestOp/worklightTestData" method="post">
+		<input type="submit" value="post"/>
+	</form>
+	<br />
+	<form action="rest/operations/worklightTestOp" method="put">
+		<input type="submit" value="put"/>
+	</form>
+	<br />
+	<form action="rest/operations/worklightTestOp" method="delete">
+		<input type="submit" value="delete"/>
+	</form>
+	<hr />
+	<form action="rest/flows/restTestFlow/restTestData" method="get">
+		<input type="submit" value="submit"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restChannelsOp>
+
+	<operation id="restChannelsOp" context="restChannelsOpCtx" implClass="com.ibm.btt.application.op.RestChannelOp"/>
+
+	<context id="restChannelsOpCtx" type="op">
+		<refKColl refId="restChannelsOpRecord"/>
+	</context>
+
+	<kColl id="restChannelsOpRecord">
+		<refData refId="listOp"/>
+		<refData refId="restKcollOp" lazy="false"/>
+	</kColl>
+
+	<kColl id="restKcollOp">
+		<refData refId="stringDataOp"/>
+		<refData refId="dateDataOp"/>
+		<refData refId="currencyDataOp"/>
+		<refData refId="numberDataOp"/>
+		<refData refId="booleanDataOp"/>
+		<refData refId="byteArrayDataOp"/>
+		<refData refId="durationDataOp"/>
+		<refData refId="XMLGregorianCalendarDataOp"/>
+		<refData refId="byteDataOp"/>
+		<refData refId="shortDataOp"/>
+		<refData refId="integerDataOp"/>
+		<refData refId="longDataOp"/>
+		<refData refId="FloatDataOp"/>
+		<refData refId="doubleDataOp"/>
+		<refData refId="bigIntegerDataOp"/>
+		<refData refId="bigDecimalDataOp"/>
+	</kColl>
+
+	<iColl id="listOp">
+		<refData refId="restKcollOp" lazy="false"/>
+	</iColl>
+
+	<data id="stringDataOp" value="aaaa" refType="String"/>
+
+	<data id="dateDataOp" refType="Date"/>
+
+	<data id="currencyDataOp" refType="Currency"/>
+
+	<data id="numberDataOp" refType="Number"/>
+
+	<data id="booleanDataOp" refType="Boolean"/>
+
+	<data id="byteArrayDataOp" refType="ByteArray"/>
+
+	<data id="durationDataOp" refType="Duration"/>
+
+	<data id="XMLGregorianCalendarDataOp" refType="XMLGregorianCalendar"/>
+
+	<data id="byteDataOp" refType="Byte"/>
+
+	<data id="shortDataOp" refType="Short"/>
+
+	<data id="integerDataOp" refType="Integer"/>
+
+	<data id="longDataOp" refType="Long"/>
+
+	<data id="FloatDataOp" refType="Float"/>
+
+	<data id="doubleDataOp" refType="Double"/>
+
+	<data id="bigIntegerDataOp" refType="BigInteger"/>
+
+	<data id="bigDecimalDataOp" refType="BigDecimal"/>
+
+</restChannelsOp>
