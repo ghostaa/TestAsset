@@ -18,7 +18,7 @@ public class TestResourceBase extends TestCase{
 	protected RestClient client;
 	protected String cookieString;
 
-	protected static final String baseUrl = "http://localhost:8080/rest1/rest";
+	protected static final String baseUrl = "http://localhost:8080/TestRestChannel/rest";
 	protected static final String establishSessionUrl = "/session/establish";
 	
 	
