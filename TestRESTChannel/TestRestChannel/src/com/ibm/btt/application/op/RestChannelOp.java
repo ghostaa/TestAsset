@@ -10,6 +10,6 @@ public class RestChannelOp extends BTTServerOperation {
  * <!-- end-user-doc -->
  */
   public void execute() throws Exception {
-	  
+	  fireExitEvent("opEvt");
   }
 }
