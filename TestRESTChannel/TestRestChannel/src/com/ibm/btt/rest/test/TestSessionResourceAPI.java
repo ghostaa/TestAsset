@@ -1,5 +1,7 @@
 package com.ibm.btt.rest.test;
 
+import static org.junit.Assert.*;
+
 import org.apache.wink.client.ClientResponse;
 import org.apache.wink.client.Resource;
 import org.apache.wink.json4j.JSONObject;

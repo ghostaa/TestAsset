@@ -14,21 +14,19 @@ import org.apache.wink.client.RestClient;
 import org.apache.wink.json4j.JSONObject;
 import org.junit.BeforeClass;
 
-public class TestResourceBase extends TestCase{
-	protected RestClient client;
-	protected String cookieString;
+public class TestResourceBase {
+	protected static RestClient client;
+	protected static String cookieString;
 
-	protected static final String baseUrl = "http://localhost:8080/TestRestChannel/rest";
+	protected static final String baseUrl = "http://localhost:8080/rest1/rest";
 	protected static final String establishSessionUrl = "/session/establish";
 	
-	
-	protected void setUp() throws Exception {
-		super.setUp();
+	@BeforeClass
+	public static void getSession() throws Exception {
 		ClientConfig config = new ClientConfig();
 		config.connectTimeout(60000); // 1 minute
 		config.readTimeout(600000); // 10 minutes
 		client = new RestClient(config);
-
 		Resource resource = client.resource(baseUrl + establishSessionUrl);
 		resource.contentType("application/json");
 		resource.accept("application/json");
@@ -42,7 +40,7 @@ public class TestResourceBase extends TestCase{
 		cookieString = StringUtils.join(cookieParams, "; ");
 		log(cookieString);
 	}
-	protected void log(Object msg) {
+	protected static void log(Object msg) {
 		System.out.println(msg.toString());
 	}
 }
