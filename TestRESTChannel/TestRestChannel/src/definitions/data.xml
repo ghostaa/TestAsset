@@ -8,8 +8,62 @@
 
 	<kColl id="sessionData" dynamic="true">
 		<refData refId="stringDataSe"/>
+		<refData refId="restKcollSe" lazy="false"/>
 	</kColl>
 
-	<data id="stringDataSe" value="abc" refType="String"/>
+	<kColl id="restKcollSe">
+		<refData refId="stringDataSe"/>
+		<refData refId="dateDataSe"/>
+		<refData refId="currencyDataSe"/>
+		<refData refId="numberDataSe"/>
+		<refData refId="booleanDataSe"/>
+		<refData refId="byteArrayDataSe"/>
+		<refData refId="durationDataSe"/>
+		<refData refId="XMLGregorianCalendarDataSe"/>
+		<refData refId="byteDataSe"/>
+		<refData refId="shortDataSe"/>
+		<refData refId="integerDataSe"/>
+		<refData refId="longDataSe"/>
+		<refData refId="FloatDataSe"/>
+		<refData refId="doubleDataSe"/>
+		<refData refId="bigIntegerDataSe"/>
+		<refData refId="bigDecimalDataSe"/>
+	</kColl>
+
+	<iColl id="listSe">
+		<refData refId="restKcollSe" lazy="false"/>
+	</iColl>
+
+	<data id="stringDataSe" value="aaaa" refType="String"/>
+
+	<data id="dateDataSe" refType="Date"/>
+
+	<data id="currencyDataSe" refType="Currency"/>
+
+	<data id="numberDataSe" refType="Number"/>
+
+	<data id="booleanDataSe" refType="Boolean"/>
+
+	<data id="byteArrayDataSe" refType="ByteArray"/>
+
+	<data id="durationDataSe" refType="Duration"/>
+
+	<data id="XMLGregorianCalendarDataSe" refType="XMLGregorianCalendar"/>
+
+	<data id="byteDataSe" refType="Byte"/>
+
+	<data id="shortDataSe" refType="Short"/>
+
+	<data id="integerDataSe" refType="Integer"/>
+
+	<data id="longDataSe" refType="Long"/>
+
+	<data id="FloatDataSe" refType="Float"/>
+
+	<data id="doubleDataSe" refType="Double"/>
+
+	<data id="bigIntegerDataSe" refType="BigInteger"/>
+
+	<data id="bigDecimalDataSe" refType="BigDecimal"/>
 
 </data.xml>
