@@ -35,7 +35,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		if (response.getStatusCode() == 200) {
 			JSONObject res = response.getEntity(JSONObject.class);
 			TestUtil.removeDSEData(res.keys());
-			res.equals(TestUtil.getJSONObjectForFlow());
+			assertTrue(res.equals(TestUtil.getJSONObjectForFlow()));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -44,7 +44,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		}
 	}
 	@Test
-	public void testGetCallBack(){
+	public void testGetCallBack() throws JSONException{
 		dirUrl=commonflowUrl+"?callback=abc";
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
@@ -54,6 +54,13 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		if (response.getStatusCode() == 200) {
 			String res = response.getEntity(String.class);
 			log(res.toString());
+			int beginIndex=res.indexOf("(");
+			int endIndex=res.indexOf(")");
+			assertEquals("abc", res.substring(0,beginIndex));
+			assertEquals(");",res.substring(endIndex,res.length()));
+			JSONObject jsonObject=new JSONObject(res.substring(beginIndex+1, endIndex));
+			TestUtil.removeDSEData(jsonObject.keys());
+			assertTrue(jsonObject.equals(TestUtil.getJSONObjectForFlow()));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -171,7 +178,10 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		if (response.getStatusCode() == 200) {
 			ClientResponse responseGet = resource.get();
 			JSONObject res = responseGet.getEntity(JSONObject.class);
-			log(res);
+			TestUtil.removeDSEData(res.keys());
+			//It has been updated
+			JSONObject iniJsonObject=TestUtil.getJSONObjectForFlow().put("stringDataFL",asserString);
+			assertTrue(res.equals(iniJsonObject));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -205,8 +215,12 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			resourceGet.accept("application/json");
 			resourceGet.contentType("application/json;charset=UTF-8");
 			ClientResponse responseGet = resourceGet.get();
-			String res = responseGet.getEntity(String.class);
-			assertEquals(asserString, res);
+			if (responseGet.getStatusCode()==200) {
+				String res = responseGet.getEntity(String.class);
+				assertEquals(asserString, res);
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -233,8 +247,12 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.post(inputJsonObject);
 		if (response.getStatusCode() == 200) {
 			ClientResponse responseGet = resource.get();
-			JSONObject res = responseGet.getEntity(JSONObject.class);
-			assertEquals(asserString, res.get("stringDataFL"));
+			if (responseGet.getStatusCode()==200) {
+				JSONObject res = responseGet.getEntity(JSONObject.class);
+				assertEquals(asserString, res.get("stringDataFL"));
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -261,8 +279,12 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.post(inputJsonObject);
 		if (response.getStatusCode() == 200) {
 			ClientResponse responseGet = resource.get();
-			JSONObject res = responseGet.getEntity(JSONObject.class);
-			assertEquals(asserString, res.get("stringDataFL"));
+			if (responseGet.getStatusCode()==200) {
+				JSONObject res = responseGet.getEntity(JSONObject.class);
+				assertEquals(asserString, res.get("stringDataFL"));
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -276,14 +298,48 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	
 	@Test
 	public void testPut() throws JSONException{
-		testPost();
+		
 	}
 	@Test
 	public void testPutParams() throws JSONException{
-		testPostField();
+		
 	}
+	/** test delete method
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM
+	 * Assert: stringDataFL & NULL
+	 */
 	@Test
 	public void testRemove(){
+		dirUrl=commonflowUrl;
+		Resource resource = client.resource(dirUrl);
+		resource.header("Cookie", cookieString);
+		resource.accept("application/json");
+		ClientResponse response = resource.delete();
+		if (response.getStatusCode() == 204) {
+			Resource resourceGet = client.resource(dirUrl);
+			resourceGet.header("Cookie", cookieString);
+			resourceGet.accept("application/json");
+			ClientResponse responseGet = resourceGet.get();
+			if (responseGet.getStatusCode()==200) {
+				JSONObject res=	responseGet.getEntity(JSONObject.class);
+				assertEquals(new JSONObject(), res);
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
+		} else {
+			JSONObject res = response.getEntity(JSONObject.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
+	}
+	
+	/** test delete params method
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/stringDataFL
+	 * Assert: stringDataFL & NULL
+	 */
+	@Test
+	public void testRemoveField(){
 		dirUrl=commonflowUrl+"/stringDataFL";
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
@@ -296,7 +352,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			ClientResponse responseGet = resourceGet.get();
 			if (responseGet.getStatusCode()==404) {
 				String res=	responseGet.getEntity(String.class);
-				System.out.println(res);
+				assertEquals("", res);
 			}else {
 				fail("Response Status Code : " + response.getStatusCode());
 			}
@@ -307,6 +363,11 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
+	
+	/** test delete params method
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/restKcollFL/stringDataFL
+	 * Assert: restKcollFL.stringDataFL & NULL
+	 */
 	@Test
 	public void testRemoveParamsKColl(){
 		dirUrl=commonflowUrl+"/restKcollFL/stringDataFL";
@@ -321,7 +382,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			ClientResponse responseGet = resourceGet.get();
 			if (responseGet.getStatusCode()==404) {
 				String res=	responseGet.getEntity(String.class);
-				System.out.println(res);
+				assertEquals("", res);
 			}else {
 				fail("Response Status Code : " + response.getStatusCode());
 			}
@@ -333,7 +394,10 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		}
 	}
 	
-	
+	/** test delete params method
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/listFL/0
+	 * Assert: listFL.0.stringDataFL & NULL
+	 */
 	@Test
 	public void testRemoveParamsIColl(){
 		dirUrl=commonflowUrl+"/listFL/0";
