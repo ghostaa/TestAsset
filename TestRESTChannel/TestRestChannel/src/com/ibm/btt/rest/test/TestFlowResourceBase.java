@@ -7,7 +7,8 @@ import org.apache.wink.json4j.JSONObject;
 import org.junit.BeforeClass;
 
 public class TestFlowResourceBase extends TestResourceBase{
-	private static String flowUrl = "/flows";
+	protected static String flowUrl = "/flows";
+	protected static String flowName="/restChannelFlow";
 	//http://localhost:8080/TestRestChannel/rest/flows
 	private static String commonUrl = baseUrl + flowUrl;
 	private static String dirUrl;
@@ -19,8 +20,7 @@ public class TestFlowResourceBase extends TestResourceBase{
 	 */
 	@BeforeClass
 	public static void getProcId() throws Exception {
-		//super.setUp();
-		dirUrl=commonUrl+"/sampleFlow";
+		dirUrl=commonUrl+flowName;
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
 		resource.accept("application/json");

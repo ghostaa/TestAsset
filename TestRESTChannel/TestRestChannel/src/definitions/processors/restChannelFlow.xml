@@ -20,7 +20,13 @@
 
 		<htmlState type="page" typeIdInfo="restChannelPage.jsp" id="restChannelPage">
 			<transitions>
-				<htmlTransition id="restChannelPage.viewEvt" targetState="OK"/>
+				<htmlTransition id="restChannelPage.toResult" targetState="resultPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="resultPage.jsp" id="resultPage">
+			<transitions>
+				<htmlTransition id="resultPage.viewEvt" targetState="OK"/>
 			</transitions>
 		</htmlState>
 	</htmlProcessor>
@@ -69,7 +75,7 @@
 		<refData refId="bigDecimalDataFL"/>
 	</kColl>
 
-	<iColl id="listFL">
+	<iColl id="listFL" size="2">
 		<refData refId="restKcollFL" lazy="false"/>
 	</iColl>
 
@@ -89,7 +95,7 @@
 
 	<data id="XMLGregorianCalendarDataFL" refType="XMLGregorianCalendar"/>
 
-	<data id="byteDataFL" refType="Byte"/>
+	<data id="byteDataFL" value="1" refType="Byte"/>
 
 	<data id="shortDataFL" refType="Short"/>
 
