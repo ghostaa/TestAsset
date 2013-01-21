@@ -2,13 +2,15 @@ package com.ibm.btt.rest.test;
 
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
+
 import org.apache.wink.client.ClientResponse;
 import org.apache.wink.client.Resource;
+import org.apache.wink.json4j.JSONArray;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
 import org.junit.Test;
 
-import com.ibm.json.java.JSONArray;
 
 public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	
@@ -20,9 +22,10 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	 * test get method
 	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM
 	 * Assert: Json & retun Json
+	 * @throws JSONException 
 	 */
 	@Test
-	public void testGet(){
+	public void testGet() throws JSONException{
 		dirUrl=commonflowUrl;
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
@@ -31,7 +34,8 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
 			JSONObject res = response.getEntity(JSONObject.class);
-			log(res.toString());
+			TestUtil.removeDSEData(res.keys());
+			res.equals(TestUtil.getJSONObjectForFlow());
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -102,18 +106,19 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	}
 	/**
 	 * test get method
-	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/listFL/0/stringDataFL
-	 * Assert: restKcollFL.stringDataFL & "aaaa"
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/listFL/0
+	 * Assert: listFL.0.stringDataFL & "aaaa"
+	 * @throws JSONException 
 	 */
 	@Test
-	public void testGetParamsIColl(){
-		dirUrl=commonflowUrl+"/listFL/0/stringDataFL";
+	public void testGetParamsIColl() throws JSONException{
+		dirUrl=commonflowUrl+"/listFL/0";
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
-			String res = response.getEntity(String.class);
-			assertEquals("aaaa", res);
+			JSONObject res = response.getEntity(JSONObject.class);
+			assertEquals("aaaa", res.get("stringDataFL"));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -122,7 +127,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		}
 	}
 	
-	@Test
+/*	@Test
 	public void testGetParamsCallBack(){
 		dirUrl=commonflowUrl+"/stringDataFL?callback=abc";
 		Resource resource = client.resource(dirUrl);
@@ -140,7 +145,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-	
+	*/
 	
 	
 	/**
@@ -270,12 +275,12 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	
 	
 	@Test
-	public void testPut(){
-		
+	public void testPut() throws JSONException{
+		testPost();
 	}
 	@Test
-	public void testPutParams(){
-		
+	public void testPutParams() throws JSONException{
+		testPostField();
 	}
 	@Test
 	public void testRemove(){
@@ -337,13 +342,14 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		resource.accept("application/json");
 		ClientResponse response = resource.delete();
 		if (response.getStatusCode() == 204) {
-			Resource resourceGet = client.resource(dirUrl);
+			Resource resourceGet = client.resource(commonflowUrl+"/listFL");
 			resourceGet.header("Cookie", cookieString);
 			resourceGet.accept("application/json");
 			ClientResponse responseGet = resourceGet.get();
 			if (responseGet.getStatusCode()==200) {
 				JSONArray res=	responseGet.getEntity(JSONArray.class);
 				System.out.println(res);
+				assertEquals(1, res.size());
 			}else {
 				fail("Response Status Code : " + response.getStatusCode());
 			}
