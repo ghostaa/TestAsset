@@ -304,35 +304,6 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	public void testPutParams() throws JSONException{
 		
 	}
-	/** test delete method
-	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM
-	 * Assert: stringDataFL & NULL
-	 */
-	@Test
-	public void testRemove(){
-		dirUrl=commonflowUrl;
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		ClientResponse response = resource.delete();
-		if (response.getStatusCode() == 204) {
-			Resource resourceGet = client.resource(dirUrl);
-			resourceGet.header("Cookie", cookieString);
-			resourceGet.accept("application/json");
-			ClientResponse responseGet = resourceGet.get();
-			if (responseGet.getStatusCode()==200) {
-				JSONObject res=	responseGet.getEntity(JSONObject.class);
-				assertEquals(new JSONObject(), res);
-			}else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			JSONObject res = response.getEntity(JSONObject.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
 	
 	/** test delete params method
 	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/stringDataFL
@@ -424,4 +395,35 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
+	
+	/** test delete method
+	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM
+	 * Assert: stringDataFL & NULL
+	 */
+	@Test
+	public void testRemove(){
+		dirUrl=commonflowUrl;
+		Resource resource = client.resource(dirUrl);
+		resource.header("Cookie", cookieString);
+		resource.accept("application/json");
+		ClientResponse response = resource.delete();
+		if (response.getStatusCode() == 204) {
+			Resource resourceGet = client.resource(dirUrl);
+			resourceGet.header("Cookie", cookieString);
+			resourceGet.accept("application/json");
+			ClientResponse responseGet = resourceGet.get();
+			if (responseGet.getStatusCode()==200) {
+				JSONObject res=	responseGet.getEntity(JSONObject.class);
+				assertEquals(new JSONObject(), res);
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
+		} else {
+			JSONObject res = response.getEntity(JSONObject.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
+	}
+	
 }
