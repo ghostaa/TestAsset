@@ -10,6 +10,8 @@ public class RestChannelOp extends BTTServerOperation {
  * <!-- end-user-doc -->
  */
   public void execute() throws Exception {
+	  System.out.println("start execute");
 	  fireExitEvent("opEvt");
+	  System.out.println("end execute");
   }
 }

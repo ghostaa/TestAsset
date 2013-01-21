@@ -13,9 +13,16 @@
 
 		<operationState typeIdInfo="restChannelsOp" id="restChannelsOp" type="operation">
 			<transitions>
-				<htmlTransition id="restChannelsOp.opEvt" targetState="OK"/>
+				<htmlTransition id="restChannelsOp.opEvt" targetState="restChannelPage"/>
+				<htmlTransition id="restChannelsOp.exit" targetState="OK"/>
 			</transitions>
 		</operationState>
+
+		<htmlState type="page" typeIdInfo="restChannelPage.jsp" id="restChannelPage">
+			<transitions>
+				<htmlTransition id="restChannelPage.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
 	</htmlProcessor>
 
 	<context id="restChannelFlowCtx" type="op">
