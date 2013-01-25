@@ -8,12 +8,10 @@
 
 	<kColl id="sessionData" dynamic="true">
 		<refData refId="stringDataSe"/>
-		<refData refId="restKcollSe" lazy="false"/>
 		<refData refId="dateDataSe"/>
 		<refData refId="currencyDataSe"/>
 		<refData refId="numberDataSe"/>
 		<refData refId="booleanDataSe"/>
-		<refData refId="byteArrayDataSe"/>
 		<refData refId="durationDataSe"/>
 		<refData refId="XMLGregorianCalendarDataSe"/>
 		<refData refId="byteDataSe"/>
@@ -24,6 +22,9 @@
 		<refData refId="doubleDataSe"/>
 		<refData refId="bigIntegerDataSe"/>
 		<refData refId="bigDecimalDataSe"/>
+		<refData refId="listSe"/>
+		<refData refId="restKcollSe" lazy="false"/>
+		<refData refId="byteArrayDataSe"/>
 	</kColl>
 
 	<kColl id="restKcollSe">
@@ -32,7 +33,6 @@
 		<refData refId="currencyDataSe"/>
 		<refData refId="numberDataSe"/>
 		<refData refId="booleanDataSe"/>
-		<refData refId="byteArrayDataSe"/>
 		<refData refId="durationDataSe"/>
 		<refData refId="XMLGregorianCalendarDataSe"/>
 		<refData refId="byteDataSe"/>
@@ -43,23 +43,25 @@
 		<refData refId="doubleDataSe"/>
 		<refData refId="bigIntegerDataSe"/>
 		<refData refId="bigDecimalDataSe"/>
+		<refData refId="byteArrayDataSe"/>
 	</kColl>
 
 	<iColl id="listSe">
 		<refData refId="restKcollSe" lazy="false"/>
 	</iColl>
 
-	<data id="stringDataSe" value="aaaa" refType="String"/>
+	<data id="stringDataSe" value="abc" refType="String"/>
 
-	<data id="dateDataSe" value="2012-09-09" refType="Date">
+	<data id="dateDataSe" value="2012-12-29" refType="Date">
 		<param value="yyyy-mm-dd" id="pattern"/>
 	</data>
 
 	<data id="currencyDataSe" refType="Currency"/>
 
-	<data id="numberDataSe" value="123" refType="Number"/>
+	<!-- -->
+	<data id="numberDataSe" value="88" refType="Number"/>
 
-	<data id="booleanDataSe" refType="Boolean"/>
+	<data id="booleanDataSe" value="false" refType="Boolean"/>
 
 	<data id="byteArrayDataSe" refType="ByteArray"/>
 
@@ -67,20 +69,20 @@
 
 	<data id="XMLGregorianCalendarDataSe" refType="XMLGregorianCalendar"/>
 
-	<data id="byteDataSe" refType="Byte"/>
+	<data id="byteDataSe" value="1" refType="Byte"/>
 
-	<data id="shortDataSe" refType="Short"/>
+	<data id="shortDataSe" value="2" refType="Short"/>
 
-	<data id="integerDataSe" refType="Integer"/>
+	<data id="integerDataSe" value="3" refType="Integer"/>
 
-	<data id="longDataSe" refType="Long"/>
+	<data id="longDataSe" value="5" refType="Long"/>
 
-	<data id="FloatDataSe" refType="Float"/>
+	<data id="FloatDataSe" value="2.22" refType="Float"/>
 
-	<data id="doubleDataSe" refType="Double"/>
+	<data id="doubleDataSe" value="3.33" refType="Double"/>
 
-	<data id="bigIntegerDataSe" refType="BigInteger"/>
+	<data id="bigIntegerDataSe" value="1234567890" refType="BigInteger"/>
 
-	<data id="bigDecimalDataSe" refType="BigDecimal"/>
+	<data id="bigDecimalDataSe" value="89.123" refType="BigDecimal"/>
 
 </data.xml>
