@@ -27,27 +27,6 @@ public class TestFlowResourceData extends TestFlowResourceBase {
 	private String dirUrl;
 
 	@Test
-	public void testGetString() {
-		dirUrl = commonUrl + "/" + procId;
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-//			String res = response.getEntity(String.class);
-			JSONObject res = response.getEntity(JSONObject.class);
-			TestUtil.removeDSEData(res.keys());
-			log(res.toString());
-		} else {
-			JSONObject res = response.getEntity(JSONObject.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-	
-	@Test
 	public void testGetStringData() {
 		String dataName = "stringDataFL";
 		String result = "abc"; 
@@ -200,7 +179,7 @@ public class TestFlowResourceData extends TestFlowResourceBase {
 	@Test
 	public void testPostNumberData() throws JSONException {
 		String dataName = "numberDataFL";
-		Number result = 88.0; 
+		Number result = 67.0; 
 		postDataValue(dataName, result);
 	}
 
@@ -217,7 +196,7 @@ public class TestFlowResourceData extends TestFlowResourceBase {
 		Byte[] result = null; 
 		postDataValue(dataName, result);
 	}
-*/
+
 	@Test
 	public void testPostDurationData() throws JSONException {
 		String dataName = "durationDataFL";
@@ -231,60 +210,60 @@ public class TestFlowResourceData extends TestFlowResourceBase {
 		XMLGregorianCalendar result = null; 
 		postDataValue(dataName, result);
 	}
-
+*/
 	@Test
 	public void testPostByteData() throws JSONException {
 		String dataName = "byteDataFL";
-		Byte result = 1; 
+		Byte result = 9; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostShortData() throws JSONException {
 		String dataName = "shortDataFL";
-		short result = 2; 
+		short result = 7; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostIntegerData() throws JSONException {
 		String dataName = "integerDataFL";
-		Integer result = 3; 
+		Integer result = 267; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostLongData() throws JSONException {
 		String dataName = "longDataFL";
-		long result = 5; 
+		long result = 987; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostFloatData() throws JSONException {
 		String dataName = "FloatDataFL";
-		Float result = 2.22f; 
+		Float result = 69.99f; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostDoubleData() throws JSONException {
 		String dataName = "doubleDataFL";
-		double result = 3.33; 
+		double result = 20.02; 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostBigIntegerData() throws JSONException {
 		String dataName = "bigIntegerDataFL";
-		BigInteger result = new BigInteger("1234567890"); 
+		BigInteger result = new BigInteger("987654321"); 
 		postDataValue(dataName, result);
 	}
 
 	@Test
 	public void testPostBigDecimalData() throws JSONException {
 		String dataName = "bigDecimalDataFL";
-		BigDecimal result = new BigDecimal("89.123"); 
+		BigDecimal result = new BigDecimal("123.89"); 
 		postDataValue(dataName, result);
 	}
 
