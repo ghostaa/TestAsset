@@ -3,7 +3,7 @@
 
 	<operation id="restChannelsOp" context="restChannelsOpCtx" implClass="com.ibm.btt.application.op.RestChannelOp"/>
 
-	<context id="restChannelsOpCtx" type="op">
+	<context id="restChannelsOpCtx" type="op" parent="sessionCtx">
 		<refKColl refId="restChannelsOpRecord"/>
 	</context>
 
@@ -15,7 +15,6 @@
 		<refData refId="currencyDataOp"/>
 		<refData refId="numberDataOp"/>
 		<refData refId="booleanDataOp"/>
-		<refData refId="byteArrayDataOp"/>
 		<refData refId="durationDataOp"/>
 		<refData refId="XMLGregorianCalendarDataOp"/>
 		<refData refId="byteDataOp"/>
@@ -26,6 +25,7 @@
 		<refData refId="doubleDataOp"/>
 		<refData refId="bigIntegerDataOp"/>
 		<refData refId="bigDecimalDataOp"/>
+		<refData refId="byteArrayDataOp"/>
 	</kColl>
 
 	<kColl id="restKcollOp">
@@ -34,7 +34,6 @@
 		<refData refId="currencyDataOp"/>
 		<refData refId="numberDataOp"/>
 		<refData refId="booleanDataOp"/>
-		<refData refId="byteArrayDataOp"/>
 		<refData refId="durationDataOp"/>
 		<refData refId="XMLGregorianCalendarDataOp"/>
 		<refData refId="byteDataOp"/>
@@ -45,21 +44,24 @@
 		<refData refId="doubleDataOp"/>
 		<refData refId="bigIntegerDataOp"/>
 		<refData refId="bigDecimalDataOp"/>
+		<refData refId="byteArrayDataOp"/>
 	</kColl>
 
-	<iColl id="listOp">
+	<iColl id="listOp" size="2">
 		<refData refId="restKcollOp" lazy="false"/>
 	</iColl>
 
-	<data id="stringDataOp" value="aaaa" refType="String"/>
+	<data id="stringDataOp" value="abc" refType="String"/>
 
-	<data id="dateDataOp" refType="Date"/>
+	<data id="dateDataOp" value="2012-12-29" refType="Date">
+		<param value="yyyy-mm-dd" id="pattern"/>
+	</data>
 
 	<data id="currencyDataOp" refType="Currency"/>
 
-	<data id="numberDataOp" refType="Number"/>
+	<data id="numberDataOp" value="88" refType="Number"/>
 
-	<data id="booleanDataOp" refType="Boolean"/>
+	<data id="booleanDataOp" value="false" refType="Boolean"/>
 
 	<data id="byteArrayDataOp" refType="ByteArray"/>
 
@@ -67,20 +69,20 @@
 
 	<data id="XMLGregorianCalendarDataOp" refType="XMLGregorianCalendar"/>
 
-	<data id="byteDataOp" refType="Byte"/>
+	<data id="byteDataOp" value="1" refType="Byte"/>
 
-	<data id="shortDataOp" refType="Short"/>
+	<data id="shortDataOp" value="2" refType="Short"/>
 
-	<data id="integerDataOp" refType="Integer"/>
+	<data id="integerDataOp" value="3" refType="Integer"/>
 
-	<data id="longDataOp" refType="Long"/>
+	<data id="longDataOp" value="5" refType="Long"/>
 
-	<data id="FloatDataOp" refType="Float"/>
+	<data id="FloatDataOp" value="2.22" refType="Float"/>
 
-	<data id="doubleDataOp" refType="Double"/>
+	<data id="doubleDataOp" value="3.33" refType="Double"/>
 
-	<data id="bigIntegerDataOp" refType="BigInteger"/>
+	<data id="bigIntegerDataOp" value="1234567890" refType="BigInteger"/>
 
-	<data id="bigDecimalDataOp" refType="BigDecimal"/>
+	<data id="bigDecimalDataOp" value="89.123" refType="BigDecimal"/>
 
 </restChannelsOp>
