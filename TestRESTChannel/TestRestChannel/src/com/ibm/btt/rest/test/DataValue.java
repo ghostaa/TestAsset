@@ -15,7 +15,7 @@ public class DataValue {
 	Locale locale=Locale.CHINA;
 	java.util.Currency curr = java.util.Currency.getInstance(locale);
 	private String stringValue = "abc";
-	private Number numberValue = 2255;
+	private Number numberValue = 88.8;
 	private Date dateValue = new Date(0);
 	private boolean booleanValue = false;
 	private byte byteValue = 1;
@@ -24,14 +24,13 @@ public class DataValue {
 	//btt don't support byteArray
 //	private byte[] byteArrayValue = {1, 2, 3};
 	private short shortValue = 2;
-	private int intValue= 55;
-	private long longValue = 22l;
-	private float floatValue = 2.99f;
-	private double doubleValue = 33.22d;
-	private byte[] bigUse = {1, 2, 3,4,5,6,7,8,9};
-	private BigInteger bigIngeterValu = new BigInteger(bigUse);
+	private int intValue= 3;
+	private long longValue = 5;
+	private float floatValue = 2.22f;
+	private double doubleValue = 3.33d;
+	private BigInteger bigIngeterValu = new BigInteger("123456789");
 	private BigDecimal bigDecimal = new BigDecimal(bigIngeterValu);	
-	private Currency currencyValue = new Currency(curr.getCurrencyCode(), numberValue);
+	private Currency currencyValue = new Currency("CN", bigDecimal);
 
 	public static XMLGregorianCalendar convertToXMLGregorianCalendar() {
 

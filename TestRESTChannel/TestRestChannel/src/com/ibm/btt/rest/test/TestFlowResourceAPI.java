@@ -72,7 +72,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	/**
 	 * test get method
 	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/stringDataFL
-	 * Assert: stringDataFL & "aaaa"
+	 * Assert: stringDataFL & "abc"
 	 */
 	@Test
 	public void testGetParams(){
@@ -82,7 +82,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
 			String res = response.getEntity(String.class);
-			assertEquals("aaaa", res);
+			assertEquals("abc", res);
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -93,7 +93,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	/**
 	 * test get method
 	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/restKcollFL/stringDataFL
-	 * Assert: restKcollFL.stringDataFL & "aaaa"
+	 * Assert: restKcollFL.stringDataFL & "abc"
 	 */
 	@Test
 	public void testGetParamsKColl(){
@@ -103,7 +103,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
 			String res = response.getEntity(String.class);
-			assertEquals("aaaa", res);
+			assertEquals("abc", res);
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
@@ -114,7 +114,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 	/**
 	 * test get method
 	 * http://localhost:8080/TestRestChannel/rest/flows/restChannelFlow/AFIAJFBLBPAEETHSGOCYFQJEEOIOFDHDAZJNIUHM/listFL/0
-	 * Assert: listFL.0.stringDataFL & "aaaa"
+	 * Assert: listFL.0.stringDataFL & "abc"
 	 * @throws JSONException 
 	 */
 	@Test
@@ -125,7 +125,7 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
 			JSONObject res = response.getEntity(JSONObject.class);
-			assertEquals("aaaa", res.get("stringDataFL"));
+			assertEquals("abc", res.get("stringDataFL"));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
