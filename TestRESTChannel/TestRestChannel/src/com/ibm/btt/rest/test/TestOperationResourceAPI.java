@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import org.apache.wink.client.ClientResponse;
 import org.apache.wink.client.Resource;
+import org.apache.wink.json4j.JSONArray;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
 import org.junit.Test;
@@ -16,12 +17,14 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	private String operationName = "/restChannelsOp";
 	private String commonUrl = baseUrl + operationUrl + operationName;
 	private String dirUrl;
-
-	public Resource getResource(String dirUrl) {
+	
+	JSONObject jsonObjectOriginal = TestUtil.getJSONObjectForOperation();
+	
+	public Resource getResource(String dirUrl,String contentType) {
 		Resource resource = client.resource(dirUrl);
 		resource.header("Cookie", cookieString);
 		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
+		resource.contentType(contentType + ";charset=UTF-8");
 		return resource;
 	}
 
@@ -32,17 +35,62 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	 */
 	@Test
 	public void testOperationExecute() {
-		dirUrl = commonUrl;
 		JSONObject json = new JSONObject();
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
+		operationExecute(json, jsonObjectOriginal);
+	}
+	
+	@Test
+	public void testOperationExecuteRoot() throws JSONException {
+		JSONObject json = new JSONObject();
+		json.put("stringDataOp", "ssssss");
+		jsonObjectOriginal.put("stringDataOp", "ssssss");
+		operationExecute(json, jsonObjectOriginal);
+	}
+	
+	@Test
+	public void testOperationExecuteKcoll() throws JSONException {
+		JSONObject json = new JSONObject();
+//		JSONObject jsonUpdate = TestUtil.putValueForJSONObject("Op");
+		JSONObject jsonUpdate = new JSONObject();
+		jsonUpdate.put("stringDataOp", "updateString");
+		jsonUpdate.put("shortDataOp", 9);
+		jsonUpdate.put("longDataOp", 8);
+		jsonUpdate.put("FloatDataOp", 7.77);
+		jsonUpdate.put("doubleDataoP", 6.66);
+		json.put("restKcollOp", jsonUpdate);
+		jsonObjectOriginal.put("restKcollOp", jsonUpdate);
+		operationExecute(json, jsonObjectOriginal);
+	}
+	
+	@Test
+	public void testOperationExecuteIcoll() throws JSONException {
+		JSONObject json = new JSONObject();
+		JSONArray icoll = new JSONArray();
+		JSONObject jsonUpdate = TestUtil.putValueForJSONObject("Op");
+		jsonUpdate.put("stringDataOp", "updateString");
+		jsonUpdate.put("shortDataOp", 9);
+		jsonUpdate.put("longDataOp", 8);
+		jsonUpdate.put("FloatDataOp", 7.77);
+		jsonUpdate.put("doubleDataoP", 6.66);
+		icoll.put(jsonUpdate);
+		json.put("listOp", icoll);
+		jsonObjectOriginal.put("restKcollOp", icoll);
+		operationExecute(json, jsonObjectOriginal);
+		
+	}
+	 
+	public void operationExecute(JSONObject json, JSONObject jsonObjectOriginal) {
+		dirUrl = commonUrl;
+		String contentType = "application/json";
+		Resource resource = getResource(dirUrl, contentType);
+		System.out.println(json);
 		ClientResponse response = resource.post(json);
 		if (response.getStatusCode() == 200) {
 			JSONObject res = response.getEntity(JSONObject.class);
-			System.out.println(response.getStatusType());
-			// String res = response.getEntity(String.class);
+			TestUtil.removeDSEData(res.keys());
+			System.out.println(res.toString());
+			System.out.println(jsonObjectOriginal.toString());
+			assertTrue(res.equals(jsonObjectOriginal));
 			log(res.toString());
 		} else {
 			String res = response.getEntity(String.class);
@@ -57,18 +105,18 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 */
 	@Test
-	public void testOperationExecuteALL() {
+	public void testOperationExecuteNoConsumes() {
 		dirUrl = commonUrl;
+		String contentType = "text/plain";
 		JSONObject json = new JSONObject();
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("text/plain;charset=UTF-8");
+		Resource resource = getResource(dirUrl, contentType);
 		ClientResponse response = resource.post(json.toString());
 		if (response.getStatusCode() == 200) {
 			JSONObject res = response.getEntity(JSONObject.class);
-			System.out.println(response.getStatusType());
-			// String res = response.getEntity(String.class);
+			TestUtil.removeDSEData(res.keys());
+//			System.out.println(res.toString());
+//			System.out.println(jsonObjectOriginal.toString());
+			assertTrue(res.equals(jsonObjectOriginal));
 			log(res.toString());
 		} else {
 			String res = response.getEntity(String.class);
@@ -82,6 +130,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	 * @GET
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 */
+	/*
 	@Test
 	public void testOperationGet() {
 		testOperationExecute();
@@ -103,12 +152,13 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @GET
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 */
+/*	
 	@Test
 	public void testOperationGetParams() {
 		testOperationExecute();
@@ -130,13 +180,14 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @POST
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 * @Consumes({ MediaType.TEXT_PLAIN })
 	 */
+/*	
 	@Test
 	public void testOperationPostParamsText() {
 		testOperationExecute();
@@ -158,7 +209,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @throws JSONException
@@ -166,6 +217,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 * @Consumes({ MediaType.APPLICATION_JSON })
 	 */
+/*	
 	@Test
 	public void testOperationPostParamsJson() throws JSONException {
 		testOperationExecute();
@@ -189,13 +241,14 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @PUT
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 * @Consumes({ MediaType.TEXT_PLAIN })
 	 */
+/*
 	@Test
 	public void testOperationPutParamsText() {
 		testOperationExecute();
@@ -217,7 +270,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @throws JSONException
@@ -225,6 +278,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 * @Consumes({ MediaType.APPLICATION_JSON })
 	 */
+/*	
 	@Test
 	public void testOperationPutParamsJson() throws JSONException {
 		testOperationExecute();
@@ -248,11 +302,12 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @DELETE
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 */
+/*	
 	@Test
 	public void testOperationDelete() {
 		testOperationExecute();
@@ -274,12 +329,13 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
-
+*/
 	/**
 	 * @Path("{params:.*}")
 	 * @DELETE
 	 * @Produces({ MediaType.APPLICATION_JSON})
 	 */
+/*
 	@Test
 	public void testOperationDeleteParams() {
 		testOperationExecute();
@@ -301,4 +357,5 @@ public class TestOperationResourceAPI extends TestResourceBase {
 			fail("Response Status Code : " + response.getStatusCode());
 		}
 	}
+	*/
 }
