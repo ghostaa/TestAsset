@@ -395,17 +395,37 @@ public class TestSessionResourceData extends TestResourceBase {
 		}
 	}
 
-	public void getDataValue(String elementName, String assertValue) {
+	public void getDataValue(String elementName, Object assertValue) {
 		dirUrl = commonUrl + "/" + elementName;
 		Resource resource = getResource(dirUrl);
 		ClientResponse response = resource.get();
 		if (response.getStatusCode() == 200) {
 			// JSONObject res = response.getEntity(JSONObject.class);
 			String res = response.getEntity(String.class);
-			assertEquals(assertValue, res.toString());
+			assertEquals(assertValue.toString(), res.toString());
 			log(res.toString());
 		} else {
 			String res = response.getEntity(String.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
+	}
+	
+	public void postDataValue(String dataName, Object asserString) throws JSONException {
+		dirUrl = commonUrl;
+		Resource resource = getResource(dirUrl);
+		JSONObject inputJsonObject=new JSONObject();
+		inputJsonObject.put(dataName, asserString);
+		ClientResponse response = resource.post(inputJsonObject);
+		if (response.getStatusCode() == 200) {
+			ClientResponse responseGet = resource.get();
+			JSONObject res = responseGet.getEntity(JSONObject.class);
+			assertEquals(asserString.toString(), res.get(dataName));
+			System.out.println(res.toString());
+//			System.out.println(iniJsonObject.toString());
+		} else {
+			JSONObject res = response.getEntity(JSONObject.class);
 			log(res.toString());
 			log(response.getStatusType());
 			fail("Response Status Code : " + response.getStatusCode());
