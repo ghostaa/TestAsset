@@ -19,7 +19,24 @@ import org.junit.Test;
 
 import com.ibm.btt.base.types.impl.Currency;
 
-public class TestSessionResourceData extends TestSessionResourceAPI{
+public class TestSessionResourceData extends TestResourceBase{
+	
+
+	private String sessionUrl = "/session";
+	// http://localhost:8080/TestRestChannel/rest/session
+	private String commonUrl = baseUrl + sessionUrl;
+	private String dirUrl;
+	JSONObject jsonAssert = TestUtil.putValueForJSONObject("Op");
+	public Resource getResource(String dirUrl) {
+		Resource resource = client.resource(dirUrl);
+		resource.header("Cookie", cookieString);
+		resource.accept("application/json");
+		resource.contentType("application/json;charset=UTF-8");
+
+		return resource;
+
+	}
+	
 	@Test
 	public void testPostStringData() throws JSONException {
 		String dataName = "stringDataSe";
@@ -296,5 +313,42 @@ public class TestSessionResourceData extends TestSessionResourceAPI{
 		String dataName = "bigDecimalDataSe";
 		BigDecimal result = new BigDecimal("89.123"); 
 		getDataValue(dataName, result);
+	}
+	
+	public void getDataValue(String elementName, Object assertValue) {
+		dirUrl = commonUrl + "/" + elementName;
+		Resource resource = getResource(dirUrl);
+		ClientResponse response = resource.get();
+		if (response.getStatusCode() == 200) {
+			// JSONObject res = response.getEntity(JSONObject.class);
+			String res = response.getEntity(String.class);
+			assertEquals(assertValue.toString(), res.toString());
+			log(res.toString());
+		} else {
+			String res = response.getEntity(String.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
+	}
+	
+	public void postDataValue(String dataName, Object asserString) throws JSONException {
+		dirUrl = commonUrl;
+		Resource resource = getResource(dirUrl);
+		JSONObject inputJsonObject=new JSONObject();
+		inputJsonObject.put(dataName, asserString);
+		ClientResponse response = resource.post(inputJsonObject);
+		if (response.getStatusCode() == 200) {
+			ClientResponse responseGet = resource.get();
+			JSONObject res = responseGet.getEntity(JSONObject.class);
+			assertEquals(asserString.toString(), res.get(dataName));
+			System.out.println(res.toString());
+//			System.out.println(iniJsonObject.toString());
+		} else {
+			JSONObject res = response.getEntity(JSONObject.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
 	}
 }
