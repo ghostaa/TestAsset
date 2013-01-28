@@ -1,6 +1,15 @@
 package com.ibm.btt.rest.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
+
+import javax.xml.datatype.Duration;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.wink.client.ClientResponse;
 import org.apache.wink.client.Resource;
@@ -8,412 +17,123 @@ import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
 import org.junit.Test;
 
-public class TestSessionResourceData extends TestResourceBase {
+import com.ibm.btt.base.types.impl.Currency;
 
-	private String sessionUrl = "/session";
-	// http://localhost:8080/TestRestChannel/rest/session
-	private String commonUrl = baseUrl + sessionUrl;
-	private String dirUrl;
-	JSONObject jsonAssert = TestUtil.putValueForJSONObject("Op");
-	public Resource getResource(String dirUrl) {
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-
-		return resource;
-
-	}
-
-	/**
-	 * @throws JSONException
-	 * @GET
-	 * @Produces({ MediaType.APPLICATION_JSON, RestConstants.JSONP_MIME_TYPE })
-	 */
+public class TestSessionResourceData extends TestSessionResourceAPI{
 	@Test
-	public void testSessionGet() throws JSONException {
-		dirUrl = commonUrl;
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			JSONObject res = response.getEntity(JSONObject.class);
-			TestUtil.removeDSEData(res.keys());
-			JSONObject iniJsonObject = TestUtil.getJSONObjectForSession();
-			// System.out.println(res);
-			// System.out.println(iniJsonObject);
-			assertTrue(res.equals(iniJsonObject));
-			log(res.toString());
-		} else {
-			JSONObject res = response.getEntity(JSONObject.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionGetCallBack() throws JSONException {
-		dirUrl = commonUrl + "?callback=aa";
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			String res = response.getEntity(String.class);
-			int beginIndex = res.indexOf("(");
-			int endIndex = res.indexOf(")");
-			assertEquals("aa", res.substring(0, beginIndex));
-			assertEquals(");", res.substring(endIndex, res.length()));
-			JSONObject jsonObject = new JSONObject(res.substring(
-					beginIndex + 1, endIndex));
-			TestUtil.removeDSEData(jsonObject.keys());
-			assertTrue(jsonObject.equals(TestUtil.getJSONObjectForSession()));
-			log(res.toString());
-		} else {
-			JSONObject res = response.getEntity(JSONObject.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	/**
-	 * @Path("{params:.*}")
-	 * @GET
-	 * @Produces({ MediaType.APPLICATION_JSON, RestConstants.JSONP_MIME_TYPE })
-	 */
-	@Test
-	public void testSessionGetParams() {
-		dirUrl = commonUrl + "/stringDataSe";
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			// JSONObject res = response.getEntity(JSONObject.class);
-			String res = response.getEntity(String.class);
-			assertEquals("abc", res.toString());
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionGetParamsKcoll() {
-		dirUrl = commonUrl + "/restKcollSe/stringDataSe";
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			// JSONObject res = response.getEntity(JSONObject.class);
-			String res = response.getEntity(String.class);
-			assertEquals("abc", res.toString());
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionGetParamsIcoll() throws JSONException {
-		dirUrl = commonUrl + "/listSe/0";
-		Resource resource = client.resource(dirUrl);
-		resource.header("Cookie", cookieString);
-		resource.accept("application/json");
-		resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			JSONObject res = response.getEntity(JSONObject.class);
-			TestUtil.removeDSEData(res.keys());
-			JSONObject iniJsonObject = TestUtil.putValueForJSONObject("Se");
-			// System.out.println(res);
-			// System.out.println(iniJsonObject);
-			assertTrue(res.equals(iniJsonObject));
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	/**
-	 * @throws JSONException
-	 * @POST
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 * @Consumes({ MediaType.APPLICATION_JSON })
-	 */
-	@Test
-	public void testSessionPost() throws JSONException {
-		dirUrl = commonUrl;
-		String asserString = "aaaaaaaaaaa";
-		JSONObject inputJsonObject = new JSONObject();
-		inputJsonObject.put("stringDataSe", asserString);
-		Resource resource = getResource(dirUrl);
-		ClientResponse response = resource.post(inputJsonObject);
-		if (response.getStatusCode() == 200) {
-			ClientResponse responseGet = resource.get();
-			if (responseGet.getStatusCode() == 200) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				// String res = responseGet.getEntity(String.class);
-				assertEquals(asserString, res.get("stringDataSe"));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-			// JSONObject res = response.getEntity(JSONObject.class);
-			String res = response.getEntity(String.class);
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	/**
-	 * @Path("{params:.*}")
-	 * @throws JSONException
-	 * @POST
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 * @Consumes({ MediaType.APPLICATION_JSON })
-	 */
-	@Test
-	public void testSessionPostParamsKcoll() throws JSONException {
-		dirUrl = commonUrl + "/restKcollSe";
-		String asserString = "aaaaaaaaaaa";
-		JSONObject inputJsonObject = new JSONObject();
-		inputJsonObject.put("stringDataSe", asserString);
-		ClientResponse response = getResource(dirUrl).post(inputJsonObject);
-		if (response.getStatusCode() == 200) {
-			ClientResponse responseGet = getResource(dirUrl).get();
-			if (responseGet.getStatusCode() == 200) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				assertEquals(asserString, res.get("stringDataSe"));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionPostParamsIcoll() throws JSONException {
-		dirUrl = commonUrl + "/listSe/0";
-		String asserString = "aaaaaaaaaaa";
-		JSONObject inputJsonObject = new JSONObject();
-		inputJsonObject.put("stringDataSe", asserString);
-		ClientResponse response = getResource(dirUrl).post(inputJsonObject);
-		if (response.getStatusCode() == 200) {
-			ClientResponse responseGet = getResource(dirUrl).get();
-			if (responseGet.getStatusCode() == 200) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				assertEquals(asserString, res.get("stringDataSe"));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	/**
-	 * @throws JSONException
-	 * @PUT
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 * @Consumes({ MediaType.APPLICATION_JSON })
-	 */
-	@Test
-	public void testSessionPut() throws JSONException {
-		/*
-		 * dirUrl = commonUrl; String s = "{\"stringDataSe\":\"aaaaaaaaaaa\"}";
-		 * JSONObject json = new JSONObject(); json.put("stringDataSe",
-		 * "aaaaaaa"); ClientResponse response = getResource(dirUrl).put(json);
-		 * if (response.getStatusCode() == 200) { JSONObject res =
-		 * response.getEntity(JSONObject.class);
-		 * System.out.println(response.getStatusType()); // String res =
-		 * response.getEntity(String.class); log(res.toString()); } else {
-		 * String res = response.getEntity(String.class); log(res.toString());
-		 * log(response.getStatusType()); fail("Response Status Code : " +
-		 * response.getStatusCode()); }
-		 */
-	}
-
-	/**
-	 * @Path("{params:.*}")
-	 * @throws JSONException
-	 * @PUT
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 * @Consumes({ MediaType.APPLICATION_JSON })
-	 */
-	@Test
-	public void testSessionPutParams() throws JSONException {
-		/*
-		 * dirUrl = commonUrl + "/restKcollSe"; String s =
-		 * "{\"stringDataSe\":\"aaaaaaaaaaa\"}"; JSONObject json = new
-		 * JSONObject(); json.put("stringDataSe", "aaaaaaa"); ClientResponse
-		 * response = getResource(dirUrl).put(json); if
-		 * (response.getStatusCode() == 200) { JSONObject res =
-		 * response.getEntity(JSONObject.class); // String res =
-		 * response.getEntity(String.class); log(res.toString()); } else {
-		 * String res = response.getEntity(String.class); log(res.toString());
-		 * log(response.getStatusType()); fail("Response Status Code : " +
-		 * response.getStatusCode()); }
-		 */
-	}
-
-	/**
-	 * @Path("{params:.*}")
-	 * @throws JSONException
-	 * @DELETE
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 */
-	@Test
-	public void testSessionDeleteParams() throws JSONException {
-		dirUrl = commonUrl + "/stringDataSe";
-		// Resource resource = client.resource(dirUrl);
-		// resource.header("Cookie", cookieString);
-		// resource.accept("application/json");
-		// resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = getResource(dirUrl).delete();
-		if (response.getStatusCode() == 200) {
-			// JSONObject res = response.getEntity(JSONObject.class);
-			// String res = response.getEntity(String.class);
-			// log(res.toString());
-			ClientResponse responseGet = getResource(dirUrl).get();
-			if (responseGet.getStatusCode() == 404) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				JSONObject jso = new JSONObject();
-				jso.put("error", "Object not found.");
-				assertTrue(res.equals(jso));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionDeleteParamsKcoll() throws JSONException {
-		dirUrl = commonUrl + "/restKcollSe";
-		// Resource resource = client.resource(dirUrl);
-		// resource.header("Cookie", cookieString);
-		// resource.accept("application/json");
-		// resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = getResource(dirUrl).delete();
-		if (response.getStatusCode() == 200) {
-			ClientResponse responseGet = getResource(dirUrl).get();
-			if (responseGet.getStatusCode() == 404) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				JSONObject jso = new JSONObject();
-				jso.put("error", "Object not found.");
-				assertTrue(res.equals(jso));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	@Test
-	public void testSessionDeleteParamsIcoll() throws JSONException {
-		dirUrl = commonUrl + "/listSe";
-		// Resource resource = client.resource(dirUrl);
-		// resource.header("Cookie", cookieString);
-		// resource.accept("application/json");
-		// resource.contentType("application/json;charset=UTF-8");
-		ClientResponse response = getResource(dirUrl).delete();
-		if (response.getStatusCode() == 200) {
-			ClientResponse responseGet = getResource(dirUrl).get();
-			if (responseGet.getStatusCode() == 404) {
-				JSONObject res = responseGet.getEntity(JSONObject.class);
-				JSONObject jso = new JSONObject();
-				jso.put("error", "Object not found.");
-				assertTrue(res.equals(jso));
-			} else {
-				fail("Response Status Code : " + response.getStatusCode());
-			}
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	/**
-	 * @POST
-	 * @Produces({ MediaType.APPLICATION_JSON})
-	 */
-	@Test
-	public void testSessionEstablish() {
-		dirUrl = commonUrl + "/establish";
-		JSONObject json = new JSONObject();
-		ClientResponse response = getResource(dirUrl).post(json);
-		if (response.getStatusCode() == 200) {
-			JSONObject res = response.getEntity(JSONObject.class);
-			TestUtil.removeDSEData(res.keys());
-//			System.out.println(res.toString());
-//			System.out.println(jsonObjectOriginal.toString());
-//			assertTrue(res.equals(jsonAssert));
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
-	}
-
-	public void getDataValue(String elementName, Object assertValue) {
-		dirUrl = commonUrl + "/" + elementName;
-		Resource resource = getResource(dirUrl);
-		ClientResponse response = resource.get();
-		if (response.getStatusCode() == 200) {
-			// JSONObject res = response.getEntity(JSONObject.class);
-			String res = response.getEntity(String.class);
-			assertEquals(assertValue.toString(), res.toString());
-			log(res.toString());
-		} else {
-			String res = response.getEntity(String.class);
-			log(res.toString());
-			log(response.getStatusType());
-			fail("Response Status Code : " + response.getStatusCode());
-		}
+	public void testPostStringData() throws JSONException {
+		String dataName = "stringDataSe";
+		String result = "ccc"; 
+		postDataValue(dataName, result);
 	}
 	
+	@Test
+	public void testPostDateData() throws JSONException {
+		String dataName = "dateDataSe";
+		Date result = new Date(0); 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostCurrencyData() throws JSONException {
+		String dataName = "currencyDataSe";
+		Currency result = new Currency("$", 99); ; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostNumberData() throws JSONException {
+		String dataName = "numberDataSe";
+		Number result = 67.0; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostBooleanData() throws JSONException {
+		String dataName = "booleanDataSe";
+		boolean result = true; 
+		postDataValue(dataName, result);
+	}
+/*
+	@Test
+	public void testPostByteArrayData() throws JSONException {
+		String dataName = "byteArrayDataSe";
+		Byte[] result = null; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostDurationData() throws JSONException {
+		String dataName = "durationDataSe";
+		Duration result = null; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostXMLGregorianCalendarData() throws JSONException {
+		String dataName = "XMLGregorianCalendarDataSe";
+		XMLGregorianCalendar result = null; 
+		postDataValue(dataName, result);
+	}
+*/
+	@Test
+	public void testPostByteData() throws JSONException {
+		String dataName = "byteDataSe";
+		Byte result = 9; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostShortData() throws JSONException {
+		String dataName = "shortDataSe";
+		short result = 7; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostIntegerData() throws JSONException {
+		String dataName = "integerDataSe";
+		Integer result = 267; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostLongData() throws JSONException {
+		String dataName = "longDataSe";
+		long result = 987; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostFloatData() throws JSONException {
+		String dataName = "FloatDataSe";
+		Float result = 69.99f; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostDoubleData() throws JSONException {
+		String dataName = "doubleDataSe";
+		double result = 20.02; 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostBigIntegerData() throws JSONException {
+		String dataName = "bigIntegerDataSe";
+		BigInteger result = new BigInteger("987654321"); 
+		postDataValue(dataName, result);
+	}
+
+	@Test
+	public void testPostBigDecimalData() throws JSONException {
+		String dataName = "bigDecimalDataSe";
+		BigDecimal result = new BigDecimal("123.89"); 
+		postDataValue(dataName, result);
+	}
+
+/*	
 	public void postDataValue(String dataName, Object asserString) throws JSONException {
-		dirUrl = commonUrl;
 		Resource resource = getResource(dirUrl);
 		JSONObject inputJsonObject=new JSONObject();
 		inputJsonObject.put(dataName, asserString);
@@ -421,7 +141,8 @@ public class TestSessionResourceData extends TestResourceBase {
 		if (response.getStatusCode() == 200) {
 			ClientResponse responseGet = resource.get();
 			JSONObject res = responseGet.getEntity(JSONObject.class);
-			assertEquals(asserString.toString(), res.get(dataName));
+			JSONObject res = responseGet.getEntity(JSONObject.class);
+			assertEquals(asserString, res.get("stringDataSe"));
 			System.out.println(res.toString());
 //			System.out.println(iniJsonObject.toString());
 		} else {
@@ -430,5 +151,150 @@ public class TestSessionResourceData extends TestResourceBase {
 			log(response.getStatusType());
 			fail("Response Status Code : " + response.getStatusCode());
 		}
+	}
+	
+	
+	public void testSessionPost(String dirUrl) throws JSONException {
+		String asserString = "aaaaaaaaaaa";
+		JSONObject inputJsonObject = new JSONObject();
+		inputJsonObject.put("stringDataSe", asserString);
+		Resource resource = getResource(dirUrl);
+		ClientResponse response = resource.post(inputJsonObject);
+		if (response.getStatusCode() == 200) {
+			ClientResponse responseGet = resource.get();
+			if (responseGet.getStatusCode()==200) {
+				JSONObject res = responseGet.getEntity(JSONObject.class);
+				assertEquals(asserString, res.get("stringDataSe"));
+			}else {
+				fail("Response Status Code : " + response.getStatusCode());
+			}
+//			JSONObject res = response.getEntity(JSONObject.class);
+			 String res = response.getEntity(String.class);
+			log(res.toString());
+		} else {
+			String res = response.getEntity(String.class);
+			log(res.toString());
+			log(response.getStatusType());
+			fail("Response Status Code : " + response.getStatusCode());
+		}
+	}
+*/	
+	@Test
+	public void testSessionGetParams() {
+		String elementName = "stringDataSe";
+		String assertValue = "abc";
+		getDataValue(elementName, assertValue);
+	}
+
+	@Test
+	public void testGetStringData() {
+		String dataName = "stringDataSe";
+		String result = "abc"; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetDateData() {
+		String dataName = "dateDataSe";
+		String result = "2012-12-29"; 
+		getDataValue(dataName, result);
+	}
+/*
+	@Test
+	public void testGetCurrencyData() {
+		String dataName = "currencyDataSe";
+		Currency result = new Currency("$", 99); 
+		getDataValue(dataName, result);
+	}
+*/
+	@Test
+	public void testGetNumberData() {
+		String dataName = "numberDataSe";
+		Number result = 88.0; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetBooleanData() {
+		String dataName = "booleanDataSe";
+		boolean result = false; 
+		getDataValue(dataName, result);
+	}
+/*
+	@Test
+	public void testGetByteArrayData() {
+		String dataName = "byteArrayDataSe";
+		Byte[] result = null; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetDurationData() {
+		String dataName = "durationDataSe";
+		Duration result = null; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetXMLGregorianCalendarData() {
+		String dataName = "XMLGregorianCalendarDataSe";
+		XMLGregorianCalendar result = null; 
+		getDataValue(dataName, result);
+	}
+*/
+	@Test
+	public void testGetByteData() {
+		String dataName = "byteDataSe";
+		Byte result = 1; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetShortData() {
+		String dataName = "shortDataSe";
+		short result = 2; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetIntegerData() {
+		String dataName = "integerDataSe";
+		Integer result = 3; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetLongData() {
+		String dataName = "longDataSe";
+		long result = 5; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetFloatData() {
+		String dataName = "FloatDataSe";
+		Float result = 2.22f; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetDoubleData() {
+		String dataName = "doubleDataSe";
+		double result = 3.33; 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetBigIntegerData() {
+		String dataName = "bigIntegerDataSe";
+		BigInteger result = new BigInteger("1234567890"); 
+		getDataValue(dataName, result);
+	}
+
+	@Test
+	public void testGetBigDecimalData() {
+		String dataName = "bigDecimalDataSe";
+		BigDecimal result = new BigDecimal("89.123"); 
+		getDataValue(dataName, result);
 	}
 }
