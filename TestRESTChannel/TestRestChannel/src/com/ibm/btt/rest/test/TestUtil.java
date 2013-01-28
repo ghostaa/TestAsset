@@ -68,6 +68,7 @@ public class TestUtil {
 		JSONObject jsonObjectKcoll = putValueForJSONObject(s);
 		JSONArray jsonArrayIcoll = new JSONArray();
 		jsonArrayIcoll.put(jsonObjectKcoll);
+		jsonArrayIcoll.put(jsonObjectKcoll);
 		jsonObject.put("restKcoll" + s, jsonObjectKcoll);
 		jsonObject.put("list" + s, jsonArrayIcoll);
 		return jsonObject;
