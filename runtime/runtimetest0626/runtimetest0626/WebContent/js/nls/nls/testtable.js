@@ -1,0 +1,17 @@
+({
+"TradeTime":"TradeTime",
+"accountAttribution":"accountAttribution",
+"Image":"Image",
+"Usable":"Usable",
+"AccountName":"AccountName",
+"Localtion":"Localtion",
+"AccountOpeningDate":"AccountOpeningDate",
+"TradeTimeValue":"TradeTimeValue",
+"AccountBlance":"AccountBlance",
+"EditTableHint":"new hint from NLS",
+"MaximumAmount":"MaximumAmount",
+"nonEditTableHint":"new hint from NLS",
+"AccountTypeValue":"AccountTypeValue",
+"AccountType":"AccountType",
+"Rate":"Rate",
+"LocaltionTypeValue":"LocaltionTypeValue"})

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ajaxChnlEnhanceProcFlow>
+
+
+	<htmlProcessor context="ajaxChnlEnhanceProcCtxt" id="ajaxChnlEnhanceProcFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ajaxIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="ajaxChnlEnhance/ajaxIndex.jsp" id="ajaxIndex">
+			<transitions>
+				<htmlTransition id="ajaxIndex.event0" targetState="ajaxChnlState1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ajaxChnlEnhance/ajaxChnlState1.jsp" id="ajaxChnlState1">
+			<transitions>
+				<htmlTransition id="ajaxChnlState1.event0" targetState="ajaxChnlState2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ajaxChnlEnhance/ajaxChnlState2.jsp" id="ajaxChnlState2">
+			<transitions>
+				<htmlTransition id="ajaxChnlState2.event0" targetState="ajaxChnlState3"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ajaxChnlEnhance/ajaxChnlState3.jsp" id="ajaxChnlState3">
+			<transitions>
+				<htmlTransition id="ajaxChnlState3.Next" targetState="ajaxChnlState4"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ajaxChnlEnhance/ajaxChnlState4.jsp" id="ajaxChnlState4">
+			<transitions>
+				<htmlTransition id="ajaxChnlState4.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ajaxChnlState2Ctxt" type="state">
+		<refKColl refId="ajaxChnlState2Data"/>
+	</context>
+
+	<context id="ajaxChnlState4Ctxt" type="state">
+		<refKColl refId="ajaxChnlState4Data"/>
+	</context>
+
+	<context id="ajaxChnlEnhanceProcCtxt" type="processor">
+		<refKColl refId="ajaxChnlEnhanceProcData"/>
+	</context>
+
+	<kColl id="ajaxChnlState2Data" dynamic="false">
+		<field id="stateField" value="CurrentStateIs:ajaxChnlState2"/>
+	</kColl>
+
+	<kColl id="ajaxChnlState4Data" dynamic="false">
+		<field id="stateField" value="CurrentStateIs:ajaxChnlState4"/>
+	</kColl>
+
+	<kColl id="row">
+		<field id="index" value="0"/>
+		<field id="ctxtName" value="Null"/>
+	</kColl>
+
+	<kColl id="ajaxChnlEnhanceProcData" dynamic="false">
+		<!--"for storing current processor's instance id"-->
+		<field id="procId"/>
+		<!--"for storing current processor's expire time"-->
+		<field id="procExpireTime"/>
+		<!--"The current state's name"-->
+		<field id="curStateName"/>
+		<refData refId="row"/>
+		<iColl id="procSubCtxtNameList" size="1">
+			<refData refId="row"/>
+		</iColl>
+		<iColl id="stateSubCtxNametList" size="1">
+			<refData refId="row"/>
+		</iColl>
+	</kColl>
+
+</ajaxChnlEnhanceProcFlow>

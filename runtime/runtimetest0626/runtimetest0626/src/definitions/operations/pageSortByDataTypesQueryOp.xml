@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageSortByDataTypesQueryOp>
+
+	<operation id="pageSortByDataTypesQueryOp" context="pageSortByDataTypesQueryCtx" implClass="com.ibm.btt.test.pageSort.MyTestPaginationSortingOp"/>
+
+	<context id="pageSortByDataTypesQueryCtx" type="op">
+		<refKColl refId="pageSortByDataTypesQueryOpData"/>
+	</context>
+
+	<kColl id="pageSortByDataTypesQueryOpData" dynamic="false">
+		<field id="start" value="0"/>
+		<field id="count" value="15"/>
+		<field id="sort"/>
+		<field id="numRows" value="50"/>
+		<kColl id="queryConditions" dynamic="false">
+			<field id="aFilter" value="%"/>
+			<field id="bFilter" value="0"/>
+		</kColl>
+		<iColl id="items" size="1">
+			<kColl id="item">
+				<field id="index"/>
+				<data id="currencyField" refType="Currency"/>
+				<data id="dateField" refType="Date"/>
+				<data id="numberField" refType="Number"/>
+				<data id="stringField" refType="String"/>
+				<field id="plainField"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</pageSortByDataTypesQueryOp>

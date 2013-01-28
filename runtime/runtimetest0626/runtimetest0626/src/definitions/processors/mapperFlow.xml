@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapperFlow>
+
+
+	<htmlProcessor context="mapperCtx" id="mapperFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start1" targetState="mapper/index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="mapper/finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="mapper/index.jsp" id="mapper/index">
+			<transitions>
+				<htmlTransition id="mapper/index.flow2" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="myOp" context="opCtx" implClass="com.ibm.btt.application.op.myOp"/>
+
+	<operation id="yourOp" context="opCtx" implClass="com.ibm.btt.application.op.yourOp"/>
+
+	<context id="mapperCtx" type="op">
+		<refKColl refId="mapperRecord"/>
+	</context>
+
+	<context id="procCtx" type="op" parent="sessionCtx">
+		<refKColl refId="allTypeData"/>
+	</context>
+
+	<context id="opCtx" type="op">
+		<refKColl refId="opData"/>
+	</context>
+
+	<kColl id="mapperRecord">
+	</kColl>
+
+	<kColl id="allTypeData" dynamic="true">
+		<refData refId="table"/>
+		<refData refId="typeData"/>
+		<refData refId="tableData"/>
+		<refData refId="beanData"/>
+	</kColl>
+
+	<kColl id="table">
+		<field id="name"/>
+		<field id="position"/>
+		<field id="age"/>
+	</kColl>
+
+	<kColl id="typeData">
+		<data id="stringData" refType="String"/>
+		<data id="dateData" refType="Date"/>
+		<data id="numberData" refType="Number"/>
+		<data id="currencyData" refType="Currency"/>
+	</kColl>
+
+	<kColl id="tableData">
+		<iColl id="myTable" size="3">
+			<kColl id="tableColumn">
+				<field id="name"/>
+				<field id="position"/>
+				<field id="age"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="opData" dynamic="true">
+		<kColl id="table">
+			<field id="name"/>
+			<field id="position"/>
+			<field id="age"/>
+		</kColl>
+		<kColl id="tableData">
+			<iColl id="myTable" size="3">
+				<kColl id="tableColumn">
+					<field id="name"/>
+					<field id="position"/>
+					<field id="age"/>
+				</kColl>
+			</iColl>
+		</kColl>
+		<kColl id="typeData">
+			<data id="stringData" refType="String"/>
+			<data id="dateData" refType="Date"/>
+			<data id="numberData" refType="Number"/>
+			<data id="currencyData" refType="Currency"/>
+		</kColl>
+		<kColl id="beanData">
+			<bColl bean="com.ibm.btt.application.bean.BeanData" id="myBean" dynamic="true">
+			</bColl>
+		</kColl>
+	</kColl>
+
+	<kColl id="beanData">
+		<bColl bean="com.ibm.btt.application.bean.BeanData" id="myBean" dynamic="true">
+		</bColl>
+	</kColl>
+
+</mapperFlow>

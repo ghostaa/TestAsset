@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+
+	<import file="table_data.xml"/>
+
+	<import file="X054TableData.xml"/>
+
+	<!--Data collection for the branch context-->
+	<kColl id="branchData" dynamic="true">
+		<field id="BranchId"/>
+	</kColl>
+
+	<kColl id="sessionData" dynamic="true">
+		<field id="hidden"/>
+		<field id="dailyTransLimit" value="2000.00"/>
+		<field id="loanServiceID"/>
+		<refData refId="fileupload1"/>
+		<refData refId="fileupload2"/>
+		<field id="display"/>
+		<field id="TID"/>
+		<field id="sessionID"/>
+		<field id="dse_locale"/>
+		<field id="dse_errorMessages"/>
+		<field id="btt_ajax_request"/>
+		<field id="field2"/>
+		<kColl id="cardTypes">
+			<field id="Platinum" value="Platinum"/>
+			<field id="Classic" value="Classic"/>
+			<field id="Universal" value="Universal"/>
+		</kColl>
+		<field id="data_field" value="123"/>
+		<iColl id="combodata" size="3">
+			<kColl id="combo">
+				<field id="label" value="label"/>
+				<field id="value" value="value"/>
+			</kColl>
+		</iColl>
+		<kColl id="combokcoll">
+			<field id="Football" value="Football"/>
+			<field id="Basketball" value="Basketball"/>
+			<field id="Tennis" value="Tennis"/>
+			<field id="F1" value="F1"/>
+		</kColl>
+		<kColl id="treeData">
+			<kColl id="transfer">
+				<field id="fromAccount"/>
+			</kColl>
+			<kColl id="summary">
+				<field id="balance"/>
+				<kColl id="transfer">
+					<field id="fromAccount"/>
+				</kColl>
+			</kColl>
+			<field id="basicField" value="123"/>
+			<field id="basicField2"/>
+			<data id="requiredBasicField" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+		</kColl>
+		<field id="basicField" value="123"/>
+		<field id="basicField2"/>
+		<data id="requiredBasicField" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<iColl id="Select1Options" size="1">
+			<kColl id="option">
+				<field id="label" value="a sample label"/>
+				<field id="value" value="a sample value"/>
+			</kColl>
+		</iColl>
+		<iColl id="Select2Options" size="1">
+			<kColl id="option">
+				<field id="label" value="a sample label"/>
+				<field id="value" value="a sample value"/>
+			</kColl>
+		</iColl>
+		<iColl id="Combo1Options" size="1">
+			<kColl id="option">
+				<field id="label" value="a sample label"/>
+				<field id="value" value="a sample value"/>
+			</kColl>
+		</iColl>
+		<iColl id="Combo2Options" size="1">
+			<kColl id="option">
+				<field id="label" value="a sample label"/>
+				<field id="value" value="a sample value"/>
+			</kColl>
+		</iColl>
+		<kColl id="loanOptions">
+			<field id="old user" value="2"/>
+			<field id="new user" value="1"/>
+		</kColl>
+		<refData refId="TreeKColl"/>
+		<refData refId="actionType"/>
+		<refData refId="tabbedPane1Data"/>
+		<refData refId="transfer_fromKColl"/>
+		<refData refId="transfer_toKColl"/>
+		<field id="transfer_from"/>
+		<field id="transfer_to"/>
+		<field id="amount"/>
+		<field id="acount"/>
+		<field id="deposit_amount"/>
+		<refData refId="ajaxChnlEnhanceData"/>
+		<field id="dse_timezone"/>
+	</kColl>
+
+	<kColl id="TreeKColl" dynamic="false">
+		<kColl id="Tree1Data" dynamic="false">
+			<kColl id="branch1">
+				<kColl id="subBranch1">
+					<field id="Node1" value="Leaf1"/>
+				</kColl>
+				<kColl id="subBranch2">
+					<field id="Node1" value="Leaf2"/>
+				</kColl>
+			</kColl>
+			<kColl id="branch2">
+				<kColl id="subBranch1">
+					<field id="Node1" value="Leaf1"/>
+				</kColl>
+				<kColl id="subBranch2">
+					<field id="Node1" value="Leaf2"/>
+				</kColl>
+			</kColl>
+		</kColl>
+		<kColl id="Tree2Data" dynamic="false">
+			<kColl id="branch1">
+				<kColl id="subBranch1">
+					<field id="Node1" value="Leaf1"/>
+				</kColl>
+				<kColl id="subBranch2">
+					<field id="Node1" value="Leaf2"/>
+				</kColl>
+			</kColl>
+			<kColl id="branch2">
+				<kColl id="subBranch1">
+					<field id="Node1" value="Leaf1"/>
+				</kColl>
+				<kColl id="subBranch2">
+					<field id="Node1" value="Leaf2"/>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<data id="forDateTextBox" refType="Date">
+		<param value="yyyy/MM/dd" id="pattern"/>
+	</data>
+
+	<kColl id="creditCardData">
+		<data id="forRadioButton" refType="String"/>
+		<kColl id="forSelectItems">
+			<field id="item1" value="item1Value"/>
+			<field id="item2" value="item2Value"/>
+			<field id="item3" value="item3Value"/>
+		</kColl>
+		<field id="forSelect"/>
+		<iColl id="forComboItems" size="3">
+			<kColl id="comboKColl">
+				<field id="label"/>
+			</kColl>
+		</iColl>
+		<field id="forCombo"/>
+		<field id="forCheckBox"/>
+		<data id="forDateTextBox1" refType="Date">
+			<param value="yyyy/MM/dd" id="pattern"/>
+		</data>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<kColl id="fileupload1">
+		<refData refId="file"/>
+		<iColl id="receivedFiles">
+			<refData refId="file"/>
+		</iColl>
+		<field id="handler" value="sampleFileHandler"/>
+	</kColl>
+
+	<kColl id="fileupload2">
+		<refData refId="file"/>
+		<iColl id="receivedFiles">
+			<refData refId="file"/>
+		</iColl>
+		<field id="handler" value="sampleFileHandler">
+			<param value="true" id="isMandatory"/>
+		</field>
+	</kColl>
+
+	<kColl id="transfer_fromKColl">
+		<field id="AA109284990" value="AA109284990"/>
+		<field id="BB109284912" value="BB109284912"/>
+		<field id="CC109282312" value="CC109282312"/>
+		<field id="DD109245127" value="DD109245127"/>
+		<field id="EE765454912" value="EE765454912"/>
+	</kColl>
+
+	<kColl id="transfer_toKColl">
+		<field id="XX109284990" value="XX109284990"/>
+		<field id="YY109284912" value="YY109284912"/>
+		<field id="ZZ109282312" value="ZZ109282312"/>
+	</kColl>
+
+	<kColl id="cardType">
+		<field id="MCard" value="master_card"/>
+		<field id="VCard" value="visa_card"/>
+	</kColl>
+
+	<kColl id="actionType">
+		<field id="query" value="query"/>
+		<field id="creat" value="open_creadit_card"/>
+		<field id="depos_trans" value="deposit_transfer"/>
+	</kColl>
+
+	<kColl id="tabbedPane1Data">
+		<field id="userName"/>
+		<field id="cardType"/>
+		<field id="actionType"/>
+	</kColl>
+
+	<field id="message1"/>
+
+	<field id="message2"/>
+
+	<iColl id="treeIkoll" size="3">
+		<kColl id="treedata">
+			<field id="name" value="111"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="ajaxChnlEnhanceData" dynamic="false">
+		<field id="seid"/>
+		<field id="setime" value="0"/>
+		<iColl id="subCtxtNameList" size="0">
+			<kColl id="rowData">
+				<field id="index"/>
+				<field id="ctxtName"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="city" dynamic="true">
+		<field id="name"/>
+		<field id="address"/>
+		<iColl id="listBranch">
+			<refData refId="branch"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="branch">
+		<field id="name"/>
+		<field id="address"/>
+	</kColl>
+
+	<kColl id="citysDisplay">
+		<field id="label"/>
+		<field id="value"/>
+	</kColl>
+
+</data.xml>

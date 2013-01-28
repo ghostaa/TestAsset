@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testKcollMapper>
+
+
+	<htmlProcessor context="testKcollMapperCtx" id="testKcollMapper">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start1" inputMapFmt="initial.start_InputFmt" skipValidation="false" targetState="myOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="myOp" id="myOp" type="operation">
+			<transitions>
+				<htmlTransition id="myOp.next" outputMapFmt="myOp.ok_OutputFmt" skipValidation="false" targetState="yourOp"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="yourOp" id="yourOp" type="operation">
+			<transitions>
+				<htmlTransition id="yourOp.go" skipValidation="false" targetState="showResult-1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="mapper/showResult.jsp" id="showResult-1">
+			<transitions>
+				<htmlTransition id="showResult-1.end" skipValidation="false" targetState="finalPage-1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="mapper/finalPage.jsp" id="finalPage-1"/>
+	</htmlProcessor>
+
+	<operation id="myOp" context="testKcollMapperCtx" implClass="com.ibm.btt.application.op.myOp"/>
+
+	<operation id="yourOp" context="testKcollMapperCtx" implClass="com.ibm.btt.application.op.yourOp"/>
+
+	<context id="testKcollMapperCtx" type="op">
+		<refKColl refId="allTypeData"/>
+	</context>
+
+	<kColl id="allTypeData" dynamic="true">
+		<refData refId="table"/>
+		<refData refId="typeData"/>
+		<refData refId="tableData"/>
+		<refData refId="beanData"/>
+	</kColl>
+
+	<kColl id="table">
+		<field id="name"/>
+		<field id="position"/>
+		<field id="age"/>
+	</kColl>
+
+	<kColl id="typeData">
+		<data id="stringData" refType="String"/>
+		<data id="dateData" refType="Date"/>
+		<data id="numberData" refType="Number"/>
+		<data id="currencyData" refType="Currency"/>
+	</kColl>
+
+	<kColl id="tableData">
+		<iColl id="myTable" size="3">
+			<kColl id="tableColumn">
+				<field id="name"/>
+				<field id="position"/>
+				<field id="age"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="beanData">
+		<field id="testKcollMapperField"/>
+	</kColl>
+
+	<fmtDef id="myOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="typeData" to="typeData"/>
+			<map from="tableData" to="tableData"/>
+			<map from="table" to="table"/>
+			<map from="beanData" to="beanData"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="initial.start_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="&apos;hello,China&apos;" to="typeData.stringData"/>
+			<map fromExpression="&apos;2011-11-11&apos;" to="typeData.dateData"/>
+			<map fromExpression="22" to="typeData.numberData"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</testKcollMapper>

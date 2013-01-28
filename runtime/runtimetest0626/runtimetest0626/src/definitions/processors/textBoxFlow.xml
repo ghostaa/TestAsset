@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<textBoxFlow>
+
+
+	<htmlProcessor context="textBoxCtx" id="textBoxFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="textBoxIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="textBox.jsp" id="textBox">
+			<transitions>
+				<htmlTransition id="textBox.end" targetState="OK"/>
+				<htmlTransition id="textBox.submit" targetState="textBox"/>
+				<htmlTransition id="textBox.change" targetState="textButtonStyle"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="textBoxIndex.jsp" id="textBoxIndex">
+			<transitions>
+				<htmlTransition id="textBoxIndex.textBoxDetail" targetState="textBox"/>
+				<htmlTransition id="textBoxIndex.1-&gt;textbox" targetState="textBoxSubmittedinFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="textBoxSubmittedinFlow.jsp" id="textBoxSubmittedinFlow">
+			<transitions>
+				<htmlTransition id="textBoxSubmittedinFlow.submit" targetState="textBoxAfterSubmittedinFlow"/>
+				<htmlTransition id="textBoxSubmittedinFlow.intoPopup" targetState="textBoxAfterSubmittedinFlow-1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="textBoxAfterSubmittedinFlow.jsp" id="textBoxAfterSubmittedinFlow">
+			<transitions>
+				<htmlTransition id="textBoxAfterSubmittedinFlow.back" targetState="textBoxSubmittedinFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="textButtonStyle.jsp" id="textButtonStyle">
+			<transitions>
+				<htmlTransition id="textButtonStyle.back" targetState="textBox"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="textBoxAfterSubmittedinFlow.jsp" id="textBoxAfterSubmittedinFlow-1">
+			<transitions>
+				<htmlTransition id="textBoxAfterSubmittedinFlow-1.return" targetState="textBoxIndex"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="textBoxCtx" type="op">
+		<refKColl refId="textBoxRecord"/>
+	</context>
+
+	<kColl id="textBoxRecord">
+		<data id="BasicField" value="123" description="Basic Field" refType="String"/>
+		<data id="BasicField_1" description="Basic Field" refType="String"/>
+		<data id="Fieldwithpassword" description="Field with password,hint attribute" refType="String"/>
+		<data id="Fieldwithpassword_1" description="Field with password,hint attribute" refType="String"/>
+		<data id="LengthTestField" description="Length Test Field" refType="String">
+			<param value="6" id="maximumLength"/>
+			<param value="3" id="minimumLength"/>
+		</data>
+		<data id="LengthTestField_1" description="Length Test Field" refType="String">
+			<param value="6" id="maximumLength"/>
+			<param value="3" id="minimumLength"/>
+		</data>
+		<data id="mailaddress" description="mail address" refType="String">
+			<param value="\w+([-+.&apos;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" id="regExp"/>
+		</data>
+		<data id="mailaddress_1" description="mail address" refType="String">
+			<param value="\w+([-+.&apos;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" id="regExp"/>
+		</data>
+		<data id="StringwithRequired" description="String with Required, password, hint" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="StringwithRequired_1" description="String with Required, password, hint" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateBoxWithmaxmin(default)" refType="Date">
+			<param value="today+7d" id="maximumDate"/>
+			<param value="today-7d" id="minimumDate"/>
+		</data>
+		<data id="DateBoxWithmaxmin(default)_1" refType="Date">
+			<param value="today+7d" id="maximumDate"/>
+			<param value="today-7d" id="minimumDate"/>
+		</data>
+		<data id="DateBoxWithmaxmin(MMddYYYY)" refType="Date">
+			<param value="today+7d" id="maximumDate"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+		</data>
+		<data id="DateBoxWithmaxmin(MMddYYYY)_1" refType="Date">
+			<param value="today+7d" id="maximumDate"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+		</data>
+		<data id="DateWithRequiredminmax" refType="Date">
+			<param value="2009-10-21" id="maximumDate"/>
+			<param value="2009-10-11" id="minimumDate"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateWithRequiredminmax_1" refType="Date">
+			<param value="2009-10-21" id="maximumDate"/>
+			<param value="2009-10-11" id="minimumDate"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateWithRequiredminmax(today)" refType="Date">
+			<param value="today+1y1m7d" id="maximumDate"/>
+			<param value="today-1y1m7d" id="minimumDate"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateWithRequiredminmax(today)_1" refType="Date">
+			<param value="today+1y1m7d" id="maximumDate"/>
+			<param value="today-1y1m7d" id="minimumDate"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateWithPatternNull" refType="Date"/>
+		<data id="DateWithPatternNull_1" refType="Date"/>
+		<data id="DateBasic" refType="Date">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="DateBasic_1" refType="Date">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Html:bigdecimalwithhtml:decimalplaces" refType="Number">
+			<param value="4" id="html:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Html:defaultwithhtml:decimalplaces" refType="Number">
+			<param value="4" id="html:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Default:bigdecimalwithdefault:decimalplaces" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="4" id="default:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Default:defaultwithdefault:decimalplaces" refType="Number">
+			<param value="4" id="default:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Html:bigdecimalwithhtml:decimalplaces_1" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="4" id="html:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Html:defaultwithhtml:decimalplaces_1" refType="Number">
+			<param value="4" id="html:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Default:bigdecimalwithdefault:decimalplaces_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="4" id="default:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Default:defaultwithdefault:decimalplaces_1" refType="Number">
+			<param value="4" id="default:decimalPlaces"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Html:bigDecimal,html:pattern=#" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default:bigDecimal,html:pattern=#" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html:bigDecimal,html:pattern=0" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Defaultl:bigDecimal,html:pattern=0" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Html:bigDecimal,html:pattern=#_1" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default:bigDecimal,html:pattern=#_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html:bigDecimal,html:pattern=0_1" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Defaultl:bigDecimal,html:pattern=0_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Html:decimalPlaces" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="Html:bigDecimalwithpatternwithhtml:decimalPlaces" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="bigDecimal" id="html:numberType"/>
+		</data>
+		<data id="Html:bigDecimalwithpatternwithdefault:decimalPlaces" refType="Number">
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="bigDecimal" id="html:numberType"/>
+		</data>
+		<data id="Default:bigDecimalwithpatternwithhtml:decimalPlaces" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="Default:bigDecimalwithpatternwithdefault:decimalPlaces" refType="Number">
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=#" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=0" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlacesewithhtml:pattern=#" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlacesewithhtml:pattern=0" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=#withvalue" value="12.1111" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=0withvalue" value="12.1111" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlaceswithhtml:pattern=#" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlaceswithhtml:pattern=0" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Html:decimalPlaces_1" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="Html:bigDecimalwithpatternwithhtml:decimalPlaces_1" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="bigDecimal" id="html:numberType"/>
+		</data>
+		<data id="Html:bigDecimalwithpatternwithdefault:decimalPlaces_1" refType="Number">
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="bigDecimal" id="html:numberType"/>
+		</data>
+		<data id="Default:bigDecimalwithpatternwithhtml:decimalPlaces_1" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="Default:bigDecimalwithpatternwithdefault:decimalPlaces_1" refType="Number">
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=#_1" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=0_1" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlacesewithhtml:pattern=#_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlacesewithhtml:pattern=0_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=#withvalue_1" value="12.1111" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Html: bigDecimalwithhtml:decimalPlaceswithhtml:pattern=0withvalue_1" value="12.1111" refType="Number">
+			<param value="bigDecimal" id="html:numberType"/>
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlaceswithhtml:pattern=#_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.###" id="html:pattern"/>
+		</data>
+		<data id="Default: bigDecimalwithdefault:decimalPlaceswithhtml:pattern=0_1" refType="Number">
+			<param value="bigDecimal" id="default:numberType"/>
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="###,###.000" id="html:pattern"/>
+		</data>
+		<data id="Currencywithrequiredwithhint" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithCNY" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminInt" refType="Currency">
+			<param value="100" id="maximumNumber"/>
+			<param value="10" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminDecimal" refType="Currency">
+			<param value="100.99" id="maximumNumber"/>
+			<param value="10.99" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithformatwithlocale" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithByte" refType="Currency">
+			<param value="byte" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithShort" refType="Currency">
+			<param value="short" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithInteger" refType="Currency">
+			<param value="integer" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithLong" refType="Currency">
+			<param value="long" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithDouble" refType="Currency">
+			<param value="double" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithFloat" refType="Currency">
+			<param value="float" id="numberType"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigdecimal" refType="Currency">
+			<param value="bigDecimal" id="numberType"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithDefault" refType="Currency">
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=4" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="Currencywithrequiredwithhint_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithCNY_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminInt_1" refType="Currency">
+			<param value="100" id="maximumNumber"/>
+			<param value="10" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminDecimal_1" refType="Currency">
+			<param value="100.99" id="maximumNumber"/>
+			<param value="10.99" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithformatwithlocale_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithByte_1" refType="Currency">
+			<param value="byte" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithShort_1" refType="Currency">
+			<param value="short" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithInteger_1" refType="Currency">
+			<param value="integer" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithLong_1" refType="Currency">
+			<param value="long" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithDouble_1" refType="Currency">
+			<param value="double" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithFloat_1" refType="Currency">
+			<param value="float" id="numberType"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigdecimal_1" refType="Currency">
+			<param value="bigDecimal" id="numberType"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithDefault_1" refType="Currency">
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=4_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=1_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithFRF" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="FRF" id="currency"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithFRF_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="FRF" id="currency"/>
+		</data>
+		<data id="StringData" value="test" refType="String"/>
+		<data id="DateData" value="2012-02-12" refType="Date"/>
+		<data id="IntegerData" value="12" refType="Integer"/>
+		<data id="LongData" value="12" refType="Long"/>
+		<data id="DoubleData" value="12" refType="Double"/>
+		<data id="CurrencyData" value="212" refType="Currency"/>
+		<field id="lengthofStringTestField"/>
+		<data id="d1" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="d2" refType="String">
+			<param value="false" id="isMandatory"/>
+		</data>
+		<data id="d3" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="d4" refType="String">
+			<param value="false" id="isMandatory"/>
+		</data>
+		<data id="d5" refType="String"/>
+		<data id="d6" refType="String"/>
+		<data id="d7" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="d8" refType="String">
+			<param value="false" id="isMandatory"/>
+		</data>
+		<data id="d9" refType="String"/>
+		<data id="textBoxData" value="1" refType="String"/>
+		<data id="textBoxData_onClick" value="1" refType="String"/>
+		<data id="textBoxData_onFocus" value="1" refType="String"/>
+		<data id="textBoxData_onBlur" value="1" refType="String"/>
+		<data id="textBoxData_onKeyDown" value="1" refType="String"/>
+		<data id="textBoxData_onKeyPress" value="1" refType="String"/>
+		<data id="textBoxData_onKeyUp" value="1" refType="String"/>
+		<data id="textBoxData_onMouseDown" value="1" refType="String"/>
+		<data id="textBoxData_onMouseUp" value="1" refType="String"/>
+		<data id="textBoxData_onMouseEnter" value="1" refType="String"/>
+		<data id="textBoxData_onChange" value="1" refType="String"/>
+		<data id="textBoxData_onMouseLeave" value="1" refType="String"/>
+		<data id="textBoxData_onMouseMove" value="1" refType="String"/>
+		<data id="textBoxDataSubmitString" refType="String"/>
+		<data id="textBoxDataSubmitDate" refType="Date"/>
+		<data id="textBoxDataSubmitCurrency" refType="Currency"/>
+		<data id="textBoxDataSubmitNumber" refType="Number"/>
+		<data id="textBoxButtonStyleString" refType="String">
+			<param value="7" id="maximumLength"/>
+			<param value="5" id="minimumLength"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="String" refType="String"/>
+		<data id="Date" refType="Date"/>
+		<data id="Currency" refType="Currency"/>
+		<data id="Number(default)" refType="Number"/>
+		<data id="Integer" refType="Integer"/>
+		<data id="BigDecimal" refType="BigDecimal"/>
+		<data id="Number(BigDecimal)" refType="BigDecimal"/>
+		<data id="Double" refType="Double"/>
+		<data id="BigInteger" refType="BigInteger"/>
+		<data id="Default:bigDecimalwithpatternwithhtml:decimalPlaceswithvalue" value="12.1111" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="Default:bigDecimalwithpatternwithdefault:decimalPlaceswithvalue" value="12.1111" refType="Number">
+			<param value="2" id="default:decimalPlaces"/>
+			<param value="bigDecimal" id="default:numberType"/>
+		</data>
+		<data id="NumberMinMax" refType="Number">
+			<param value="100.111" id="maximumNumber"/>
+			<param value="10.111" id="minimumNumber"/>
+		</data>
+	</kColl>
+
+	<kColl id="province">
+		<field id="label"/>
+		<field id="value"/>
+	</kColl>
+
+</textBoxFlow>

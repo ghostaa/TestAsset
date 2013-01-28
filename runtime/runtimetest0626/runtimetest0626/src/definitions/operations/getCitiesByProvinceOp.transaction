@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_3DAdEOpmEeG2i4gxNgVgQw">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_3DAdEupmEeG2i4gxNgVgQw">
+    <contexts xmi:type="transaction:Context" xmi:id="_7KAusOpmEeG2i4gxNgVgQw" tag="context" id="getCitiesByProvinceCtx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_7KAusepmEeG2i4gxNgVgQw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_7KAusupmEeG2i4gxNgVgQw" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_7KAus-pmEeG2i4gxNgVgQw" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_7KAutOpmEeG2i4gxNgVgQw" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_7KAutepmEeG2i4gxNgVgQw" key="_7KAusupmEeG2i4gxNgVgQw" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_7KAutupmEeG2i4gxNgVgQw" key="_7KAusepmEeG2i4gxNgVgQw" value="getCitiesByProvinceCtx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_7uhJ8OpmEeG2i4gxNgVgQw" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_7uhJ8epmEeG2i4gxNgVgQw" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_8aoCAOpmEeG2i4gxNgVgQw" key="_7uhJ8epmEeG2i4gxNgVgQw" value="getCitiesByProvinceRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_3DAdE-pmEeG2i4gxNgVgQw">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_6L3rcOpmEeG2i4gxNgVgQw" tag="kColl" id="getCitiesByProvinceRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_6L3rcepmEeG2i4gxNgVgQw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_6L3rcupmEeG2i4gxNgVgQw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_6L3rc-pmEeG2i4gxNgVgQw" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_6L3rdOpmEeG2i4gxNgVgQw" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_6L3rdepmEeG2i4gxNgVgQw" key="_6L3rc-pmEeG2i4gxNgVgQw" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_6L3rdupmEeG2i4gxNgVgQw" key="_6L3rcepmEeG2i4gxNgVgQw" value="getCitiesByProvinceRecord"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_6oVlAOpmEeG2i4gxNgVgQw" tag="field" id="getCitiesByProvinceField">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_6oVlAepmEeG2i4gxNgVgQw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_6oVlAupmEeG2i4gxNgVgQw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_6oVlA-pmEeG2i4gxNgVgQw" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_6oVlBOpmEeG2i4gxNgVgQw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_6oVlBepmEeG2i4gxNgVgQw" key="_6oVlA-pmEeG2i4gxNgVgQw" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_6oVlBupmEeG2i4gxNgVgQw" key="_6oVlAepmEeG2i4gxNgVgQw" value="getCitiesByProvinceField"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_3DAdFOpmEeG2i4gxNgVgQw"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_3DAdFepmEeG2i4gxNgVgQw">
+    <operations xmi:type="transaction:Operation" xmi:id="_5nNfMOpmEeG2i4gxNgVgQw" tag="operation" id="getCitiesByProvinceOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_5nNfMepmEeG2i4gxNgVgQw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_5nNfMupmEeG2i4gxNgVgQw" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_5nNfM-pmEeG2i4gxNgVgQw" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_5nNfNOpmEeG2i4gxNgVgQw" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_5nNfNepmEeG2i4gxNgVgQw" key="_5nNfM-pmEeG2i4gxNgVgQw" value="com.ibm.btt.banco.operation.GetCitiesByProvince"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_5nNfNupmEeG2i4gxNgVgQw" key="_5nNfMepmEeG2i4gxNgVgQw" value="getCitiesByProvinceOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9diQgOpmEeG2i4gxNgVgQw" key="_5nNfMupmEeG2i4gxNgVgQw" value="getCitiesByProvinceCtx"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_3DAdFupmEeG2i4gxNgVgQw"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_3DAdF-pmEeG2i4gxNgVgQw"/>
+</transaction:WorkProduct>

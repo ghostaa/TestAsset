@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AjaxFormFlow>
+
+
+	<htmlProcessor context="AjaxFormCtx" id="AjaxFormFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="hForm"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="hForm.jsp" id="hForm">
+			<transitions>
+				<htmlTransition id="hForm.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="AjaxFormCtx" type="op">
+		<refKColl refId="hFormInitData"/>
+	</context>
+
+	<kColl id="hFormInitData">
+		<kColl id="proviceList">
+			<field id="hubei" value="Hu Bei"/>
+			<field id="henan" value="He Nan"/>
+			<field id="shanxi" value="Shan Xi"/>
+		</kColl>
+		<field id="uName"/>
+		<field id="uPwd"/>
+		<field id="provice"/>
+		<field id="city"/>
+		<kColl id="cityList">
+		</kColl>
+		<iColl id="iProvinceList" size="2">
+			<kColl id="province">
+				<field id="label"/>
+				<field id="value"/>
+			</kColl>
+		</iColl>
+		<iColl id="iCityList" size="3">
+			<kColl id="city">
+				<field id="label"/>
+				<field id="value"/>
+			</kColl>
+		</iColl>
+		<field id="inputText"/>
+		<field id="filterText"/>
+		<field id="inputRichText"/>
+		<field id="filterRichText"/>
+		<field id="inputTextArea"/>
+		<field id="filterTextArea"/>
+		<data id="pageName" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+	</kColl>
+
+</AjaxFormFlow>

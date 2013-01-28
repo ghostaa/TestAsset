@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="Cp1252"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="197,94,400,300" dataBinding="{'ctxType':'proc','ctxFile':'selectFlow','ctxName':'selectCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'selectIndex.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:723,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:622,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    <container name="Form" id="form">
+      <gridData heightHint="84" horizontalAlignment="4" verticalAlignment="4" widthHint="252" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:398,&quot;displaySize&quot;:236,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:298,&quot;displaySize&quot;:45,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" action="flowEvent=flow" hint="search the web with link" id="link" text="SelectList submitted in Flow">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:234,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <widget name="Link" extraParams="pageName=select.jsp" action="operationId=combodataOp" id="link01" text="SelectList submitted by operation">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:234,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <widget name="Link" action="flowId=SelectListExistBlackFlow;flowEvent=start" id="link02" text="SelectList for Label and Value exist black" tabIndex="">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:234,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="1"/>
+    </container>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="panel" event="onkeydown"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="expression">
+            <leftValue type="eventProperty" widget="e" property="keyCode"/>
+            <operator name="=="/>
+            <rightValue type="constant" constant="90"/>
+          </leftValue>
+          <operator name="and"/>
+          <rightValue type="expression">
+            <leftValue type="eventProperty" widget="e" property="ctrlKey"/>
+            <operator name="=="/>
+            <rightValue type="constant" constant="true"/>
+          </rightValue>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="12" script="function log(message){
+ var console=document.getElementById(&quot;debug.info&quot;);
+ if(console===null){
+  console=document.createElement(&quot;div&quot;);
+  console.id=&quot;debuginfo&quot;;
+  console.style.background=&quot;#dedede&quot;;
+  console.style.borader=&quot;lpx solid silver&quot;;
+  console.style.padding=&quot;5px&quot;;
+  console.style.width=&quot;t400px&quot;;
+  console.style.position=&quot;absolute&quot;;
+  console.style.right=&quot;0px&quot;;
+  console.style.top=&quot;0px&quot;;
+  document.body.appendChild(console);
+ }
+ console.innerHTML+=&quot;&lt;p&gt;&quot;+message+&quot;&lt;/p&gt;&quot;;
+}"/>
+        <action type="inlineScript" id="1" script="//console.info(&quot;you press both keyBoard ctrl and z with same time&quot;);
+"/>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="text">
+          <value type="constant" constant="'%nls.BTTResource/clientName'"/>
+        </action>
+        <action type="inlineScript" id="12345678" script="console.log(&quot;not same time press Ctrl + ASCII:90(z)&quot;);"/>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="form" event="onKeyDown"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="expression">
+            <leftValue type="eventProperty" widget="e" property="ctrlKey"/>
+            <operator name="=="/>
+            <rightValue type="constant" constant="true"/>
+          </leftValue>
+          <operator name="and"/>
+          <rightValue type="expression">
+            <leftValue type="eventProperty" widget="e" property="keyCode"/>
+            <operator name="=="/>
+            <rightValue type="constant" constant="65"/>
+          </rightValue>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="1" script="function buildURL(){
+ with(location)
+ {
+  var url =href;
+ }
+ return url;
+}
+var result =buildURL();
+console.info(result);"/>
+        <action type="inlineScript" id="12" script="var a;"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="link" event="onKeyDown"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="eventProperty" widget="e" property="keyCode"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="17"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="1" script="function buildURL(){
+ var url=location.href;
+ return url;
+}
+console.info(buildURL());"/>
+        <action type="inlineScript" id="1" script="console.log(&quot;this info is link widgets,not form&quot;);"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="link02" event="onKeyDown"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="1" script="//&lt;a href=&quot;www.baidu.com&quot; title=This a very popular browser engine&gt;Baidu&lt;/a&gt; search very thing 
+// a
+// b
+var a;
+var b;"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule04">
+      <events>
+        <event widget="link01" event="onKeyDown"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="1" script=" "/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+</XUI>

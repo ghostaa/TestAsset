@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SelectListExistBlackFlow>
+
+
+	<htmlProcessor context="SelectListExistBlackCtx" id="SelectListExistBlackFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SelectForListOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="SelectForListOp" id="SelectForListOp" type="operation">
+			<transitions>
+				<htmlTransition id="SelectForListOp.event0" outputMapFmt="SelectForListOp.event0_OutputFmt" targetState="SelectListExistBlack-1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="SelectListExistBlack.jsp" id="SelectListExistBlack">
+			<transitions>
+				<htmlTransition id="SelectListExistBlack.DisplayPageOp" targetState="SelectForAsn"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="SelectForAsn.jsp" id="SelectForAsn">
+			<transitions>
+				<htmlTransition id="SelectForAsn.popup" targetState="SelectListExistBlack"/>
+				<htmlTransition id="SelectForAsn.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="SelectListExistBlack.jsp" id="SelectListExistBlack-1">
+			<transitions>
+				<htmlTransition id="SelectListExistBlack-1.DisplayPageOp" targetState="SelectForAsn"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<operation id="SelectListExistBlackOp" implClass="com.ibm.btt.sample.operation.Fire"/>
+
+	<context id="SelectListExistBlackCtx" type="op">
+		<refKColl refId="SelectListExistBlackRecord"/>
+	</context>
+
+	<kColl id="SelectListExistBlackRecord">
+		<refData refId="SelectListExistBlackList"/>
+		<refData refId="SelectListRecord"/>
+		<field id="Reveal"/>
+	</kColl>
+
+	<iColl id="SelectListExistBlackList">
+		<kColl id="SelectListExistBlackRecord01">
+			<field id="LableForList"/>
+			<field id="ValueForList"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="SelectListRecord">
+		<field id="SelectOne"/>
+		<field id="SelectTwo"/>
+	</kColl>
+
+	<fmtDef id="SelectForListOp.event0_OutputFmt">
+		<mapperConverterExpression>
+			<map from="SelectList.*.Lable" to="SelectListExistBlackList.*.LableForList" append="false"/>
+			<map from="SelectList.*.Value" to="SelectListExistBlackList.*.ValueForList" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</SelectListExistBlackFlow>

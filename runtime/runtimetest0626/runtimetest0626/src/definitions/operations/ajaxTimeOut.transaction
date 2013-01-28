@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_7yghAMEEEeG-_JqiCz5s5w">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_7yghAsEEEeG-_JqiCz5s5w">
+    <contexts xmi:type="transaction:Context" xmi:id="_PH5oYMEFEeG-_JqiCz5s5w" tag="context" id="ajaxTimeOutCtx01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PH5oYcEFEeG-_JqiCz5s5w" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PH5oYsEFEeG-_JqiCz5s5w" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PH5oY8EFEeG-_JqiCz5s5w" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PH5oZMEFEeG-_JqiCz5s5w" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PH5oZcEFEeG-_JqiCz5s5w" key="_PH5oYsEFEeG-_JqiCz5s5w" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PH5oZsEFEeG-_JqiCz5s5w" key="_PH5oYcEFEeG-_JqiCz5s5w" value="ajaxTimeOutCtx01"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_P18aIMEFEeG-_JqiCz5s5w" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_P18aIcEFEeG-_JqiCz5s5w" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_gYrMoMEFEeG-_JqiCz5s5w" key="_P18aIcEFEeG-_JqiCz5s5w" value="ajaxTimeOutRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_7yghA8EEEeG-_JqiCz5s5w">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_QnH_cMEFEeG-_JqiCz5s5w" tag="kColl" id="ajaxTimeOutRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_QnH_ccEFEeG-_JqiCz5s5w" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_QnH_csEFEeG-_JqiCz5s5w" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_QnH_c8EFEeG-_JqiCz5s5w" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_QnH_dMEFEeG-_JqiCz5s5w" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_QnH_dcEFEeG-_JqiCz5s5w" key="_QnH_c8EFEeG-_JqiCz5s5w" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_QnH_dsEFEeG-_JqiCz5s5w" key="_QnH_ccEFEeG-_JqiCz5s5w" value="ajaxTimeOutRecord"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_aubmoMEFEeG-_JqiCz5s5w" tag="field" id="name">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_aubmocEFEeG-_JqiCz5s5w" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_aubmosEFEeG-_JqiCz5s5w" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_aubmo8EFEeG-_JqiCz5s5w" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_aubmpMEFEeG-_JqiCz5s5w" key="_aubmocEFEeG-_JqiCz5s5w" value="name"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_byhg4MEFEeG-_JqiCz5s5w" tag="field" id="password">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_byhg4cEFEeG-_JqiCz5s5w" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_byhg4sEFEeG-_JqiCz5s5w" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_byhg48EFEeG-_JqiCz5s5w" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_byhg5MEFEeG-_JqiCz5s5w" key="_byhg4cEFEeG-_JqiCz5s5w" value="password"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_7yghBMEEEeG-_JqiCz5s5w"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_7yghBcEEEeG-_JqiCz5s5w">
+    <operations xmi:type="transaction:Operation" xmi:id="_HpbEoMEFEeG-_JqiCz5s5w" tag="operation" id="ajaxTimeOut">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_HpbEocEFEeG-_JqiCz5s5w" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_HpbEosEFEeG-_JqiCz5s5w" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_HpbEo8EFEeG-_JqiCz5s5w" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_HpbEpMEFEeG-_JqiCz5s5w" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_HpbEpcEFEeG-_JqiCz5s5w" key="_HpbEo8EFEeG-_JqiCz5s5w" value="com.ibm.btt.sample.operation.AjaxTimeOut"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_HpbEpsEFEeG-_JqiCz5s5w" key="_HpbEocEFEeG-_JqiCz5s5w" value="ajaxTimeOut"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_zWac0MZGEeGPLo1RsrSAOA" key="_HpbEosEFEeG-_JqiCz5s5w" value="ajaxTimeOutCtx01"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_7yghBsEEEeG-_JqiCz5s5w"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_7yghB8EEEeG-_JqiCz5s5w"/>
+</transaction:WorkProduct>

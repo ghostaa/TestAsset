@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableAlignTestFlow>
+
+
+	<htmlProcessor context="tableAlignTestCtx" id="tableAlignTestFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="tableAlignTestOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="tableAlignTest.jsp"/>
+
+		<htmlState type="page" typeIdInfo="tableAlignTest.jsp" id="tableAlignTest">
+			<transitions>
+				<htmlTransition id="tableAlignTest.submit" targetState="tableAlignTestAfterSubmitted"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableAlignTestOp" id="tableAlignTestOp" type="operation">
+			<transitions>
+				<htmlTransition id="tableAlignTestOp.init" targetState="tableAlignTest"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="tableAlignTestAfterSubmitted.jsp" id="tableAlignTestAfterSubmitted">
+			<transitions>
+				<htmlTransition id="tableAlignTestAfterSubmitted.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="tableAlignTestOp" implClass="com.ibm.btt.sample.operation.TableAlignTest"/>
+
+	<context id="tableAlignTestCtx" type="op">
+		<refKColl refId="testTable"/>
+	</context>
+
+	<kColl id="testTable">
+		<refData refId="tableRow"/>
+		<refData refId="tableData"/>
+		<refData refId="depList"/>
+		<refData refId="comboList"/>
+		<field id="rad"/>
+		<field id="default"/>
+	</kColl>
+
+	<kColl id="tableRow">
+		<refData refId="tString"/>
+		<refData refId="tNumber"/>
+		<refData refId="tCurrency"/>
+		<refData refId="dateField"/>
+		<field id="comId"/>
+		<field id="depId"/>
+		<field id="tev"/>
+	</kColl>
+
+	<data id="tString" refType="String"/>
+
+	<data id="tNumber" refType="Number"/>
+
+	<data id="tCurrency" refType="Currency">
+		<param value="USD" id="currency"/>
+	</data>
+
+	<data id="dateField" refType="Date">
+		<param value="dd/MM/yyyy" id="pattern"/>
+	</data>
+
+	<iColl id="tableData" size="6">
+		<refData refId="tableRow"/>
+	</iColl>
+
+	<iColl id="depList" size="6">
+		<kColl id="de">
+			<field id="label"/>
+			<field id="value"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="comboList" size="6">
+		<kColl id="option">
+			<field id="label"/>
+		</kColl>
+	</iColl>
+
+</tableAlignTestFlow>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_ozYbQOdpEeGm0tLryqhMag">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_ozYbQedpEeGm0tLryqhMag">
+    <contexts xmi:type="transaction:Context" xmi:id="_ozYbQudpEeGm0tLryqhMag" tag="context" id="PAG_paginationRefactor$paginationFFTable_FFInfoCtx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbQ-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbROdpEeGm0tLryqhMag" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbRedpEeGm0tLryqhMag" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbRudpEeGm0tLryqhMag" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbR-dpEeGm0tLryqhMag" key="_ozYbROdpEeGm0tLryqhMag" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbSOdpEeGm0tLryqhMag" key="_ozYbQ-dpEeGm0tLryqhMag" value="PAG_paginationRefactor$paginationFFTable_FFInfoCtx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_ozYbSedpEeGm0tLryqhMag" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbSudpEeGm0tLryqhMag" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbS-dpEeGm0tLryqhMag" key="_ozYbSudpEeGm0tLryqhMag" value="PAG_paginationRefactor$paginationFFTable_FFInfoRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_ozYbTOdpEeGm0tLryqhMag">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_ozYbTedpEeGm0tLryqhMag" tag="kColl" id="PAG_paginationRefactor$paginationFFTable_FFInfoRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbTudpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbT-dpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbUOdpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbUedpEeGm0tLryqhMag" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbUudpEeGm0tLryqhMag" key="_ozYbTudpEeGm0tLryqhMag" value="PAG_paginationRefactor$paginationFFTable_FFInfoRecord"/>
+      <elements xmi:type="transaction:KeyedCollection" xmi:id="_ozYbU-dpEeGm0tLryqhMag" tag="kColl" id="tableProperties">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbVOdpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbVedpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbVudpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbV-dpEeGm0tLryqhMag" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbWOdpEeGm0tLryqhMag" key="_ozYbVOdpEeGm0tLryqhMag" value="tableProperties"/>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbWedpEeGm0tLryqhMag" tag="field" id="tableId">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbWudpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbW-dpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbXOdpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbXedpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbXudpEeGm0tLryqhMag" key="_ozYbWudpEeGm0tLryqhMag" value="tableId"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbX-dpEeGm0tLryqhMag" key="_ozYbXedpEeGm0tLryqhMag" value="FFInfo"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbYOdpEeGm0tLryqhMag" tag="field" id="dataName">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbYedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbYudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbY-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbZOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbZedpEeGm0tLryqhMag" key="_ozYbYedpEeGm0tLryqhMag" value="dataName"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbZudpEeGm0tLryqhMag" key="_ozYbZOdpEeGm0tLryqhMag" value="FFData"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbZ-dpEeGm0tLryqhMag" tag="field" id="dataNameForList">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbaOdpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbaedpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbaudpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYba-dpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbbOdpEeGm0tLryqhMag" key="_ozYbaOdpEeGm0tLryqhMag" value="dataNameForList"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbbedpEeGm0tLryqhMag" key="_ozYba-dpEeGm0tLryqhMag" value="FFInfoTableIColl"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbbudpEeGm0tLryqhMag" tag="field" id="rowsPerPage">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbb-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbcOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbcedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbcudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbc-dpEeGm0tLryqhMag" key="_ozYbb-dpEeGm0tLryqhMag" value="rowsPerPage"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbdOdpEeGm0tLryqhMag" key="_ozYbcudpEeGm0tLryqhMag" value="10"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbdedpEeGm0tLryqhMag" tag="field" id="operationNameForPagination">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbdudpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbd-dpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbeOdpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbeedpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbeudpEeGm0tLryqhMag" key="_ozYbdudpEeGm0tLryqhMag" value="operationNameForPagination"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbe-dpEeGm0tLryqhMag" key="_ozYbeedpEeGm0tLryqhMag" value="paginationFetchPagedDataOp"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbfOdpEeGm0tLryqhMag" tag="field" id="directPagination">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbfedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbfudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbf-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbgOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbgedpEeGm0tLryqhMag" key="_ozYbfedpEeGm0tLryqhMag" value="directPagination"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbgudpEeGm0tLryqhMag" key="_ozYbgOdpEeGm0tLryqhMag" value="false"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbg-dpEeGm0tLryqhMag" tag="field" id="tableColumnIDs" comment=" this four fields corresponds to four columns on table ">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbhOdpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbhedpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbhudpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbh-dpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbiOdpEeGm0tLryqhMag" key="_ozYbhOdpEeGm0tLryqhMag" value="tableColumnIDs"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbiedpEeGm0tLryqhMag" key="_ozYbh-dpEeGm0tLryqhMag" value="cid,cname,cage,cgender,cbirthDay,csalary,cbigIntegerField,cfloatField,caccountCount,cbigDecimalField,cdoubleField,ctotalStayTime,clastAccessTime,cplainField"/>
+        </elements>
+      </elements>
+      <elements xmi:type="transaction:KeyedCollection" xmi:id="_ozYbiudpEeGm0tLryqhMag" tag="kColl" id="pageRequest">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbi-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbjOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbjedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbjudpEeGm0tLryqhMag" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbj-dpEeGm0tLryqhMag" key="_ozYbi-dpEeGm0tLryqhMag" value="pageRequest"/>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbkOdpEeGm0tLryqhMag" tag="field" id="pageEvent" comment=" candidate value should be &quot;initial&quot;, &quot;next&quot;, &quot;prev&quot;, &quot;page&quot; ">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbkedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbkudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbk-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYblOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbledpEeGm0tLryqhMag" key="_ozYbkedpEeGm0tLryqhMag" value="pageEvent"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbludpEeGm0tLryqhMag" tag="field" id="pageNumber">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbl-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbmOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbmedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbmudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbm-dpEeGm0tLryqhMag" key="_ozYbl-dpEeGm0tLryqhMag" value="pageNumber"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbnOdpEeGm0tLryqhMag" tag="field" id="sortData">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbnedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbnudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbn-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYboOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYboedpEeGm0tLryqhMag" key="_ozYbnedpEeGm0tLryqhMag" value="sortData"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYboudpEeGm0tLryqhMag" tag="field" id="customData" comment=" for extension on project-level, product do not handle ">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbo-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbpOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbpedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbpudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbp-dpEeGm0tLryqhMag" key="_ozYbo-dpEeGm0tLryqhMag" value="customData"/>
+        </elements>
+      </elements>
+      <elements xmi:type="transaction:KeyedCollection" xmi:id="_ozYbqOdpEeGm0tLryqhMag" tag="kColl" id="pageReply">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbqedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbqudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbq-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbrOdpEeGm0tLryqhMag" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbredpEeGm0tLryqhMag" key="_ozYbqedpEeGm0tLryqhMag" value="pageReply"/>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbrudpEeGm0tLryqhMag" tag="field" id="totalRowNumber">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbr-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbsOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbsedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbsudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbs-dpEeGm0tLryqhMag" key="_ozYbr-dpEeGm0tLryqhMag" value="totalRowNumber"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbtOdpEeGm0tLryqhMag" tag="field" id="enableNext">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbtedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbtudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbt-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbuOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbuedpEeGm0tLryqhMag" key="_ozYbtedpEeGm0tLryqhMag" value="enableNext"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbuudpEeGm0tLryqhMag" tag="field" id="enablePrevious">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbu-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbvOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbvedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbvudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbv-dpEeGm0tLryqhMag" key="_ozYbu-dpEeGm0tLryqhMag" value="enablePrevious"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbwOdpEeGm0tLryqhMag" tag="field" id="errMsg">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbwedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbwudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbw-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbxOdpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYbxedpEeGm0tLryqhMag" key="_ozYbwedpEeGm0tLryqhMag" value="errMsg"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_ozYbxudpEeGm0tLryqhMag" tag="field" id="customData" comment=" for extension on project-level, product do not handle ">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbx-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbyOdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbyedpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbyudpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYby-dpEeGm0tLryqhMag" key="_ozYbx-dpEeGm0tLryqhMag" value="customData"/>
+        </elements>
+        <elements xmi:type="transaction:IndexedCollection" xmi:id="_ozYbzOdpEeGm0tLryqhMag" tag="iColl" id="items" comment=" the technical operation will set data into iColl, filtering through the tableColumnIDs ">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbzedpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbzudpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYbz-dpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb0OdpEeGm0tLryqhMag" name="size" type="java.lang.Integer"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYb0edpEeGm0tLryqhMag" key="_ozYbzedpEeGm0tLryqhMag" value="items"/>
+          <element xmi:type="transaction:DataField" xmi:id="_ozYb0udpEeGm0tLryqhMag" tag="field" id="dummy">
+            <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb0-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+            <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb1OdpEeGm0tLryqhMag" name="description" type="java.lang.String"/>
+            <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb1edpEeGm0tLryqhMag" name="direction" type="java.lang.String"/>
+            <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb1udpEeGm0tLryqhMag" name="value" type="java.lang.String"/>
+            <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYb1-dpEeGm0tLryqhMag" key="_ozYb0-dpEeGm0tLryqhMag" value="dummy"/>
+          </element>
+        </elements>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_ozYb2OdpEeGm0tLryqhMag">
+    <formatters xmi:type="transaction:Formatter" xmi:id="_sr4NcOeCEeGm0tLryqhMag" tag="fmtDef" id="normalOutputMapping">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_sr4NceeCEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_sr4NcueCEeGm0tLryqhMag" key="_sr4NceeCEeGm0tLryqhMag" value="normalOutputMapping"/>
+      <rootElement xmi:type="transaction:DataMapperConverterFormatElement" xmi:id="_PF_WIOgQEeGYKphZMmDVbQ" tag="mapperConverterExpression">
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WIegQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WIugQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WI-gQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WJOgQEeGYKphZMmDVbQ" key="_PF_WIugQEeGYKphZMmDVbQ" value="return.paginationCtrlData.pageHook"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WJegQEeGYKphZMmDVbQ" key="_PF_WI-gQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_hook"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WJugQEeGYKphZMmDVbQ" type="Data" valueToString="return.paginationCtrlData.pageHook" field="return.paginationCtrlData.pageHook" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WJ-gQEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_hook" field="paginationData.paginationFFTable_FFInfo_hook" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WKOgQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WKegQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WKugQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WK-gQEeGYKphZMmDVbQ" key="_PF_WKegQEeGYKphZMmDVbQ" value="return.paginationCtrlData.havePrevious"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WLOgQEeGYKphZMmDVbQ" key="_PF_WKugQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_enablePrevious"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WLegQEeGYKphZMmDVbQ" type="Data" valueToString="return.paginationCtrlData.havePrevious" field="return.paginationCtrlData.havePrevious" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WLugQEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_enablePrevious" field="paginationData.paginationFFTable_FFInfo_enablePrevious" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WL-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WMOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WMegQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WMugQEeGYKphZMmDVbQ" key="_PF_WMOgQEeGYKphZMmDVbQ" value="return.paginationCtrlData.haveNext"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WM-gQEeGYKphZMmDVbQ" key="_PF_WMegQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_enableNext"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WNOgQEeGYKphZMmDVbQ" type="Data" valueToString="return.paginationCtrlData.haveNext" field="return.paginationCtrlData.haveNext" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WNegQEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_enableNext" field="paginationData.paginationFFTable_FFInfo_enableNext" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WNugQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WN-gQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WOOgQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WOegQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WOugQEeGYKphZMmDVbQ" key="_PF_WN-gQEeGYKphZMmDVbQ" value="return.tableResultList.*.cid"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WO-gQEeGYKphZMmDVbQ" key="_PF_WOOgQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cid"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WPOgQEeGYKphZMmDVbQ" key="_PF_WOegQEeGYKphZMmDVbQ" value="false"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WPegQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cid" field="return.tableResultList.*.cid" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WPugQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cid" field="FFInfoTableIColl.*.cid" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WP-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WQOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WQegQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WQugQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WQ-gQEeGYKphZMmDVbQ" key="_PF_WQOgQEeGYKphZMmDVbQ" value="return.tableResultList.*.cname"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WROgQEeGYKphZMmDVbQ" key="_PF_WQegQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cname"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WRegQEeGYKphZMmDVbQ" key="_PF_WQugQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WRugQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cname" field="return.tableResultList.*.cname" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WR-gQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cname" field="FFInfoTableIColl.*.cname" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WSOgQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WSegQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WSugQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WS-gQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WTOgQEeGYKphZMmDVbQ" key="_PF_WSegQEeGYKphZMmDVbQ" value="return.tableResultList.*.cgender"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WTegQEeGYKphZMmDVbQ" key="_PF_WSugQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cgender"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WTugQEeGYKphZMmDVbQ" key="_PF_WS-gQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WT-gQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cgender" field="return.tableResultList.*.cgender" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WUOgQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cgender" field="FFInfoTableIColl.*.cgender" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WUegQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WUugQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WU-gQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WVOgQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WVegQEeGYKphZMmDVbQ" key="_PF_WUugQEeGYKphZMmDVbQ" value="return.tableResultList.*.cbirthDay"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WVugQEeGYKphZMmDVbQ" key="_PF_WU-gQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cbirthDay"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WV-gQEeGYKphZMmDVbQ" key="_PF_WVOgQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WWOgQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cbirthDay" field="return.tableResultList.*.cbirthDay" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WWegQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cbirthDay" field="FFInfoTableIColl.*.cbirthDay" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WWugQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WW-gQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WXOgQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WXegQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WXugQEeGYKphZMmDVbQ" key="_PF_WW-gQEeGYKphZMmDVbQ" value="return.tableResultList.*.csalary"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WX-gQEeGYKphZMmDVbQ" key="_PF_WXOgQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.csalary"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WYOgQEeGYKphZMmDVbQ" key="_PF_WXegQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WYegQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.csalary" field="return.tableResultList.*.csalary" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WYugQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.csalary" field="FFInfoTableIColl.*.csalary" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WY-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WZOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WZegQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WZugQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WZ-gQEeGYKphZMmDVbQ" key="_PF_WZOgQEeGYKphZMmDVbQ" value="return.tableResultList.*.caccountCount"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WaOgQEeGYKphZMmDVbQ" key="_PF_WZegQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.caccountCount"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WaegQEeGYKphZMmDVbQ" key="_PF_WZugQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WaugQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.caccountCount" field="return.tableResultList.*.caccountCount" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_Wa-gQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.caccountCount" field="FFInfoTableIColl.*.caccountCount" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WbOgQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WbegQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WbugQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wb-gQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WcOgQEeGYKphZMmDVbQ" key="_PF_WbegQEeGYKphZMmDVbQ" value="return.tableResultList.*.cage"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WcegQEeGYKphZMmDVbQ" key="_PF_WbugQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cage"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WcugQEeGYKphZMmDVbQ" key="_PF_Wb-gQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_Wc-gQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cage" field="return.tableResultList.*.cage" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WdOgQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cage" field="FFInfoTableIColl.*.cage" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WdegQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WdugQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wd-gQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WeOgQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WeegQEeGYKphZMmDVbQ" key="_PF_WdugQEeGYKphZMmDVbQ" value="return.tableResultList.*.clastAccessTime"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WeugQEeGYKphZMmDVbQ" key="_PF_Wd-gQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.clastAccessTime"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_We-gQEeGYKphZMmDVbQ" key="_PF_WeOgQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WfOgQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.clastAccessTime" field="return.tableResultList.*.clastAccessTime" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WfegQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.clastAccessTime" field="FFInfoTableIColl.*.clastAccessTime" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WfugQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wf-gQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WgOgQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WgegQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WgugQEeGYKphZMmDVbQ" key="_PF_Wf-gQEeGYKphZMmDVbQ" value="return.tableResultList.*.ctotalStayTime"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_Wg-gQEeGYKphZMmDVbQ" key="_PF_WgOgQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.ctotalStayTime"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WhOgQEeGYKphZMmDVbQ" key="_PF_WgegQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WhegQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.ctotalStayTime" field="return.tableResultList.*.ctotalStayTime" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WhugQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.ctotalStayTime" field="FFInfoTableIColl.*.ctotalStayTime" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_Wh-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WiOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WiegQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WiugQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_Wi-gQEeGYKphZMmDVbQ" key="_PF_WiOgQEeGYKphZMmDVbQ" value="return.tableResultList.*.cfloatField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WjOgQEeGYKphZMmDVbQ" key="_PF_WiegQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cfloatField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WjegQEeGYKphZMmDVbQ" key="_PF_WiugQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WjugQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cfloatField" field="return.tableResultList.*.cfloatField" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_Wj-gQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cfloatField" field="FFInfoTableIColl.*.cfloatField" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WkOgQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WkegQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WkugQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wk-gQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WlOgQEeGYKphZMmDVbQ" key="_PF_WkegQEeGYKphZMmDVbQ" value="return.tableResultList.*.cdoubleField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WlegQEeGYKphZMmDVbQ" key="_PF_WkugQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cdoubleField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WlugQEeGYKphZMmDVbQ" key="_PF_Wk-gQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_Wl-gQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cdoubleField" field="return.tableResultList.*.cdoubleField" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WmOgQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cdoubleField" field="FFInfoTableIColl.*.cdoubleField" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WmegQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WmugQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wm-gQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WnOgQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WnegQEeGYKphZMmDVbQ" key="_PF_WmugQEeGYKphZMmDVbQ" value="return.tableResultList.*.cbigIntegerField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WnugQEeGYKphZMmDVbQ" key="_PF_Wm-gQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cbigIntegerField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_Wn-gQEeGYKphZMmDVbQ" key="_PF_WnOgQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WoOgQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cbigIntegerField" field="return.tableResultList.*.cbigIntegerField" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WoegQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cbigIntegerField" field="FFInfoTableIColl.*.cbigIntegerField" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_WougQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_Wo-gQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WpOgQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WpegQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WpugQEeGYKphZMmDVbQ" key="_PF_Wo-gQEeGYKphZMmDVbQ" value="return.tableResultList.*.cbigDecimalField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_Wp-gQEeGYKphZMmDVbQ" key="_PF_WpOgQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cbigDecimalField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WqOgQEeGYKphZMmDVbQ" key="_PF_WpegQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WqegQEeGYKphZMmDVbQ" type="Data" valueToString="return.tableResultList.*.cbigDecimalField" field="return.tableResultList.*.cbigDecimalField" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_WqugQEeGYKphZMmDVbQ" type="Data" valueToString="FFInfoTableIColl.*.cbigDecimalField" field="FFInfoTableIColl.*.cbigDecimalField" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_PF_Wq-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WrOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WregQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_PF_WrugQEeGYKphZMmDVbQ" name="append" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_Wr-gQEeGYKphZMmDVbQ" key="_PF_WrOgQEeGYKphZMmDVbQ" value="return.tableResultList.*.cplainField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WsOgQEeGYKphZMmDVbQ" key="_PF_WregQEeGYKphZMmDVbQ" value="FFInfoTableIColl.*.cplainField"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PF_WsegQEeGYKphZMmDVbQ" key="_PF_WrugQEeGYKphZMmDVbQ" value="ignore"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_PF_WsugQEeGYKphZMmDVbQ" type="DataField" valueToString="return.tableResultList.*.cplainField" field="return.tableResultList.*.cplainField" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_PF_Ws-gQEeGYKphZMmDVbQ" type="DataField" valueToString="FFInfoTableIColl.*.cplainField" field="FFInfoTableIColl.*.cplainField" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+      </rootElement>
+    </formatters>
+    <formatters xmi:type="transaction:Formatter" xmi:id="_cYvrQOeEEeGm0tLryqhMag" tag="fmtDef" id="errorOutputMapping">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_cYvrQeeEEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_cYvrQueEEeGm0tLryqhMag" key="_cYvrQeeEEeGm0tLryqhMag" value="errorOutputMapping"/>
+      <rootElement xmi:type="transaction:DataMapperConverterFormatElement" xmi:id="_mLtUgOgQEeGYKphZMmDVbQ" tag="mapperConverterExpression">
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_mLtUgegQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUgugQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUg-gQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUhOgQEeGYKphZMmDVbQ" key="_mLtUgugQEeGYKphZMmDVbQ" value="return.errorInfo"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUhegQEeGYKphZMmDVbQ" key="_mLtUg-gQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_errMsg"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_mLtUhugQEeGYKphZMmDVbQ" type="DataField" valueToString="return.errorInfo" field="return.errorInfo" contextName="paginationFetchPagedDataCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_mLtUh-gQEeGYKphZMmDVbQ" type="DataField" valueToString="paginationData.paginationFFTable_FFInfo_errMsg" field="paginationData.paginationFFTable_FFInfo_errMsg" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_mLtUiOgQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUiegQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUiugQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUi-gQEeGYKphZMmDVbQ" key="_mLtUiegQEeGYKphZMmDVbQ" value="false"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUjOgQEeGYKphZMmDVbQ" key="_mLtUiugQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_enableNext"/>
+          <fromValue xmi:type="transaction:ConstantValue" xmi:id="_mLtUjegQEeGYKphZMmDVbQ" type="Boolean" constant="false"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_mLtUjugQEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_enableNext" field="paginationData.paginationFFTable_FFInfo_enableNext" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_mLtUj-gQEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUkOgQEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_mLtUkegQEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUkugQEeGYKphZMmDVbQ" key="_mLtUkOgQEeGYKphZMmDVbQ" value="false"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mLtUk-gQEeGYKphZMmDVbQ" key="_mLtUkegQEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_enablePrevious"/>
+          <fromValue xmi:type="transaction:ConstantValue" xmi:id="_mLtUlOgQEeGYKphZMmDVbQ" type="Boolean" constant="false"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_mLtUlegQEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_enablePrevious" field="paginationData.paginationFFTable_FFInfo_enablePrevious" contextName="pageCustomerInfoQueryCtx"/>
+        </mappers>
+      </rootElement>
+    </formatters>
+    <formatters xmi:type="transaction:Formatter" xmi:id="_oNS3YOeEEeGm0tLryqhMag" tag="fmtDef" id="nextInputMapping">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_oNS3YeeEEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_oNS3YueEEeGm0tLryqhMag" key="_oNS3YeeEEeGm0tLryqhMag" value="nextInputMapping"/>
+      <rootElement xmi:type="transaction:DataMapperConverterFormatElement" xmi:id="_hkYcsOgTEeGYKphZMmDVbQ" tag="mapperConverterExpression">
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_hkYcsegTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcsugTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcs-gTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYctOgTEeGYKphZMmDVbQ" key="_hkYcsugTEeGYKphZMmDVbQ" value="params.cid"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYctegTEeGYKphZMmDVbQ" key="_hkYcs-gTEeGYKphZMmDVbQ" value="params.cid"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_hkYctugTEeGYKphZMmDVbQ" type="Data" valueToString="params.cid" field="params.cid" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_hkYct-gTEeGYKphZMmDVbQ" type="Data" valueToString="params.cid" field="params.cid" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_hkYcuOgTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcuegTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcuugTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcu-gTEeGYKphZMmDVbQ" key="_hkYcuegTEeGYKphZMmDVbQ" value="params.cname"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcvOgTEeGYKphZMmDVbQ" key="_hkYcuugTEeGYKphZMmDVbQ" value="params.cname"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_hkYcvegTEeGYKphZMmDVbQ" type="Data" valueToString="params.cname" field="params.cname" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_hkYcvugTEeGYKphZMmDVbQ" type="Data" valueToString="params.cname" field="params.cname" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_hkYcv-gTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcwOgTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcwegTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcwugTEeGYKphZMmDVbQ" key="_hkYcwOgTEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_rowsPerPage"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcw-gTEeGYKphZMmDVbQ" key="_hkYcwegTEeGYKphZMmDVbQ" value="rowsPerPage"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_hkYcxOgTEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_rowsPerPage" field="paginationData.paginationFFTable_FFInfo_rowsPerPage" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_hkYcxegTEeGYKphZMmDVbQ" type="Data" valueToString="rowsPerPage" field="rowsPerPage" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_hkYcxugTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcx-gTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_hkYcyOgTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcyegTEeGYKphZMmDVbQ" key="_hkYcx-gTEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_hook * 1"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hkYcyugTEeGYKphZMmDVbQ" key="_hkYcyOgTEeGYKphZMmDVbQ" value="pageHook"/>
+          <fromValue xmi:type="transaction:ExpressionValue" xmi:id="_hkYcy-gTEeGYKphZMmDVbQ" operator="11">
+            <leftOperand xmi:type="transaction:ContextValue" xmi:id="_hkYczOgTEeGYKphZMmDVbQ" type="com.ibm.btt.base.DataField" field="paginationData.paginationFFTable_FFInfo_hook" contextName="pageCustomerInfoQueryCtx"/>
+            <rightOperand xmi:type="transaction:ConstantValue" xmi:id="_hkYczegTEeGYKphZMmDVbQ" type="Number" constant="1"/>
+          </fromValue>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_hkYczugTEeGYKphZMmDVbQ" type="Data" valueToString="pageHook" field="pageHook" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+      </rootElement>
+    </formatters>
+    <formatters xmi:type="transaction:Formatter" xmi:id="_uPHvkOeHEeGm0tLryqhMag" tag="fmtDef" id="previousInputMapping">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_uPHvkeeHEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_uPHvkueHEeGm0tLryqhMag" key="_uPHvkeeHEeGm0tLryqhMag" value="previousInputMapping"/>
+      <rootElement xmi:type="transaction:DataMapperConverterFormatElement" xmi:id="_k_B-oOgTEeGYKphZMmDVbQ" tag="mapperConverterExpression">
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_k_B-oegTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-ougTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-o-gTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-pOgTEeGYKphZMmDVbQ" key="_k_B-ougTEeGYKphZMmDVbQ" value="params.cid"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-pegTEeGYKphZMmDVbQ" key="_k_B-o-gTEeGYKphZMmDVbQ" value="params.cid"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_k_B-pugTEeGYKphZMmDVbQ" type="Data" valueToString="params.cid" field="params.cid" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_k_B-p-gTEeGYKphZMmDVbQ" type="Data" valueToString="params.cid" field="params.cid" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_k_B-qOgTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-qegTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-qugTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-q-gTEeGYKphZMmDVbQ" key="_k_B-qegTEeGYKphZMmDVbQ" value="params.cname"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-rOgTEeGYKphZMmDVbQ" key="_k_B-qugTEeGYKphZMmDVbQ" value="params.cname"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_k_B-regTEeGYKphZMmDVbQ" type="Data" valueToString="params.cname" field="params.cname" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_k_B-rugTEeGYKphZMmDVbQ" type="Data" valueToString="params.cname" field="params.cname" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_k_B-r-gTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-sOgTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-segTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-sugTEeGYKphZMmDVbQ" key="_k_B-sOgTEeGYKphZMmDVbQ" value="paginationData.paginationFFTable_FFInfo_rowsPerPage"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-s-gTEeGYKphZMmDVbQ" key="_k_B-segTEeGYKphZMmDVbQ" value="rowsPerPage"/>
+          <fromValue xmi:type="transaction:ContextValue" xmi:id="_k_B-tOgTEeGYKphZMmDVbQ" type="Data" valueToString="paginationData.paginationFFTable_FFInfo_rowsPerPage" field="paginationData.paginationFFTable_FFInfo_rowsPerPage" contextName="pageCustomerInfoQueryCtx"/>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_k_B-tegTEeGYKphZMmDVbQ" type="Data" valueToString="rowsPerPage" field="rowsPerPage" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+        <mappers xmi:type="transaction:ExpressionDataMapper" xmi:id="_k_B-tugTEeGYKphZMmDVbQ" tag="map">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-t-gTEeGYKphZMmDVbQ" name="from" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_k_B-uOgTEeGYKphZMmDVbQ" name="to" type="com.ibm.btt.tools.transaction.dominate.manipulators.dialog.DataMappingFmt"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-uegTEeGYKphZMmDVbQ" key="_k_B-t-gTEeGYKphZMmDVbQ" value="-1 * paginationData.paginationFFTable_FFInfo_hook"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_k_B-uugTEeGYKphZMmDVbQ" key="_k_B-uOgTEeGYKphZMmDVbQ" value="pageHook"/>
+          <fromValue xmi:type="transaction:ExpressionValue" xmi:id="_k_B-u-gTEeGYKphZMmDVbQ" operator="11">
+            <leftOperand xmi:type="transaction:ConstantValue" xmi:id="_k_B-vOgTEeGYKphZMmDVbQ" type="Number" constant="-1"/>
+            <rightOperand xmi:type="transaction:ContextValue" xmi:id="_k_B-vegTEeGYKphZMmDVbQ" type="com.ibm.btt.base.DataField" field="paginationData.paginationFFTable_FFInfo_hook" contextName="pageCustomerInfoQueryCtx"/>
+          </fromValue>
+          <toValue xmi:type="transaction:ContextValue" xmi:id="_k_B-vugTEeGYKphZMmDVbQ" type="Data" valueToString="pageHook" field="pageHook" contextName="paginationFetchPagedDataCtx"/>
+        </mappers>
+      </rootElement>
+    </formatters>
+  </format>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_ozYb2edpEeGm0tLryqhMag">
+    <operations xmi:type="transaction:Operation" xmi:id="_ozYb2udpEeGm0tLryqhMag" tag="operation" id="PAG_paginationRefactor$paginationFFTable_FFInfo">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb2-dpEeGm0tLryqhMag" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb3OdpEeGm0tLryqhMag" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb3edpEeGm0tLryqhMag" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ozYb3udpEeGm0tLryqhMag" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYb3-dpEeGm0tLryqhMag" key="_ozYb2-dpEeGm0tLryqhMag" value="PAG_paginationRefactor$paginationFFTable_FFInfo"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ozYb4OdpEeGm0tLryqhMag" key="_ozYb3OdpEeGm0tLryqhMag" value="PAG_paginationRefactor$paginationFFTable_FFInfoCtx"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_A69PgOd7EeGm0tLryqhMag" key="_ozYb3edpEeGm0tLryqhMag" value="com.ibm.btt.cs.ajax.DefaultPaginationOp"/>
+      <refFormats xmi:type="transaction:RefFormat" xmi:id="_sr4NdOeCEeGm0tLryqhMag" tag="refFormat">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_sr4NdeeCEeGm0tLryqhMag" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_sr4NdueCEeGm0tLryqhMag" name="name" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_sr4Nd-eCEeGm0tLryqhMag" key="_sr4NdeeCEeGm0tLryqhMag" value="normalOutputMapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_sr4NeOeCEeGm0tLryqhMag" key="_sr4NdueCEeGm0tLryqhMag" value="normalOutputMapping"/>
+      </refFormats>
+      <refFormats xmi:type="transaction:RefFormat" xmi:id="_cYvrROeEEeGm0tLryqhMag" tag="refFormat">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_cYvrReeEEeGm0tLryqhMag" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_cYvrRueEEeGm0tLryqhMag" name="name" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_cYvrR-eEEeGm0tLryqhMag" key="_cYvrReeEEeGm0tLryqhMag" value="errorOutputMapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_cYvrSOeEEeGm0tLryqhMag" key="_cYvrRueEEeGm0tLryqhMag" value="errorOutputMapping"/>
+      </refFormats>
+      <refFormats xmi:type="transaction:RefFormat" xmi:id="_oNS3ZOeEEeGm0tLryqhMag" tag="refFormat">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_oNS3ZeeEEeGm0tLryqhMag" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_oNS3ZueEEeGm0tLryqhMag" name="name" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_oNS3Z-eEEeGm0tLryqhMag" key="_oNS3ZeeEEeGm0tLryqhMag" value="nextInputMapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_oNS3aOeEEeGm0tLryqhMag" key="_oNS3ZueEEeGm0tLryqhMag" value="nextInputMapping"/>
+      </refFormats>
+      <refFormats xmi:type="transaction:RefFormat" xmi:id="_uPHvlOeHEeGm0tLryqhMag" tag="refFormat">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_uPHvleeHEeGm0tLryqhMag" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_uPHvlueHEeGm0tLryqhMag" name="name" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_uPHvl-eHEeGm0tLryqhMag" key="_uPHvleeHEeGm0tLryqhMag" value="previousInputMapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_uPHvmOeHEeGm0tLryqhMag" key="_uPHvlueHEeGm0tLryqhMag" value="previousInputMapping"/>
+      </refFormats>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_ozYb4edpEeGm0tLryqhMag"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_ozYb4udpEeGm0tLryqhMag"/>
+</transaction:WorkProduct>

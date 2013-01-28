@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="Cp1252"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="102,100,566,438" dataBinding="{'ctxType':'proc','ctxFile':'TabPaneFlow','ctxName':'TabPaneCtx01'}" isRuleDirty="false">
+  <styles/>
+  <container name="Form" id="Form01">
+    <gridData heightHint="630" verticalAlignment="1" widthHint="808" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    <container name="TabbedPane" id="TabbedPane01">
+      <gridData heightHint="600" horizontalAlignment="4" verticalAlignment="4" widthHint="800" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      <container name="ContentPane" title="Currency" selected="true" id="2">
+        <widget name="Table" dataNameForList="{'ctxType':'oper','ctxFile':'tabbedPaneSelectActionOp','ctxName':'tabbedPaneSelectActionCtx','dataName':'tableData'}" dataName="tableData.0" id="Table01">
+          <gridData heightHint="400" widthHint="600" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+          <column widthType="FixedSize" widget="" dataName="index" width="50" relativeWidth="1" text="Index">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+          <column widthType="FixedSize" widget="" dataName="cardNo" width="200" relativeWidth="1" text="Card Number">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+          <column widthType="FixedSize" widget="" dataName="amount" width="200" relativeWidth="1" text="Amount">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+        </widget>
+        <widget name="Link" extraParams="pageName=tabbedPane/TabbedPane10.jsp" action="operationId=DisplayPageOp" id="link" text="Return">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <container name="ContentPane" closable="true" title="Fund" id="3">
+        <widget name="Table" dataNameForList="fundtableData" dataName="fundtableData.0" id="Table02">
+          <gridData heightHint="400" widthHint="471" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+          <column widthType="FixedSize" widget="" dataName="index" width="50" relativeWidth="1" text="Index">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+          <column widthType="FixedSize" widget="" dataName="fundNo" width="200" relativeWidth="1" text="Fund Number">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+          <column widthType="FixedSize" widget="" dataName="amount" width="200" relativeWidth="1" text="Amount">
+            <tableColumnAlignment>16777216</tableColumnAlignment>
+          </column>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <container name="ContentPane" closable="true" title="Stock" id="4">
+        <widget name="PlaceHolder">
+          <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+    </container>
+    <widget name="PlaceHolder">
+      <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+</XUI>

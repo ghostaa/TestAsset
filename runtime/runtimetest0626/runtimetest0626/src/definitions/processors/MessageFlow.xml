@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageFlow>
+
+
+	<htmlProcessor context="MessageCtx" id="MessageFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="message"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="message.jsp" id="message">
+			<transitions>
+				<htmlTransition id="message.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="MessageCtx" type="op">
+		<refKColl refId="MessageRecord"/>
+	</context>
+
+	<kColl id="MessageRecord">
+		<field id="pageName"/>
+		<field id="inputMsg"/>
+		<field id="msgField" value="This is a message in a data field"/>
+		<field id="msgEmptyField"/>
+		<kColl id="msgKColl">
+			<field id="msg1" value="this is a message in a kColl"/>
+		</kColl>
+		<iColl id="msgIColl" size="2">
+			<kColl id="msg1">
+				<field id="msg" value="This is a message in iColl"/>
+			</kColl>
+		</iColl>
+		<field id="tempField"/>
+		<field id="radioMsgType"/>
+		<field id="radioWidgetType"/>
+	</kColl>
+
+</MessageFlow>

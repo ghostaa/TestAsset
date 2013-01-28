@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globeEcaOp>
+
+	<operation id="globeEcaOp" context="globeEcaCtx" implClass="com.ibm.btt.sample.operation.GlobeEcaOp"/>
+
+	<context id="globeEcaCtx" type="op">
+		<refKColl refId="GlobeEcaKcoll"/>
+	</context>
+
+	<kColl id="GlobeEcaKcoll">
+		<iColl id="LanData">
+			<kColl id="LanData">
+				<field id="Spanish" value="Spanish"/>
+				<field id="Chinese" value="Chinese"/>
+			</kColl>
+		</iColl>
+		<iColl id="MoneyData">
+			<kColl id="MoneyData" dynamic="true">
+				<field id="EURO" value="EURO"/>
+				<field id="RMB" value="RMB"/>
+			</kColl>
+		</iColl>
+		<field id="business"/>
+		<field id="text1" value="200"/>
+		<field id="text2" value="300"/>
+		<field id="text3" value="500"/>
+		<field id="combo1"/>
+		<field id="combo2"/>
+		<field id="combo3" value="Spanish"/>
+		<field id="combo4"/>
+		<field id="select1"/>
+		<field id="select2"/>
+		<field id="select3" value="RMB"/>
+		<field id="select4"/>
+		<field id="nlsText" value="200"/>
+		<field id="nlsCombo"/>
+		<field id="nlsSelect"/>
+		<field id="nls0Text"/>
+		<field id="nls0Combo"/>
+		<field id="nls0Select"/>
+		<field id="nls2Text" value="Chinese"/>
+		<field id="nls2Combo"/>
+		<field id="nls2Select"/>
+		<field id="text4"/>
+	</kColl>
+
+</globeEcaOp>

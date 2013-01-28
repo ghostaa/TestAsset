@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="Cp1252"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="74,164,1166,667" dataBinding="{'ctxType':'proc','ctxFile':'editableTableFlow','ctxName':'editableTableCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'EditableTable.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="667" verticalAlignment="1" widthHint="1166" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:554,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:558,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    <container name="Form" defaultAction="flowId=comboboxFlow;flowEvent=" id="form">
+      <gridData heightHint="483" verticalAlignment="1" widthHint="1008" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:1164,&quot;displaySize&quot;:1144,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:665,&quot;displaySize&quot;:599,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label" text="editable table: this panel is Event onKeyDown">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:1142,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <widget name="Table" dataNameForList="EditableAccountList" dataName="selectAccountList" action="flowId=editableTableFlow;flowEvent=" isActionable="true" selectionRequired="true" id="table" selectionMode="multiple">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:1142,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:102,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+        <column widthType="FixedSize" widget="TextBox" editable="true" dataName="AccountName" width="80" hidden="true" relativeWidth="1" text="%nls.testtable/AccountName">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" dataNameForList="" widget="Select" editable="true" dataName="TradeTime" width="80" labelField="" urlForList="listFiles/tradeTimeForSelect.js" valueField="" relativeWidth="1" text="%nls.testtable/TradeTime">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="" dataName="TradeTime" width="80" relativeWidth="1" text="%nls.testtable/TradeTimeValue">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" dataNameForList="AccountTypeForSelect" widget="Select" editable="true" dataName="AccountType" width="80" labelField="labelField" urlForList="" valueField="valueField" relativeWidth="1" text="%nls.testtable/AccountType">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="" dataName="AccountType" width="80" relativeWidth="1" text="%nls.testtable/AccountTypeValue">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="TextBox" editable="true" dataName="AccountOpeningDate" width="100" relativeWidth="1" text="%nls.testtable/AccountOpeningDate">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="TextBox" editable="true" dataName="AccountBlance" width="80" relativeWidth="1" text="%nls.testtable/AccountBlance">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" dataNameForList="" widget="ComboBox" editable="true" dataName="Rate" width="80" labelField="" urlForList="listFiles/rateForCombo.js" relativeWidth="1" text="%nls.testtable/Rate">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" dataNameForList="LocaltionForComboBox" widget="ComboBox" editable="true" dataName="Localtion" width="80" labelField="labelField" urlForList="" relativeWidth="1" text="%nls.testtable/Localtion">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" unCheckedValue="false" widget="CheckBox" editable="true" dataName="Usable" width="80" relativeWidth="1" checkedValue="true" text="%nls.testtable/Usable">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="LabelFromList" editable="false" dataName="accountAttribution" width="80" urlForList="listFiles/accountAttribution.js" relativeWidth="1" text="%nls.testtable/accountAttribution">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" widget="Image" editable="false" dataName="ImageField" width="80" hidden="true" relativeWidth="1" text="%nls.testtable/Image">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+      </widget>
+      <widget name="Radio" dataName="AccountInfoRecord.ImageField" id="radio01" text="Radio">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:1142,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:15,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <container name="Panel" id="panel01">
+        <gridData heightHint="348" verticalAlignment="1" widthHint="389" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:1142,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:461,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+        <container name="Panel" id="panel02">
+          <gridData heightHint="340" verticalAlignment="1" widthHint="381" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:686,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:459,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+          <container name="Group" id="group" text="Test in group">
+            <gridData heightHint="108" verticalAlignment="1" widthHint="351" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:98,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Link" action="flowEvent=LinkToGroup" id="link" text="Link to 'table in group' page">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:321,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Link" action="flowEvent=group popup" id="link02" text="Link to popup page">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:321,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Button" action="flowEvent=group popup" id="button10" text="Submit to group popup">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:321,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <container name="Panel" id="panel04">
+              <gridData heightHint="30" verticalAlignment="1" widthHint="323" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:321,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:24,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=submit to group page" icon="a" id="button" text="submit to group page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:139,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <widget name="Button" action="flowEvent=submit to group popup page" id="button02" text="submit to group popup page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:178,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="2"/>
+            </container>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group04" text="Group">
+            <gridData heightHint="79" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:98,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button04" buttonType="button" text="Hide/Show Column">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:61,&quot;displaySize&quot;:25,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" fieldReference="button04" id="label01">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:61,&quot;displaySize&quot;:14,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label02" text="E:Button.onClick,C:isColumnVisible(0),A:Hide/Show Column">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:61,&quot;displaySize&quot;:16,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group01" text="Test inTabbedpane">
+            <gridData heightHint="108" verticalAlignment="1" widthHint="341" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:74,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Link" action="flowEvent=LinkToPane" id="link01" text="Link to 'table in TabbedPane' page">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:311,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Link" action="flowEvent=pane popup" id="link04" text="Link to popup page">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:311,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <container name="Panel" id="panel05">
+              <gridData heightHint="30" verticalAlignment="1" widthHint="313" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:311,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:24,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=submit to pane page" id="button01" text="submit to pane page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:134,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <widget name="Button" action="flowEvent=submit to pane popup page" id="button03" text="submit to pane popup page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:173,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="2"/>
+            </container>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group05" text="Group">
+            <gridData heightHint="72" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:74,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button05" buttonType="button" text="setCellValueByName">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:54,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" fieldReference="button05" id="label03">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:54,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label04" text="setCellValueByName(Name,RowIndex,Value)">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:54,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Panel" id="panel03">
+            <gridData heightHint="59" verticalAlignment="1" widthHint="221" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:78,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <container name="Group" id="group02" text="Test in 'manipulate table'">
+              <gridData heightHint="51" verticalAlignment="1" widthHint="213" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:181,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:33,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="flowEvent=manipulatetable" id="link03" text="Link to 'manipulate table' page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:175,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group06" text="Group">
+            <gridData heightHint="76" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:78,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button06" buttonType="button" text="setCellValueByIndex">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:58,&quot;displaySize&quot;:23,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" fieldReference="button06" id="label05">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:58,&quot;displaySize&quot;:14,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label06" text="setCellValueByIndex(ColumnIndex,RowIndex,Value)">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:58,&quot;displaySize&quot;:15,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group03" text="Test selection and bombo box">
+            <gridData heightHint="51" verticalAlignment="1" widthHint="260" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:79,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Link" action="flowEvent=selection and combo box" id="link05" text="Link to 'selection and combo box' page">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:222,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:13,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group07" text="Group">
+            <gridData heightHint="77" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:79,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button07" buttonType="button" text="getValueInSelectedItem">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:59,&quot;displaySize&quot;:24,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" fieldReference="button07" id="label07">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:59,&quot;displaySize&quot;:14,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label08" text="getValueInSelectedItem(ItemId)">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:59,&quot;displaySize&quot;:15,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group08" text="Group">
+            <gridData heightHint="63" verticalAlignment="1" widthHint="325" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:65,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button08" buttonType="button" text="Condition:getCellValueByIndex">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:321,&quot;displaySize&quot;:319,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:45,&quot;displaySize&quot;:25,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label09">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:321,&quot;displaySize&quot;:319,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:45,&quot;displaySize&quot;:16,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group09" text="Group">
+            <gridData heightHint="62" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:65,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" id="button09" buttonType="button" text="Condition:Expression:getCellValueByName">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:44,&quot;displaySize&quot;:25,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <widget name="Label" id="label10">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:44,&quot;displaySize&quot;:15,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group10" text="Group">
+            <gridData heightHint="50" verticalAlignment="1" widthHint="325" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:327,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:53,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="CheckBox" dataName="AccountInfoRecord.accountAttribution" id="checkBox" text="CheckBox">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:321,&quot;displaySize&quot;:319,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:32,&quot;displaySize&quot;:30,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <container name="Group" id="group11" text="Group">
+            <gridData heightHint="51" verticalAlignment="1" widthHint="353" autoSize="false" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:355,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:53,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            <widget name="Radio" dataName="AccountInfoRecord.Localtion" id="radio" text="Radio">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:349,&quot;displaySize&quot;:347,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:33,&quot;displaySize&quot;:31,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="2"/>
+        </container>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="1"/>
+    </container>
+    <widget name="Button" id="button11" text="Button">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:1164,&quot;displaySize&quot;:1144,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:665,&quot;displaySize&quot;:22,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button04" event="onClick"/>
+      </events>
+      <condition>
+        <value type="widgetFunction" widget="table">
+          <function name="isColumnVisible">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="showColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="button05" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="setCellValueByName">
+            <parameter>
+              <value type="constant" constant="'AccountName'"/>
+              <value type="constant" constant="1"/>
+              <value type="constant" constant="'Meilier'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="button06" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="setCellValueByIndex">
+            <parameter>
+              <value type="constant" constant="0"/>
+              <value type="constant" constant="1"/>
+              <value type="constant" constant="'Angle'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="button07" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="button07" property="text">
+          <value type="widgetFunction" widget="table">
+            <function name="getValueInSelectedItem">
+              <parameter>
+                <value type="constant" constant="'AccountName'"/>
+              </parameter>
+            </function>
+          </value>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule04">
+      <events>
+        <event widget="button08" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="constant" constant="'Meilier'"/>
+          <operator name="=="/>
+          <rightValue type="widgetFunction" widget="table">
+            <function name="getCellValueByIndex">
+              <parameter>
+                <value type="constant" constant="0"/>
+                <value type="constant" constant="1"/>
+              </parameter>
+            </function>
+          </rightValue>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label09" property="text">
+          <value type="constant" constant="'True'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label09" property="text">
+          <value type="constant" constant="'False'"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule05">
+      <events>
+        <event widget="button09" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetFunction" widget="table">
+            <function name="getCellValueByName">
+              <parameter>
+                <value type="constant" constant="'AccountName'"/>
+                <value type="constant" constant="1"/>
+              </parameter>
+            </function>
+          </leftValue>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'Angle'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label10" property="text">
+          <value type="constant" constant="'True'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label10" property="text">
+          <value type="constant" constant="'False'"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule06">
+      <events>
+        <event widget="checkBox" event="onClick"/>
+      </events>
+      <condition>
+        <value type="widgetFunction" widget="table">
+          <function name="isColumnVisible">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="showColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule07">
+      <events>
+        <event widget="radio" event="onClick"/>
+      </events>
+      <condition>
+        <value type="widgetFunction" widget="table">
+          <function name="isColumnVisible">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="showColumn">
+            <parameter>
+              <value type="constant" constant="0"/>
+            </parameter>
+          </function>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+</XUI>

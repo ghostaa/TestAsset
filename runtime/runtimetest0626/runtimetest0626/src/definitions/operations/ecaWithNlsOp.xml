@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecaWithNlsOp>
+
+	<operation id="ecaWithNlsOp" context="ecaWithNlsCtx" implClass="com.ibm.btt.sample.operation.nls.EcaWithNlsOp"/>
+
+	<context id="ecaWithNlsCtx" type="op">
+		<refKColl refId="EcaNlsKColl"/>
+	</context>
+
+	<kColl id="EcaNlsKColl" dynamic="false">
+		<field id="labelTextField" value="%nls.NlsSupportTestResourse/_2Text_Value2"/>
+		<field id="imageDataNameField" value="img/dataName.gif"/>
+		<field id="PlainTextBoxValueField" value="new plain value"/>
+		<refData refId="CurrencyTextBoxValueField"/>
+		<refData refId="DateTextBoxValueField"/>
+		<refData refId="NumberTextBoxValueField"/>
+		<refData refId="StringTextBoxValueField"/>
+		<field id="TextAreaValueField" value="totally unknown!"/>
+		<field id="CheckBoxValueField" value="I_Have_Been_Checked"/>
+		<field id="RadioButtonValueField" value="true"/>
+		<field id="ComboBoxValueField"/>
+		<field id="SelectListValueField"/>
+		<field id="RichTextEditorValueField" value="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
+		<field id="TableValueField"/>
+		<field id="TreeValueField"/>
+	</kColl>
+
+	<data id="CurrencyTextBoxValueField" refType="Currency"/>
+
+	<data id="DateTextBoxValueField" refType="Date">
+		<param value="yyyy-MM-dd" id="pattern"/>
+	</data>
+
+	<data id="NumberTextBoxValueField" refType="Number"/>
+
+	<data id="StringTextBoxValueField" refType="String"/>
+
+</ecaWithNlsOp>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serverNlsOp>
+
+	<operation id="serverNlsOp" context="serverNlsCtx" implClass="com.ibm.btt.sample.operation.nls.ServerNlsOP"/>
+
+	<context id="serverNlsCtx" type="op">
+		<refKColl refId="serNlsKcoll"/>
+	</context>
+
+	<kColl id="serNlsKcoll" dynamic="false">
+		<refData refId="LabelKColl"/>
+		<refData refId="ImageKColl"/>
+		<refData refId="TextKColl"/>
+		<refData refId="TextAreaKColl"/>
+		<refData refId="CheckBoxKColl"/>
+		<refData refId="RadioButtonKColl"/>
+		<refData refId="RichTextEditorKColl"/>
+		<refData refId="SelectListKColl"/>
+		<refData refId="ComboBoxKColl"/>
+		<refData refId="TableKColl"/>
+		<refData refId="TableDataKColl"/>
+		<refData refId="TreeKColl"/>
+		<refData refId="FileUploadKColl"/>
+	</kColl>
+
+	<kColl id="LabelKColl" dynamic="false">
+		<field id="labelDataName"/>
+		<field id="labelConstantValue"/>
+		<field id="labelDataName4Disabled"/>
+	</kColl>
+
+	<kColl id="ImageKColl">
+		<field id="imgDataName"/>
+		<field id="imgLocation"/>
+	</kColl>
+
+	<kColl id="TextKColl" dynamic="false">
+		<field id="txtPlainField"/>
+		<data id="txtCurrencyField" refType="Currency">
+			<param value="USD" id="currency"/>
+		</data>
+		<data id="txtDateField" refType="Date">
+			<param value="today+1m" id="maximumDate"/>
+		</data>
+		<data id="txtNumberField" refType="Number"/>
+		<data id="txtStringField" refType="String">
+			<param value="6" id="maximumLength"/>
+		</data>
+		<data id="txtStringPassword" refType="String">
+			<param value="8" id="maximumLength"/>
+			<param value="3" id="minimumLength"/>
+		</data>
+		<data id="txtCurrencyDisabled" refType="Currency">
+			<param value="USD" id="currency"/>
+		</data>
+		<data id="txtDateReadOnly" refType="Date">
+			<param value="today+1d" id="maximumDate"/>
+		</data>
+	</kColl>
+
+	<kColl id="TextAreaKColl" dynamic="false">
+		<field id="taPlainField1"/>
+		<field id="taPlainField2"/>
+		<field id="taPlainField3"/>
+	</kColl>
+
+	<kColl id="CheckBoxKColl" dynamic="false">
+		<field id="cbPlainField1"/>
+		<field id="cbPlainField2"/>
+		<field id="cbPlainField3"/>
+		<field id="cbPlainField4"/>
+	</kColl>
+
+	<kColl id="RadioButtonKColl" dynamic="false">
+		<field id="rbPlainField1"/>
+	</kColl>
+
+	<kColl id="RichTextEditorKColl" dynamic="false">
+		<field id="rtePlainField1"/>
+		<field id="rtePlainField2"/>
+		<field id="rtePlainField3"/>
+		<field id="rtePlainField4"/>
+	</kColl>
+
+	<kColl id="SelectListKColl" dynamic="false">
+		<field id="slPlainField1"/>
+		<field id="slPlainField2"/>
+		<field id="slPlainField3"/>
+		<field id="slPlainField4"/>
+		<field id="slPlainField5"/>
+		<field id="slPlainField6"/>
+	</kColl>
+
+	<kColl id="ComboBoxKColl" dynamic="false">
+		<field id="cbPlainField1"/>
+		<field id="cbPlainField2"/>
+		<field id="cbPlainField3"/>
+		<field id="cbPlainField4"/>
+		<field id="cbPlainField5"/>
+		<field id="cbPlainField6"/>
+	</kColl>
+
+	<kColl id="TableKColl" dynamic="false">
+		<kColl id="Table1" dynamic="false">
+			<field id="tbField1"/>
+			<field id="tbField2"/>
+			<field id="tbField3"/>
+		</kColl>
+		<kColl id="Table2" dynamic="false">
+			<field id="tbField1"/>
+			<field id="tbField2"/>
+			<field id="tbField3"/>
+		</kColl>
+		<kColl id="Table3" dynamic="false">
+			<field id="tbField1"/>
+			<field id="tbField2"/>
+			<field id="tbField3"/>
+			<field id="tbField4"/>
+			<field id="tbField5"/>
+		</kColl>
+		<kColl id="Table4" dynamic="false">
+			<field id="tbField1"/>
+			<field id="tbField2"/>
+			<field id="tbField3"/>
+			<field id="tbField4"/>
+		</kColl>
+		<field id="tbOuterField1"/>
+	</kColl>
+
+	<kColl id="TableDataKColl" dynamic="false">
+		<iColl id="Table1DataList" size="1">
+			<kColl id="Table1" dynamic="false">
+				<field id="tbInnerField1" value="00000"/>
+				<field id="tbInnerField2" value="00001"/>
+				<field id="tbInnerField3" value="00002"/>
+			</kColl>
+		</iColl>
+		<iColl id="Table2DataList" size="1">
+			<kColl id="Table2" dynamic="false">
+				<field id="tbInnerField1" value="00000"/>
+				<field id="tbInnerField2" value="00001"/>
+				<field id="tbInnerField3" value="00002"/>
+			</kColl>
+		</iColl>
+		<iColl id="Table3DataList" size="1">
+			<kColl id="Table3" dynamic="false">
+				<field id="tbInnerField1" value="00000"/>
+				<field id="tbInnerField2" value="00001"/>
+				<field id="tbInnerField3" value="00002"/>
+				<field id="tbInnerField4" value="00003"/>
+				<field id="tbInnerField5" value="00004"/>
+			</kColl>
+		</iColl>
+		<iColl id="Table4DataList" size="1">
+			<kColl id="Table4" dynamic="false">
+				<field id="tbInnerField1" value="00000"/>
+				<field id="tbInnerField2" value="00001"/>
+				<field id="tbInnerField3" value="00002"/>
+				<field id="tbInnerField4" value="00003"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="TreeKColl" dynamic="false">
+		<field id="tree1SelectionField"/>
+		<field id="tree2SelectionField"/>
+	</kColl>
+
+	<kColl id="FileUploadKColl" dynamic="false">
+		<field id="fileUploadField"/>
+	</kColl>
+
+</serverNlsOp>

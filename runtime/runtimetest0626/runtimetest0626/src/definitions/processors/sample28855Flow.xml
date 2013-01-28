@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample28855Flow>
+
+
+	<htmlProcessor context="sample28855Ctx" id="sample28855Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="sample28855Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="sample28855.jsp" id="sample28855">
+			<transitions>
+				<htmlTransition id="sample28855.submit" targetState="AfterSubmit28855"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmit28855.jsp" id="AfterSubmit28855">
+			<transitions>
+				<htmlTransition id="AfterSubmit28855.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="sample28855Index.jsp" id="sample28855Index">
+			<transitions>
+				<htmlTransition id="sample28855Index.ajax" targetState="sample28855"/>
+				<htmlTransition id="sample28855Index.inFlow" targetState="sample28855InFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="sample28855InFlow.jsp" id="sample28855InFlow">
+			<transitions>
+				<htmlTransition id="sample28855InFlow.submit" targetState="AfterSubmitSample28855InFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmitSample28855InFlow.jsp" id="AfterSubmitSample28855InFlow">
+			<transitions>
+				<htmlTransition id="AfterSubmitSample28855InFlow.back" targetState="sample28855InFlow"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="sample28855Ctx" type="op">
+		<refKColl refId="sample28855Record"/>
+	</context>
+
+	<kColl id="sample28855Record">
+		<data id="28855Data" refType="Number"/>
+		<data id="temporaryData" refType="Number"/>
+	</kColl>
+
+</sample28855Flow>

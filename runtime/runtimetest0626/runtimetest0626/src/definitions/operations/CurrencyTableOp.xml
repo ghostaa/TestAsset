@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CurrencyTableOp>
+
+	<operation id="CurrencyTableOp" context="CurrencyTableCtx" implClass="com.ibm.btt.sample.operation.CurrencyTableOperation"/>
+
+	<context id="CurrencyTableCtx" type="op">
+		<refKColl refId="CurrencyTableRecord"/>
+	</context>
+
+	<kColl id="CurrencyTableRecord">
+		<field id="pageName"/>
+		<refData refId="tableData"/>
+		<refData refId="fundtableData"/>
+		<refData refId="stocktableData"/>
+	</kColl>
+
+	<iColl id="tableData" size="5">
+		<kColl id="tableRow">
+			<field id="index"/>
+			<field id="cardNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="fundTableKColl">
+		<refData refId="fundtableData"/>
+	</kColl>
+
+	<iColl id="fundtableData" size="6">
+		<kColl id="fundtableRow">
+			<field id="index"/>
+			<field id="fundNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="stockTableKColl">
+		<refData refId="stocktableData"/>
+	</kColl>
+
+	<iColl id="stocktableData">
+		<kColl id="stocktableRow">
+			<field id="index"/>
+			<field id="stockNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+</CurrencyTableOp>

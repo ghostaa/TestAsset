@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X054HiddenColumnsFlow>
+
+
+	<htmlProcessor context="X054HiddenColumnsCtx" id="X054HiddenColumnsFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X054InputDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="X054/TheFirstPage.jsp" id="TheFirstPage">
+			<transitions>
+				<htmlTransition id="TheFirstPage.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="X054InputDataOp" id="X054InputDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="X054InputDataOp.opEvt" outputMapFmt="X054InputDataOp.opEvt_OutputFmt" targetState="TheFirstPage"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="X054HiddenColumnsCtx" type="op">
+		<refKColl refId="HiddenColumnsRecord"/>
+	</context>
+
+	<kColl id="HiddenColumnsRecord">
+		<iColl id="TableDataList" size="7">
+			<kColl id="0">
+				<field id="FirstColumn"/>
+				<field id="SecondColumn"/>
+				<field id="ThirdColumn"/>
+			</kColl>
+		</iColl>
+		<field id="TableDataName"/>
+	</kColl>
+
+	<fmtDef id="X054InputDataOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X054HiddenColumnsFlow>

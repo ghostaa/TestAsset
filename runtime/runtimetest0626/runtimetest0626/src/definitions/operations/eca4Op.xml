@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eca4Op>
+
+	<operation id="eca4Op" context="eca4Ctx" implClass="com.ibm.btt.sample.operation.eca.Eca4Op"/>
+
+	<context id="eca4Ctx" type="op">
+		<refKColl refId="eca4KColl"/>
+	</context>
+
+	<kColl id="eca4KColl">
+		<refData refId="TypePropertyKColl"/>
+		<refData refId="legacyKColl"/>
+		<refData refId="EAKColl"/>
+		<refData refId="BAKColl"/>
+	</kColl>
+
+	<data id="TpCurrencyDisabledField" refType="Currency">
+		<param value="CNY" id="currency"/>
+	</data>
+
+	<data id="TpDateMandatoryField" refType="Date">
+		<param value="true" id="isMandatory"/>
+		<param value="dd/MM/yyyy" id="pattern"/>
+		<param value="today" id="maximumDate"/>
+	</data>
+
+	<data id="TpNumberReadOnlyField" refType="Number">
+		<param value="3" id="html:decimalPlaces"/>
+		<param value="bigDecimal" id="html:numberType"/>
+		<param value="###,###.000" id="html:pattern"/>
+	</data>
+
+	<data id="TpStringPasswordField" refType="String">
+		<param value="6" id="minimumLength"/>
+		<param value="15" id="maximumLength"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="mxCurrencyField" description="This field is aimed to test MeiXiang&apos;s defect &quot;23997&quot;" refType="Currency">
+		<param value="4" id="decimalPlaces"/>
+		<param value="USD" id="currency"/>
+	</data>
+
+	<kColl id="legacyKColl" dynamic="false">
+		<refData refId="mxCurrencyField"/>
+		<field id="retVal" value="aaaa"/>
+	</kColl>
+
+	<kColl id="EAKColl" dynamic="false">
+		<data id="EADateField" refType="Date">
+			<param value="MM/dd/yyyy" id="pattern"/>
+		</data>
+		<data id="EAStringField" refType="String">
+			<param value="6" id="maximumLength"/>
+		</data>
+		<data id="EAExtendedCurrencyField" description="Will change the refType field to SingleCurrency when the defect [24066] is solved." refType="Currency">
+			<param value="EUR" id="currency"/>
+			<param value="200000" id="maximumNumber"/>
+		</data>
+		<data id="EANumberField" refType="Number">
+			<param value="3" id="html:decimalPlaces"/>
+		</data>
+		<field id="EAInformationDisplayField" value="This is a sample display information."/>
+	</kColl>
+
+	<kColl id="BAKColl" dynamic="false">
+		<data id="BACurrency" refType="Currency">
+			<param value="EUR" id="currency"/>
+			<param value="2" id="decimalPlaces"/>
+		</data>
+		<data id="BADate" value="" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="BANumber" refType="Number"/>
+		<data id="BADate2" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="BAString" refType="String"/>
+		<field id="RandomConditionName" value="NOOP"/>
+		<field id="RandomConditionId" value="-1"/>
+	</kColl>
+
+	<kColl id="TypePropertyKColl" dynamic="false">
+		<refData refId="TpCurrencyDisabledField"/>
+		<refData refId="TpDateMandatoryField"/>
+		<refData refId="TpNumberReadOnlyField"/>
+		<refData refId="TpStringPasswordField"/>
+	</kColl>
+
+</eca4Op>

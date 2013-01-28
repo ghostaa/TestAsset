@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_rkt-MG_iEeCPGtMuolL6Tw">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_rkt-MW_iEeCPGtMuolL6Tw">
+    <contexts xmi:type="transaction:Context" xmi:id="_rkt-Mm_iEeCPGtMuolL6Tw" tag="context" id="tableAjaxCtx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-M2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-NG_iEeCPGtMuolL6Tw" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-NW_iEeCPGtMuolL6Tw" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Nm_iEeCPGtMuolL6Tw" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-N2_iEeCPGtMuolL6Tw" key="_rkt-NG_iEeCPGtMuolL6Tw" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-OG_iEeCPGtMuolL6Tw" key="_rkt-M2_iEeCPGtMuolL6Tw" value="tableAjaxCtx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_rkt-OW_iEeCPGtMuolL6Tw" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Om_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-O2_iEeCPGtMuolL6Tw" key="_rkt-Om_iEeCPGtMuolL6Tw" value="tableAjaxRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_rkt-PG_iEeCPGtMuolL6Tw">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_rkt-PW_iEeCPGtMuolL6Tw" tag="kColl" id="tableAjaxRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Pm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-P2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-QG_iEeCPGtMuolL6Tw" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-QW_iEeCPGtMuolL6Tw" key="_rkt-Pm_iEeCPGtMuolL6Tw" value="tableAjaxRecord"/>
+      <elements xmi:type="transaction:RefData" xmi:id="_rkt-Qm_iEeCPGtMuolL6Tw" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Q2_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-RG_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-RW_iEeCPGtMuolL6Tw" key="_rkt-Q2_iEeCPGtMuolL6Tw" value="tableData"/>
+      </elements>
+      <elements xmi:type="transaction:RefData" xmi:id="_rkt-Rm_iEeCPGtMuolL6Tw" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-R2_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-SG_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-SW_iEeCPGtMuolL6Tw" key="_rkt-R2_iEeCPGtMuolL6Tw" value="genderCombo"/>
+      </elements>
+      <elements xmi:type="transaction:RefData" xmi:id="_rkt-Sm_iEeCPGtMuolL6Tw" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-S2_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-TG_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-TW_iEeCPGtMuolL6Tw" key="_rkt-S2_iEeCPGtMuolL6Tw" value="positionSelect"/>
+      </elements>
+      <elements xmi:type="transaction:RefData" xmi:id="_rkt-Tm_iEeCPGtMuolL6Tw" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-T2_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-UG_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-UW_iEeCPGtMuolL6Tw" key="_rkt-T2_iEeCPGtMuolL6Tw" value="tableRowDateName"/>
+      </elements>
+      <elements xmi:type="transaction:RefData" xmi:id="_cIZmcItHEeCKEN7tCkq2JQ" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_cIZmcYtHEeCKEN7tCkq2JQ" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_cIZmcotHEeCKEN7tCkq2JQ" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_czBQwItHEeCKEN7tCkq2JQ" key="_cIZmcYtHEeCKEN7tCkq2JQ" value="singleTableRowName"/>
+      </elements>
+    </dataElements>
+    <dataElements xmi:type="transaction:IndexedCollection" xmi:id="_rkt-Um_iEeCPGtMuolL6Tw" tag="iColl" id="tableData">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-U2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-VG_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-VW_iEeCPGtMuolL6Tw" name="size" type="java.lang.Integer"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-Vm_iEeCPGtMuolL6Tw" key="_rkt-U2_iEeCPGtMuolL6Tw" value="tableData"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-V2_iEeCPGtMuolL6Tw" key="_rkt-VW_iEeCPGtMuolL6Tw" value="100"/>
+      <element xmi:type="transaction:KeyedCollection" xmi:id="_rkt-WG_iEeCPGtMuolL6Tw" tag="kColl" id="tableRow">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-WW_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Wm_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-W2_iEeCPGtMuolL6Tw" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-XG_iEeCPGtMuolL6Tw" key="_rkt-WW_iEeCPGtMuolL6Tw" value="tableRow"/>
+        <elements xmi:type="transaction:RefData" xmi:id="_rkt-XW_iEeCPGtMuolL6Tw" tag="refData">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Xm_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-X2_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-YG_iEeCPGtMuolL6Tw" key="_rkt-Xm_iEeCPGtMuolL6Tw" value="positionSelect"/>
+        </elements>
+        <elements xmi:type="transaction:RefData" xmi:id="_rkt-YW_iEeCPGtMuolL6Tw" tag="refData">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Ym_iEeCPGtMuolL6Tw" name="refId" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Y2_iEeCPGtMuolL6Tw" name="alias" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-ZG_iEeCPGtMuolL6Tw" key="_rkt-Ym_iEeCPGtMuolL6Tw" value="tempIColl"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_rkt-ZW_iEeCPGtMuolL6Tw" tag="field" id="index">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Zm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-Z2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-aG_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-aW_iEeCPGtMuolL6Tw" key="_rkt-Z2_iEeCPGtMuolL6Tw" value="checkBox"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-am_iEeCPGtMuolL6Tw" key="_rkt-Zm_iEeCPGtMuolL6Tw" value="index"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_rkt-a2_iEeCPGtMuolL6Tw" tag="field" id="gender">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-bG_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-bW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-bm_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-b2_iEeCPGtMuolL6Tw" key="_rkt-bW_iEeCPGtMuolL6Tw" value="Combo"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-cG_iEeCPGtMuolL6Tw" key="_rkt-bG_iEeCPGtMuolL6Tw" value="gender"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_rkt-cW_iEeCPGtMuolL6Tw" tag="field" id="position">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-cm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-c2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-dG_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-dW_iEeCPGtMuolL6Tw" key="_rkt-cm_iEeCPGtMuolL6Tw" value="position"/>
+        </elements>
+        <elements xmi:type="transaction:Data" xmi:id="_rkt-dm_iEeCPGtMuolL6Tw" tag="data" id="name">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-d2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-eG_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-eW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-em_iEeCPGtMuolL6Tw" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-e2_iEeCPGtMuolL6Tw" key="_rkt-d2_iEeCPGtMuolL6Tw" value="name"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-fG_iEeCPGtMuolL6Tw" key="_rkt-em_iEeCPGtMuolL6Tw" value="String"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-fW_iEeCPGtMuolL6Tw" key="isMandatory" value="true"/>
+        </elements>
+        <elements xmi:type="transaction:Data" xmi:id="_rkt-fm_iEeCPGtMuolL6Tw" tag="data" id="Num">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-f2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-gG_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-gW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-gm_iEeCPGtMuolL6Tw" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-g2_iEeCPGtMuolL6Tw" key="_rkt-f2_iEeCPGtMuolL6Tw" value="Num"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-hG_iEeCPGtMuolL6Tw" key="_rkt-gm_iEeCPGtMuolL6Tw" value="Number"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-hW_iEeCPGtMuolL6Tw" key="isMandatory" value="true"/>
+        </elements>
+        <elements xmi:type="transaction:Data" xmi:id="_rkt-h2_iEeCPGtMuolL6Tw" tag="data" id="salary">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-iG_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-iW_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-im_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-i2_iEeCPGtMuolL6Tw" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-jG_iEeCPGtMuolL6Tw" key="_rkt-iG_iEeCPGtMuolL6Tw" value="salary"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-jW_iEeCPGtMuolL6Tw" key="_rkt-i2_iEeCPGtMuolL6Tw" value="Currency"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-jm_iEeCPGtMuolL6Tw" key="currency" value="USD"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-j2_iEeCPGtMuolL6Tw" key="isMandatory" value="true"/>
+        </elements>
+        <elements xmi:type="transaction:Data" xmi:id="_rkt-kG_iEeCPGtMuolL6Tw" tag="data" id="birth">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-kW_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-km_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-k2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-lG_iEeCPGtMuolL6Tw" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-lW_iEeCPGtMuolL6Tw" key="_rkt-kW_iEeCPGtMuolL6Tw" value="birth"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-lm_iEeCPGtMuolL6Tw" key="_rkt-lG_iEeCPGtMuolL6Tw" value="Date"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-l2_iEeCPGtMuolL6Tw" key="isMandatory" value="true"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-mG_iEeCPGtMuolL6Tw" key="pattern" value="MM-dd-yyyy"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-mW_iEeCPGtMuolL6Tw" key="minimumDate" value="today-7d"/>
+          <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_rkt-mm_iEeCPGtMuolL6Tw" key="maximumDate" value="today+7d"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_rkt-m2_iEeCPGtMuolL6Tw" tag="field" id="Num2">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-nG_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-nW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-nm_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-n2_iEeCPGtMuolL6Tw" key="_rkt-nG_iEeCPGtMuolL6Tw" value="Num2"/>
+        </elements>
+        <elements xmi:type="transaction:DataField" xmi:id="_rkt-oG_iEeCPGtMuolL6Tw" tag="field" id="imageField">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-oW_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-om_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-o2_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-pG_iEeCPGtMuolL6Tw" key="_rkt-oW_iEeCPGtMuolL6Tw" value="imageField"/>
+        </elements>
+      </element>
+    </dataElements>
+    <dataElements xmi:type="transaction:IndexedCollection" xmi:id="_rkt-pW_iEeCPGtMuolL6Tw" tag="iColl" id="tempIColl">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-pm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-p2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-qG_iEeCPGtMuolL6Tw" name="size" type="java.lang.Integer"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-qW_iEeCPGtMuolL6Tw" key="_rkt-pm_iEeCPGtMuolL6Tw" value="tempIColl"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-qm_iEeCPGtMuolL6Tw" key="_rkt-qG_iEeCPGtMuolL6Tw" value="10"/>
+      <element xmi:type="transaction:DataField" xmi:id="_rkt-q2_iEeCPGtMuolL6Tw" tag="field" id="position">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-rG_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-rW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-rm_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-r2_iEeCPGtMuolL6Tw" key="_rkt-rG_iEeCPGtMuolL6Tw" value="position"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-sG_iEeCPGtMuolL6Tw" key="_rkt-rm_iEeCPGtMuolL6Tw" value="123123"/>
+      </element>
+    </dataElements>
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_rkt-sW_iEeCPGtMuolL6Tw" tag="kColl" id="genderCombo">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-sm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-s2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-tG_iEeCPGtMuolL6Tw" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-tW_iEeCPGtMuolL6Tw" key="_rkt-sm_iEeCPGtMuolL6Tw" value="genderCombo"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_rkt-tm_iEeCPGtMuolL6Tw" tag="field" id="male">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-t2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-uG_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-uW_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-um_iEeCPGtMuolL6Tw" key="_rkt-t2_iEeCPGtMuolL6Tw" value="male"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-u2_iEeCPGtMuolL6Tw" key="_rkt-uW_iEeCPGtMuolL6Tw" value="male"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_rkt-vG_iEeCPGtMuolL6Tw" tag="field" id="female">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-vW_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-vm_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-v2_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-wG_iEeCPGtMuolL6Tw" key="_rkt-vW_iEeCPGtMuolL6Tw" value="female"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-wW_iEeCPGtMuolL6Tw" key="_rkt-v2_iEeCPGtMuolL6Tw" value="female"/>
+      </elements>
+    </dataElements>
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_rkt-wm_iEeCPGtMuolL6Tw" tag="kColl" id="positionSelect">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-w2_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-xG_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-xW_iEeCPGtMuolL6Tw" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-xm_iEeCPGtMuolL6Tw" key="_rkt-w2_iEeCPGtMuolL6Tw" value="positionSelect"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_rkt-x2_iEeCPGtMuolL6Tw" tag="field" id="PM">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-yG_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-yW_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-ym_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-y2_iEeCPGtMuolL6Tw" key="_rkt-yG_iEeCPGtMuolL6Tw" value="PM"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-zG_iEeCPGtMuolL6Tw" key="_rkt-ym_iEeCPGtMuolL6Tw" value="PM"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_rkt-zW_iEeCPGtMuolL6Tw" tag="field" id="GL">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-zm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-z2_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-0G_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-0W_iEeCPGtMuolL6Tw" key="_rkt-zm_iEeCPGtMuolL6Tw" value="GL"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-0m_iEeCPGtMuolL6Tw" key="_rkt-0G_iEeCPGtMuolL6Tw" value="GL"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_rkt-02_iEeCPGtMuolL6Tw" tag="field" id="SE">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-1G_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-1W_iEeCPGtMuolL6Tw" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_rkt-1m_iEeCPGtMuolL6Tw" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-12_iEeCPGtMuolL6Tw" key="_rkt-1G_iEeCPGtMuolL6Tw" value="SE"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt-2G_iEeCPGtMuolL6Tw" key="_rkt-1m_iEeCPGtMuolL6Tw" value="SE"/>
+      </elements>
+    </dataElements>
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_YF3lIItHEeCKEN7tCkq2JQ" tag="kColl" id="singleTableRowName">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lIYtHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lIotHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lI4tHEeCKEN7tCkq2JQ" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lJItHEeCKEN7tCkq2JQ" key="_YF3lIYtHEeCKEN7tCkq2JQ" value="singleTableRowName"/>
+      <elements xmi:type="transaction:RefData" xmi:id="_YF3lJYtHEeCKEN7tCkq2JQ" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lJotHEeCKEN7tCkq2JQ" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lJ4tHEeCKEN7tCkq2JQ" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lKItHEeCKEN7tCkq2JQ" key="_YF3lJotHEeCKEN7tCkq2JQ" value="positionSelect"/>
+      </elements>
+      <elements xmi:type="transaction:RefData" xmi:id="_YF3lKYtHEeCKEN7tCkq2JQ" tag="refData">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lKotHEeCKEN7tCkq2JQ" name="refId" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lK4tHEeCKEN7tCkq2JQ" name="alias" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lLItHEeCKEN7tCkq2JQ" key="_YF3lKotHEeCKEN7tCkq2JQ" value="tempIColl"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_YF3lLYtHEeCKEN7tCkq2JQ" tag="field" id="index">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lLotHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lL4tHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lMItHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lMYtHEeCKEN7tCkq2JQ" key="_YF3lL4tHEeCKEN7tCkq2JQ" value="checkBox"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lMotHEeCKEN7tCkq2JQ" key="_YF3lLotHEeCKEN7tCkq2JQ" value="index"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_YF3lM4tHEeCKEN7tCkq2JQ" tag="field" id="gender">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lNItHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lNYtHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lNotHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lN4tHEeCKEN7tCkq2JQ" key="_YF3lNYtHEeCKEN7tCkq2JQ" value="Combo"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lOItHEeCKEN7tCkq2JQ" key="_YF3lNItHEeCKEN7tCkq2JQ" value="gender"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_YF3lOYtHEeCKEN7tCkq2JQ" tag="field" id="position">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lOotHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lO4tHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lPItHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lPYtHEeCKEN7tCkq2JQ" key="_YF3lOotHEeCKEN7tCkq2JQ" value="position"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_YF3lPotHEeCKEN7tCkq2JQ" tag="data" id="name">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lP4tHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lQItHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lQYtHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lQotHEeCKEN7tCkq2JQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lQ4tHEeCKEN7tCkq2JQ" key="_YF3lP4tHEeCKEN7tCkq2JQ" value="name"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lRItHEeCKEN7tCkq2JQ" key="_YF3lQotHEeCKEN7tCkq2JQ" value="String"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lRYtHEeCKEN7tCkq2JQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_YF3lRotHEeCKEN7tCkq2JQ" tag="data" id="Num">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lR4tHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lSItHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lSYtHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lSotHEeCKEN7tCkq2JQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lS4tHEeCKEN7tCkq2JQ" key="_YF3lR4tHEeCKEN7tCkq2JQ" value="Num"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lTItHEeCKEN7tCkq2JQ" key="_YF3lSotHEeCKEN7tCkq2JQ" value="Number"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lTYtHEeCKEN7tCkq2JQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_YF3lT4tHEeCKEN7tCkq2JQ" tag="data" id="salary">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lUItHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lUYtHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lUotHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lU4tHEeCKEN7tCkq2JQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lVItHEeCKEN7tCkq2JQ" key="_YF3lUItHEeCKEN7tCkq2JQ" value="salary"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lVYtHEeCKEN7tCkq2JQ" key="_YF3lU4tHEeCKEN7tCkq2JQ" value="Currency"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lVotHEeCKEN7tCkq2JQ" key="currency" value="USD"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lV4tHEeCKEN7tCkq2JQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_YF3lWItHEeCKEN7tCkq2JQ" tag="data" id="birth">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lWYtHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lWotHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lW4tHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lXItHEeCKEN7tCkq2JQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lXYtHEeCKEN7tCkq2JQ" key="_YF3lWYtHEeCKEN7tCkq2JQ" value="birth"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lXotHEeCKEN7tCkq2JQ" key="_YF3lXItHEeCKEN7tCkq2JQ" value="Date"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lX4tHEeCKEN7tCkq2JQ" key="isMandatory" value="true"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lYItHEeCKEN7tCkq2JQ" key="pattern" value="MM-dd-yyyy"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lYYtHEeCKEN7tCkq2JQ" key="minimumDate" value="today-7d"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_YF3lYotHEeCKEN7tCkq2JQ" key="maximumDate" value="today+7d"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_YF3lY4tHEeCKEN7tCkq2JQ" tag="field" id="Num2">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lZItHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lZYtHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3lZotHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lZ4tHEeCKEN7tCkq2JQ" key="_YF3lZItHEeCKEN7tCkq2JQ" value="Num2"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_YF3laItHEeCKEN7tCkq2JQ" tag="field" id="imageField">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3laYtHEeCKEN7tCkq2JQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3laotHEeCKEN7tCkq2JQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_YF3la4tHEeCKEN7tCkq2JQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_YF3lbItHEeCKEN7tCkq2JQ" key="_YF3laYtHEeCKEN7tCkq2JQ" value="imageField"/>
+      </elements>
+    </dataElements>
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_qXdpEOBWEeG2nJTS7aobSQ" tag="kColl" id="tableRowDateName">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpEeBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpEuBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpE-BWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpFOBWEeG2nJTS7aobSQ" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpFeBWEeG2nJTS7aobSQ" key="_qXdpE-BWEeG2nJTS7aobSQ" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpFuBWEeG2nJTS7aobSQ" key="_qXdpEeBWEeG2nJTS7aobSQ" value="tableRowDateName"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_qXdpF-BWEeG2nJTS7aobSQ" tag="field" id="index">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpGOBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpGeBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpGuBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpG-BWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpHOBWEeG2nJTS7aobSQ" key="_qXdpGuBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpHeBWEeG2nJTS7aobSQ" key="_qXdpGOBWEeG2nJTS7aobSQ" value="index"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpHuBWEeG2nJTS7aobSQ" key="_qXdpGeBWEeG2nJTS7aobSQ" value="checkBox"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_qXdpH-BWEeG2nJTS7aobSQ" tag="field" id="gender">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpIOBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpIeBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpIuBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpI-BWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpJOBWEeG2nJTS7aobSQ" key="_qXdpIuBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpJeBWEeG2nJTS7aobSQ" key="_qXdpIOBWEeG2nJTS7aobSQ" value="gender"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpJuBWEeG2nJTS7aobSQ" key="_qXdpI-BWEeG2nJTS7aobSQ" value="Combo"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_qXdpJ-BWEeG2nJTS7aobSQ" tag="field" id="position">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpKOBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpKeBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpKuBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpK-BWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpLOBWEeG2nJTS7aobSQ" key="_qXdpKuBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpLeBWEeG2nJTS7aobSQ" key="_qXdpKOBWEeG2nJTS7aobSQ" value="position"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_qXdpLuBWEeG2nJTS7aobSQ" tag="data" id="name">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpL-BWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpMOBWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpMeBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpMuBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpM-BWEeG2nJTS7aobSQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpNOBWEeG2nJTS7aobSQ" key="_qXdpL-BWEeG2nJTS7aobSQ" value="name"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpNeBWEeG2nJTS7aobSQ" key="_qXdpMeBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpNuBWEeG2nJTS7aobSQ" key="_qXdpM-BWEeG2nJTS7aobSQ" value="String"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpN-BWEeG2nJTS7aobSQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_qXdpOOBWEeG2nJTS7aobSQ" tag="data" id="Num">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpOeBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpOuBWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpO-BWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpPOBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpPeBWEeG2nJTS7aobSQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpPuBWEeG2nJTS7aobSQ" key="_qXdpOeBWEeG2nJTS7aobSQ" value="Num"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpP-BWEeG2nJTS7aobSQ" key="_qXdpO-BWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpQOBWEeG2nJTS7aobSQ" key="_qXdpPeBWEeG2nJTS7aobSQ" value="Number"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpQeBWEeG2nJTS7aobSQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_qXdpQuBWEeG2nJTS7aobSQ" tag="data" id="salary">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpQ-BWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpROBWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpReBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpRuBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpR-BWEeG2nJTS7aobSQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpSOBWEeG2nJTS7aobSQ" key="_qXdpQ-BWEeG2nJTS7aobSQ" value="salary"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpSeBWEeG2nJTS7aobSQ" key="_qXdpReBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpSuBWEeG2nJTS7aobSQ" key="_qXdpR-BWEeG2nJTS7aobSQ" value="Currency"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpS-BWEeG2nJTS7aobSQ" key="currency" value="USD"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpTOBWEeG2nJTS7aobSQ" key="isMandatory" value="true"/>
+      </elements>
+      <elements xmi:type="transaction:Data" xmi:id="_qXdpTeBWEeG2nJTS7aobSQ" tag="data" id="birth">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpTuBWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpT-BWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpUOBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpUeBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpUuBWEeG2nJTS7aobSQ" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpU-BWEeG2nJTS7aobSQ" key="_qXdpTuBWEeG2nJTS7aobSQ" value="birth"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpVOBWEeG2nJTS7aobSQ" key="_qXdpUOBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpVeBWEeG2nJTS7aobSQ" key="_qXdpUuBWEeG2nJTS7aobSQ" value="Date"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpVuBWEeG2nJTS7aobSQ" key="isMandatory" value="true"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpV-BWEeG2nJTS7aobSQ" key="pattern" value="MM-dd-yyyy"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpWOBWEeG2nJTS7aobSQ" key="minimumDate" value="today-7d"/>
+        <params xmi:type="transaction:StringToStringMapEntry" xmi:id="_qXdpWeBWEeG2nJTS7aobSQ" key="maximumDate" value="today+7d"/>
+      </elements>
+      <elements xmi:type="transaction:DataField" xmi:id="_qXdpWuBWEeG2nJTS7aobSQ" tag="field" id="Num2">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpW-BWEeG2nJTS7aobSQ" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpXOBWEeG2nJTS7aobSQ" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpXeBWEeG2nJTS7aobSQ" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_qXdpXuBWEeG2nJTS7aobSQ" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpX-BWEeG2nJTS7aobSQ" key="_qXdpXeBWEeG2nJTS7aobSQ" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qXdpYOBWEeG2nJTS7aobSQ" key="_qXdpW-BWEeG2nJTS7aobSQ" value="Num2"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_rkt_K2_iEeCPGtMuolL6Tw"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_rkt_LG_iEeCPGtMuolL6Tw">
+    <operations xmi:type="transaction:Operation" xmi:id="_rkt_LW_iEeCPGtMuolL6Tw" tag="operation" id="tableAjaxOp" comment=" This operation gets from the context a field containing the page wanted to be shown to the user and places it in the right place to make Composer understand that this page must be shown. &#xA; Operation definition ">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt_Lm_iEeCPGtMuolL6Tw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt_L2_iEeCPGtMuolL6Tw" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt_MG_iEeCPGtMuolL6Tw" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_rkt_MW_iEeCPGtMuolL6Tw" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt_Mm_iEeCPGtMuolL6Tw" key="_rkt_MG_iEeCPGtMuolL6Tw" value="com.ibm.btt.sample.operation.TableAjaxOperation"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt_M2_iEeCPGtMuolL6Tw" key="_rkt_Lm_iEeCPGtMuolL6Tw" value="tableAjaxOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_rkt_NG_iEeCPGtMuolL6Tw" key="_rkt_L2_iEeCPGtMuolL6Tw" value="tableAjaxCtx"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_rkt_NW_iEeCPGtMuolL6Tw"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_rkt_Nm_iEeCPGtMuolL6Tw"/>
+</transaction:WorkProduct>

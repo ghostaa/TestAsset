@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fireExitEventInSelectFlowOp>
+
+	<operation id="fireExitEventInSelectFlowOp" context="SelectListExistBlackCtx" implClass="com.ibm.btt.sample.operation.Fire"/>
+
+	<context id="SelectListExistBlackCtx" type="op">
+		<refKColl refId="SelectListExistBlackRecord"/>
+	</context>
+
+	<kColl id="SelectListExistBlackRecord">
+		<refData refId="SelectListExistBlackList"/>
+		<refData refId="SelectListRecord"/>
+		<field id="Reveal"/>
+	</kColl>
+
+	<iColl id="SelectListExistBlackList">
+		<kColl id="SelectListExistBlackRecord01">
+			<field id="LableForList"/>
+			<field id="ValueForList"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="SelectListRecord">
+		<field id="SelectOne"/>
+		<field id="SelectTwo"/>
+	</kColl>
+
+</fireExitEventInSelectFlowOp>

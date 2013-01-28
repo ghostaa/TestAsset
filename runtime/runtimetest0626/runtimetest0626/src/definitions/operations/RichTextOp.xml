@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RichTextOp>
+
+	<operation id="RichTextOp" context="RichTextCtx" implClass="com.ibm.btt.sample.operation.RichTextOperation"/>
+
+	<context id="RichTextCtx" type="op">
+		<refKColl refId="richTextDefaultOpData"/>
+	</context>
+
+	<kColl id="richTextDefaultOpData">
+		<field id="basicField"/>
+		<field id="basicField2"/>
+		<data id="requiredBasicField" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+	</kColl>
+
+</RichTextOp>

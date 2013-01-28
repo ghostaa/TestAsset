@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageSortProcFlow>
+
+
+	<htmlProcessor context="pageSortProcCtx" id="pageSortProcFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="pageSort/paginationByDataTypesState"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationByDataTypesState.jsp" id="pageSort/paginationByDataTypesState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationByDataTypesState.next" targetState="pageSort/paginationByCustomizedDataTypesState"/>
+				<htmlTransition id="pageSort/paginationByDataTypesState.retrieve" targetState="pageSortByDataTypesQueryOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationByCustomizedDataTypesState.jsp" id="pageSort/paginationByCustomizedDataTypesState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationByCustomizedDataTypesState.next" targetState="pageSort/paginationNegListNameState"/>
+				<htmlTransition id="pageSort/paginationByCustomizedDataTypesState.retrieve" targetState="pageSortByCustomiedDataTypesQueryOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationNegListNameState.jsp" id="pageSort/paginationNegListNameState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationNegListNameState.next" targetState="pageSort/paginationNegRowNameState"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationNegRowNameState.jsp" id="pageSort/paginationNegRowNameState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationNegRowNameState.next" targetState="pageSort/paginationNegColumnNamesState"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationNegColumnNamesState.jsp" id="pageSort/paginationNegColumnNamesState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationNegColumnNamesState.next" targetState="pageSort/paginationInitReqState"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="pageSort/paginationInitReqState.jsp" id="pageSort/paginationInitReqState">
+			<transitions>
+				<htmlTransition id="pageSort/paginationInitReqState.next" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="pageSortByDataTypesQueryOp" id="pageSortByDataTypesQueryOp" type="operation">
+			<transitions>
+				<htmlTransition id="pageSortByDataTypesQueryOp.back" outputMapFmt="pageSortByDataTypesQueryOp.back_OutputFmt" targetState="pageSort/paginationByDataTypesState"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="pageSortByCustomiedDataTypesQueryOp" id="pageSortByCustomiedDataTypesQueryOp" type="operation">
+			<transitions>
+				<htmlTransition id="pageSortByCustomiedDataTypesQueryOp.back" outputMapFmt="pageSortByCustomiedDataTypesQueryOp.back_OutputFmt" targetState="pageSort/paginationByCustomizedDataTypesState"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="pageSortProcCtx" type="op">
+		<refKColl refId="pageSortProcData"/>
+	</context>
+
+	<kColl id="data4State" dynamic="false">
+		<field id="stateField" value="James Bond"/>
+	</kColl>
+
+	<kColl id="item">
+		<field id="index"/>
+		<data id="currencyField" refType="Currency"/>
+		<data id="dateField" refType="Date"/>
+		<data id="numberField" refType="Number"/>
+		<data id="stringField" refType="String"/>
+		<field id="plainField"/>
+	</kColl>
+
+	<kColl id="pageSortProcData" dynamic="false">
+		<field id="start" value="0"/>
+		<field id="count" value="0"/>
+		<field id="sort"/>
+		<field id="numRows" value="0"/>
+		<refData refId="item"/>
+		<kColl id="filters" dynamic="false">
+			<field id="filter1" value="%"/>
+			<field id="filter2" value="0"/>
+		</kColl>
+		<iColl id="items" size="1">
+			<refData refId="item"/>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="pageSortByDataTypesQueryOp.back_OutputFmt">
+		<mapperConverterExpression>
+			<map from="start" to="start"/>
+			<map from="count" to="count"/>
+			<map from="sort" to="sort"/>
+			<map from="numRows" to="numRows"/>
+			<map from="items" to="items" append="false"/>
+			<map from="queryConditions" to="filters"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="pageSortByCustomiedDataTypesQueryOp.back_OutputFmt">
+		<mapperConverterExpression>
+			<map from="start" to="start"/>
+			<map from="count" to="count"/>
+			<map from="sort" to="sort"/>
+			<map from="numRows" to="numRows"/>
+			<map from="items" to="items" append="false"/>
+			<map from="queryConditions" to="filters"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</pageSortProcFlow>

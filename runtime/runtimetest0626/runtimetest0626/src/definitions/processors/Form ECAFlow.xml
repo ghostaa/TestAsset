@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form ECAFlow>
+
+
+	<htmlProcessor context="Form ECACtx" id="Form ECAFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="FormOnSubmit"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="FormECA/FormOnSubmit.jsp" id="FormOnSubmit">
+			<transitions>
+				<htmlTransition id="FormOnSubmit.move" targetState="FormInstead"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="FormECA/FormInstead.jsp" id="FormInstead">
+			<transitions>
+				<htmlTransition id="FormInstead.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="Form ECAOp" context="Form ECACtx" implClass="com.ibm.btt.sample.operation.FireExitEvent"/>
+
+	<context id="Form ECACtx" type="op">
+		<refKColl refId="Form ECARecord"/>
+	</context>
+
+	<kColl id="Form ECARecord">
+		<field id="CheckBoxValue"/>
+		<field id="TestValue"/>
+		<field id="SelectValue"/>
+	</kColl>
+
+</Form ECAFlow>

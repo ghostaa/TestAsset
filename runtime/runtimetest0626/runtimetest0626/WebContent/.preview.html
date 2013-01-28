@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:useBean id="utb" scope="page" class="com.ibm.btt.cs.html.DSEJspContextServices">
+	
+</jsp:useBean>	
+<html>
+<!-- Generated from FormOnSubmit.xui by Administrator, on Fri Oct 19 10:47:40 CST 2012 -->
+<head>
+
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+@import "js/dojo/resources/dojo.css";
+@import "js/dijit/themes/claro/claro.css";	
+@import "js/dojox/grid/enhanced/resources/claro/EnhancedGrid.css";
+@import "css/dijit/message.css";
+@import "js/com/ibm/btt/dijit/templates/FileUpload.css";
+@import "js/dijit/themes/claro/document.css";
+@import "js/com/ibm/btt/dijit/templates/Grid.css";
+@import "js/com/ibm/btt/dijit/templates/ScreenCover.css";
+@import "js/com/ibm/btt/dijit/templates/Group.css";
+@import "js/com/ibm/btt/dijit/templates/Label.css";
+@import "css/dijit/main.css";
+
+
+
+.dojoxGrid table { margin: 0; }
+.dj_gecko .dijitTextBoxReadOnly INPUT.dijitInputInner {
+    -moz-user-input: auto;
+}
+.dj_gecko .dijitTextBoxReadOnlyFocused INPUT.dijitInputInner {
+	-moz-user-input: none;
+}
+</style>
+<script>
+	var djConfig =  {
+		baseUrl:"js/dojo/",
+		locale:'',
+		isDebug: false, 
+		parseOnLoad: true
+	};
+</script>
+
+<script type="text/javascript" src="js/dojo/dojo_BTT.js" ></script>
+<script type="text/javascript" src="js/com/ibm/btt/btt.js"></script>
+<script type="text/javascript" >
+dojo.addOnLoad(function(){
+	dojo.style(document.body, "visibility", "");
+});
+</script>
+
+<script type="text/javascript">
+	if(!window.engine){
+		
+			window.engine = new com.ibm.btt.event.NavigationEngine();
+		
+			window.engine = new com.ibm.btt.event.Engine();
+		
+		engine.setMonitor(new com.ibm.btt.event.BaseMonitor());
+		engine.registerCond("js/condition/condition.js");
+	}
+</script>
+</head>
+<body class="claro" style="visibility:hidden">
+<script type="text/javascript" src=".preview.js"> </script>
+<form id="FormOnSubmit_form" validateOnSubmit="false" dojoType="com.ibm.btt.dijit.Form" method="post" bttParams="{}" bttErrorPage="FormECA/FormOnSubmit.jsp">  <table>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+<input id="FormOnSubmit_checkBox" checkedValue="Checked" unCheckedValue="Not Checked" dojoType="com.ibm.btt.dijit.CheckBox" name="CheckBoxValue" text="CheckBox" isChecked="false"></input>      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+<div id="FormOnSubmit_button08" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="Set Value"></div>      </td>
+      <td>
+      </td>
+      <td>
+<label id="FormOnSubmit_label" dojoType="com.ibm.btt.dijit.Label"></label>      </td>
+      <td>
+<div id="FormOnSubmit_button" type="submit" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="Form OnSubmit"></div>      </td>
+    </tr>
+    <tr>
+      <td>
+<div id="FormOnSubmit_button10" type="submit" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="Click"></div>      </td>
+      <td>
+      </td>
+      <td>
+<label id="FormOnSubmit_label01" dojoType="com.ibm.btt.dijit.Label"></label>      </td>
+      <td>
+<div id="FormOnSubmit_button01" type="reset" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="Form OnReset"></div>      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+<input dojoType="com.ibm.btt.dijit.StringTextBox" name="TestValue" value="sample data" id="FormOnSubmit_text" required="true"></input>      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+<select id="FormOnSubmit_combo" dojoType="com.ibm.btt.dijit.ComboBox" labelField="label"></select>      </td>
+      <td>
+<div id="FormOnSubmit_button02" type="submit" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="First"></div>      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+<div id="FormOnSubmit_button03" type="submit" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="Second"></div>      </td>
+    </tr>
+    <tr>
+      <td>
+<div id="FormOnSubmit_button04" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="1"></div>      </td>
+      <td>
+<div id="FormOnSubmit_button07" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="2"></div>      </td>
+      <td>
+<div id="FormOnSubmit_button05" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="3"></div>      </td>
+      <td>
+<div id="FormOnSubmit_button06" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="4"></div>      </td>
+    </tr>
+    <tr>
+      <td>
+<div id="FormOnSubmit_button09" type="button" dojoType="com.ibm.btt.dijit.Button" style="margin:0px;" text="click change grobal function"></div>      </td>
+      <td>
+      </td>
+      <td>
+<label id="FormOnSubmit_label02" dojoType="com.ibm.btt.dijit.Label"></label>      </td>
+      <td>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

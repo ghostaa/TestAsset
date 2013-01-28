@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sampleFlow11>
+
+
+	<htmlProcessor context="ctxsampleFlow11" id="sampleFlow11">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+	</htmlProcessor>
+
+	<context id="ctxsampleFlow11" type="op" parent="sessionCtx">
+		<refKColl refId="estructSufijo"/>
+	</context>
+
+	<kColl id="estructSufijo" dynamic="true">
+		<data id="Integerwithrequiredwithhint" refType="Number">
+			<param value="true" id="isMandatory"/>
+			<param value="integer" id="html:numberType"/>
+		</data>
+		<data id="Currencywithrequiredwithhint" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithCNY" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminInt" refType="Currency">
+			<param value="100" id="maximumNumber"/>
+			<param value="10" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminDecimal" refType="Currency">
+			<param value="100.99" id="maximumNumber"/>
+			<param value="10.99" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithformatwithlocale" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithByte" refType="Currency">
+			<param value="byte" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithShort" refType="Currency">
+			<param value="short" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithInteger" refType="Currency">
+			<param value="integer" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithLong" refType="Currency">
+			<param value="long" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithDouble" refType="Currency">
+			<param value="double" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithFloat" refType="Currency">
+			<param value="float" id="numberType"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigdecimal" refType="Currency">
+			<param value="bigDecimal" id="numberType"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigInteger" refType="Currency">
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=4" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="Integerwithrequiredwithhint_1" refType="Number">
+			<param value="true" id="isMandatory"/>
+			<param value="integer" id="html:numberType"/>
+		</data>
+		<data id="Currencywithrequiredwithhint_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithrequiredwithCNY_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminInt_1" refType="Currency">
+			<param value="100" id="maximumNumber"/>
+			<param value="10" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithmaxminDecimal_1" refType="Currency">
+			<param value="100.99" id="maximumNumber"/>
+			<param value="10.99" id="minimumNumber"/>
+		</data>
+		<data id="CurrencyBoxwithformatwithlocale_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="CurrencyBoxwithByte_1" refType="Currency">
+			<param value="byte" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithShort_1" refType="Currency">
+			<param value="short" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithInteger_1" refType="Currency">
+			<param value="integer" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithLong_1" refType="Currency">
+			<param value="long" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithDouble_1" refType="Currency">
+			<param value="double" id="numberType"/>
+		</data>
+		<data id="CurrencyBoxwithFloat_1" refType="Currency">
+			<param value="float" id="numberType"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigdecimal_1" refType="Currency">
+			<param value="bigDecimal" id="numberType"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithBigInteger_1" refType="Currency">
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=4_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="4" id="decimalPlaces"/>
+		</data>
+		<data id="CurrencyBoxwithdecimalplacewithrequired=1_1" refType="Currency">
+			<param value="true" id="isMandatory"/>
+			<param value="1" id="decimalPlaces"/>
+		</data>
+	</kColl>
+
+</sampleFlow11>

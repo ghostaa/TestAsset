@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_EElBwBghEeKb97crrG4Xxw">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_EElo0BghEeKb97crrG4Xxw">
+    <contexts xmi:type="transaction:Context" xmi:id="_vl13QBghEeKb97crrG4Xxw" tag="context" id="TestCtx01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_vl13QRghEeKb97crrG4Xxw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_vl13QhghEeKb97crrG4Xxw" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_vl13QxghEeKb97crrG4Xxw" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_vl13RBghEeKb97crrG4Xxw" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_vl13RRghEeKb97crrG4Xxw" key="_vl13QhghEeKb97crrG4Xxw" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_vl13RhghEeKb97crrG4Xxw" key="_vl13QRghEeKb97crrG4Xxw" value="TestCtx01"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_x7OaQBghEeKb97crrG4Xxw" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_x7PBUBghEeKb97crrG4Xxw" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_yYx48BghEeKb97crrG4Xxw" key="_x7PBUBghEeKb97crrG4Xxw" value="TestRecord01"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_EElo0RghEeKb97crrG4Xxw">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_xkyQMBghEeKb97crrG4Xxw" tag="kColl" id="TestRecord01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_xkyQMRghEeKb97crrG4Xxw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_xkyQMhghEeKb97crrG4Xxw" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_xkyQMxghEeKb97crrG4Xxw" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_xkyQNBghEeKb97crrG4Xxw" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_xkyQNRghEeKb97crrG4Xxw" key="_xkyQMxghEeKb97crrG4Xxw" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_xkyQNhghEeKb97crrG4Xxw" key="_xkyQMRghEeKb97crrG4Xxw" value="TestRecord01"/>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_EElo0hghEeKb97crrG4Xxw"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_EElo0xghEeKb97crrG4Xxw">
+    <operations xmi:type="transaction:Operation" xmi:id="_F_M7YBghEeKb97crrG4Xxw" tag="operation" id="TestOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_F_M7YRghEeKb97crrG4Xxw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_F_M7YhghEeKb97crrG4Xxw" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_F_M7YxghEeKb97crrG4Xxw" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_F_M7ZBghEeKb97crrG4Xxw" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_F_M7ZRghEeKb97crrG4Xxw" key="_F_M7YxghEeKb97crrG4Xxw" value="TestOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_F_M7ZhghEeKb97crrG4Xxw" key="_F_M7YRghEeKb97crrG4Xxw" value="TestOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_wohcQBghEeKb97crrG4Xxw" key="_F_M7YhghEeKb97crrG4Xxw" value="TestCtx01"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_EElo1BghEeKb97crrG4Xxw"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_EElo1RghEeKb97crrG4Xxw"/>
+</transaction:WorkProduct>

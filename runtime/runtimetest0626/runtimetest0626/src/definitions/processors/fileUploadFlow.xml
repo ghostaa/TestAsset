@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileUploadFlow>
+
+
+	<htmlProcessor context="fileUploadCtx" id="fileUploadFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="fileUpload"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="fileUploadTest.jsp" id="fileUpload">
+			<transitions>
+				<htmlTransition id="fileUpload.submit" targetState="AfterFileUpload"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterFileUpload.jsp" id="AfterFileUpload">
+			<transitions>
+				<htmlTransition id="AfterFileUpload.back" targetState="fileUpload"/>
+				<htmlTransition id="AfterFileUpload.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="fileUploadCtx" type="op">
+		<refKColl refId="fileUpload"/>
+	</context>
+
+	<kColl id="userFiles">
+		<iColl id="receivedFiles">
+			<refData refId="file"/>
+		</iColl>
+		<refData refId="file"/>
+		<field id="handler" value="sampleFileHandler"/>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<kColl id="fileUpload">
+		<refData refId="userFiles"/>
+	</kColl>
+
+</fileUploadFlow>

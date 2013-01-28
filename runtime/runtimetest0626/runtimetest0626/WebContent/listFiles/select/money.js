@@ -1,0 +1,4 @@
+{
+	"EURO":"EURO",
+	"RMB":"RMB"
+}

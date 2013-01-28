@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="Cp1252"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="46,19,1092,280" dataBinding="{'ctxType':'proc','ctxFile':'pageCustomerInfoQueryFlow','ctxName':'pageCustomerInfoQueryCtx'}" isRuleDirty="false">
+  <styles>
+    <css file="../../WebContent/css/dijit/main.css"/>
+  </styles>
+  <container name="Form" id="form">
+    <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    <widget name="Label" styleClass="sessionInfo" id="label" text="NAME start with=">
+      <gridData horizontalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Label" dataName="params.cname" styleClass="sessionInfo" id="label01" text="Label">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Button" action="flowEvent=NEXT" id="button" text="next">
+      <gridData horizontalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Table" paginationParams="{'timeout':'6000','operationNameForPagination':'paginationFetchPagedDataOp','rowsPerPage':'15','directPagination':'false','paginationType':'default','errorOutputMapping':'errorOutputMapping','normalOutputMapping':'normalOutputMapping','nextInputMapping':'nextInputMapping','initialInputMapping':'initialInputMapping','paginationWhenLoading':'true','previousInputMapping':'previousInputMapping','directInputMapping':''}" dataNameForList="FTInfoTableIColl" isPageable="true" dataName="FTData" id="FTInfo">
+      <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      <column widthType="FixedSize" dataName="cid" width="40" relativeWidth="1" text="ID">
+        <tableColumnAlignment>16384</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cname" width="80" relativeWidth="1" text="NAME">
+        <tableColumnAlignment>16384</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cage" width="50" relativeWidth="1" text="AGE">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cgender" width="80" relativeWidth="1" text="GENDER">
+        <tableColumnAlignment>16384</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cbirthDay" width="80" relativeWidth="1" text="BIRTHDAY">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="csalary" width="80" relativeWidth="1" text="SALARY">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cbigIntegerField" width="80" relativeWidth="1" text="CBIF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cfloatField" width="80" relativeWidth="1" text="CFF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="caccountCount" width="80" relativeWidth="1" text="CAC">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cbigDecimalField" width="80" relativeWidth="1" text="CBDF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cdoubleField" width="80" relativeWidth="1" text="CDF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="ctotalStayTime" width="80" relativeWidth="1" text="CTSTF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="clastAccessTime" width="80" relativeWidth="1" text="CLATF">
+        <tableColumnAlignment>16384</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cplainField" width="80" relativeWidth="1" text="CPF">
+        <tableColumnAlignment>16384</tableColumnAlignment>
+      </column>
+    </widget>
+    <gridLayout numColumns="3"/>
+  </container>
+  <rules/>
+  <groups/>
+</XUI>

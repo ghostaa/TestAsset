@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageSortByCustomiedDataTypesQueryOp>
+
+	<operation id="pageSortByCustomiedDataTypesQueryOp" context="pageSortByCustomiedDataTypesQueryCtx" implClass="com.ibm.btt.test.pageSort.MyTestPaginationSortingCustomizedOp"/>
+
+	<context id="pageSortByCustomiedDataTypesQueryCtx" type="op">
+		<refKColl refId="pageSortByCustomiedDataTypesQueryOpData"/>
+	</context>
+
+	<kColl id="pageSortByCustomiedDataTypesQueryOpData" dynamic="false">
+		<field id="start" value="0"/>
+		<field id="count" value="15"/>
+		<field id="sort"/>
+		<field id="numRows" value="50"/>
+		<kColl id="queryConditions" dynamic="false">
+			<field id="aFilter" value="%"/>
+			<field id="bFilter" value="0"/>
+		</kColl>
+		<iColl id="items" size="1">
+			<kColl id="item">
+				<field id="index"/>
+				<data id="currencyField" refType="Currency">
+					<param value="true" id="isMandatory"/>
+					<param value="bigDecimal" id="numberType"/>
+					<param value="USD" id="currency"/>
+					<param value="2" id="decimalPlaces"/>
+				</data>
+				<data id="dateField" refType="Date">
+					<param value="true" id="isMandatory"/>
+					<param value="today+1y" id="maximumDate"/>
+					<param value="today-1y" id="minimumDate"/>
+				</data>
+				<data id="numberField" refType="Number">
+					<param value="bigDecimal" id="numberType"/>
+					<param value="2147483647" id="maximumNumber"/>
+					<param value="-2147483648" id="minimumNumber"/>
+				</data>
+				<data id="stringField" refType="String">
+					<param value="false" id="isMandatory"/>
+					<param value="4" id="minimumLength"/>
+				</data>
+				<field id="plainField"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</pageSortByCustomiedDataTypesQueryOp>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkBoxFlow>
+
+
+	<htmlProcessor context="checkBoxCtx" id="checkBoxFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="checkBoxIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="checkBoxIndex.jsp" id="checkBoxIndex">
+			<transitions>
+				<htmlTransition id="checkBoxIndex.flow" targetState="checkBoxInFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="checkBoxInFlow.jsp" id="checkBoxInFlow">
+			<transitions>
+				<htmlTransition id="checkBoxInFlow.end" targetState="OK"/>
+				<htmlTransition id="checkBoxInFlow.submit" targetState="AfterSubmitCheckBox"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmitCheckBox.jsp" id="AfterSubmitCheckBox">
+			<transitions>
+				<htmlTransition id="AfterSubmitCheckBox.back" targetState="checkBoxInFlow"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="checkBoxCtx" type="op">
+		<refKColl refId="checkBoxRecord"/>
+	</context>
+
+	<kColl id="checkBoxRecord">
+		<field id="java" value="Java is not Checked"/>
+		<field id="c++" value="Java is not Checked"/>
+		<field id="checkBoxField" value="001"/>
+	</kColl>
+
+</checkBoxFlow>

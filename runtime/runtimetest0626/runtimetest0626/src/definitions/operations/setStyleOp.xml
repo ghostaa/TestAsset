@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setStyleOp>
+
+	<operation id="setStyleOp" context="setStyleCtx" implClass="com.ibm.btt.sample.operation.SetStyleOp"/>
+
+	<context id="setStyleCtx" type="op">
+		<refKColl refId="setStyleRecord"/>
+	</context>
+
+	<kColl id="setStyleRecord">
+		<field id="erro" value="Error message"/>
+		<field id="field1"/>
+		<field id="field2"/>
+		<field id="field3"/>
+		<field id="field4"/>
+		<field id="field5"/>
+		<field id="field6"/>
+		<field id="field7"/>
+		<field id="field8"/>
+		<field id="field9"/>
+		<field id="field10"/>
+		<field id="field11"/>
+		<field id="field12"/>
+		<field id="field13"/>
+		<field id="field14"/>
+		<field id="field15"/>
+		<field id="field16"/>
+		<field id="field17"/>
+		<field id="field18"/>
+		<field id="pageName"/>
+		<kColl id="comboboxOption">
+			<field id="100011445" value="100011445"/>
+			<field id="100234449" value="100234449"/>
+			<field id="100777777" value="100777777"/>
+		</kColl>
+		<refData refId="tableData"/>
+		<refData refId="tableRowDateName"/>
+		<refData refId="treeData"/>
+		<refData refId="file"/>
+		<refData refId="fileupload1"/>
+	</kColl>
+
+	<iColl id="tableData" size="10">
+		<kColl id="tableRow">
+			<field id="index" description="checkBox" value="2010"/>
+			<field id="name" description="checkBox" value="Mackle"/>
+			<field id="gender" description="Combo" value="Girl"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="tableRowDateName">
+		<field id="index" description="checkBox"/>
+		<field id="name" description="checkBox"/>
+		<field id="gender" description="Combo"/>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<kColl id="fileupload1">
+		<refData refId="file"/>
+		<iColl id="receivedFiles">
+			<refData refId="file"/>
+		</iColl>
+		<field id="handler" value="sampleFileHandler"/>
+	</kColl>
+
+	<kColl id="treeData">
+		<kColl id="transfer">
+			<field id="fromAccount"/>
+		</kColl>
+		<kColl id="summary">
+			<field id="balance"/>
+			<kColl id="transfer">
+				<field id="fromAccount"/>
+			</kColl>
+		</kColl>
+		<field id="basicField" value="123"/>
+		<field id="basicField2"/>
+		<data id="requiredBasicField" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+	</kColl>
+
+</setStyleOp>

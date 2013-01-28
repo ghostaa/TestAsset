@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleWidgetNlsTableOp>
+
+	<operation id="simpleWidgetNlsTableOp" context="simpleWidgetNlsTableCtx" implClass="com.ibm.btt.sample.operation.nls.SimpleWidgetNlsTableOp"/>
+
+	<context id="simpleWidgetNlsTableCtx" type="op">
+		<refKColl refId="SimpleWidgetNlsTableKColl"/>
+	</context>
+
+	<kColl id="SimpleWidgetNlsTableKColl" dynamic="false">
+		<refData refId="TableKColl"/>
+		<refData refId="TableDataKColl"/>
+	</kColl>
+
+	<data id="currencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+	</data>
+
+	<data id="dateField" refType="Date">
+		<param value="today+1m" id="maximumDate"/>
+		<param value="dd/MM/yyyy" id="pattern"/>
+	</data>
+
+	<data id="numberField" refType="Number"/>
+
+	<data id="stringField" refType="String">
+		<param value="3" id="minimumLength"/>
+	</data>
+
+	<kColl id="TableKColl" dynamic="false">
+		<kColl id="TypedTable" dynamic="false">
+			<field id="index" value="-1"/>
+			<refData refId="currencyField"/>
+			<refData refId="dateField"/>
+			<refData refId="numberField"/>
+			<refData refId="stringField"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="TableDataKColl" dynamic="false">
+		<iColl id="TypedTableDataList" size="10">
+			<kColl id="TypedTable" dynamic="false">
+				<field id="index" value="-1"/>
+				<refData refId="currencyField"/>
+				<refData refId="dateField"/>
+				<refData refId="numberField"/>
+				<refData refId="stringField"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</simpleWidgetNlsTableOp>

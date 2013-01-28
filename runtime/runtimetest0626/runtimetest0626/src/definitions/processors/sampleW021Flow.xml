@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sampleW021Flow>
+
+
+	<htmlProcessor context="sampleW021Ctx" id="sampleW021Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="sampleW021"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="sampleW021.jsp" id="sampleW021">
+			<transitions>
+				<htmlTransition id="sampleW021.submit" targetState="AfterSubmitSampleW021"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmitSampleW021.jsp" id="AfterSubmitSampleW021">
+			<transitions>
+				<htmlTransition id="AfterSubmitSampleW021.end" targetState="OK"/>
+				<htmlTransition id="AfterSubmitSampleW021.back" targetState="sampleW021"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="sampleW021Ctx" type="op">
+		<refKColl refId="sampleW021Record"/>
+	</context>
+
+	<kColl id="sampleW021Record">
+		<data id="sampleW021Data" value="MTS is the IBM approved method for accessing the IBM internal network when working remotely." refType="String"/>
+		<data id="emptyW021" value="" refType="String"/>
+		<data id="enterW021" value="MTSistheIBMapprovedmethodforaccessingtheIB
+Minternalnetworkwhenworkingremotely." refType="String"/>
+		<field id="001"/>
+	</kColl>
+
+</sampleW021Flow>

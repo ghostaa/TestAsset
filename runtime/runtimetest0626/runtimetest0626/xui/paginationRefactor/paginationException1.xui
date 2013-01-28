@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Cp1252"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="8,4,455,148" dataBinding="{'projectName':'BPRuntimeTestDojo16','ctxType':'proc','ctxFile':'pagiExceptionTestFlow','ctxName':'pagiExceptionTestCtx'}" isRuleDirty="false">
+  <styles>
+    <css file="../../WebContent/css/dijit/message.css"/>
+  </styles>
+  <container name="Form" id="form">
+    <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    <widget name="Label" styleClass="warnMessage" id="label" text="1: Pagination table requested technical operaiton does not exist!">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Button" action="flowEvent=NEXT" id="button" text="next">
+      <gridData horizontalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Label" styleClass="warnMessage" id="label01" text="Delete &quot;PAG_paginationRefactor$paginationException1_FTInfo.xml&quot; firstly!">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Label" styleClass="errorMessage" id="label02" text="***">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+    </widget>
+    <widget name="Table" paginationParams="{'timeout':'6000','operationNameForPagination':'','rowsPerPage':'10','directPagination':'false','paginationType':'AlphaNonePageNumber','errorOutputMapping':'','normalOutputMapping':'','nextInputMapping':'','initialInputMapping':'','paginationWhenLoading':'true','previousInputMapping':'','directInputMapping':''}" dataNameForList="FTInfoTableIColl" isPageable="true" id="FTInfo">
+      <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" cell="{&quot;width&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1},&quot;height&quot;:{&quot;containerSize&quot;:-1,&quot;displaySize&quot;:-1,&quot;fixedSize&quot;:-1,&quot;type&quot;:&quot;AutoSize&quot;,&quot;relativeSize&quot;:-1}}" horizontalIndentType="FixedSize"/>
+      <column widthType="FixedSize" dataName="cid" width="80" relativeWidth="1" text="ID">
+        <tableColumnAlignment>16777216</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cgender" width="80" relativeWidth="1" text="GENDER">
+        <tableColumnAlignment>16777216</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cfloatField" width="80" relativeWidth="1" text="CFF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="ctotalStayTime" width="80" relativeWidth="1" text="CTSTF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+      <column widthType="FixedSize" dataName="cbigIntegerField" width="80" relativeWidth="1" text="CBIF">
+        <tableColumnAlignment>131072</tableColumnAlignment>
+      </column>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules/>
+  <groups/>
+</XUI>

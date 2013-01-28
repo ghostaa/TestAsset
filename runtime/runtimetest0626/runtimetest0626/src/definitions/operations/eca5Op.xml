@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eca5Op>
+
+	<operation id="eca5Op" context="eca5Ctx" implClass="com.ibm.btt.sample.operation.eca.Eca5Op"/>
+
+	<context id="eca5Ctx" type="op">
+		<refKColl refId="eca5KColl"/>
+	</context>
+
+	<kColl id="eca5KColl">
+		<field id="submitFlag" value="0"/>
+		<refData refId="CurrencyKColl"/>
+		<refData refId="DateKColl"/>
+		<refData refId="NumberKColl"/>
+		<refData refId="StringKColl"/>
+	</kColl>
+
+	<kColl id="CurrencyKColl" dynamic="false">
+		<data id="currency1" description="full parameters" refType="Currency">
+			<param value="2" id="decimalPlaces"/>
+		</data>
+		<data id="currency2" refType="Currency"/>
+		<data id="currency3" refType="Currency">
+			<param value="CNY" id="currency"/>
+			<param value="bigDecimal" id="numberType"/>
+			<param value="false" id="isMandatory"/>
+		</data>
+	</kColl>
+
+	<kColl id="DateKColl" dynamic="false">
+		<data id="date1" refType="Date">
+			<param value="false" id="isMandatory"/>
+			<param value="2222-02-22" id="maximumDate"/>
+			<param value="2001-01-01" id="minimumDate"/>
+			<param value="MM/dd/yyyy" id="pattern"/>
+		</data>
+		<data id="date2" refType="Date"/>
+		<data id="date3" refType="Date">
+			<param value="false" id="isMandatory"/>
+			<param value="yyyy-MM-dd" id="pattern"/>
+			<param value="2222-12-31" id="maximumDate"/>
+		</data>
+	</kColl>
+
+	<kColl id="NumberKColl" dynamic="false">
+		<data id="number1" refType="Number">
+			<param value="bigDecimal" id="numberType"/>
+			<param value="4" id="html:decimalPlaces"/>
+			<param value="false" id="isMandatory"/>
+			<param value="###,###.0000" id="html:pattern"/>
+			<param value="-1048576.1234" id="minimumNumber"/>
+			<param value="1048576.5678" id="maximumNumber"/>
+		</data>
+		<data id="number2" refType="Number"/>
+		<data id="number3" refType="Number">
+			<param value="0" id="html:decimalPlaces"/>
+			<param value="###,###,###" id="html:pattern"/>
+		</data>
+		<data id="number4" refType="Number">
+			<param value="-1" id="minimumNumber"/>
+			<param value="1024" id="maximumNumber"/>
+		</data>
+		<data id="number5" refType="Number">
+			<param value="false" id="isMandatory"/>
+		</data>
+		<data id="number6" refType="Number"/>
+		<data id="number7" refType="Number">
+			<param value="double" id="numberType"/>
+		</data>
+		<data id="number8" refType="Number">
+			<param value="float" id="numberType"/>
+		</data>
+	</kColl>
+
+	<kColl id="StringKColl" dynamic="false">
+		<data id="string1" refType="String">
+			<param value="false" id="isMandatory"/>
+			<param value="16" id="maximumLength"/>
+			<param value="6" id="minimumLength"/>
+			<param value="[A-Z]*" id="regExp"/>
+		</data>
+		<data id="string2" refType="String"/>
+		<data id="string3" refType="String">
+			<param value="2" id="minimumLength"/>
+		</data>
+	</kColl>
+
+</eca5Op>

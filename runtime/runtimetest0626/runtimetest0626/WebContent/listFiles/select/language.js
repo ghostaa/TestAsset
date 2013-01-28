@@ -1,0 +1,4 @@
+{
+	"Spanish":"Spanish",
+	"Chinese":"Chinese",
+}

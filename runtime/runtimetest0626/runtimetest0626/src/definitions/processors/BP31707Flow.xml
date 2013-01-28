@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BP31707Flow>
+
+
+	<htmlProcessor context="BP31707Ctx01" id="BP31707Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="BP31707Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="BP31706.jsp" id="BP31706">
+			<transitions>
+				<htmlTransition id="BP31706.SUBMIT" targetState="BP31707"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="BP31707.jsp" id="BP31707">
+			<transitions>
+				<htmlTransition id="BP31707.REVIEW" targetState="BP31706"/>
+				<htmlTransition id="BP31707.FINISH" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="BP31707Op" id="BP31707Op" type="operation">
+			<transitions>
+				<htmlTransition id="BP31707Op.OK" targetState="BP31706"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="BP31707Op" implClass="com.ibm.btt.test.pmrs.ops.TreeDataGeneOp"/>
+
+	<context id="BP31707Ctx01" type="proc">
+		<refKColl refId="BP31707Record01"/>
+	</context>
+
+	<kColl id="BP31707Record01">
+		<field id="BP31707Field"/>
+		<treeModel id="root">
+		</treeModel>
+	</kColl>
+
+</BP31707Flow>

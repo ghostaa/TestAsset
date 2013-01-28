@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_c-OrUMZxEeGPLo1RsrSAOA">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_c-OrUsZxEeGPLo1RsrSAOA">
+    <contexts xmi:type="transaction:Context" xmi:id="_fmwz0MZxEeGPLo1RsrSAOA" tag="context" id="AjaxExceptionTestCtx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_fmwz0cZxEeGPLo1RsrSAOA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_fmwz0sZxEeGPLo1RsrSAOA" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_fmwz08ZxEeGPLo1RsrSAOA" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_fmwz1MZxEeGPLo1RsrSAOA" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_fmwz1cZxEeGPLo1RsrSAOA" key="_fmwz0sZxEeGPLo1RsrSAOA" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_fmwz1sZxEeGPLo1RsrSAOA" key="_fmwz0cZxEeGPLo1RsrSAOA" value="AjaxExceptionTestCtx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_gFKAAMZxEeGPLo1RsrSAOA" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_gFKAAcZxEeGPLo1RsrSAOA" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_iJeoMMZxEeGPLo1RsrSAOA" key="_gFKAAcZxEeGPLo1RsrSAOA" value="AjaxExceptionTestRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_c-OrU8ZxEeGPLo1RsrSAOA">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_g6gToMZxEeGPLo1RsrSAOA" tag="kColl" id="AjaxExceptionTestRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_g6gTocZxEeGPLo1RsrSAOA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_g6gTosZxEeGPLo1RsrSAOA" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_g6gTo8ZxEeGPLo1RsrSAOA" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_g6gTpMZxEeGPLo1RsrSAOA" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_g6gTpcZxEeGPLo1RsrSAOA" key="_g6gTo8ZxEeGPLo1RsrSAOA" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_g6gTpsZxEeGPLo1RsrSAOA" key="_g6gTocZxEeGPLo1RsrSAOA" value="AjaxExceptionTestRecord"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_mR-uoMZxEeGPLo1RsrSAOA" tag="field" id="AjaxExceptionTestField">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mR-uocZxEeGPLo1RsrSAOA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mR-uosZxEeGPLo1RsrSAOA" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mR-uo8ZxEeGPLo1RsrSAOA" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mR-upMZxEeGPLo1RsrSAOA" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mR-upcZxEeGPLo1RsrSAOA" key="_mR-uo8ZxEeGPLo1RsrSAOA" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mR-upsZxEeGPLo1RsrSAOA" key="_mR-uocZxEeGPLo1RsrSAOA" value="AjaxExceptionTestField"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_c-OrVMZxEeGPLo1RsrSAOA"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_c-OrVcZxEeGPLo1RsrSAOA">
+    <operations xmi:type="transaction:Operation" xmi:id="_eqG-UMZxEeGPLo1RsrSAOA" tag="operation" id="AjaxExceptionTestOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_eqG-UcZxEeGPLo1RsrSAOA" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_eqG-UsZxEeGPLo1RsrSAOA" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_eqG-U8ZxEeGPLo1RsrSAOA" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_eqG-VMZxEeGPLo1RsrSAOA" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_eqG-VcZxEeGPLo1RsrSAOA" key="_eqG-U8ZxEeGPLo1RsrSAOA" value="com.ibm.btt.sample.operation.AjaxExceptionTest"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_eqG-VsZxEeGPLo1RsrSAOA" key="_eqG-UcZxEeGPLo1RsrSAOA" value="AjaxExceptionTestOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_jF-ssMZxEeGPLo1RsrSAOA" key="_eqG-UsZxEeGPLo1RsrSAOA" value="AjaxExceptionTestCtx"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_c-OrVsZxEeGPLo1RsrSAOA"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_c-OrV8ZxEeGPLo1RsrSAOA"/>
+</transaction:WorkProduct>

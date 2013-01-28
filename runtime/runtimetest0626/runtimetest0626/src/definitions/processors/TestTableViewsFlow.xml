@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestTableViewsFlow>
+
+
+	<htmlProcessor context="TestTableViewsCtx" id="TestTableViewsFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SelectForListOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="SelectForListOp" id="SelectForListOp" type="operation">
+			<transitions>
+				<htmlTransition id="SelectForListOp.event0" targetState="TestTableViews"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="TestTableViews.jsp" id="TestTableViews">
+			<transitions>
+				<htmlTransition id="TestTableViews.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestTableViewsCtx" type="op">
+		<refKColl refId="SelectListExistBlackRecord"/>
+	</context>
+
+	<kColl id="SelectListExistBlackRecord">
+		<refData refId="SelectListExistBlackList"/>
+		<refData refId="SelectListRecord"/>
+	</kColl>
+
+	<iColl id="SelectListExistBlackList">
+		<kColl id="SelectListExistBlackRecord01">
+			<field id="LableForList"/>
+			<field id="ValueForList"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="SelectListRecord">
+		<field id="SelectOne"/>
+		<field id="SelectTwo"/>
+	</kColl>
+
+</TestTableViewsFlow>

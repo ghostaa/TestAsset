@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InitPaginationDataOp>
+
+	<operation id="InitPaginationDataOp" context="InitPaginationDataCtx01" implClass="com.ibm.btt.application.op.InitPaginationData"/>
+
+	<context id="InitPaginationDataCtx01" type="op">
+		<refKColl refId="InitPaginationDataRecord01"/>
+	</context>
+
+	<kColl id="InitPaginationDataRecord01">
+		<refData refId="AccountTypeForSelect"/>
+		<refData refId="LocaltionForComboBox"/>
+		<iColl id="AllAccountList" size="100">
+			<refData refId="AccountInfoRecord"/>
+		</iColl>
+		<refData refId="AccountInfoList"/>
+	</kColl>
+
+</InitPaginationDataOp>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageextendFlow>
+
+
+	<htmlProcessor context="imageextendCtx" id="imageextendFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="imageextend"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="imageextend.jsp" id="imageextend">
+			<transitions>
+				<htmlTransition id="imageextend.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="imageextendCtx" type="op">
+		<refKColl refId="imageextendRecord"/>
+	</context>
+
+	<kColl id="imageextendRecord">
+		<field id="imageLocationPath" value="img/png1.png"/>
+		<field id="imageHttpPath" value="http://localhost:9080/runtimetest0626/img/png3.png"/>
+		<field id="imageABLocationPath" value="c://aa.jpg"/>
+		<field id="png" value="img/differentImage/Bomb1.PNG"/>
+		<field id="bmp" value="img/differentImage/Bomb3.bmp"/>
+		<field id="jpg" value="img/Bomb15.jpg"/>
+	</kColl>
+
+</imageextendFlow>

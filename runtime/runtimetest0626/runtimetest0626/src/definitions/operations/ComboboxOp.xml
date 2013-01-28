@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComboboxOp>
+
+	<operation id="ComboboxOp" context="ComboboxCtx" implClass="com.ibm.btt.sample.operation.ComboboxOperation"/>
+
+	<context id="ComboboxCtx" type="op">
+		<refKColl refId="selectRecord"/>
+	</context>
+
+	<kColl id="selectRecord">
+		<refData refId="selectDataList"/>
+		<refData refId="selectData"/>
+		<refData refId="selectName6"/>
+	</kColl>
+
+	<iColl id="selectDataList" size="3">
+		<kColl id="selectKColl">
+			<field id="labelselect" value="this is label"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="selectData">
+		<kColl id="selectKColl">
+			<field id="select1" value="selectA"/>
+			<field id="select2" value="selectB"/>
+		</kColl>
+		<field id="selectName" value="o3"/>
+		<field id="selectName2"/>
+		<field id="selectName3"/>
+		<field id="selectName4" value="M"/>
+		<field id="selectName5"/>
+	</kColl>
+
+	<field id="selectName6" value="o3"/>
+
+</ComboboxOp>

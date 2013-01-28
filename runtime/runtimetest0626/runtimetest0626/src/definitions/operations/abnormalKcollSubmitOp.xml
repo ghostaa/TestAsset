@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abnormalKcollSubmitOp>
+
+	<operation id="abnormalKcollSubmitOp" context="abnormalKcollSubmitCtx" implClass="com.ibm.btt.sample.operation.AbnormalKcollSubmitOp"/>
+
+	<context id="abnormalKcollSubmitCtx" type="op">
+		<refKColl refId="abnormalKcollSubmitRecord"/>
+	</context>
+
+	<kColl id="abnormalKcollSubmitRecord">
+		<kColl id="abnormalKColl" dynamic="false">
+			<refData refId="userComments"/>
+			<refData refId="dftCurrencyField"/>
+			<refData refId="dftDateField"/>
+			<refData refId="dftNumberField"/>
+			<refData refId="dftStringField"/>
+		</kColl>
+		<kColl id="abnormalKCollCp" dynamic="false">
+			<refData refId="userComments"/>
+		</kColl>
+	</kColl>
+
+	<field id="userComments" value="USER"/>
+
+	<data id="dftCurrencyField" refType="Currency"/>
+
+	<data id="dftDateField" refType="Date"/>
+
+	<data id="dftNumberField" refType="Number"/>
+
+	<data id="dftStringField" refType="String"/>
+
+</abnormalKcollSubmitOp>

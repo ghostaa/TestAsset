@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectFlow>
+
+
+	<htmlProcessor context="selectCtx" id="selectFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="selectIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="selectInFlow.jsp" id="selectInFlow">
+			<transitions>
+				<htmlTransition id="selectInFlow.submit" targetState="AfterSubmitSelectInFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="selectIndex.jsp" id="selectIndex">
+			<transitions>
+				<htmlTransition id="selectIndex.flow" targetState="combodataOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="combodataOp" id="combodataOp" type="operation">
+			<transitions>
+				<htmlTransition id="combodataOp.ok" outputMapFmt="combodataOp.ok_OutputFmt" targetState="selectInFlow"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmitSelectInFlow.jsp" id="AfterSubmitSelectInFlow">
+			<transitions>
+				<htmlTransition id="AfterSubmitSelectInFlow.end" targetState="OK"/>
+				<htmlTransition id="AfterSubmitSelectInFlow.back" targetState="selectInFlow"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="selectCtx" type="op">
+		<refKColl refId="selectRecord"/>
+	</context>
+
+	<kColl id="selectRecord">
+		<refData refId="selectDataList"/>
+		<refData refId="selectData"/>
+		<data id="selectData01" refType="String"/>
+	</kColl>
+
+	<iColl id="selectDataList" size="3">
+		<kColl id="selectKColl">
+			<field id="labelselect" value="this is label"/>
+			<field id="valueselect" value="this is value"/>
+			<field id="labelanother" value="abc"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="selectData">
+		<kColl id="selectKColl">
+			<field id="select1" value="selectA"/>
+			<field id="select2" value="selectB"/>
+		</kColl>
+		<field id="selectName" value="Spanish"/>
+		<field id="selectName2"/>
+		<field id="selectName3"/>
+		<field id="selectName4" value="M"/>
+		<field id="selectName5"/>
+	</kColl>
+
+	<fmtDef id="selectIndex.flow_InputFmt">
+		<mapperConverterExpression>
+			<map from="selectDataList.*.labelselect" to="labelselect"/>
+			<map from="selectDataList.*.valueselect" to="valueselect"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="combodataOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="labelselect" to="selectDataList.*.labelselect" append="false"/>
+			<map from="valueselect" to="selectDataList.*.valueselect" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</selectFlow>

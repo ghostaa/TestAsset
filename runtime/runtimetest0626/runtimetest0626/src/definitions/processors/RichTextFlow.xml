@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RichTextFlow>
+
+
+	<htmlProcessor context="RichTextCtx" id="RichTextFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="RichText"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="RichText.jsp" id="RichText">
+			<transitions>
+				<htmlTransition id="RichText.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="RichTextCtx" type="op">
+		<refKColl refId="RichTextRecord"/>
+	</context>
+
+	<kColl id="RichTextRecord">
+		<field id="basicField"/>
+		<field id="basicField2"/>
+		<data id="requiredBasicField" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+	</kColl>
+
+</RichTextFlow>

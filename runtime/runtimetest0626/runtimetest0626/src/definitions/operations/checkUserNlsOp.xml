@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkUserNlsOp>
+
+	<operation id="checkUserNlsOp" context="checkUserNlsCtx" implClass="com.ibm.btt.sample.operation.nls.CheckUserNlsOp"/>
+
+	<context id="checkUserNlsCtx" type="op">
+		<refKColl refId="checkUserNlsKcoll"/>
+	</context>
+
+	<kColl id="checkUserNlsKcoll">
+		<field id="username"/>
+		<field id="age"/>
+		<kColl id="nlsTypeKcoll">
+			<field id="key"/>
+			<field id="list"/>
+			<field id="map"/>
+			<field id="params"/>
+		</kColl>
+		<field id="nlsType"/>
+		<field id="nlsResult"/>
+	</kColl>
+
+</checkUserNlsOp>

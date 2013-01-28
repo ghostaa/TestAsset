@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msgManageDijitProcFlow>
+
+
+	<htmlProcessor context="msgManageDijitProcCtx" id="msgManageDijitProcFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="msgDijitPage1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="mapper/finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="msgDijitPage1.jsp" id="msgDijitPage1">
+			<transitions>
+				<htmlTransition id="msgDijitPage1.ok" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="msgManageDijitProcCtx" type="op">
+		<refKColl refId="msgManageDijitData"/>
+	</context>
+
+	<kColl id="msgManageDijitData" dynamic="false">
+		<refData refId="msKColl"/>
+		<refData refId="daKColl"/>
+		<refData refId="mlKColl"/>
+		<refData refId="mpKColl"/>
+		<refData refId="mnKColl"/>
+		<refData refId="mrKColl"/>
+	</kColl>
+
+	<kColl id="msKColl" dynamic="false">
+		<field id="nonNlsMsgFromServer" value="This is a sample non-nls message from server side."/>
+		<field id="comboValue" value="[Select a message level!]"/>
+		<kColl id="comboOptions">
+			<field id="INFO"/>
+			<field id="WARN"/>
+			<field id="ERROR"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="daKColl" dynamic="false">
+		<field id="nlsMsgFromServer" value="%nls.NlsSupportTestResourse/_2Tip_Message1"/>
+	</kColl>
+
+	<kColl id="mlKColl" dynamic="false">
+		<field id="combo2Value" value="[Change Level!]"/>
+		<kColl id="combo2Options">
+			<field id="INFO"/>
+			<field id="WARN"/>
+			<field id="ERROR"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="mpKColl" dynamic="false">
+		<field id="nlsMsgFromServer" value="%nls.NlsSupportTestResourse/_2Tip_Message2"/>
+	</kColl>
+
+	<kColl id="mnKColl" dynamic="false">
+		<field id="nlsMsgFromServer" value="%nls.NlsSupportTestResourse/_2Tip_Message1"/>
+	</kColl>
+
+	<kColl id="mrKColl" dynamic="false">
+		<field id="displayApproach" value="normal"/>
+		<field id="messageLevel" value="INFO"/>
+		<field id="messageContents" value="This is a sample message contents!"/>
+	</kColl>
+
+</msgManageDijitProcFlow>

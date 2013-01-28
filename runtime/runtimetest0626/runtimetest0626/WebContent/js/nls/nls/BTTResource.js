@@ -1,0 +1,16 @@
+({
+"Sample":"For example",
+"LABEL03":"Third i18n Label",
+"LABEL02":"Second i18n Label",
+"LABEL01":"First i18n Label",
+"CLIENT_NLS_NEW_API":"Cient NLS with new API",
+"clientName":"clientName",
+"MultiLine":"hello,\r\n\r\n\r\n flowers\!",
+"DrawHelp":"Help",
+"LABEL09":"1",
+"space button":"\   space Text1\r\nspace Text2",
+"SERVER_NLS_NEW_API":"Server NLS with new API",
+"totalBalance":"totalBalance",
+"LABEL05":"\   Fifth i18n Label\r\nqerqerw",
+"I18N_MESSAGE":"Dear user {name}, your age is {age}, welcome to use BTT\!",
+"LABEL04":"Forth i18n Label"})

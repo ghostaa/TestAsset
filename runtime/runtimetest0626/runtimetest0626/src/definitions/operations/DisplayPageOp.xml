@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayPageOp>
+
+	<operation id="DisplayPageOp" context="DisplayPageCtx" implClass="com.ibm.btt.sample.operation.DisplayPageOperation"/>
+
+	<context id="DisplayPageCtx" type="op">
+		<refKColl refId="DisplayPageRecord"/>
+	</context>
+
+	<kColl id="DisplayPageRecord" dynamic="true">
+		<field id="pageName"/>
+		<kColl id="TextKColl" dynamic="false">
+			<field id="txtPlainField"/>
+			<data id="txtCurrencyField" refType="Currency">
+				<param value="USD" id="currency"/>
+			</data>
+			<data id="txtDateField" refType="Date">
+				<param value="today+1m" id="maximumDate"/>
+			</data>
+			<data id="txtNumberField" refType="Number"/>
+			<data id="txtStringField" refType="String">
+				<param value="6" id="maximumLength"/>
+			</data>
+			<data id="txtStringPassword" refType="String">
+				<param value="8" id="maximumLength"/>
+				<param value="3" id="minimumLength"/>
+			</data>
+			<data id="txtCurrencyDisabled" refType="Currency">
+				<param value="USD" id="currency"/>
+			</data>
+			<data id="txtDateReadOnly" refType="Date">
+				<param value="today+1d" id="maximumDate"/>
+			</data>
+		</kColl>
+		<iColl id="DisplayPageList">
+			<kColl id="DisplayPageRecord01">
+				<field id="DisplayPageField"/>
+			</kColl>
+		</iColl>
+		<data id="DisplayPageData" refType="Number">
+			<param value="9999999" id="maximumNumber"/>
+			<param value="1000000" id="minimumNumber"/>
+		</data>
+		<data id="DisplayPageData01" refType="String">
+			<param id="maximumLength"/>
+		</data>
+	</kColl>
+
+</DisplayPageOp>

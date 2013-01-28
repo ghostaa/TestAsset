@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widthAndheightFlow>
+
+
+	<htmlProcessor context="widthAndheightCtx" id="widthAndheightFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="widthAndHeightIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" type="final" finalPage="finalPage.jsp" id="OK"/>
+
+		<htmlState type="page" typeIdInfo="widthAndHeightIndex.jsp" id="widthAndHeightIndex">
+			<transitions>
+				<htmlTransition id="widthAndHeightIndex.comboBox" targetState="wh_comboBox"/>
+				<htmlTransition id="widthAndHeightIndex.image" targetState="wh_image"/>
+				<htmlTransition id="widthAndHeightIndex.table" targetState="wh_table"/>
+				<htmlTransition id="widthAndHeightIndex.button" targetState="wh_button"/>
+				<htmlTransition id="widthAndHeightIndex.richTextEditor" targetState="wh_richTextEditor"/>
+				<htmlTransition id="widthAndHeightIndex.textArea" targetState="wh_textArea"/>
+				<htmlTransition id="widthAndHeightIndex.radiobutton" targetState="wh_radiobutton"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="wh_comboBox.jsp" id="wh_comboBox">
+			<transitions>
+				<htmlTransition id="wh_comboBox.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="wh_image.jsp" id="wh_image"/>
+
+		<htmlState type="page" typeIdInfo="wh_table.jsp" id="wh_table"/>
+
+		<htmlState type="page" typeIdInfo="wh_button.jsp" id="wh_button"/>
+
+		<htmlState type="page" typeIdInfo="wh_richTextEditor.jsp" id="wh_richTextEditor"/>
+
+		<htmlState type="page" typeIdInfo="wh_textArea.jsp" id="wh_textArea"/>
+
+		<htmlState type="page" typeIdInfo="wh_radiobutton.jsp" id="wh_radiobutton"/>
+	</htmlProcessor>
+
+	<context id="widthAndheightCtx" type="op">
+		<refKColl refId="widthAndheightRecord"/>
+	</context>
+
+	<kColl id="widthAndheightRecord">
+		<data id="widthAndheightData" refType="String"/>
+		<refData refId="tableList" alias="b">
+			<param value="3" id="size"/>
+		</refData>
+		<refData refId="tableRow" alias="a"/>
+	</kColl>
+
+	<kColl id="tableRow">
+		<refData refId="sampleDataString01" alias="ref_sampleString011">
+			<param value="blue" id="value"/>
+		</refData>
+		<refData refId="sampleField01" alias="ref_sampleField011">
+			<param value="new" id="value"/>
+		</refData>
+		<refData refId="sampleDataNumber01" alias="ref_sampleNumber011">
+			<param value="111" id="value"/>
+		</refData>
+		<refData refId="sampleDataDate01" alias="ref_sampleDate011">
+			<param value="2012-02-12" id="value"/>
+		</refData>
+		<refData refId="sampleDataCurrency01" alias="ref_sampleCurrency011">
+			<param value="11" id="value"/>
+		</refData>
+	</kColl>
+
+	<iColl id="tableList">
+		<refData refId="tableRow"/>
+	</iColl>
+
+	<data id="sampleDataString01" value="abc" refType="String"/>
+
+	<field id="sampleField01" description="a" value="name"/>
+
+	<data id="sampleDataNumber01" value="1.2221" refType="Number"/>
+
+	<data id="sampleDataCurrency01" refType="Currency"/>
+
+	<data id="sampleDataDate01" refType="Date"/>
+
+</widthAndheightFlow>

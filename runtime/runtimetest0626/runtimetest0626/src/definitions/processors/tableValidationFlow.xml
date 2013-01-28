@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableValidationFlow>
+
+
+	<htmlProcessor context="tableValidationCtx" id="tableValidationFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="tableValidationOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="TableValidation.jsp" id="TableValidation">
+			<transitions>
+				<htmlTransition id="TableValidation.end" targetState="OK"/>
+				<htmlTransition id="TableValidation.multiSelectWithPage" targetState="multiSelectResultWithoutPagination"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableValidationOp" id="tableValidationOp" type="operation">
+			<transitions>
+				<htmlTransition id="tableValidationOp.init" targetState="TableValidation"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="multiSelectResultWithoutPagination.jsp" id="multiSelectResultWithoutPagination"/>
+	</htmlProcessor>
+
+	<operation id="tableValidationOp" implClass="com.ibm.btt.sample.operation.TableValidation"/>
+
+	<context id="tableValidationCtx" type="op">
+		<refKColl refId="tablev"/>
+	</context>
+
+	<kColl id="tablev">
+		<refData refId="StringTableRow"/>
+		<iColl id="StringTableData" size="5">
+			<refData refId="StringTableRow"/>
+		</iColl>
+		<refData refId="selList"/>
+		<refData refId="comboList"/>
+		<refData refId="selectTableDate"/>
+		<field id="st"/>
+		<iColl id="DateTableData" size="3">
+			<refData refId="DateTableRow"/>
+		</iColl>
+		<refData refId="selectTableDate2"/>
+		<iColl id="NumberTableData" size="4">
+			<refData refId="NumberTableRow"/>
+		</iColl>
+		<iColl id="CurrencyTableData" size="4">
+			<refData refId="CurrencyTableRow"/>
+		</iColl>
+		<refData refId="NumberTableRow"/>
+		<refData refId="CurrencyTableRow"/>
+		<refData refId="DateTableRow"/>
+	</kColl>
+
+	<kColl id="StringTableRow">
+		<refData refId="requiredBasicField"/>
+		<refData refId="lengthofStringTestField"/>
+		<refData refId="regExpr"/>
+		<field id="sId"/>
+		<field id="cId"/>
+		<field id="chk"/>
+		<refData refId="NumberInString"/>
+		<refData refId="DateInString"/>
+		<refData refId="CurrencyInString"/>
+		<refData refId="hiddenString"/>
+		<refData refId="hiddenCurrency"/>
+		<refData refId="hiddenDate"/>
+		<refData refId="hiddenNumber"/>
+	</kColl>
+
+	<iColl id="selList" size="3">
+		<kColl id="de">
+			<field id="label"/>
+			<field id="value"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="comboList" size="3">
+		<kColl id="option">
+			<field id="label"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="NumberTableRow">
+		<refData refId="DefaultNumberTypeofNumberField"/>
+		<refData refId="ByteofNumberField"/>
+		<refData refId="ShortofNumberField"/>
+		<refData refId="IntegerofNumberField"/>
+		<refData refId="LongNumberField"/>
+		<refData refId="DoubleNumberField"/>
+		<refData refId="FloatNumberField"/>
+		<refData refId="DecimalofNumberField"/>
+		<refData refId="maxMinIntegerofNumberField"/>
+		<refData refId="maxMinDecimalofNumberField"/>
+		<refData refId="formatWithLocaleofNumberField"/>
+		<refData refId="formatWithPatternofNumberField1"/>
+		<refData refId="formatWithPatternofNumberField2"/>
+		<refData refId="formatWithPatternofNumberField3"/>
+		<refData refId="formatWithDecimalPlacesofNumberField1"/>
+		<refData refId="formatWithDecimalPlacesofNumberField2"/>
+		<refData refId="DoubleFiledForSorting"/>
+	</kColl>
+
+	<kColl id="CurrencyTableRow">
+		<refData refId="basicCurrencyofCurrencyField"/>
+		<refData refId="CNYCurrencyofCurrencyField"/>
+		<refData refId="FRFCurrencyofCurrencyField"/>
+		<refData refId="IntegerofCurrencyField"/>
+		<refData refId="DecimalofCurrencyField"/>
+		<refData refId="maxMinIntegerofCurrencyField"/>
+		<refData refId="maxMinDecimalofCurrencyField"/>
+		<refData refId="decimalPlacesAndLimit"/>
+		<refData refId="ByteofCurrencyField"/>
+		<refData refId="ShortofCurrencyField"/>
+		<refData refId="LongCurrencyField"/>
+		<refData refId="DoubleCurrencyField"/>
+		<refData refId="FloatCurrencyField"/>
+		<refData refId="formatWithDecimalPlacesofCurrencyField1"/>
+		<refData refId="formatWithDecimalPlacesofCurrencyField2"/>
+	</kColl>
+
+	<kColl id="DateTableRow">
+		<refData refId="maxMinofDateTestField1"/>
+		<refData refId="maxMinofDateTestField2"/>
+		<refData refId="maxMinofDateTestField3"/>
+		<refData refId="maxMinofDateTestField4"/>
+		<refData refId="nullPatternofDateTestField"/>
+		<refData refId="basicfDateTestField"/>
+	</kColl>
+
+	<data id="NumberInString" refType="Number"/>
+
+	<data id="hiddenNumber" refType="Number"/>
+
+	<data id="hiddenString" refType="String"/>
+
+	<data id="hiddenDate" refType="Date"/>
+
+	<data id="hiddenCurrency" refType="Currency"/>
+
+	<data id="DateInString" refType="Date">
+		<param value="yyyy-MM-dd" id="pattern"/>
+	</data>
+
+	<data id="CurrencyInString" refType="Currency"/>
+
+	<data id="requiredBasicField" refType="String"/>
+
+	<data id="lengthofStringTestField" refType="String">
+		<param value="6" id="maximumLength"/>
+		<param value="3" id="minimumLength"/>
+	</data>
+
+	<data id="regExpr" refType="String">
+		<param value="\\\&quot;&apos;" id="regExp"/>
+	</data>
+
+	<data id="maxMinofDateTestField1" refType="Date">
+		<param value="yyyy-MM-dd" id="pattern"/>
+		<param value="today+7d" id="maximumDate"/>
+		<param value="today-7d" id="minimumDate"/>
+	</data>
+
+	<data id="maxMinofDateTestField2" refType="Date">
+		<param value="MM-dd-yyyy" id="pattern"/>
+		<param value="today+7d" id="maximumDate"/>
+		<param value="today-7d" id="minimumDate"/>
+	</data>
+
+	<data id="maxMinofDateTestField3" refType="Date">
+		<param value="true" id="isMandatory"/>
+		<param value="MM-dd-yyyy" id="pattern"/>
+		<param value="1979-10-11" id="minimumDate"/>
+		<param value="1979-10-21" id="maximumDate"/>
+	</data>
+
+	<data id="maxMinofDateTestField4" refType="Date">
+		<param value="true" id="isMandatory"/>
+		<param value="MM-dd-yyyy" id="pattern"/>
+		<param value="today-1y1m7d" id="minimumDate"/>
+		<param value="today+1y1m7d" id="maximumDate"/>
+	</data>
+
+	<data id="nullPatternofDateTestField" refType="Date"/>
+
+	<data id="basicfDateTestField" refType="Date">
+		<param value="true" id="isMandatory"/>
+		<param value="MM-dd-yyyy" id="pattern"/>
+	</data>
+
+	<data id="DefaultNumberTypeofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="ByteofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="ShortofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="IntegerofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="100" id="maximumNumber"/>
+		<param value="10" id="minimumNumber"/>
+		<param value="###,###.###" id="html:pattern"/>
+	</data>
+
+	<data id="LongNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="DoubleNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="double" id="numberType"/>
+		<param value="100.999" id="maximumNumber"/>
+		<param value="10.999" id="minimumNumber"/>
+		<param value="###,###.###" id="html:pattern"/>
+	</data>
+
+	<data id="FloatNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="float" id="numberType"/>
+		<param value="1" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="DecimalofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="4" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="maxMinIntegerofNumberField" refType="Number">
+		<param value="100" id="maximumNumber"/>
+		<param value="10" id="minimumNumber"/>
+	</data>
+
+	<data id="maxMinDecimalofNumberField" refType="Number">
+		<param value="100.99" id="maximumNumber"/>
+		<param value="10.99" id="minimumNumber"/>
+		<param value="float" id="numberType"/>
+		<param value="3" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="formatWithLocaleofNumberField" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="4" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="formatWithPatternofNumberField1" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="###,###.###" id="html:pattern"/>
+	</data>
+
+	<data id="formatWithPatternofNumberField2" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="####,####.0000" id="html:pattern"/>
+	</data>
+
+	<data id="formatWithPatternofNumberField3" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="##.00" id="html:pattern"/>
+	</data>
+
+	<data id="formatWithDecimalPlacesofNumberField1" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="double" id="numberType"/>
+		<param value="###,###.###" id="html:pattern"/>
+		<param value="4" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="formatWithDecimalPlacesofNumberField2" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="2" id="html:decimalPlaces"/>
+	</data>
+
+	<data id="basicCurrencyofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="CNYCurrencyofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="100" id="maximumNumber"/>
+		<param value="10" id="minimumNumber"/>
+	</data>
+
+	<data id="FRFCurrencyofCurrencyField" refType="Currency">
+		<param value="FRF" id="currency"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="maxMinIntegerofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="100" id="maximumNumber"/>
+		<param value="10" id="minimumNumber"/>
+	</data>
+
+	<data id="maxMinDecimalofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="100.99" id="maximumNumber"/>
+		<param value="10.99" id="minimumNumber"/>
+		<param value="bigDecimal" id="numberType"/>
+	</data>
+
+	<data id="decimalPlacesAndLimit" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="100.99" id="maximumNumber"/>
+		<param value="10.99" id="minimumNumber"/>
+		<param value="4" id="decimalPlaces"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="ByteofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="ShortofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="100" id="maximumNumber"/>
+		<param value="10" id="minimumNumber"/>
+	</data>
+
+	<data id="IntegerofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<data id="LongCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="10" id="minimumNumber"/>
+		<param value="100" id="maximumNumber"/>
+	</data>
+
+	<data id="DoubleCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="10" id="minimumNumber"/>
+		<param value="100" id="maximumNumber"/>
+		<param value="double" id="numberType"/>
+	</data>
+
+	<data id="FloatCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="float" id="numberType"/>
+		<param value="1" id="decimalPlaces"/>
+	</data>
+
+	<data id="DecimalofCurrencyField" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="bigDecimal" id="numberType"/>
+		<param value="4" id="decimalPlaces"/>
+	</data>
+
+	<data id="formatWithDecimalPlacesofCurrencyField1" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="4" id="decimalPlaces"/>
+	</data>
+
+	<data id="formatWithDecimalPlacesofCurrencyField2" refType="Currency">
+		<param value="USD" id="currency"/>
+		<param value="true" id="isMandatory"/>
+		<param value="1" id="decimalPlaces"/>
+	</data>
+
+	<iColl id="selectTableDate2">
+		<kColl id="std2">
+			<refData refId="requiredBasicField"/>
+			<refData refId="lengthofStringTestField"/>
+			<refData refId="regExpr"/>
+			<refData refId="NumberInString"/>
+			<refData refId="DateInString"/>
+			<refData refId="CurrencyInString"/>
+			<field id="sId"/>
+			<field id="cId"/>
+			<field id="chk"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="selectTableDate">
+		<refData refId="StringTableRow"/>
+	</iColl>
+
+	<data id="DoubleFiledForSorting" refType="Number">
+		<param value="true" id="isMandatory"/>
+		<param value="double" id="numberType"/>
+	</data>
+
+</tableValidationFlow>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabPaneFlow>
+
+
+	<htmlProcessor context="TabPaneCtx01" id="TabPaneFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="tabbedPaneTabbedPane10"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="tabbedPane/TabbedPane10.jsp" id="tabbedPaneTabbedPane10">
+			<transitions>
+				<htmlTransition id="tabbedPaneTabbedPane10.event4" targetState="tabbedPaneSelectActionOp"/>
+				<htmlTransition id="tabbedPaneTabbedPane10.event0" targetState="tabbedPaneTabbedPane04"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="tabbedPane/TabbedPane03.jsp" id="tabbedPane/TabbedPane03">
+			<transitions>
+				<htmlTransition id="tabbedPane/TabbedPane03.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="tabbedPane/TabbedPane04.jsp" id="tabbedPaneTabbedPane04">
+			<transitions>
+				<htmlTransition id="tabbedPaneTabbedPane04.event0" targetState="tabbedPaneTabbedPane05"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tabbedPaneSelectActionOp" id="tabbedPaneSelectActionOp" type="operation">
+			<transitions>
+				<htmlTransition id="tabbedPaneSelectActionOp.event0" outputMapFmt="tabbedPaneSelectActionOp.event0_OutputFmt" targetState="tabbedPane/TabbedPane03"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="FireExitEventOp" id="FireExitEventOp" type="operation">
+			<transitions>
+				<htmlTransition id="FireExitEventOp.return" targetState="tabbedPaneTabbedPane10"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="tabbedPane/TabbedPane05.jsp" id="tabbedPaneTabbedPane05">
+			<transitions>
+				<htmlTransition id="tabbedPaneTabbedPane05.event0" targetState="FireExitEventOp"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TabPaneCtx01" type="op">
+		<refKColl refId="TabPaneRecord"/>
+	</context>
+
+	<kColl id="TabPaneRecord">
+		<field id="userID"/>
+		<field id="PageName"/>
+		<kColl id="selectItems">
+			<field id="query" value="query"/>
+			<field id="open_account" value="open_account"/>
+			<field id="depos_trans" value="deposit_transfer"/>
+		</kColl>
+		<field id="display"/>
+		<field id="selectOp"/>
+		<refData refId="tableData"/>
+		<field id="transfer_from"/>
+		<field id="transfer_to"/>
+		<refData refId="fundtableData"/>
+		<refData refId="stocktableData"/>
+		<field id="amount"/>
+		<field id="deposit_amount"/>
+		<field id="userName"/>
+		<field id="cardType"/>
+		<field id="TheIndex01"/>
+		<field id="TheIndex02"/>
+		<field id="TheIndex03"/>
+		<field id="TheIndex04"/>
+		<field id="Reveal" value="ABCDEFG"/>
+	</kColl>
+
+	<iColl id="fundtableData" size="6">
+		<kColl id="fundtableRow">
+			<field id="index"/>
+			<field id="fundNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="stocktableData">
+		<kColl id="stocktableRow">
+			<field id="index"/>
+			<field id="stockNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="tableData" size="5">
+		<kColl id="tableRow">
+			<field id="index"/>
+			<field id="cardNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="tabbedPaneSelectActionOp.event0_OutputFmt">
+		<mapperConverterExpression>
+			<map from="tableData" to="tableData" append="false"/>
+			<map from="fundtableData" to="fundtableData" append="false"/>
+			<map from="stocktableData" to="stocktableData" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TabPaneFlow>

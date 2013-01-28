@@ -1,0 +1,157 @@
+<%@ jet package="demo.translated" imports="java.util.* com.ibm.btt.tools.common.report.*" %>
+<% ReportElementsModel report = (ReportElementsModel)argument;%>
+<html>
+    <head>
+        <META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" href="report.css"/>
+        <title><%=report.getReportName()%> Report</title>
+        <script language="javascript">
+            function outliner () {
+                oMe = window.event.srcElement
+                //get child element
+                var child = document.all[event.srcElement.getAttribute("child",false)];
+                //if child element exists, expand or collapse it.
+                if (null != child)
+                    child.className = child.className == "collapsed" ? "expanded" : "collapsed";
+            }
+            
+            function Unicode2oStr(str){
+				var re=/&#[\da-fA-F]{1,5};/ig;
+				var arr=str.match(re);
+				if(arr==null)return("");
+				for(var i=0;i<arr.length;i++){
+				  arr[i]=String.fromCharCode(arr[i].replace(/[&#;]/g,""));
+				}
+				return(arr.toString().replace(/,/g,""))
+			} 
+
+            function changepic(obj, index) {
+                var check = obj.src.toLowerCase();
+                var tr = document.getElementById("tr"+index);
+                if (check.lastIndexOf("report_plus.gif") != -1)
+                {
+                    obj.src = "report_minus.gif"
+                    tr.style.display = "";
+                }
+                else
+                {
+                    obj.src = "report_plus.gif"
+                    tr.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body topmargin="0" leftmargin="0" rightmargin="0" >
+    
+        <!-- 25394 h1 _locID="ConversionReport"><%=report.getReportName()%> - Report</h1 -->
+        
+        <% List<ReportSection> sectionList = report.getReportList(); %>
+        <% for ( int i = sectionList.size() - 1; i >= 0 ; i-- ) { %>
+        	<% ReportSection section = sectionList.get(i); %> 
+	        <p><span class="note">
+	        <b>Report Time:</b>  <%=section.getDataTime()%><br/>
+	        </span></p>
+        	  <%int imported = 0, notImported = 0, packageErrors =0, packageWarnings =0;%>
+       		  <table cellpadding="2" cellspacing="0" width="98%" border="1" bordercolor="white" class="infotable">
+		            <tr>
+		                <td nowrap="1" width="34%" class="header">File Name</td>
+		                <td nowrap="1" width="15%" class="header">Status</td>
+		                <td nowrap="1" width="13%" class="header">Errors</td>
+		                <td nowrap="1" width="13%" class="header">Warnings</td>
+		                <td nowrap="1" width="25%" class="header">Time</td>
+		            </tr>
+	                <% List<ReportEvent> list = section.getReportItems(); %>
+	                <% String cacheSourceName = "first_sys_var_"; %>
+	                <% int errors = 0, warnings = 0, start = 0; %>
+	                <% for (int j = 0; j <= list.size(); ++j) { %>
+						<%ReportEvent event = null;%>
+						<%if (j == list.size()) { %>
+						<%	event = new ReportEvent();%>
+						<%	event.setSource("last_sys_var_");%>
+						<%	event.setEventLevel("2");%>
+						<% }else {%>
+							<%event = (ReportEvent) list.get(j);%>
+						<% } %>	                     
+	                    <% if (!cacheSourceName.equals(event.getSource())) {%>
+	                        <% if (!cacheSourceName.equals("first_sys_var_")) {%>
+		                        <tr class="row" <%=(errors > 0)?"style=\"color:#ff0000\"":""%>>
+				                    <td class="content">
+				                    	<% if ( (errors + warnings) > 0 ) { %>
+				                        	<IMG border="0" alt="expand/collapse section" class="expandable" height="11" onclick="changepic(this,'<%=i%>_<%=j%>')" src="Report_Plus.gif" width="9">
+				                        <% } %>
+				                        <%=cacheSourceName%>
+				                    </td>
+				                    <td class="content">
+				                    <%if(errors > 0) {%>
+				                    	<%notImported++;%>
+				                        Fail
+				                    <% } else { %>
+				                       <%imported++;%>
+				                       Success
+				                    <% } %>
+				                    </td>
+				                    <td class="content"><%=errors%></td>
+				                    <td class="content"><%=warnings%></td>
+				                    <td class="content"><%=list.get(j-1).getImportTime()%></td>
+					            </tr>
+					            <!-- 25375 -->
+					            <% if ( (errors + warnings) > 0 ) { %>
+			                    <tr id = "tr<%=i%>_<%=j%>" style="display:none" bgcolor="#ffffff">
+					                    <td colspan="7">
+					                        <table width="97%" border="1" bordercolor="#dcdcdc" rules="cols" class="issuetable">
+					                            <tr><td class="issuetitle" colspan="7" >Problems - <%=cacheSourceName%>:</td></tr>
+					                                <% for (int k = start; k < j && k < list.size(); ++k) {%>
+    												  	<% if ("1".equals(list.get(k).getEventLevel())) {%>
+					                                     <tr>
+						                                     <td class="issuewarning" style="border-bottom:solid 1 lightgray">
+						                                         <IMG border="0" alt="expand/collapse section" height="16"  src="warn.gif" width="16">
+				                        					     </IMG><%=ReportElementsModel.encodeHtml(list.get(k).getDescription())%>
+						                                     </td>
+					                                     </tr>
+					                                    <%} else if("2".equals(list.get(k).getEventLevel())) {%>
+					                                    <tr>
+						                                    <td class="issueerror" style="border-bottom:solid 1 lightgray">
+						                                        <IMG border="0" alt="expand/collapse section" height="16"  src="error.gif" width="16">
+				                        						</IMG><%=ReportElementsModel.encodeHtml(list.get(k).getDescription())%>
+						                                    </td>
+					                                    </tr>
+					                                    <% } %>
+    												<% } %>
+					                        </table>
+					                   </td>
+					            </tr>
+					            <%}%>
+		                    <% } %>
+			                <% cacheSourceName = event.getSource(); %>
+			                <% packageErrors += errors;%>
+			                <% packageWarnings += warnings;%>
+		                    <% errors = warnings = 0; %>
+		                    <% start = j; %>
+			             <% } %>
+	                     
+	                     <% int level = java.lang.Integer.parseInt(event.getEventLevel()); %>
+	                     <% if (level == 1) {%>
+	                         <% warnings++; %>
+	                     <% }else if (level == 2) {%>
+	                         <% errors++; %>
+	                     <% }%>
+	                    
+	                               
+	                <% } %>
+		                <tr valign="top">
+				            <td class="foot">
+				                
+				            </td>
+				            <td class="foot">
+						        Success: <%=imported%><BR/>
+						        Fail: <%=notImported%>
+				            </td>
+				            <td class="foot"><%=packageErrors%></td>
+				            <td class="foot"><%=packageWarnings%></td>
+				            <td class="foot"></td>
+				        </tr>  
+       			 </table>
+           <% } %>
+    </body>
+</html>
+

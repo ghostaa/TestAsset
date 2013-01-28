@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AjaxTestOp>
+
+	<operation id="AjaxTestOp" context="AjaxTestCtx" implClass="com.ibm.btt.sample.operation.AjaxTest"/>
+
+	<context id="AjaxTestCtx" type="op">
+		<refKColl refId="ajaxt"/>
+	</context>
+
+	<kColl id="ajaxt">
+		<field id="s"/>
+		<field id="rad"/>
+		<field id="default" value="1"/>
+		<field id="textA"/>
+		<field id="e1" value="e1"/>
+		<field id="e2" value="e2"/>
+		<field id="e3" value="e3"/>
+		<field id="e4" value="e4"/>
+		<field id="e5" value="e5"/>
+		<field id="e6" value="e6"/>
+		<field id="depId"/>
+		<refData refId="depList"/>
+	</kColl>
+
+	<iColl id="depList">
+		<kColl id="de">
+			<field id="label"/>
+			<field id="value"/>
+		</kColl>
+	</iColl>
+
+</AjaxTestOp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<treeAjaxOp>
+
+	<operation id="treeAjaxOp" context="treeAjaxCtx" implClass="com.ibm.btt.sample.operation.TreeAjaxOperation"/>
+
+	<context id="treeAjaxCtx" type="op">
+		<refKColl refId="treeAjaxRecord"/>
+	</context>
+
+	<kColl id="treeAjaxRecord">
+		<field id="basicField"/>
+		<field id="basicField2"/>
+		<data id="requiredBasicField" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+	</kColl>
+
+</treeAjaxOp>

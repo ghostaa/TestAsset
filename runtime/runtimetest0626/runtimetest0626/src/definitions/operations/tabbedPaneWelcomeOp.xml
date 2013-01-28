@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tabbedPaneWelcomeOp>
+
+	<operation id="tabbedPaneWelcomeOp" context="tabbedPaneWelcomeCtx" implClass="com.ibm.btt.sample.operation.TabbedPaneWelcomeOperation"/>
+
+	<context id="tabbedPaneWelcomeCtx" type="op">
+		<refKColl refId="tabbedPaneWelcomeRecord"/>
+	</context>
+
+	<kColl id="tabbedPaneWelcomeRecord">
+		<field id="pageName"/>
+		<field id="userID" value="aaa"/>
+		<kColl id="selectItems">
+			<field id="query" value="query"/>
+			<field id="open_account" value="open_account"/>
+			<field id="depos_trans" value="deposit_transfer"/>
+		</kColl>
+		<field id="display"/>
+	</kColl>
+
+</tabbedPaneWelcomeOp>

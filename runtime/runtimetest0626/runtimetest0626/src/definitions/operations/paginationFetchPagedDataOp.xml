@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paginationFetchPagedDataOp>
+
+	<operation id="paginationFetchPagedDataOp" context="paginationFetchPagedDataCtx" implClass="com.ibm.btt.test.pagirefact.PaginationFetchPagedDataOp"/>
+
+	<context id="paginationFetchPagedDataCtx" type="op">
+		<refKColl refId="PaginationFetchPagedDataKColl"/>
+	</context>
+
+	<kColl id="params">
+		<data id="cid" refType="Integer"/>
+		<data id="cname" refType="String"/>
+		<data id="cgender" refType="Boolean"/>
+		<data id="cbirthdayBegin" refType="XMLGregorianCalendar"/>
+		<data id="cbirthdayEnd" refType="XMLGregorianCalendar"/>
+	</kColl>
+
+	<kColl id="rowData" dynamic="false">
+		<data id="cid" refType="Integer"/>
+		<data id="cname" refType="String"/>
+		<data id="cgender" refType="Boolean"/>
+		<data id="cbirthDay" refType="XMLGregorianCalendar"/>
+		<data id="csalary" refType="Currency"/>
+		<data id="caccountCount" refType="Byte"/>
+		<data id="cage" refType="Short"/>
+		<data id="clastAccessTime" refType="Long"/>
+		<data id="ctotalStayTime" refType="Duration"/>
+		<data id="cphotoData" refType="ByteArray"/>
+		<data id="cfloatField" refType="Float"/>
+		<data id="cdoubleField" refType="Double"/>
+		<data id="cbigIntegerField" refType="BigInteger"/>
+		<data id="cbigDecimalField" refType="BigDecimal"/>
+		<field id="cplainField"/>
+	</kColl>
+
+	<iColl id="InfoTableIColl" size="0">
+		<refData refId="rowData"/>
+	</iColl>
+
+	<kColl id="PaginationFetchPagedDataKColl">
+		<refData refId="params"/>
+		<data id="pageHook" value="0" refType="Double"/>
+		<data id="rowsPerPage" refType="Byte"/>
+		<kColl id="return">
+			<field id="errorInfo"/>
+			<iColl id="tableResultList" size="0">
+				<refData refId="rowData"/>
+			</iColl>
+			<kColl id="paginationCtrlData" dynamic="false">
+				<data id="havePrevious" refType="Boolean"/>
+				<data id="haveNext" refType="Boolean"/>
+				<data id="pageHook" refType="Double"/>
+				<data id="totalRowNumber" refType="Integer"/>
+			</kColl>
+		</kColl>
+	</kColl>
+
+</paginationFetchPagedDataOp>

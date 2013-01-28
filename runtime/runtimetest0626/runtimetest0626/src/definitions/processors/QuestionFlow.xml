@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuestionFlow>
+
+
+	<htmlProcessor context="QuestionCtx" id="QuestionFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ECA_Question"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState id="" type="final"/>
+
+		<htmlState type="page" typeIdInfo="eca/ECA_Question.jsp" id="ECA_Question">
+			<transitions>
+				<htmlTransition id="ECA_Question.event0" targetState=""/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="QuestionCtx" type="op">
+		<refKColl refId="QuestionRecord"/>
+	</context>
+
+	<kColl id="QuestionRecord">
+		<field id="QuestionField"/>
+	</kColl>
+
+</QuestionFlow>

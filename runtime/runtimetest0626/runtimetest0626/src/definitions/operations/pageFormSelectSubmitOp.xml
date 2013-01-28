@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageFormSelectSubmitOp>
+
+	<operation id="pageFormSelectSubmitOp" context="pageFormSelectSubmitCtx" implClass="com.ibm.btt.test.pageSort.PageFormSelectSubmit"/>
+
+	<context id="pageFormSelectSubmitCtx" type="op">
+		<refKColl refId="pageSortSingleOpData"/>
+	</context>
+
+	<kColl id="item">
+		<field id="index"/>
+		<data id="currencyField" refType="Currency"/>
+		<data id="dateField" refType="Date"/>
+		<data id="numberField" refType="Number"/>
+		<data id="stringField" refType="String"/>
+		<field id="plainField"/>
+	</kColl>
+
+	<kColl id="pageSortSingleOpData" dynamic="false">
+		<field id="start" value="0"/>
+		<field id="count" value="15"/>
+		<field id="sort"/>
+		<field id="numRows" value="50"/>
+		<kColl id="queryConditions" dynamic="false">
+			<field id="aFilter" value="%"/>
+			<field id="bFilter" value="0"/>
+		</kColl>
+		<refData refId="item"/>
+		<iColl id="items" size="1">
+			<refData refId="item"/>
+		</iColl>
+		<refData refId="selectTableDate"/>
+	</kColl>
+
+	<iColl id="selectTableDate" size="1">
+		<refData refId="item"/>
+	</iColl>
+
+</pageFormSelectSubmitOp>

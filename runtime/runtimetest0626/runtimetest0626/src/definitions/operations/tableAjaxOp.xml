@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableAjaxOp>
+
+	<!-- This operation gets from the context a field containing the page wanted to be shown to the user and places it in the right place to make Composer understand that this page must be shown. -->
+	<!-- Operation definition -->
+	<operation id="tableAjaxOp" context="tableAjaxCtx" implClass="com.ibm.btt.sample.operation.TableAjaxOperation"/>
+
+	<context id="tableAjaxCtx" type="op">
+		<refKColl refId="tableAjaxRecord"/>
+	</context>
+
+	<kColl id="tableAjaxRecord">
+		<refData refId="tableData"/>
+		<refData refId="genderCombo"/>
+		<refData refId="positionSelect"/>
+		<refData refId="tableRowDateName"/>
+		<refData refId="singleTableRowName"/>
+	</kColl>
+
+	<iColl id="tableData" size="100">
+		<kColl id="tableRow">
+			<refData refId="positionSelect"/>
+			<refData refId="tempIColl"/>
+			<field id="index" description="checkBox"/>
+			<field id="gender" description="Combo"/>
+			<field id="position"/>
+			<data id="name" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="Num" refType="Number">
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="salary" refType="Currency">
+				<param value="USD" id="currency"/>
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="birth" refType="Date">
+				<param value="true" id="isMandatory"/>
+				<param value="MM-dd-yyyy" id="pattern"/>
+				<param value="today-7d" id="minimumDate"/>
+				<param value="today+7d" id="maximumDate"/>
+			</data>
+			<field id="Num2"/>
+			<field id="imageField"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="tempIColl" size="10">
+		<field id="position" value="123123"/>
+	</iColl>
+
+	<kColl id="genderCombo">
+		<field id="male" value="male"/>
+		<field id="female" value="female"/>
+	</kColl>
+
+	<kColl id="positionSelect">
+		<field id="PM" value="PM"/>
+		<field id="GL" value="GL"/>
+		<field id="SE" value="SE"/>
+	</kColl>
+
+	<kColl id="singleTableRowName">
+		<refData refId="positionSelect"/>
+		<refData refId="tempIColl"/>
+		<field id="index" description="checkBox"/>
+		<field id="gender" description="Combo"/>
+		<field id="position"/>
+		<data id="name" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Num" refType="Number">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="salary" refType="Currency">
+			<param value="USD" id="currency"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="birth" refType="Date">
+			<param value="true" id="isMandatory"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="today+7d" id="maximumDate"/>
+		</data>
+		<field id="Num2"/>
+		<field id="imageField"/>
+	</kColl>
+
+	<kColl id="tableRowDateName">
+		<field id="index" description="checkBox"/>
+		<field id="gender" value="Combo"/>
+		<field id="position"/>
+		<data id="name" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Num" refType="Number">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="salary" refType="Currency">
+			<param value="USD" id="currency"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="birth" refType="Date">
+			<param value="true" id="isMandatory"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="today+7d" id="maximumDate"/>
+		</data>
+		<field id="Num2"/>
+	</kColl>
+
+</tableAjaxOp>

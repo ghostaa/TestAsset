@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableAbnormalICollFlow>
+
+
+	<htmlProcessor context="tableAbnormalICollCtx" id="tableAbnormalICollFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="tableAbnormalICollOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="TableAbnormalIColl.jsp" id="TableAbnormalIColl">
+			<transitions>
+				<htmlTransition id="TableAbnormalIColl.submit" targetState="TableAbnormalICollAfterSubmitted"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableAbnormalICollOp" id="tableAbnormalICollOp" type="operation">
+			<transitions>
+				<htmlTransition id="tableAbnormalICollOp.init" targetState="TableAbnormalIColl"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="TableAbnormalICollAfterSubmitted.jsp" id="TableAbnormalICollAfterSubmitted">
+			<transitions>
+				<htmlTransition id="TableAbnormalICollAfterSubmitted.end" targetState="OK"/>
+				<htmlTransition id="TableAbnormalICollAfterSubmitted.back" targetState="TableAbnormalIColl"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="tableAbnormalICollOp" implClass="com.ibm.btt.sample.operation.TableAbnormalIColl"/>
+
+	<context id="tableAbnormalICollCtx" type="op">
+		<refKColl refId="tableAbnormalICollRecord"/>
+	</context>
+
+	<kColl id="tableAbnormalICollRecord">
+		<refData refId="tableData"/>
+		<refData refId="tableRow"/>
+		<refData refId="depList"/>
+		<refData refId="comboList"/>
+		<field id="rad"/>
+		<field id="default"/>
+		<treeModel id="tableAbnormalICollTreeModel">
+			<treeModel id="tableAbnormalICollTreeModel01" label="Str" value="Street">
+				<treeModel id="tableAbnormalICollTreeModel03" label="%nls.BTTResource/Sample" value="Room001">
+				</treeModel>
+				<treeModel id="tableAbnormalICollTreeModel04" label="Rom" value="Room002">
+				</treeModel>
+			</treeModel>
+			<treeModel id="tableAbnormalICollTreeModel02" label="%nls.BTTResource/LABEL03" value="Tent
+Tent">
+			</treeModel>
+		</treeModel>
+		<field id="TreeModel"/>
+		<treeModel id="tableAbnormalICollTreeModel05">
+		</treeModel>
+	</kColl>
+
+	<kColl id="tableRow">
+		<refData refId="tString"/>
+		<refData refId="tNumber"/>
+		<refData refId="tCurrency"/>
+		<refData refId="dateField"/>
+		<refData refId="depList"/>
+		<refData refId="comboList"/>
+		<field id="comId"/>
+		<field id="depId"/>
+		<field id="tev"/>
+		<field id="Image" value="img/040518flashlee01.jpg"/>
+	</kColl>
+
+	<data id="tString" refType="String"/>
+
+	<data id="tNumber" refType="Number"/>
+
+	<data id="tCurrency" refType="Currency"/>
+
+	<data id="dateField" refType="Date">
+		<param value="dd/MM/yyyy" id="pattern"/>
+	</data>
+
+	<iColl id="tableData" size="3">
+		<refData refId="tableRow"/>
+	</iColl>
+
+	<kColl id="depList">
+		<field id="PM" value="PM"/>
+		<field id="GL" value="GL"/>
+		<field id="SE" value="SE"/>
+	</kColl>
+
+	<kColl id="comboList">
+		<field id="PM"/>
+		<field id="GL"/>
+		<field id="SE"/>
+	</kColl>
+
+	<field id="Image" value="img/040518flashlee01.jpg"/>
+
+</tableAbnormalICollFlow>

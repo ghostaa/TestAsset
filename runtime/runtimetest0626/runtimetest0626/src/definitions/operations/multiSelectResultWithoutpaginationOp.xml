@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<multiSelectResultWithoutpaginationOp>
+
+	<operation id="multiSelectResultWithoutpaginationOp" context="multiSelectResultWithoutpaginationCtx" implClass="com.ibm.btt.sample.operation.MultiSelectResultWithoutPagination"/>
+
+	<context id="multiSelectResultWithoutpaginationCtx" type="op">
+		<refKColl refId="tablev"/>
+	</context>
+
+	<kColl id="tablev">
+		<iColl id="StringTableData" size="5">
+			<refData refId="StringTableRow"/>
+		</iColl>
+		<field id="st"/>
+		<refData refId="StringTableRow"/>
+		<refData refId="selList"/>
+		<refData refId="comboList"/>
+		<refData refId="selectTableDate"/>
+	</kColl>
+
+	<iColl id="selectTableDate">
+		<refData refId="StringTableRow"/>
+	</iColl>
+
+	<kColl id="StringTableRow">
+		<refData refId="requiredBasicField"/>
+		<refData refId="lengthofStringTestField"/>
+		<refData refId="regExpr"/>
+		<field id="sId"/>
+		<field id="cId"/>
+		<field id="chk"/>
+		<refData refId="NumberInString"/>
+		<refData refId="DateInString"/>
+		<refData refId="CurrencyInString"/>
+		<refData refId="hiddenString"/>
+		<refData refId="hiddenCurrency"/>
+		<refData refId="hiddenDate"/>
+		<refData refId="hiddenNumber"/>
+	</kColl>
+
+	<data id="NumberInString" refType="Number"/>
+
+	<data id="hiddenNumber" refType="Number"/>
+
+	<data id="hiddenString" refType="String"/>
+
+	<data id="hiddenDate" refType="Date"/>
+
+	<data id="hiddenCurrency" refType="Currency"/>
+
+	<data id="DateInString" refType="Date">
+		<param value="yyyy-MM-dd" id="pattern"/>
+	</data>
+
+	<data id="CurrencyInString" refType="Currency"/>
+
+	<data id="requiredBasicField" refType="String"/>
+
+	<data id="lengthofStringTestField" refType="String">
+		<param value="6" id="maximumLength"/>
+		<param value="3" id="minimumLength"/>
+	</data>
+
+	<data id="regExpr" refType="String">
+		<param value="\\\&quot;&apos;" id="regExp"/>
+	</data>
+
+	<iColl id="selList" size="3">
+		<kColl id="de">
+			<field id="label"/>
+			<field id="value"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="comboList" size="3">
+		<kColl id="option">
+			<field id="label"/>
+		</kColl>
+	</iColl>
+
+</multiSelectResultWithoutpaginationOp>

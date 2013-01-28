@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_paginationRefactorpaginationTFTable_TFInfo>
+
+	<operation id="PAG_paginationRefactor$paginationTFTable_TFInfo" context="PAG_paginationRefactor$paginationTFTable_TFInfoCtx">
+		<refFormat refId="errorOutputMapping" name="errorOutputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+	</operation>
+
+	<context id="PAG_paginationRefactor$paginationTFTable_TFInfoCtx" type="op">
+		<refKColl refId="PAG_paginationRefactor$paginationTFTable_TFInfoRecord"/>
+	</context>
+
+	<kColl id="PAG_paginationRefactor$paginationTFTable_TFInfoRecord">
+		<kColl id="tableProperties">
+			<field id="tableId" value="TFInfo"/>
+			<field id="dataName" value="TFData"/>
+			<field id="dataNameForList" value="TFInfoTableIColl"/>
+			<field id="rowsPerPage" value="20"/>
+			<field id="operationNameForPagination" value="paginationFetchPagedDataByPageNumOp"/>
+			<field id="directPagination" value="true"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="cid,cname,cage,cgender,cbirthDay,csalary,cbigIntegerField,cfloatField,caccountCount,cbigDecimalField,cdoubleField,ctotalStayTime,clastAccessTime,cplainField"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="errorOutputMapping">
+		<mapperConverterExpression>
+			<map from="return.errorInfo" to="paginationData.paginationTFTable_TFInfo_errMsg"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="return.tableResultList.*.cid" to="TFInfoTableIColl.*.cid" append="false"/>
+			<map from="return.tableResultList.*.cname" to="TFInfoTableIColl.*.cname" append="ignore"/>
+			<map from="return.tableResultList.*.cgender" to="TFInfoTableIColl.*.cgender" append="ignore"/>
+			<map from="return.tableResultList.*.cbirthDay" to="TFInfoTableIColl.*.cbirthDay" append="ignore"/>
+			<map from="return.tableResultList.*.csalary" to="TFInfoTableIColl.*.csalary" append="ignore"/>
+			<map from="return.tableResultList.*.caccountCount" to="TFInfoTableIColl.*.caccountCount" append="ignore"/>
+			<map from="return.tableResultList.*.cage" to="TFInfoTableIColl.*.cage" append="ignore"/>
+			<map from="return.tableResultList.*.clastAccessTime" to="TFInfoTableIColl.*.clastAccessTime" append="ignore"/>
+			<map from="return.tableResultList.*.ctotalStayTime" to="TFInfoTableIColl.*.ctotalStayTime" append="ignore"/>
+			<map from="return.tableResultList.*.cfloatField" to="TFInfoTableIColl.*.cfloatField" append="ignore"/>
+			<map from="return.tableResultList.*.cdoubleField" to="TFInfoTableIColl.*.cdoubleField" append="ignore"/>
+			<map from="return.tableResultList.*.cbigIntegerField" to="TFInfoTableIColl.*.cbigIntegerField" append="ignore"/>
+			<map from="return.tableResultList.*.cbigDecimalField" to="TFInfoTableIColl.*.cbigDecimalField" append="ignore"/>
+			<map from="return.tableResultList.*.cplainField" to="TFInfoTableIColl.*.cplainField" append="ignore"/>
+			<map from="return.paginationCtrlData.pageNumber" to="paginationData.paginationTFTable_TFInfo_pageNumber"/>
+			<map from="return.paginationCtrlData.totalRowNumber" to="paginationData.paginationTFTable_TFInfo_totalRowNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_paginationRefactorpaginationTFTable_TFInfo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageRetreverOp>
+
+	<operation id="pageRetreverOp" context="pageRetreverCtx" implClass="com.ibm.btt.test.pageSort.PageRetriever"/>
+
+	<context id="pageRetreverCtx" type="op">
+		<refKColl refId="pageRetrieverData"/>
+	</context>
+
+	<kColl id="item">
+		<field id="index"/>
+		<data id="currencyField" refType="Currency"/>
+		<data id="dateField" refType="Date"/>
+		<data id="numberField" refType="Number"/>
+		<data id="stringField" refType="String"/>
+		<field id="plainField"/>
+	</kColl>
+
+	<kColl id="pageRetrieverData" dynamic="false">
+		<field id="start" value="0"/>
+		<field id="count" value="15"/>
+		<field id="sort"/>
+		<field id="numRows" value="50"/>
+		<kColl id="queryConditions" dynamic="false">
+			<field id="aFilter" value="%"/>
+			<field id="bFilter" value="0"/>
+		</kColl>
+		<refData refId="item"/>
+		<iColl id="items" size="1">
+			<refData refId="item"/>
+		</iColl>
+	</kColl>
+
+</pageRetreverOp>

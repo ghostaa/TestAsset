@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>keyboard test</title>
+<script>
+	var djConfig =  {
+		baseUrl:"js/dojo/",
+		locale : "en-us",
+		isDebug: true,
+		parseOnLoad: true
+	};
+</script>
+
+<script type="text/javascript" src="js/dojo/dojo_BTT.js"></script>
+<script>
+function _debugKeyState(evt){
+		console.log("evt: " + evt.type);
+		console.log("keyCode : " + evt.keyCode);
+		console.log("altKey : " + evt.altKey);
+		console.log("ctrlKey : " + evt.ctrlKey);
+		console.log("shiftKey : " + evt.shiftKey);
+		console.log("metaKey : " + evt.metaKey);
+		dojo.stopEvent(evt);
+}
+
+dojo.addOnLoad(function(){
+	console.log("keyboard test");
+	dojo.connect(dojo.body(), "onkeydown", function(evt){
+		_debugKeyState(evt);
+	});
+	dojo.connect(dojo.body(), "onkeypress", function(evt){
+		_debugKeyState(evt);
+	});
+	dojo.connect(dojo.body(), "onkeyup", function(evt){
+		_debugKeyState(evt);
+	});
+});
+</script>
+</head>
+<body>
+<label>key board test: see details in the console</label>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableTestFlow>
+
+
+	<htmlProcessor context="tableTestCtx" id="tableTestFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="InitTableOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="table.jsp" id="table">
+			<transitions>
+				<htmlTransition id="table.end" targetState="OK"/>
+				<htmlTransition id="table.edit" targetState="editTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="editTable.jsp" id="editTable">
+			<transitions>
+				<htmlTransition id="editTable.back" targetState="table"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="InitTableOp" id="InitTableOp" type="operation">
+			<transitions>
+				<htmlTransition id="InitTableOp.init" targetState="table"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="InitTableOp" implClass="com.ibm.btt.sample.operation.InitTableOperation"/>
+
+	<context id="tableTestCtx" type="op">
+		<refKColl refId="tableTestRecord"/>
+	</context>
+
+	<kColl id="tableTestRecord">
+		<refData refId="tableData"/>
+		<refData refId="genderComboList"/>
+		<refData refId="positionSelect"/>
+		<refData refId="tableRowDateName"/>
+		<refData refId="singleTableRowName"/>
+	</kColl>
+
+	<iColl id="tableData" size="100">
+		<kColl id="tableRow">
+			<refData refId="positionSelect"/>
+			<refData refId="tempIColl"/>
+			<field id="index" description="checkBox"/>
+			<field id="gender" description="Combo"/>
+			<field id="position"/>
+			<data id="name" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="Num" refType="Number">
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="salary" refType="Currency">
+				<param value="USD" id="currency"/>
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="birth" refType="Date">
+				<param value="true" id="isMandatory"/>
+				<param value="MM-dd-yyyy" id="pattern"/>
+				<param value="today-7d" id="minimumDate"/>
+				<param value="today+7d" id="maximumDate"/>
+			</data>
+			<field id="Num2"/>
+			<field id="imageField"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="positionSelect">
+		<field id="PM" value="PM"/>
+		<field id="GL" value="GL"/>
+		<field id="SE" value="SE"/>
+	</kColl>
+
+	<kColl id="tableRowDateName">
+		<field id="index" description="checkBox"/>
+		<field id="gender" value="Combo"/>
+		<field id="position"/>
+		<data id="name" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Num" refType="Number">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="salary" refType="Currency">
+			<param value="USD" id="currency"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="birth" refType="Date">
+			<param value="true" id="isMandatory"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="today+7d" id="maximumDate"/>
+		</data>
+		<field id="Num2"/>
+	</kColl>
+
+	<kColl id="singleTableRowName">
+		<refData refId="positionSelect"/>
+		<refData refId="tempIColl"/>
+		<field id="index" description="checkBox"/>
+		<field id="gender" description="Combo"/>
+		<field id="position"/>
+		<data id="name" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="Num" refType="Number">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="salary" refType="Currency">
+			<param value="USD" id="currency"/>
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="birth" refType="Date">
+			<param value="true" id="isMandatory"/>
+			<param value="MM-dd-yyyy" id="pattern"/>
+			<param value="today-7d" id="minimumDate"/>
+			<param value="today+7d" id="maximumDate"/>
+		</data>
+		<field id="imageField"/>
+		<field id="Num2"/>
+	</kColl>
+
+	<iColl id="tempIColl" size="10">
+		<field id="position" value="123123"/>
+	</iColl>
+
+	<iColl id="genderComboList" size="2">
+		<kColl id="genderCombo">
+			<field id="labelselect" value="male"/>
+		</kColl>
+	</iColl>
+
+</tableTestFlow>

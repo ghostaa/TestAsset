@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextBoxECAFlow>
+
+
+	<htmlProcessor context="TextBoxECACtx" id="TextBoxECAFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ECA20"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="eca/ECA20.jsp" id="ECA20">
+			<transitions>
+				<htmlTransition id="ECA20.event0" targetState="MappingECA20"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="eca/MappingECA20.jsp" id="MappingECA20">
+			<transitions>
+				<htmlTransition id="MappingECA20.event0" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TextBoxECACtx" type="op">
+		<refKColl refId="TextBoxECARecord"/>
+	</context>
+
+	<kColl id="TextBoxECARecord">
+		<data id="Disabled" refType="String"/>
+		<data id="ReadOnly" refType="String"/>
+		<data id="Normal" refType="String"/>
+		<data id="Password" refType="String">
+			<param value="6" id="maximumLength"/>
+			<param value="3" id="minimumLength"/>
+		</data>
+		<data id="MappingDisabled" refType="String"/>
+		<data id="MappingReadOnly" refType="String"/>
+		<data id="MappingNormal" refType="String"/>
+		<data id="MappingPassword" refType="String">
+			<param value="6" id="maximumLength"/>
+			<param value="3" id="minimumLength"/>
+		</data>
+	</kColl>
+
+</TextBoxECAFlow>

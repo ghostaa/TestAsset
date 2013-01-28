@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comboboxFlow>
+
+
+	<htmlProcessor context="comboboxCtx" id="comboboxFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="comboboxIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="comboboxIndex.jsp" id="comboboxIndex">
+			<transitions>
+				<htmlTransition id="comboboxIndex.flow" targetState="combodataOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="combodataOp" id="combodataOp" type="operation">
+			<transitions>
+				<htmlTransition id="combodataOp.ok" targetState="comboboxInFlow"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="comboboxtInFlow.jsp" id="comboboxInFlow">
+			<transitions>
+				<htmlTransition id="comboboxInFlow.flow" targetState="comboboxInFlow_1"/>
+				<htmlTransition id="comboboxInFlow.viewEvt" targetState="comboboxInFlow_1-1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="comboboxInFlow_1.jsp" id="comboboxInFlow_1">
+			<transitions>
+				<htmlTransition id="comboboxInFlow_1.end" targetState="OK"/>
+				<htmlTransition id="comboboxInFlow_1.back" targetState="comboboxInFlow"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="comboboxInFlow_1.jsp" id="comboboxInFlow_1-1">
+			<transitions>
+				<htmlTransition id="comboboxInFlow_1-1.back" targetState="comboboxInFlow"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="comboboxCtx" type="op">
+		<refKColl refId="selectRecord"/>
+	</context>
+
+	<kColl id="selectRecord">
+		<refData refId="selectDataList"/>
+		<refData refId="selectData"/>
+		<data id="selectData01" refType="String"/>
+	</kColl>
+
+	<iColl id="selectDataList" size="3">
+		<kColl id="selectKColl">
+			<field id="labelselect" value="this is label"/>
+			<field id="valueselect" value="this is value"/>
+			<field id="labelanother" value="abc"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="selectData">
+		<kColl id="selectKColl">
+			<field id="select1" value="selectA"/>
+			<field id="select2" value="selectB"/>
+		</kColl>
+		<field id="selectName" value="Spanish"/>
+		<field id="selectName2"/>
+		<field id="selectName3"/>
+		<field id="selectName4" value="M"/>
+		<field id="selectName5"/>
+	</kColl>
+
+</comboboxFlow>

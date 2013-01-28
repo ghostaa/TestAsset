@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tabbedPaneSelectActionOp>
+
+	<operation id="tabbedPaneSelectActionOp" context="tabbedPaneSelectActionCtx01" implClass="com.ibm.btt.sample.operation.TabbedPaneSelectActionOperation"/>
+
+	<context id="tabbedPaneSelectActionCtx01" type="op">
+		<refKColl refId="tabbedPaneSelectActionRecord01"/>
+	</context>
+
+	<kColl id="tabbedPaneSelectActionRecord01">
+		<field id="pageName"/>
+		<field id="userID" value="aaa"/>
+		<field id="display"/>
+		<field id="selectOp"/>
+		<refData refId="tableData"/>
+		<refData refId="fundtableData"/>
+		<refData refId="stocktableData"/>
+		<field id="hidden"/>
+		<iColl id="selectItems">
+			<refData refId="selectItems"/>
+		</iColl>
+	</kColl>
+
+	<iColl id="tableData" size="5">
+		<kColl id="tableRow">
+			<field id="index"/>
+			<field id="cardNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="fundTableKColl">
+		<refData refId="fundtableData"/>
+	</kColl>
+
+	<iColl id="fundtableData" size="6">
+		<kColl id="fundtableRow">
+			<field id="index"/>
+			<field id="fundNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="stockTableKColl">
+		<refData refId="stocktableData"/>
+	</kColl>
+
+	<iColl id="stocktableData">
+		<kColl id="stocktableRow">
+			<field id="index"/>
+			<field id="stockNo"/>
+			<field id="amount"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="selectItems">
+		<field id="query" value="query"/>
+		<field id="open_account" value="open_account"/>
+		<field id="depos_trans" value="deposit_transfer"/>
+	</kColl>
+
+</tabbedPaneSelectActionOp>

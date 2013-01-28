@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eca3Op>
+
+	<operation id="eca3Op" context="eca3Ctx" implClass="com.ibm.btt.sample.operation.eca.Eca3Op"/>
+
+	<context id="eca3Ctx" type="op">
+		<refKColl refId="updtSignatureKCOll"/>
+	</context>
+
+	<kColl id="updtSignatureKCOll" dynamic="false">
+		<refData refId="userDefSignature"/>
+		<refData refId="userDefSignatureCopy"/>
+		<refData refId="updtResult"/>
+		<refData refId="frontOperationInfo"/>
+		<refData refId="value4Display"/>
+	</kColl>
+
+	<data id="userDefSignature" value="黑夜给了我黑色的眼睛,我却用它寻找光明!" refType="String">
+		<param value="512" id="maximumLength"/>
+		<param value="2" id="minimumLength"/>
+	</data>
+
+	<field id="userDefSignatureCopy" value="SAMPLE_SIGNATURE"/>
+
+	<field id="updtResult" value="FALSE"/>
+
+	<field id="frontOperationInfo" value="SAMPLE_INFORMATION"/>
+
+	<field id="value4Display" value="Submitted value will display here"/>
+
+</eca3Op>

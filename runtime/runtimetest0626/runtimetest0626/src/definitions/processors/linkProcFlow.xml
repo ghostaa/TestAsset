@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<linkProcFlow>
+
+
+	<htmlProcessor context="linkProcCtx" id="linkProcFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="link"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="link.jsp" id="link">
+			<transitions>
+				<htmlTransition id="link.end" targetState="OK"/>
+				<htmlTransition id="link.Next1" targetState="form1"/>
+				<htmlTransition id="link.Next2" targetState="form2"/>
+				<htmlTransition id="link.Next3" targetState="form3"/>
+				<htmlTransition id="link.viewEvt" targetState="image"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="form1.jsp" id="form1"/>
+
+		<htmlState type="page" typeIdInfo="form2.jsp" id="form2">
+			<transitions>
+				<htmlTransition id="form2.Next" targetState="link"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="form3.jsp" id="form3">
+			<transitions>
+				<htmlTransition id="form3.Next" targetState="link"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="image.jsp" id="image"/>
+	</htmlProcessor>
+
+	<context id="linkProcCtx" type="op">
+		<refKColl refId="info"/>
+	</context>
+
+	<kColl id="info">
+		<refData refId="basic"/>
+	</kColl>
+
+	<kColl id="basic">
+		<field id="mr"/>
+		<refData refId="name"/>
+		<refData refId="idnumber"/>
+		<refData refId="birthday"/>
+	</kColl>
+
+	<data id="name" refType="String">
+		<param value="true" id="isMandatory"/>
+		<param value="10" id="maximumLength"/>
+		<param value="3" id="minimumLength"/>
+	</data>
+
+	<data id="idnumber" refType="Number">
+		<param value="3" id="minimumNumber"/>
+	</data>
+
+	<data id="birthday" refType="Date">
+		<param value="yyyy-MM-dd" id="pattern"/>
+		<param value="today+7d" id="maximumDate"/>
+		<param value="today-7d" id="minimumDate"/>
+	</data>
+
+</linkProcFlow>

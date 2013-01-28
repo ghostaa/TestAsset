@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eca2Op>
+
+	<operation id="eca2Op" context="eca2Ctx" implClass="com.ibm.btt.sample.operation.eca.Eca2Op"/>
+
+	<context id="eca2Ctx" type="op">
+		<refKColl refId="userCmtKColl"/>
+	</context>
+
+	<kColl id="userCmtKColl">
+		<refData refId="userComments"/>
+		<refData refId="userCommentsCp"/>
+		<refData refId="updtResult"/>
+		<refData refId="frontOperationInfo"/>
+		<refData refId="value4Display"/>
+		<field id="dse_replyPage" value="eca2.jsp"/>
+		<field id="focusText"/>
+	</kColl>
+
+	<field id="userComments"/>
+
+	<field id="userCommentsCp"/>
+
+	<field id="updtResult" value="FALSE"/>
+
+	<field id="frontOperationInfo" value="start your operation now!"/>
+
+	<field id="value4Display" value="Submitted value will display here"/>
+
+</eca2Op>

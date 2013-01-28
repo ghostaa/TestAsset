@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<radiobuttonFlow>
+
+
+	<htmlProcessor context="radiobuttonCtx" id="radiobuttonFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="radiobuttonIndex"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="radiobutton.jsp" id="radiobutton">
+			<transitions>
+				<htmlTransition id="radiobutton.submit" targetState="AfterSubmitRadioButton"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="AfterSubmitRadioButton.jsp" id="AfterSubmitRadioButton">
+			<transitions>
+				<htmlTransition id="AfterSubmitRadioButton.end" targetState="OK"/>
+				<htmlTransition id="AfterSubmitRadioButton.back" targetState="radiobutton"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="radiobuttonIndex.jsp" id="radiobuttonIndex">
+			<transitions>
+				<htmlTransition id="radiobuttonIndex.flow" targetState="radiobutton"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="radiobuttonCtx" type="op">
+		<refKColl refId="radiobuttonRecord"/>
+	</context>
+
+	<kColl id="radiobuttonRecord">
+		<field id="agespan"/>
+		<field id="radiobutton"/>
+		<field id="animal"/>
+		<field id="textFieldValue"/>
+		<field id="submitAnimal"/>
+	</kColl>
+
+</radiobuttonFlow>
