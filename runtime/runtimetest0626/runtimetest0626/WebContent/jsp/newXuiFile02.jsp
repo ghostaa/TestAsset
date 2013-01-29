@@ -6,7 +6,7 @@
 	%>
 </jsp:useBean>	
 <html>
-<!-- Generated from newXuiFile02.xui by Administrator, on Tue Jan 29 10:56:51 CST 2013 -->
+<!-- Generated from newXuiFile02.xui by Administrator, on Tue Jan 29 11:41:02 CST 2013 -->
 <head>
 <%@ taglib uri="/WEB-INF/bttdojo.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 
@@ -230,7 +230,7 @@ dojo.addOnLoad(function(){
           <table style="width:287px;height:400px;">
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:textbox id="newXuiFile02_text_copy01" dataName="pageName" readOnly="true" tabIndex="1" textWrap="false"/>
+                <bttdojo:textbox id="newXuiFile02_text_copy01" dataName="pageName" readOnly="true" tabIndex="10" textWrap="false"/>
               </td>
             </tr>
             <tr>
@@ -250,7 +250,7 @@ dojo.addOnLoad(function(){
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:combo id="newXuiFile02_combo_copy01" readOnly="true" tabIndex="1" textWrap="false"/>
+                <bttdojo:combo id="newXuiFile02_combo_copy01" readOnly="true" tabIndex="9" textWrap="false"/>
               </td>
             </tr>
             <tr>
@@ -260,17 +260,17 @@ dojo.addOnLoad(function(){
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:radio id="newXuiFile02_radio_copy01" text="Radio" tabIndex="1" textWrap="false"/>
+                <bttdojo:radio id="newXuiFile02_radio_copy01" text="Radio" tabIndex="8" textWrap="false"/>
               </td>
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:checkbox id="newXuiFile02_checkBox_copy01" checkedValue="true" text="CheckBox" tabIndex="1" textWrap="false"/>
+                <bttdojo:checkbox id="newXuiFile02_checkBox_copy01" checkedValue="true" text="CheckBox" tabIndex="7" textWrap="false"/>
               </td>
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:select id="newXuiFile02_selectList_copy01" readOnly="true" tabIndex="2" textWrap="false"/>
+                <bttdojo:select id="newXuiFile02_selectList_copy01" readOnly="true" tabIndex="6" textWrap="false"/>
               </td>
             </tr>
             <tr>
@@ -280,12 +280,12 @@ dojo.addOnLoad(function(){
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:textArea id="newXuiFile02_textArea_copy01" readOnly="true" tabIndex="7" textWrap="false"/>
+                <bttdojo:textArea id="newXuiFile02_textArea_copy01" readOnly="true" tabIndex="5" textWrap="false"/>
               </td>
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:a id="newXuiFile02_link_copy01" text="Link" action="#" tabIndex="1" textWrap="false"/>
+                <bttdojo:a id="newXuiFile02_link_copy01" text="Link" action="#" tabIndex="5" textWrap="false"/>
               </td>
             </tr>
             <tr>
@@ -300,7 +300,7 @@ dojo.addOnLoad(function(){
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:textbox id="newXuiFile02_text02" tabIndex="5" textWrap="false"/>
+                <bttdojo:textbox id="newXuiFile02_text02" tabIndex="3" textWrap="false"/>
               </td>
             </tr>
             <tr>
@@ -310,12 +310,12 @@ dojo.addOnLoad(function(){
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:combo id="newXuiFile02_combo01" readOnly="true" tabIndex="6" textWrap="false"/>
+                <bttdojo:combo id="newXuiFile02_combo01" readOnly="true" tabIndex="2" textWrap="false"/>
               </td>
             </tr>
             <tr>
               <td align="left" valign="middle">
-                <bttdojo:button id="newXuiFile02_button01" type="button" text="Button" tabIndex="2" textWrap="false"/>
+                <bttdojo:button id="newXuiFile02_button01" type="button" text="Button" tabIndex="1" textWrap="false"/>
               </td>
             </tr>
           </table>

@@ -182,6 +182,8 @@ dojo.declare("com.ibm.btt.dijit.plugins.Pagination", dojox.grid.enhanced._Plugin
 	},
 	
 	gotoPage : function(e){
+		if(this.grid.edit)  this.grid.edit.apply();
+		this.grid.selection.deselectAll();
 		if (this._paginateable == true) {
 			if (this.mode == "simple" && e >= 1 && e <= this.totalPageSize && e != (this._currentPage + 1)) {
 				this._requestPageByNum(e);

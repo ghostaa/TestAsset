@@ -6088,7 +6088,6 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 		this.inherited(arguments);
 			
 		if(this.selectable){
-			console.debug("grid", this);
 			this._eventHandlers.push(dojo.connect(this, "postrender", this, function(){
 				//this.checkSelectionNum();
 				if(this.pagination){
@@ -6101,6 +6100,7 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 			}));
 			this._eventHandlers.push(dojo.connect(this, "onSelectionChanged", this, this.checkSelectionNum));
 		}
+
 		if(this.sortEnabled){
 			this._eventHandlers.push(dojo.connect(this, "onHeaderCellClick", this, function(e){
 				if(dojo.hasClass(e.target, 'dojoxGridSortBtnSingle') || dojo.hasClass(e.target, 'dojoxGridSortBtnNested')){
@@ -6120,16 +6120,42 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 			this._set("state", this._getState());
 		}));
 		
-		//Fix defect 25203
-		if (this.selectionMode === "single") {
-			this._eventHandlers.push(dojo.connect(this.selection, "addToSelection", this, function(inIndex) {
-				if (this._lastSelectedIndex === inIndex) {
+		if (!this.selectionRequired) {
+			this._eventHandlers.push(dojo.connect(this.domNode, "onkeyup", this, function(e){
+				if (e.keyCode==dojo.keys.ESCAPE)
+				{
 					this.selection.deselectAll();
-					this._lastSelectedIndex = undefined;
-				} else {
-					this._lastSelectedIndex = inIndex;
 				}
 			}));
+		}
+
+//		//Fix defect 25203
+//		if (this.selectionMode === "single") {
+//			this._eventHandlers.push(dojo.connect(this.selection, "addToSelection", this, function(inIndex) {
+//				if (this._lastSelectedIndex === inIndex) {
+//					this.selection.deselectAll();
+//					this._lastSelectedIndex = undefined;
+//				} else {
+//					this._lastSelectedIndex = inIndex;
+//				}
+//			}));
+//		}
+		// re-Fix defect 25203 for keyboard support
+		if (this.selectionMode=="single" && !this.selectionRequired) {
+			this.selection.select = dojo.hitch(this.selection, function(inIndex) {
+				if(this.isSelected(inIndex))
+				{
+					this.deselect(inIndex);
+				}else{
+					this.deselectAll(inIndex);
+					this.addToSelection(inIndex);
+				}
+			});
+			
+			this.selection.clickSelectEvent = dojo.hitch(this.selection, function(e) {
+				if (e.type == "keydown") return;
+				this.clickSelect(e.rowIndex, dojo.isCopyKey(e), e.shiftKey);
+			});
 		}
 		
 		this.errorMessageIcon = dojo.create("div", {"class":"errorMessageIcon", "style":"display:none;"}, this.viewsHeaderNode, "last");
@@ -6146,8 +6172,8 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 		this._eventHandlers.push(dojo.connect(this, "onRowDblClick", this, this._onRowDblClick));
 		
 		this._eventHandlers.push(dojo.connect(this, "onRowClick", this, this._onRowClick));
-		this._eventHandlers.push(dojo.connect(document, "onkeydown", this, this._onKeyEvent));
-		this._eventHandlers.push(dojo.connect(document, "onkeyup", this, this._onKeyEvent));
+		this._eventHandlers.push(dojo.connect(this.domNode, "onkeydown", this, this._onKeyEvent));
+		this._eventHandlers.push(dojo.connect(this.domNode, "onkeyup", this, this._onKeyEvent));
 		this._eventHandlers.push(dojo.connect(this.edit, "setEditCell", this, this._onCellEdit));
 				
 		if (dojo.isIE && dojo.isIE<8)
@@ -6174,22 +6200,24 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 	 *              please do not use this method in customer code.
 	 * */
 	_onCellWidgetClick : function(e){
+		// console.log("_onCellWidgetClick");
 		if(e.cell._onClick){
 			e.cell._onClick(e);
 		}
 	},
 	
 	_onKeyEvent : function(e){
-		this.inherited(arguments);
 		this._isCtrlPressed = e.ctrlKey;
 		
-		/*if(e.keyCode === dojo.keys.ENTER){
+		/*
+		 if(e.keyCode === dojo.keys.ENTER){
 			var isEditing = this.edit.isEditing();
 			this.edit.apply();
 			if(!isEditing){
 				this.edit.setEditCell(this.focus.cell, this.focus.rowIndex);
 			}
-		}*/
+		}
+		*/
 	},
 	
 	_onCellEdit : function(inCell, inRowIndex){
@@ -6243,6 +6271,7 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 	},
 	
 	_onRowClick : function(e){
+		// console.log("_onRowClick");
 		/*this._lastClickedRow = e.rowIndex;*/
 		for ( var i = 0; i < this.layout.cells.length; i++) {
 			if (this.layout.cells[i] == e.cell) {
@@ -6251,6 +6280,13 @@ dojo.declare("com.ibm.btt.dijit.Grid",[ dojox.grid.EnhancedGrid,
 			}
 		}
 		this.rowIndex = e.rowIndex;
+		
+		if((e.keyCode==dojo.keys.ENTER || e.keyCode==dojo.keys.SPACE) && e.cell._onClick){
+			dojo.query(":first-child" ,e.target).forEach(function(node, index, arr){
+				node.click();
+				return;
+			});
+		}
 	},
 	
 	/*getLastClickedRowIndex : function(){
@@ -9776,6 +9812,8 @@ dojo.declare("com.ibm.btt.dijit.plugins.Pagination", dojox.grid.enhanced._Plugin
 	},
 	
 	gotoPage : function(e){
+		if(this.grid.edit)  this.grid.edit.apply();
+		this.grid.selection.deselectAll();
 		if (this._paginateable == true) {
 			if (this.mode == "simple" && e >= 1 && e <= this.totalPageSize && e != (this._currentPage + 1)) {
 				this._requestPageByNum(e);
@@ -10649,7 +10687,7 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		var keymap = this._checkKeys(evt);
 		if (keymap == null)
 		{
-			return true;
+			return evt.keyCode;
 		}
 		
 		// execute the action
@@ -10660,7 +10698,14 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		
 		if(keymap.keys.defaultPrevented){
 			dojo.stopEvent(evt);
-			return false;
+			if (dojo.isIE<9)
+			{
+				try{
+					evt.keyCode = 0;
+				}catch(e){
+				}
+			}
+			return 0;
 		}
 	},
 	
@@ -10668,10 +10713,9 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		for (var keyname in this._registeredKeyMaps) {
 			var keymap = this._registeredKeyMaps[keyname];
 			if (keymap.keys.keyCode==evt.keyCode &&
-				(!keymap.keys.altKey   || (keymap.keys.altKey  ==evt.altKey)) &&
-				(!keymap.keys.ctrlKey  || (keymap.keys.ctrlKey ==evt.ctrlKey)) &&
-				(!keymap.keys.shiftKey || (keymap.keys.shiftKey==evt.shiftKey)) &&
-				(!keymap.keys.metaKey  || (keymap.keys.metaKey ==evt.metaKey))){
+				((undefined==keymap.keys.ctrlKeymetaKey)  || (keymap.keys.ctrlKeymetaKey ==(evt.ctrlKey||evt.metaKey))) &&
+				((undefined==keymap.keys.altKey)   		  || (keymap.keys.altKey  ==evt.altKey)) &&
+				((undefined==keymap.keys.shiftKey)        || (keymap.keys.shiftKey==evt.shiftKey))){
 				return keymap;
 			}
 		}

@@ -41,7 +41,7 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		var keymap = this._checkKeys(evt);
 		if (keymap == null)
 		{
-			return true;
+			return evt.keyCode;
 		}
 		
 		// execute the action
@@ -52,7 +52,14 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		
 		if(keymap.keys.defaultPrevented){
 			dojo.stopEvent(evt);
-			return false;
+			if (dojo.isIE<9)
+			{
+				try{
+					evt.keyCode = 0;
+				}catch(e){
+				}
+			}
+			return 0;
 		}
 	},
 	
@@ -60,10 +67,9 @@ dojo.declare("com.ibm.btt.event._AccessKeyMixin", null,{
 		for (var keyname in this._registeredKeyMaps) {
 			var keymap = this._registeredKeyMaps[keyname];
 			if (keymap.keys.keyCode==evt.keyCode &&
-				(!keymap.keys.altKey   || (keymap.keys.altKey  ==evt.altKey)) &&
-				(!keymap.keys.ctrlKey  || (keymap.keys.ctrlKey ==evt.ctrlKey)) &&
-				(!keymap.keys.shiftKey || (keymap.keys.shiftKey==evt.shiftKey)) &&
-				(!keymap.keys.metaKey  || (keymap.keys.metaKey ==evt.metaKey))){
+				((undefined==keymap.keys.ctrlKeymetaKey)  || (keymap.keys.ctrlKeymetaKey ==(evt.ctrlKey||evt.metaKey))) &&
+				((undefined==keymap.keys.altKey)   		  || (keymap.keys.altKey  ==evt.altKey)) &&
+				((undefined==keymap.keys.shiftKey)        || (keymap.keys.shiftKey==evt.shiftKey))){
 				return keymap;
 			}
 		}

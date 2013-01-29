@@ -11,43 +11,43 @@
 
 		<htmlState typeIdInfo="OK" id="OK" type="final"/>
 
-		<htmlState type="page" typeIdInfo="PaginationTablePage/FT/FT.jsp" id="PaginationTablePage/FT/FT">
+		<htmlState type="page" typeIdInfo="PaginationTablePage/FT/FT.jsp" id="PaginationTablePageFTFT">
 			<transitions>
-				<htmlTransition id="PaginationTablePage/FT/FT.ok" targetState="OK"/>
-				<htmlTransition id="PaginationTablePage/FT/FT.LinkToGroup" targetState="FTInGroup"/>
-				<htmlTransition id="PaginationTablePage/FT/FT.group popup" targetState="FTInGroupPopup"/>
-				<htmlTransition id="PaginationTablePage/FT/FT.LinkToPane" targetState="FTInTabbedPane"/>
-				<htmlTransition id="PaginationTablePage/FT/FT.pane popup" targetState="FTInTabbedPanePopup"/>
+				<htmlTransition id="PaginationTablePageFTFT.ok" targetState="OK"/>
+				<htmlTransition id="PaginationTablePageFTFT.LinkToGroup" targetState="FTInGroup"/>
+				<htmlTransition id="PaginationTablePageFTFT.group popup" targetState="FTInGroupPopup"/>
+				<htmlTransition id="PaginationTablePageFTFT.LinkToPane" targetState="FTInTabbedPane"/>
+				<htmlTransition id="PaginationTablePageFTFT.pane popup" targetState="FTInTabbedPanePopup"/>
 			</transitions>
 		</htmlState>
 
 		<htmlState type="page" typeIdInfo="PaginationTablePage/FT/FTInGroup.jsp" id="FTInGroup">
 			<transitions>
-				<htmlTransition id="FTInGroup.returnToFTtable" targetState="PaginationTablePage/FT/FT"/>
+				<htmlTransition id="FTInGroup.returnToFTtable" targetState="PaginationTablePageFTFT"/>
 			</transitions>
 		</htmlState>
 
 		<popupPageState type="page" typeIdInfo="PaginationTablePage/FT/FTInGroup.jsp" id="FTInGroupPopup">
 			<transitions>
-				<htmlTransition id="FTInGroupPopup.returnToFTtable" targetState="PaginationTablePage/FT/FT"/>
+				<htmlTransition id="FTInGroupPopup.returnToFTtable" targetState="PaginationTablePageFTFT"/>
 			</transitions>
 		</popupPageState>
 
 		<htmlState type="page" typeIdInfo="PaginationTablePage/FT/FTInTabbedPane.jsp" id="FTInTabbedPane">
 			<transitions>
-				<htmlTransition id="FTInTabbedPane.returnToTFTable" targetState="PaginationTablePage/FT/FT"/>
+				<htmlTransition id="FTInTabbedPane.returnToTFTable" targetState="PaginationTablePageFTFT"/>
 			</transitions>
 		</htmlState>
 
 		<popupPageState type="page" typeIdInfo="PaginationTablePage/FT/FTInTabbedPane.jsp" id="FTInTabbedPanePopup">
 			<transitions>
-				<htmlTransition id="FTInTabbedPanePopup.returnToTFTable" targetState="PaginationTablePage/FT/FT"/>
+				<htmlTransition id="FTInTabbedPanePopup.returnToTFTable" targetState="PaginationTablePageFTFT"/>
 			</transitions>
 		</popupPageState>
 
 		<operationState typeIdInfo="InitPaginationDataOp" id="InitPaginationDataOp" type="operation">
 			<transitions>
-				<htmlTransition id="InitPaginationDataOp.ok" outputMapFmt="InitPaginationDataOp.ok_OutputFmt" targetState="PaginationTablePage/FT/FT"/>
+				<htmlTransition id="InitPaginationDataOp.ok" outputMapFmt="InitPaginationDataOp.ok_OutputFmt" targetState="PaginationTablePageFTFT"/>
 			</transitions>
 		</operationState>
 	</htmlProcessor>
