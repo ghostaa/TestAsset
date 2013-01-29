@@ -233,13 +233,18 @@ dojo.declare("com.ibm.btt.dijit.plugins.Pagination", dojox.grid.enhanced._Plugin
 			error : this._handleError
 		};
 		dojo.xhrPost(xhrParams);*/
+		
+		var data = this.bttParams;
+		if (!data[AjaxUtil.constants.BTT_TIMEZONE]) {
+			data[AjaxUtil.constants.BTT_TIMEZONE] = AjaxUtil.getTimzone();
+		}
 		AjaxUtil.xhrPost({
 			//url : this.requestURL,
 			handleAs : "text",
 			timeout : this.timeout,
 			success : dojo.hitch(this, this._handleResponse),
 			error : dojo.hitch(this, this._handleError)
-		}, dojo.mixin(this.bttParams, arg));
+		}, dojo.mixin(data, arg));
 	},
 	
 	_handleResponse : function(arg){
