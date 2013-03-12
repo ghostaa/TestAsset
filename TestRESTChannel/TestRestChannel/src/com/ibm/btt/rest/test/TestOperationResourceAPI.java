@@ -59,7 +59,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 		jsonUpdate.put("doubleDataoP", 6.66);
 		json.put("restKcollOp", jsonUpdate);
 		jsonObjectOriginal.put("restKcollOp", jsonUpdate);
-		operationExecute(json, jsonObjectOriginal);
+//		operationExecute(json, jsonObjectOriginal);
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class TestOperationResourceAPI extends TestResourceBase {
 		icoll.put(jsonUpdate);
 		json.put("listOp", icoll);
 		jsonObjectOriginal.put("restKcollOp", icoll);
-		operationExecute(json, jsonObjectOriginal);
+//		operationExecute(json, jsonObjectOriginal);
 		
 	}
 	 
