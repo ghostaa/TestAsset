@@ -82,7 +82,7 @@ public class TestUtil {
 			jsonObject.put("numberData" + s, 88.0f);
 			jsonObject.put("stringData" + s, "abc");
 			jsonObject.put("dateData" + s, "2012-12-29");
-			jsonObject.put("durationData" + s, o);
+			jsonObject.put("durationData" + s, "77");
 			jsonObject.put("currencyData" + s, o);
 			jsonObject.put("booleanData" + s, false);
 			jsonObject.put("byteArrayData" + s, o);
@@ -92,7 +92,7 @@ public class TestUtil {
 			jsonObject.put("longData" + s, 5);
 			jsonObject.put("FloatData" + s, 2.22);
 			jsonObject.put("doubleData" + s, 3.33);
-			jsonObject.put("XMLGregorianCalendarData" + s, o);
+			jsonObject.put("XMLGregorianCalendarData" + s, "2012-12-29");
 			jsonObject.put("bigIntegerData" + s, 1234567890);
 			jsonObject.put("bigDecimalData" + s, 89.123);
 		} catch (JSONException e) {
