@@ -12,14 +12,14 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
 	
+	TestSessionResourceAPI.class,
+	TestSessionResourceData.class,
+	
 	TestFlowResourceAPI.class,
 	TestFlowResourceData.class,
 	
 	TestOperationResourceAPI.class,
-	TestOperationResourceData.class,
-	
-	TestSessionResourceAPI.class,
-	TestSessionResourceData.class
+	TestOperationResourceData.class
 
 })
 
