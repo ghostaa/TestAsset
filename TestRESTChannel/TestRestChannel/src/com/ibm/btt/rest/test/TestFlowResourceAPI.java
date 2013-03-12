@@ -181,6 +181,8 @@ public class TestFlowResourceAPI  extends TestFlowResourceBase{
 			TestUtil.removeDSEData(res.keys());
 			//It has been updated
 			JSONObject iniJsonObject=TestUtil.getJSONObjectForFlow().put("stringDataFL",asserString);
+			System.out.println(iniJsonObject);
+			System.out.println(res);
 			assertTrue(res.equals(iniJsonObject));
 		} else {
 			JSONObject res = response.getEntity(JSONObject.class);
