@@ -18,7 +18,7 @@
 %>
 
 <html lang="<%=language %>">
-<!-- Generated from ${xui_file} by ${user}, on ${date} -->
+<!-- Generated from ${xui_file} by ${user}, on  -->
 <head>
 <%@ taglib uri="/WEB-INF/bttdojo.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 

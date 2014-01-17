@@ -18,7 +18,7 @@
 %>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<%=language %>" xml:lang="<%=language %>">
-<!-- Generated from ${xui_file} by ${user}, on ${date} -->
+<!-- Generated from ${xui_file} by ${user}, on  -->
 <head>
 <%@ taglib uri="/WEB-INF/xhtml.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 

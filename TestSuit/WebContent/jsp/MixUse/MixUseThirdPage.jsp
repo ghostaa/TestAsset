@@ -15,7 +15,7 @@
 %>
 
 <html lang="<%=language %>">
-<!-- Generated from MixUseThirdPage.xui by mashuai, on Fri Jan 17 15:17:10 CST 2014 -->
+<!-- Generated from MixUseThirdPage.xui by mashuai, on  -->
 <head>
 <%@ taglib uri="/WEB-INF/bttdojo.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 
