@@ -15,7 +15,7 @@
 %>
 
 <html lang="<%=language %>">
-<!-- Generated from ClusteredColunmsPlot.xui by mashuai, on Fri Jan 17 13:39:31 CST 2014 -->
+<!-- Generated from ClusteredColunmsPlot.xui by mashuai, on Fri Jan 17 15:16:05 CST 2014 -->
 <head>
 <%@ taglib uri="/WEB-INF/bttdojo.tld" prefix="bttdojo"%>
 <%@ page import="com.ibm.btt.cs.html.JSPUtil" %> 
