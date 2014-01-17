@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="208,171,517,417" dataBinding="{'ctxType':'proc','ctxFile':'editableTableFlow','ctxName':'editableTableCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'EditableTableSelectCombo.js'}">
+  <styles>
+    <css file="../../WebContent/css/dijit/main.css"/>
+  </styles>
+  <container name="Panel" id="panel">
+    <gridData heightHint="417" verticalAlignment="1" widthHint="517" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="373" verticalAlignment="1" widthHint="458" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel03">
+            <gridData heightHint="31" verticalAlignment="1" widthHint="288" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="flowEvent=returnToEditable" id="link_copy" text="editable table">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="label" text=" -&gt; Selection and bombox table">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData heightHint="28" verticalAlignment="1" widthHint="28" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" dataNameForList="EditableAccountList" sortEnabled="true" dataName="selectAccountList" id="table" selectionRequired="true" columnReordering="true" selectionMode="multiple">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="Select" rowSpan="1" level="1" labelField="labelField" showTooltip="true" width="80" valueField="valueField" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="left" text="%nls.testtable/AccountType" columnTooltip="AccountType" dataNameForList="AccountTypeForSelect" noresize="false" dataName="AccountType" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="Select" rowSpan="1" level="1" labelField="labelField" showTooltip="true" width="80" valueField="valueField" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="below" text="%nls.testtable/AccountTypeValue" columnTooltip="AccountType" dataNameForList="AccountTypeForSelect" noresize="false" dataName="AccountType" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="ComboBox" rowSpan="1" level="1" labelField="labelField" showTooltip="true" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="above" text="%nls.testtable/Localtion" columnTooltip="Localtion" dataNameForList="LocaltionForComboBox" noresize="false" dataName="Localtion" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="ComboBox" rowSpan="1" level="1" labelField="labelField" showTooltip="true" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="right" text="%nls.testtable/LocaltionTypeValue" columnTooltip="Localtion" dataNameForList="LocaltionForComboBox" noresize="false" dataName="Localtion" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="visibility">
+            <gridData heightHint="33" verticalAlignment="1" widthHint="222" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="visible" buttonType="button" text="visible">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="hidden" buttonType="button" text="hidden">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="gone" buttonType="button" text="gone">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="disabled">
+            <gridData heightHint="33" verticalAlignment="1" widthHint="214" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="label02" text="disabled:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="disabletrue" buttonType="button" text=" true">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="disablefalse" buttonType="button" text="false">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="readonly">
+            <gridData heightHint="33" verticalAlignment="1" widthHint="221" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="readonlylabel" text="read only:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="readonlytrue" buttonType="button" text="true">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="readonlyfalse" buttonType="button" text="false">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel02">
+            <gridData heightHint="33" horizontalAlignment="4" verticalAlignment="4" widthHint="450" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=to group popup page" id="To group popup page" text="To group popup page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=to pane popup page" id="To pane popup page" text="To pane popup page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=to group page" id="button" text="To group page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" action="flowEvent=to pane page" id="button01" text="To pane page">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="4"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel04">
+            <gridData heightHint="33" verticalAlignment="1" widthHint="314" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="Change the hint from text" buttonType="button" text="Change the hint from text">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="Change the hint from NLS" buttonType="button" text="Change the hint from NLS">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="Change the CSS" buttonType="button" text="Change the CSS">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="visible" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="visibility">
+          <value type="constant" constant="'visible'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="hidden" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="visibility">
+          <value type="constant" constant="'hidden'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="gone" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="visibility">
+          <value type="constant" constant="'gone'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="disabletrue" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="disabled">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule04">
+      <events>
+        <event widget="disablefalse" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="disabled">
+          <value type="constant" constant="false"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule05">
+      <events>
+        <event widget="readonlytrue" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="readOnly">
+          <value type="constant" constant="true"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule06">
+      <events>
+        <event widget="readonlyfalse" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="readOnly">
+          <value type="constant" constant="false"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule07">
+      <events>
+        <event widget="table" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false"/>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule08">
+      <events>
+        <event widget="Change the hint from text" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="hint">
+          <value type="constant" constant="'new hint from text'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule09">
+      <events>
+        <event widget="Change the hint from NLS" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="hint">
+          <value type="constant" constant="'%nls.testtable/EditTableHint'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule10">
+      <events>
+        <event widget="Change the CSS" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="table" property="styleClass">
+          <value type="constant" constant="'customStyle'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

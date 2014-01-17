@@ -1,0 +1,179 @@
+.dojoxFloatingPane {
+	background-color:#fff;
+	position:relative; 
+	border: 1px solid #dedede; 
+	overflow: hidden;
+	-webkit-box-shadow: 0px 5px 10px #adadad;
+}
+
+.dojoxFloatingPaneFg {
+	-webkit-box-shadow: 0px 8px 20px #525252;
+}
+
+/* titleNode */
+.dojoxFloatingPaneTitle {
+	background: #cccccc;
+	background:#fafafa repeat-x bottom left;
+	border:1px solid #bfbfbf;
+	padding:4px 4px 2px 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	
+	font-size:12pt;
+	font-weight:bold;
+}
+
+.soria .dojoxFloatingPaneTitle {
+	background:#fff url("images/titleBar.png") repeat-x top left;
+	border:1px solid #b1badf;
+	font-size: 0.9em;
+	font-weight: bold;
+	line-height:1.2em;
+}
+
+
+/* Icons */
+.dojoxFloatingCloseIcon {
+	background:url('images/tabClose.png') no-repeat center center; 
+	width:16px;
+	height:16px; 
+	overflow:hidden;
+	float:right; 
+}
+
+.dojoxFloatingMinimizeIcon {
+	background:url('images/spriteArrows.png') no-repeat 0px center; 
+	width:7px;
+	margin: 0px 4px;
+	overflow:hidden;
+	float:right; 
+}
+.claro .dojoxFloatingMinimizeIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -15px top;
+	width: 14px;
+	height:14px;
+	margin: 0px 2px;
+}
+
+.floatingPaneMaximized .dojoxFloatingMaximizeIcon { display:none; }
+.dojoxFloatingMaximizeIcon {
+	background:url('images/spriteArrows.png') no-repeat -21px center;
+	width:7px;
+	margin: 0px 4px;
+	overflow:hidden;
+	float:right;	
+}
+.claro .dojoxFloatingMaximizeIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -45px top;
+}
+
+.floatingPaneMaximized .dojoxFloatingRestoreIcon { display:inline; }
+.dojoxFloatingRestoreIcon {
+	background:url('images/spriteArrows.png') no-repeat 0px center; 
+	width:7px;
+	margin: 0px 4px;
+	float:right;
+	display:none;
+}
+
+.dojoxFloatingResizeHandle {
+	background:url('icons/resize.png') no-repeat bottom right;
+	position:absolute; 
+	right:0; 
+	bottom:0; 	
+	width:16px;
+	height:16px; 
+	cursor:nw-resize;
+}
+
+.dojoxFloatingCloseIcon {
+	width:15px;
+	height:15px; 
+	overflow:hidden;
+	float:right; 
+	cursor:pointer;
+}
+
+.claro .dojoxFloatingCloseIcon {
+	background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -60px top;
+}
+
+/* our un-used dock styles for now */
+.dojoxFloatingDockDefault {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	overflow:hidden; 
+	margin:0;
+	margin-bottom:3px; 
+	padding:0px; 
+	width:100%;
+	z-index:99; /* position the dock _just_ below the lowest pane */
+
+	background:transparent;
+	/* background-color:#fff; 
+	border-top:1px solid #ccc; 
+	*/
+}
+
+.dojoxDockList {
+	padding: 0px;
+	margin: 0px;
+}
+
+.dojoxDockRestoreButton {
+	background:url('images/arrowUp.png') no-repeat center center;
+	width:16px; height:16px;
+	overflow:hidden; 
+	float:left;
+	margin-top:2px; 
+}
+.claro .dojoxDockRestoreButton {
+	/*background:url("images/spriteRoundedIconsSmallBl.png") no-repeat -45px top;*/
+}
+
+.dojoxDockTitleNode {
+	overflow:hidden;
+	display:none;
+}
+
+/* Modifications */
+
+.dojoxDock {
+	display: block;
+	position: absolute;
+	padding:0;
+	margin:0;
+	/*background:#fcfcfc;*/
+}
+
+.dojoxDockNode {
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 3px;
+	cursor:pointer; 
+	list-style: none;
+	padding: 2px;
+	margin: 0px;
+	height: 16px;
+	width: auto;
+	float: left;
+}
+.claro .dojoxDockNode {	
+	background: url("images/bag.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 48px;
+    text-indent: -10000px;
+    width: 48px;
+}
+
+.dojoxFloatingPaneContent {
+	overflow: auto;
+	background-color: #fff; 
+	height: 100%; 
+	width:	100%; 
+}
+
+.dojoxFloatingPaneCanvas {
+	background-color:#fff;
+}

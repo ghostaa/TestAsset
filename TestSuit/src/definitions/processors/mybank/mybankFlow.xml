@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mybankFlow>
+
+
+	<htmlProcessor context="mybankCtx" id="mybankFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="mybank/mybank_index.jsp"/>
+	</htmlProcessor>
+
+	<context id="mybankCtx" type="op">
+		<refKColl refId="mybankRecord"/>
+	</context>
+
+	<kColl id="mybankRecord">
+		<field id="mybankField"/>
+		<field id="mybankField01"/>
+	</kColl>
+
+</mybankFlow>

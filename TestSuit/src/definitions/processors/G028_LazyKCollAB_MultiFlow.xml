@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_LazyKCollAB_MultiFlow>
+
+
+	<htmlProcessor context="G028_LazyKCollAB_MultiCtx" id="G028_LazyKCollAB_MultiFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028_initLazyKCollABOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_LazyKCollAB_multi.jsp" id="G028G028_LazyKCollAB_multi">
+			<transitions>
+				<htmlTransition id="G028G028_LazyKCollAB_multi.ok" targetState="G028G028_Result_lazyKCollAB_multi"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G028_initLazyKCollABOp" id="G028_initLazyKCollABOp" type="operation">
+			<transitions>
+				<htmlTransition id="G028_initLazyKCollABOp.ok" outputMapFmt="initAccountsOp.ok_OutputFmt" targetState="G028G028_LazyKCollAB_multi"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_lazyKCollAB_multi.jsp" id="G028G028_Result_lazyKCollAB_multi">
+			<transitions>
+				<htmlTransition id="G028G028_Result_lazyKCollAB_multi.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_LazyKCollAB_MultiCtx" type="op">
+		<refKColl refId="G028_LazyKCollAB_MultiRecord01"/>
+	</context>
+
+	<kColl id="G028_LazyKCollAB_MultiRecord01">
+		<refData refId="lazyKColl_AB_Accounts"/>
+		<refData refId="lazyKCOll_AB_SelectedAccounts"/>
+	</kColl>
+
+	<kColl id="B">
+		<refData refId="A" lazy="false"/>
+	</kColl>
+
+	<kColl id="A">
+		<field id="F"/>
+		<refData refId="B" lazy="true"/>
+	</kColl>
+
+	<kColl id="lazyKCOll_AB_Account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="A" lazy="false"/>
+	</kColl>
+
+	<iColl id="lazyKColl_AB_Accounts" size="10">
+		<refData refId="lazyKCOll_AB_Account" lazy="false"/>
+	</iColl>
+
+	<kColl id="lazyKCOll_AB_SelectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="A" lazy="false"/>
+	</kColl>
+
+	<iColl id="lazyKCOll_AB_SelectedAccounts">
+		<refData refId="lazyKCOll_AB_SelectedAccount" lazy="false"/>
+	</iColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="lazyKColl_AB_Accounts" to="lazyKColl_AB_Accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_LazyKCollAB_MultiFlow>

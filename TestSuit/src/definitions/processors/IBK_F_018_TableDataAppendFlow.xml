@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_018_TableDataAppendFlow>
+
+
+	<htmlProcessor context="IBK_F_018_TableDataAppendCtx01" id="IBK_F_018_TableDataAppendFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="UseCases"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="InitTableDataAppendOp" id="InitTableData" type="operation">
+			<transitions>
+				<htmlTransition id="InitTableData.OK" targetState="TableAppend"/>
+			</transitions>
+		</operationState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="IBK_F_018/TableAppendFromOp.jsp" id="TableAppend">
+			<transitions>
+				<htmlTransition id="TableAppend.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_F_018/IBK_F_018_UseCases.jsp" id="UseCases">
+			<transitions>
+				<htmlTransition id="UseCases.AppendFromAjaxOp" targetState="InitTableData"/>
+				<htmlTransition id="UseCases.AppendFromUserInput" targetState="IBK_F_018_TableDataAppendUC2SubFlow"/>
+				<htmlTransition id="UseCases.TableEdit" targetState="IBK_F_018_TableDataAppendUC3SubFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="IBK_F_018_TableDataAppendUC2SubFlow" id="IBK_F_018_TableDataAppendUC2SubFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="IBK_F_018_TableDataAppendUC2SubFlow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="IBK_F_018_TableDataAppendUC3SubFlow" id="IBK_F_018_TableDataAppendUC3SubFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="IBK_F_018_TableDataAppendUC3SubFlow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="InitTableDataAppendOp" implClass="com.ibm.btt.application.op.InitTableAppendData"/>
+
+	<context id="IBK_F_018_TableDataAppendCtx01" type="op">
+		<refKColl refId="IBK_F_018_TableDataAppendRecord01"/>
+	</context>
+
+	<kColl id="IBK_F_018_TableDataAppendRecord01">
+		<iColl id="TableList" size="10">
+			<refData refId="TableRecord" lazy="false"/>
+		</iColl>
+		<iColl id="SelectedList">
+			<refData refId="TableRecord" lazy="false"/>
+		</iColl>
+		<field id="hidden"/>
+		<refData refId="TableRecord" lazy="false" alias="selectedRecord"/>
+	</kColl>
+
+	<kColl id="TableRecord">
+		<field id="A" value="A"/>
+		<field id="B" value="B"/>
+		<field id="C" value="C"/>
+	</kColl>
+
+</IBK_F_018_TableDataAppendFlow>

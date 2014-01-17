@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q002_test_login_Flow>
+
+
+	<htmlProcessor context="Q002_test_login_Ctx" id="Q002_test_login_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q-002Login"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/Login.jsp" id="Q-002Login">
+			<transitions>
+				<htmlTransition id="Q-002Login.login" inputMapFmt="Q-002Login.login_InputFmt" targetState="Q002CheckLoginOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CheckLoginOp" id="Q002CheckLoginOp" type="operation">
+			<transitions>
+				<htmlTransition id="Q002CheckLoginOp.fail" targetState="Q-002LoginFail"/>
+				<htmlTransition id="Q002CheckLoginOp.pass" targetState="Q-002LoginSuccess"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="Q-002/LoginFail.jsp" id="Q-002LoginFail">
+			<transitions>
+				<htmlTransition id="Q-002LoginFail.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q-002/LoginSuccess.jsp" id="Q-002LoginSuccess">
+			<transitions>
+				<htmlTransition id="Q-002LoginSuccess.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q002_test_login_Ctx" type="op">
+		<refKColl refId="Q002_test_login_Record"/>
+	</context>
+
+	<kColl id="Q002_test_login_Record">
+		<kColl id="User">
+			<data id="UserName" refType="String"/>
+			<data id="UserPassword" refType="String"/>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="Q-002Login.login_InputFmt">
+		<mapperConverterExpression>
+			<map from="User" to="User"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q002_test_login_Flow>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_UC1_None01Flow>
+
+
+	<htmlProcessor context="G028_UC1_None01Ctx" id="G028_UC1_None01Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028/G028_UC1_none_Test"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_UC1_none_Test.jsp" id="G028/G028_UC1_none_Test">
+			<transitions>
+				<htmlTransition id="G028/G028_UC1_none_Test.ok" targetState="G028/G028_Result_none"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_none.jsp" id="G028/G028_Result_none">
+			<transitions>
+				<htmlTransition id="G028/G028_Result_none.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="G028_UC1_None01Ctx" type="op">
+		<refKColl refId="G028_UC1_None01Record01"/>
+	</context>
+
+	<kColl id="G028_UC1_None01Record01">
+		<refData refId="accounts"/>
+	</kColl>
+
+	<iColl id="accounts" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="accounts" to="accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_UC1_None01Flow>

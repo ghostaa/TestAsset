@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:transaction="http://btt.cn.ibm.com/transaction">
+  <transaction:WorkProduct xmi:id="_gjopQFNHEeOTRegBD_ACNA">
+    <processor xmi:type="transaction:Processor" xmi:id="_gjopQlNHEeOTRegBD_ACNA" tag="Processor" id="loanOfferFlow">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_gjopQ1NHEeOTRegBD_ACNA" name="context" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_gjopRFNHEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_gjrskFNHEeOTRegBD_ACNA" key="_gjopRFNHEeOTRegBD_ACNA" value="loanOfferFlow"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_Y2wgUFNLEeOTRegBD_ACNA" key="_gjopQ1NHEeOTRegBD_ACNA" value="loanOfferCtx"/>
+      <transitions xmi:type="transaction:Transition" xmi:id="_jnGaQFNHEeOTRegBD_ACNA" tag="Transition" id="initial.start" target="_ibj0MFNHEeOTRegBD_ACNA" source="_hCo5cFNHEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_jnGaQVNHEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_jnGaQ1NHEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_jnGaRFNHEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_jnGaRVNHEeOTRegBD_ACNA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_jnGaR1NHEeOTRegBD_ACNA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_jnGaQlNHEeOTRegBD_ACNA" key="_jnGaQVNHEeOTRegBD_ACNA" value="initial.start"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_jnGaRlNHEeOTRegBD_ACNA" key="_jnGaRVNHEeOTRegBD_ACNA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_jnGaSFNHEeOTRegBD_ACNA" key="_jnGaR1NHEeOTRegBD_ACNA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_mHLKUFNHEeOTRegBD_ACNA" tag="Transition" id="mybank_loan_offer_01.submit" target="_B3CcQFNLEeOTRegBD_ACNA" source="_ibj0MFNHEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mHMYcFNHEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mHMYclNHEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mHMYc1NHEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mHMYdFNHEeOTRegBD_ACNA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_mHMYdlNHEeOTRegBD_ACNA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mHMYcVNHEeOTRegBD_ACNA" key="_mHMYcFNHEeOTRegBD_ACNA" value="mybank_loan_offer_01.submit"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mHMYdVNHEeOTRegBD_ACNA" key="_mHMYdFNHEeOTRegBD_ACNA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_mHM_gFNHEeOTRegBD_ACNA" key="_mHMYdlNHEeOTRegBD_ACNA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_FVJh4FNLEeOTRegBD_ACNA" tag="Transition" id="mybank_load_offer_02.back" target="_ibj0MFNHEeOTRegBD_ACNA" source="_B3CcQFNLEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_FVJh4VNLEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_FVJh41NLEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_FVJh5FNLEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_FVJh5VNLEeOTRegBD_ACNA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_FVJh51NLEeOTRegBD_ACNA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_FVJh4lNLEeOTRegBD_ACNA" key="_FVJh4VNLEeOTRegBD_ACNA" value="mybank_load_offer_02.back"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_FVJh5lNLEeOTRegBD_ACNA" key="_FVJh5VNLEeOTRegBD_ACNA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_FVJh6FNLEeOTRegBD_ACNA" key="_FVJh51NLEeOTRegBD_ACNA" value="Override state mapping"/>
+      </transitions>
+      <transitions xmi:type="transaction:Transition" xmi:id="_G1UUIFNLEeOTRegBD_ACNA" tag="Transition" id="mybank_load_offer_02.submit" target="_hQoSIFNHEeOTRegBD_ACNA" source="_B3CcQFNLEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_G1UUIVNLEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_G1UUI1NLEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_G1UUJFNLEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_G1UUJVNLEeOTRegBD_ACNA" name="O1Output Mapping Behaviour" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_G1UUJ1NLEeOTRegBD_ACNA" name="O2Input Mapping Behaviour" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_G1UUIlNLEeOTRegBD_ACNA" key="_G1UUIVNLEeOTRegBD_ACNA" value="mybank_load_offer_02.submit"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_G1UUJlNLEeOTRegBD_ACNA" key="_G1UUJVNLEeOTRegBD_ACNA" value="Override state mapping"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_G1UUKFNLEeOTRegBD_ACNA" key="_G1UUJ1NLEeOTRegBD_ACNA" value="Override state mapping"/>
+      </transitions>
+      <children xmi:type="transaction:State" xmi:id="_hCo5cFNHEeOTRegBD_ACNA" tag="InitialState" id="initial" targetTransitions="_jnGaQFNHEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hCtx8lNHEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hCr8wFNHEeOTRegBD_ACNA" name="id" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hCtx8FNHEeOTRegBD_ACNA" name="type" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hCtK4FNHEeOTRegBD_ACNA" key="_hCr8wFNHEeOTRegBD_ACNA" value="initial"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hCtx8VNHEeOTRegBD_ACNA" key="_hCtx8FNHEeOTRegBD_ACNA" value="initial"/>
+        <events xmi:type="transaction:Event" xmi:id="_hCvnIFNHEeOTRegBD_ACNA" name="start" automatic="true"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_hQoSIFNHEeOTRegBD_ACNA" tag="FinalState" id="OK" sourceTransitions="_mHLKUFNHEeOTRegBD_ACNA _G1UUIFNLEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hQquYFNHEeOTRegBD_ACNA" name="Exit Event" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hQquYVNHEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hQrVclNHEeOTRegBD_ACNA" name="Final Page" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hQrVc1NHEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_hQrVcFNHEeOTRegBD_ACNA" name="type" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hQquYlNHEeOTRegBD_ACNA" key="_hQquYVNHEeOTRegBD_ACNA" value="OK"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hQrVcVNHEeOTRegBD_ACNA" key="_hQrVcFNHEeOTRegBD_ACNA" value="final"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_lK-AwFNHEeOTRegBD_ACNA" key="_hQquYFNHEeOTRegBD_ACNA" value="OK"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9gSdQFWhEeOwS6OwgYMc5A" key="_hQrVclNHEeOTRegBD_ACNA" value="mybank/mybank_final.xui"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_ibj0MFNHEeOTRegBD_ACNA" tag="PageState" id="mybank_loan_offer_01" extraInfo="com.ibm.btt.tools.xui.editor2.XUIEditor" targetTransitions="_mHLKUFNHEeOTRegBD_ACNA" sourceTransitions="_jnGaQFNHEeOTRegBD_ACNA _FVJh4FNLEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ibj0MVNHEeOTRegBD_ACNA" name="Page" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ibj0M1NHEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ibkbQVNHEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ibkbQlNHEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ibj0MlNHEeOTRegBD_ACNA" key="_ibj0MVNHEeOTRegBD_ACNA" value="mybank/mybank_loan_offer_01.xui"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ibkbQFNHEeOTRegBD_ACNA" key="_ibj0M1NHEeOTRegBD_ACNA" value="mybank_loan_offer_01"/>
+        <events xmi:type="transaction:Event" xmi:id="_kANd0FNHEeOTRegBD_ACNA" name="submit"/>
+      </children>
+      <children xmi:type="transaction:State" xmi:id="_B3CcQFNLEeOTRegBD_ACNA" tag="PageState" id="mybank_load_offer_02" extraInfo="com.ibm.btt.tools.xui.editor2.XUIEditor" targetTransitions="_FVJh4FNLEeOTRegBD_ACNA _G1UUIFNLEeOTRegBD_ACNA">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_B3CcQVNLEeOTRegBD_ACNA" name="Page" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_B3DDUVNLEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_B3DDU1NLEeOTRegBD_ACNA" name="Input Data Format" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_B3DDVFNLEeOTRegBD_ACNA" name="Output Data Format" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_B3DDUFNLEeOTRegBD_ACNA" key="_B3CcQVNLEeOTRegBD_ACNA" value="mybank/mybank_load_offer_02.xui"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_B3DDUlNLEeOTRegBD_ACNA" key="_B3DDUVNLEeOTRegBD_ACNA" value="mybank_load_offer_02"/>
+        <events xmi:type="transaction:Event" xmi:id="_Djxq4FNLEeOTRegBD_ACNA" name="back"/>
+        <events xmi:type="transaction:Event" xmi:id="_Fz9k0FNLEeOTRegBD_ACNA" name="submit"/>
+      </children>
+    </processor>
+    <context xmi:type="transaction:ContextCategory" xmi:id="_gjrskVNHEeOTRegBD_ACNA">
+      <contexts xmi:type="transaction:Context" xmi:id="_7rmfoFNIEeOTRegBD_ACNA" tag="context" id="loanOfferCtx">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_7rmfoVNIEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_7rmfolNIEeOTRegBD_ACNA" name="type" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_7rmfo1NIEeOTRegBD_ACNA" name="addToDynamicKColl" type="java.lang.Boolean"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_7rmfpFNIEeOTRegBD_ACNA" name="parent" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_7rmfpVNIEeOTRegBD_ACNA" key="_7rmfolNIEeOTRegBD_ACNA" value="op"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_7rmfplNIEeOTRegBD_ACNA" key="_7rmfoVNIEeOTRegBD_ACNA" value="loanOfferCtx"/>
+        <refElement xmi:type="transaction:RefKColl" xmi:id="_8CxpgFNIEeOTRegBD_ACNA" tag="refKColl">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_8CxpgVNIEeOTRegBD_ACNA" name="refId" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_FYxIgFNJEeOTRegBD_ACNA" key="_8CxpgVNIEeOTRegBD_ACNA" value="loanOfferRecord"/>
+        </refElement>
+      </contexts>
+    </context>
+    <data xmi:type="transaction:DataCategory" xmi:id="_gjrsklNHEeOTRegBD_ACNA">
+      <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_9B6yUFNIEeOTRegBD_ACNA" tag="kColl" id="loanOfferRecord">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_9B6yUVNIEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_9B6yUlNIEeOTRegBD_ACNA" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_9B6yU1NIEeOTRegBD_ACNA" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_9B6yVFNIEeOTRegBD_ACNA" name="dynamic" type="java.lang.Boolean"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9B6yVVNIEeOTRegBD_ACNA" key="_9B6yU1NIEeOTRegBD_ACNA" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9B6yVlNIEeOTRegBD_ACNA" key="_9B6yUVNIEeOTRegBD_ACNA" value="loanOfferRecord"/>
+        <elements xmi:type="transaction:Data" xmi:id="_9eFJ4FNIEeOTRegBD_ACNA" tag="data" id="borrowAmount">
+          <attributes xmi:type="transaction:Attribute" xmi:id="_9eFJ4VNIEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_9eFJ4lNIEeOTRegBD_ACNA" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_9eFJ41NIEeOTRegBD_ACNA" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_9eFJ5FNIEeOTRegBD_ACNA" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="_9eFJ5VNIEeOTRegBD_ACNA" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9eFJ5lNIEeOTRegBD_ACNA" key="_9eFJ4VNIEeOTRegBD_ACNA" value="borrowAmount"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_9eFJ51NIEeOTRegBD_ACNA" key="_9eFJ41NIEeOTRegBD_ACNA" value="both"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_-HmA8FNIEeOTRegBD_ACNA" key="_9eFJ5VNIEeOTRegBD_ACNA" value="Currency"/>
+        </elements>
+        <elements xmi:type="transaction:Data" xmi:id="__ys34FNIEeOTRegBD_ACNA" tag="data" id="termLength">
+          <attributes xmi:type="transaction:Attribute" xmi:id="__ys34VNIEeOTRegBD_ACNA" name="id" required="true" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="__ys34lNIEeOTRegBD_ACNA" name="value" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="__ys341NIEeOTRegBD_ACNA" name="direction" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="__ys35FNIEeOTRegBD_ACNA" name="description" type="java.lang.String"/>
+          <attributes xmi:type="transaction:Attribute" xmi:id="__ys35VNIEeOTRegBD_ACNA" name="refType" required="true" type="java.lang.String"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="__ys35lNIEeOTRegBD_ACNA" key="__ys34VNIEeOTRegBD_ACNA" value="termLength"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="__ys351NIEeOTRegBD_ACNA" key="__ys341NIEeOTRegBD_ACNA" value="both"/>
+          <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ARRqQFNJEeOTRegBD_ACNA" key="__ys35VNIEeOTRegBD_ACNA" value="Number"/>
+        </elements>
+      </dataElements>
+    </data>
+    <format xmi:type="transaction:FormatCategory" xmi:id="_gjrslFNHEeOTRegBD_ACNA"/>
+    <operation xmi:type="transaction:OperationCategory" xmi:id="_gjrsk1NHEeOTRegBD_ACNA"/>
+    <service xmi:type="transaction:ServiceCategory" xmi:id="_gjrslVNHEeOTRegBD_ACNA"/>
+    <globalTag xmi:type="transaction:Taggable" xmi:id="_gjopQVNHEeOTRegBD_ACNA"/>
+  </transaction:WorkProduct>
+  <notation:Diagram xmi:id="_gkY3MFNHEeOTRegBD_ACNA" type="Editor" element="_gjopQlNHEeOTRegBD_ACNA" name="loanOfferFlow.transaction" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_hDOIQFNHEeOTRegBD_ACNA" type="1001" element="_hCo5cFNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_hDP9cFNHEeOTRegBD_ACNA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_hDQkgFNHEeOTRegBD_ACNA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_hDOIQVNHEeOTRegBD_ACNA" fontName="Arial" fontHeight="10" fillColor="9956278" gradient="16777215, 9956278, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hDOIQlNHEeOTRegBD_ACNA" x="34" y="128"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_hQu_0FNHEeOTRegBD_ACNA" type="1001" element="_hQoSIFNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_hQxcEFNHEeOTRegBD_ACNA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_hQxcEVNHEeOTRegBD_ACNA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_hQu_0VNHEeOTRegBD_ACNA" fontName="Arial" fontHeight="10" fillColor="14798212" gradient="16777215, 14798212, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hQu_0lNHEeOTRegBD_ACNA" x="475" y="152"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ibzEwFNHEeOTRegBD_ACNA" type="1001" element="_ibj0MFNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_ibzEw1NHEeOTRegBD_ACNA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_ibzr0FNHEeOTRegBD_ACNA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_ibzEwVNHEeOTRegBD_ACNA" fontName="Arial" fontHeight="10" fillColor="121087" gradient="16777215, 121087, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ibzEwlNHEeOTRegBD_ACNA" x="107" y="318"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B3K_IFNLEeOTRegBD_ACNA" type="1001" element="_B3CcQFNLEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_B3K_I1NLEeOTRegBD_ACNA" type="4001"/>
+      <children xmi:type="notation:Node" xmi:id="_B3K_JFNLEeOTRegBD_ACNA" type="4002"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_B3K_IVNLEeOTRegBD_ACNA" fontName="Arial" fontHeight="10" fillColor="121087" gradient="16777215, 121087, 0" lineColor="0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B3K_IlNLEeOTRegBD_ACNA" x="379" y="324"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_gkY3MVNHEeOTRegBD_ACNA"/>
+    <edges xmi:type="notation:Edge" xmi:id="_jnRZYFNHEeOTRegBD_ACNA" type="3001" element="_jnGaQFNHEeOTRegBD_ACNA" source="_hDOIQFNHEeOTRegBD_ACNA" target="_ibzEwFNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_jnTOkFNHEeOTRegBD_ACNA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_jnTOkVNHEeOTRegBD_ACNA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_jnSAcFNHEeOTRegBD_ACNA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_jnSAcVNHEeOTRegBD_ACNA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_jnSAclNHEeOTRegBD_ACNA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_jnSAc1NHEeOTRegBD_ACNA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_jnSAdFNHEeOTRegBD_ACNA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jnSAdVNHEeOTRegBD_ACNA" points="[15, 33, -60, -128]$[70, 158, -5, -3]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jnW48FNHEeOTRegBD_ACNA" id="(0.1780821917808219,0.046153846153846156)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_mHUUQFNHEeOTRegBD_ACNA" type="3001" element="_mHLKUFNHEeOTRegBD_ACNA" source="_ibzEwFNHEeOTRegBD_ACNA" target="_B3K_IFNLEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_mHU7UFNHEeOTRegBD_ACNA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mHU7UVNHEeOTRegBD_ACNA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_mHUUQVNHEeOTRegBD_ACNA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mHUUQlNHEeOTRegBD_ACNA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_mHUUQ1NHEeOTRegBD_ACNA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_mHUURFNHEeOTRegBD_ACNA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_mHUURVNHEeOTRegBD_ACNA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mHUURlNHEeOTRegBD_ACNA" points="[-9, 33, -273, -3]$[-9, 87, -273, 51]$[257, 87, -7, 51]$[257, 39, -7, 3]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CX1cMFNLEeOTRegBD_ACNA" id="(0.4452054794520548,0.9538461538461539)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_FVLXEFNLEeOTRegBD_ACNA" type="3001" element="_FVJh4FNLEeOTRegBD_ACNA" source="_B3K_IFNLEeOTRegBD_ACNA" target="_ibzEwFNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_FVLXF1NLEeOTRegBD_ACNA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FVLXGFNLEeOTRegBD_ACNA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_FVLXEVNLEeOTRegBD_ACNA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_FVLXElNLEeOTRegBD_ACNA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_FVLXE1NLEeOTRegBD_ACNA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_FVLXFFNLEeOTRegBD_ACNA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_FVLXFVNLEeOTRegBD_ACNA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FVLXFlNLEeOTRegBD_ACNA" points="[-47, -1, 152, 0]$[-173, -9, 26, -8]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FVNzUFNLEeOTRegBD_ACNA" id="(0.3219178082191781,0.2153846153846154)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FVNzUVNLEeOTRegBD_ACNA" id="(0.821917808219178,0.2923076923076923)"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_G1WJUFNLEeOTRegBD_ACNA" type="3001" element="_G1UUIFNLEeOTRegBD_ACNA" source="_B3K_IFNLEeOTRegBD_ACNA" target="_hQu_0FNHEeOTRegBD_ACNA">
+      <children xmi:type="notation:Node" xmi:id="_G1WJV1NLEeOTRegBD_ACNA" type="4003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_G1WJWFNLEeOTRegBD_ACNA" x="5" y="5"/>
+      </children>
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_G1WJUVNLEeOTRegBD_ACNA" lineColor="0" lineWidth="1"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_G1WJUlNLEeOTRegBD_ACNA" fontName="Arial" fontHeight="10"/>
+      <styles xmi:type="notation:ArrowStyle" xmi:id="_G1WJU1NLEeOTRegBD_ACNA" arrowTarget="SolidArrow"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_G1WJVFNLEeOTRegBD_ACNA"/>
+      <styles xmi:type="notation:LineTypeStyle" xmi:id="_G1WJVVNLEeOTRegBD_ACNA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G1WJVlNLEeOTRegBD_ACNA" points="[-10, -32, 59, 166]$[-62, -230, 7, -32]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

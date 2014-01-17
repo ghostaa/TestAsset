@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Back_B002_UC1Flow>
+
+
+	<htmlProcessor context="Back_B002_UC1Ctx" id="Back_B002_UC1Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC1_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC1_1.jsp" id="B002_UC1_1">
+			<transitions>
+				<htmlTransition id="B002_UC1_1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="B002_UC1_Op" id="B002_UC1_Op" outputMapFmt="B002_UC1_Op_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="B002_UC1_Op.opEvt" outputMapFmt="B002_UC1_Op_OutputFmt" targetState="B002_UC1_1"/>
+				<htmlTransition id="B002_UC1_Op.opEvt01" outputMapFmt="B002_UC1_Op_OutputFmt" targetState="B002B002_CommonErrorPage-1"/>
+				<htmlTransition id="B002_UC1_Op.opEvt02" outputMapFmt="B002_UC1_Op_OutputFmt" targetState="B002B002_CommonErrorPage"/>
+				<htmlTransition id="B002_UC1_Op.opEvt03" outputMapFmt="B002_UC1_Op_OutputFmt" inputMapFmt="B002_CommonErrorOp_InputFmt" targetState="B002_CommonErrorOp"/>
+				<htmlTransition id="B002_UC1_Op.opEvt04" outputMapFmt="B002_UC1_Op_OutputFmt" inputMapFmt="commonErrorFlow2_InputFmt" targetState="commonErrorFlow2"/>
+				<htmlTransition id="B002_UC1_Op.opEvt05" outputMapFmt="B002_UC1_Op_OutputFmt" inputMapFmt="commonErrorFlow2-1_InputFmt" targetState="commonErrorFlow2-1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC1_0.jsp" id="B002_UC1_0">
+			<transitions>
+				<htmlTransition id="B002_UC1_0.ok" targetState="B002_UC1_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="ErrorFlow2" id="commonErrorFlow2" inputMapFmt="commonErrorFlow2_InputFmt" type="subFlow"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_CommonErrorPage.jsp" id="B002B002_CommonErrorPage-1"/>
+
+		<operationState typeIdInfo="B002_CommonErrorOp" id="B002_CommonErrorOp" inputMapFmt="B002_CommonErrorOp_InputFmt" type="operation"/>
+
+		<popupSubFlowState typeIdInfo="ErrorFlow2" id="commonErrorFlow2-1" inputMapFmt="commonErrorFlow2-1_InputFmt" closable="false" title="" type="subFlow"/>
+
+		<popupPageState type="page" typeIdInfo="B002/B002_CommonErrorPage.jsp" id="B002B002_CommonErrorPage" closable="false" title=""/>
+	</htmlProcessor>
+
+	<context id="Back_B002_UC1Ctx" type="op">
+		<refKColl refId="Back_B002_UC1Record"/>
+	</context>
+
+	<kColl id="Back_B002_UC1Record">
+		<field id="stateFlag"/>
+		<field id="flowErrorMessage"/>
+	</kColl>
+
+	<fmtDef id="B002_UC1_Op_OutputFmt">
+		<mapperConverterExpression>
+			<map from="opErrorMessage" to="flowErrorMessage"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="commonErrorFlow2_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="flowHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="B002_CommonErrorOp_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="opHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="commonErrorFlow2-1_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="flowHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Back_B002_UC1Flow>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q005_TestServerResponseDataOp>
+
+	<operation id="Q005_TestServerResponseDataOp" context="Q005_TestServerResponseDataCtx" implClass="com.ibm.btt.application.op.Q005.server.Q005_TestFilterOp"/>
+
+	<context id="Q005_TestServerResponseDataCtx" type="op">
+		<refKColl refId="Q005_TestServerResponseDataRecord"/>
+	</context>
+
+	<kColl id="Q005_TestServerResponseDataRecord">
+		<refData refId="testRecord" lazy="false"/>
+		<iColl id="testList">
+			<refData refId="testRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="testRecord" dynamic="true">
+		<field id="TestField"/>
+		<data id="StringData" refType="String"/>
+		<data id="DateData" refType="Date"/>
+		<data id="CurrencyData" refType="Currency"/>
+		<data id="NumberData" refType="Number"/>
+		<data id="BooleanData" refType="Boolean"/>
+		<data id="ByteArrayData" refType="ByteArray"/>
+		<data id="DurationData" refType="Duration"/>
+		<data id="XMLGregorianCalendarData" refType="XMLGregorianCalendar"/>
+		<data id="ByteData" refType="Byte"/>
+		<data id="ShortData" refType="Short"/>
+		<data id="IntegerData" value="11111" refType="Integer"/>
+		<data id="LongData" refType="Long"/>
+		<data id="FloatData" refType="Float"/>
+		<data id="DoubleData" refType="Double"/>
+		<data id="BigIntegerData" refType="BigInteger"/>
+		<data id="BigDecimalData" refType="BigDecimal"/>
+	</kColl>
+
+</Q005_TestServerResponseDataOp>

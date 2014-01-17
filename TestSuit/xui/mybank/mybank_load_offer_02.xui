@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="51,34,700,362" dataBinding="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'mybank_load_offer_02.js'}">
+  <styles>
+    <css file="../../WebContent/css/mybank/mybankMain.css"/>
+    <css file="../../WebContent/css/mybank/button/button.css"/>
+  </styles>
+  <container name="Panel" styleClass="loanOffer02" id="panel">
+    <gridData heightHint="362" verticalAlignment="1" widthHint="700" heightType="FixedSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="panel01">
+        <gridData heightHint="147" verticalAlignment="1" widthHint="369" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="label01" id="label" text="Are you sure you would like to do this?">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightHint="20" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel02">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass="label02" id="label01_copy" text="Borrow Ammount: $">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx','dataName':'borrowAmount'}" styleClass="label02" id="label01" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel03">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass="label02" id="label02_copy" text="Term Lenght:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx','dataName':'termLength'}" styleClass="label02" id="label02" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass="label02" id="label03" text="years">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightHint="20" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Form" id="form">
+            <gridData heightHint="20" verticalAlignment="1" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+            <hiddenWidget name="HiddenField" dataName="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx','dataName':'borrowAmount'}" id="hiddenField"/>
+            <hiddenWidget name="HiddenField" dataName="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx','dataName':'termLength'}" id="hiddenField01"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel04">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" styleClass="mybankButtonGray" id="button" buttonType="button" text="GO BACK">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData widthHint="20" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" styleClass="mybankButtonGreen" id="button01" buttonType="button" text="ACCEPT LOAN">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="centerPanel" path="/xui/mybank/mybank_index.xui">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form" property="id"/>
+              <value type="constant" constant="'back'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="button01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="centerPanel" path="/xui/mybank/mybank_index.xui">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="constant" constant="null"/>
+              <value type="constant" constant="'submit'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

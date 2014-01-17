@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paginationDataOp>
+
+	<operation id="paginationDataOp" context="paginationDataCtx" implClass="com.ibm.btt.application.op.Q002.PaginationDataOp"/>
+
+	<context id="paginationDataCtx" type="op">
+		<refKColl refId="paginationDataRecord"/>
+	</context>
+
+	<kColl id="paginationDataRecord">
+		<iColl id="table_List" size="10">
+			<kColl id="table_Record">
+				<field id="filed1"/>
+				<field id="filed2"/>
+				<field id="filed3"/>
+			</kColl>
+		</iColl>
+		<kColl id="paginationData">
+			<data id="enableNext" refType="Boolean"/>
+			<data id="enablePrevious" refType="Boolean"/>
+			<data id="totalRowNumber" value="100" refType="Integer"/>
+			<data id="errMsg" refType="String"/>
+			<data id="pageNumber" value="1" refType="Integer"/>
+			<field id="pageEvent"/>
+			<data id="rowsPerPage" value="10" refType="Integer"/>
+		</kColl>
+	</kColl>
+
+</paginationDataOp>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="227,119,410,724" dataBinding="{'ctxType':'proc','ctxFile':'IBK_F_018_TableDataAppendFlow','ctxName':'IBK_F_018_TableDataAppendCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'TableAppendFromOp.js'}">
+  <styles/>
+  <container name="Form" layoutStyle="block" id="form">
+    <gridData heightHint="724" verticalAlignment="1" widthHint="410" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" verticalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="button" buttonType="button" text="Append ">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'IBK_F_018_TableDataAppendFlow','ctxName':'IBK_F_018_TableDataAppendCtx','dataName':'TableList'}" dataName="{'ctxType':'proc','ctxFile':'IBK_F_018_TableDataAppendFlow','ctxName':'IBK_F_018_TableDataAppendCtx','dataName':'SelectedList'}" id="table" selectionRequired="true" selectionMode="multiple">
+        <gridData heightHint="330" widthHint="300" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="130" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column A" noresize="false" dataName="A" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="130" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column B" noresize="false" dataName="B" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=OK" id="button01" text="OK">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="3"/>
+    <hiddenWidget name="Script" content="console.debug(&quot;############ enable table append flag on&quot;);
+dijit.byId(&quot;TableAppendFromOp_table&quot;).rows_append=true;
+
+//save  firstVisibleRow to hidden field
+var  firstVisibleRow=dijit.byId(&quot;TableAppendFromOp_table&quot;).scroller.firstVisibleRow;
+dijit.byId(&quot;TableAppendFromOp_hidden_firstVisibleRow&quot;).value=firstVisibleRow;
+" executeOnLoad="false" id="Script01"/>
+    <hiddenWidget name="Script" content="
+var  scrollMode= param0;
+var    scrollToRow=0;
+
+if (scrollMode==undefined || scrollMode==&quot;CurrentLocation&quot;)
+       scrollToRow=dijit.byId(&quot;TableAppendFromOp_hidden_firstVisibleRow&quot;).value;
+else if (scrollMode==&quot;Bottom&quot;)
+      scrollToRow=dijit.byId(&quot;TableAppendFromOp_table&quot;).scroller.rowCount;
+else if (scrollMode==&quot;Top&quot;)
+      scrollToRow=0;
+
+console.debug(&quot;############ scrollToRow : &quot;+  scrollToRow);
+dijit.byId(&quot;TableAppendFromOp_table&quot;).scrollToRow( scrollToRow);
+
+" executeOnLoad="false" id="Script02"/>
+    <hiddenWidget name="HiddenField" dataName="{'ctxType':'proc','ctxFile':'IBK_F_018_TableDataAppendFlow','ctxName':'IBK_F_018_TableDataAppendCtx','dataName':'hidden'}" id="hidden_firstVisibleRow"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="Script01">
+          <function name="execute"/>
+        </action>
+        <action type="widgetFunction" widget="form">
+          <function name="callAsyncOperation">
+            <parameter>
+              <value type="constant" constant="'IBK_F_018_TableDataAppendOp'"/>
+              <value type="constant" constant="'TableAppend'"/>
+              <value type="constant" constant="60000"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="form" event="onAsyncOK"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="Script02">
+          <function name="execute">
+            <parameter>
+              <value type="constant" constant="'CurrentLocation'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

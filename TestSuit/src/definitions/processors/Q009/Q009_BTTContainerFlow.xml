@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_BTTContainerFlow>
+
+
+	<htmlProcessor context="Q009_BTTContainerCtx" id="Q009_BTTContainerFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_BTTContainer"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer.jsp" id="Q009Q009_BTTContainer">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainer.load" targetState="LoadDiv"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Q009_BTTContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_BTTContainer_groupContainer&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div02.jsp&quot;,&quot;widgetId&quot;:&quot;groupContainer&quot;}, {&quot;divPage&quot;:&quot;Q009\/Q009_BTTContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_BTTContainer_titlePaneContainer&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div03.jsp&quot;,&quot;widgetId&quot;:&quot;titlePaneContainer&quot;}, {&quot;divPage&quot;:&quot;Q009\/Q009_BTTContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_BTTContainer_ContentPaneContainer01&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div04.jsp&quot;,&quot;widgetId&quot;:&quot;ContentPaneContainer01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Q009_BTTContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_BTTContainer_ContentPaneContainer02&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div05.jsp&quot;,&quot;widgetId&quot;:&quot;ContentPaneContainer02&quot;}]" id="LoadDiv" type="subPage">
+			<transitions>
+				<htmlTransition id="LoadDiv.exit" targetState="OK"/>
+			</transitions>
+		</subPageState>
+	</htmlProcessor>
+
+	<context id="Q009_BTTContainerCtx" type="op">
+		<refKColl refId="Q009_BTTContainerRecord"/>
+	</context>
+
+	<kColl id="Q009_BTTContainerRecord">
+		<field id="textValue_Panel" value="default_Panel"/>
+		<field id="textValue_Group" value="default_group"/>
+		<field id="textValue_titlePane" value="default_titlePane"/>
+		<field id="textValue_TabbedPane01" value="default_TabbedPane01"/>
+		<field id="textValue_TabbedPane02" value="textValue_TabbedPane02"/>
+		<field id="textValue_TabbedPane03" value="textValue_TabbedPane03"/>
+	</kColl>
+
+</Q009_BTTContainerFlow>

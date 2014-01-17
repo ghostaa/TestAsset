@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<F013_IndexFlow>
+
+
+	<htmlProcessor context="F013_IndexCtx" id="F013_IndexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="F013_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_F_013/F013_Index.jsp" id="F013_Index">
+			<transitions>
+				<htmlTransition id="F013_Index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="F013_IndexCtx" type="op">
+		<refKColl refId="F013_IndexRecord"/>
+	</context>
+
+	<kColl id="F013_IndexRecord">
+	</kColl>
+
+</F013_IndexFlow>

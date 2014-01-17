@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="301,97,500,347" dataBinding="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'IBKE2E_AccountPay.js'}">
+  <styles>
+    <css file="../WebContent/css/master.css"/>
+    <css file="../WebContent/css/dijit/Label.css"/>
+  </styles>
+  <container name="Panel" id="panel">
+    <gridData heightHint="347" verticalAlignment="1" widthHint="500" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="FixedSize" relativeWidth="99" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="labelAccountList" id="label" text="%nls.bttsample/IBKE2E_Account_Transfer">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label01" text="Select an account FROM which money is dispensed">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="SelectList" dataNameForList="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx','dataName':'AccountList'}" dataName="{'ctxType':'oper','ctxFile':'IBKE2E_GetAccountBalanceOp','ctxName':'IBKE2E_GetAccountBalanceCtx','dataName':'FromAccount'}" labelField="AccountNumber" valueField="AccountNumber" id="selectList">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="60" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="10" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label04" text="Balance($):">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" dataName="{'ctxType':'oper','ctxFile':'IBKE2E_GetAccountBalanceOp','ctxName':'IBKE2E_GetAccountBalanceCtx','dataName':'AvailableAmount'}" id="availableAmountLabel">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label02" text="Select or Input an account TO which money is deposited">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Combo" dataNameForList="AccountList" dataName="AccountTransfer.ToAccount" labelField="AccountNumber" hint="demo req 6: combo box typeAhead property and label/value fields" valueField="AccountNumber" id="combo" isMandatory="true">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label03" text="Please enter the amount of money to be transferred">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Text" dataName="AccountTransfer.Amount" id="amountText" isMandatory="true">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="dojoxGridErroressages" id="checkAmountLabel">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="10" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <gridData verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="CheckBox" id="inRealTimeCheckBox" text="Transfer in Realtime?">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="88" heightType="AutoSize" widthType="RelativeSize" relativeWidth="10" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="feeLabel" text="Fee($):">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="feeNumberLabel">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="3" widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="CheckBox" id="feeConfirmCheck" text="I Accept the Fee">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="200" heightType="AutoSize" widthType="FixedSize" relativeWidth="50" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=cancel" id="cancelButton" buttonType="submit without validation" text="Cancel">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=submit" id="submitButton" disabled="true" text="Submit">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="3"/>
+        <hiddenWidget name="HiddenField" dataName="AccountTransfer.FromAccount" id="FromAccount"/>
+        <hiddenWidget name="HiddenField" dataName="AccountTransfer.ToAccount" id="ToAccount"/>
+        <hiddenWidget name="HiddenField" dataName="AccountTransfer.Amount" id="Amount"/>
+        <hiddenWidget name="HiddenField" dataName="AccountTransfer.TransferFee" id="TransferFee"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules>
+    <rule name="getAvailableAmountECA" description="">
+      <events>
+        <event widget="selectList" event="onChange"/>
+        <event widget="selectList" event="onFocus"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="form">
+          <function name="callAsyncOperation">
+            <parameter>
+              <value type="constant" constant="'IBKE2E_GetAccountBalanceOp'"/>
+              <value type="constant" constant="'refresh'"/>
+              <value type="constant" constant="3000"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="computeLeftAmount">
+      <events>
+        <event widget="amountText" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="2" script="var amount = this.getPW('IBKE2E_AccountPay_availableAmountLabel', 'text');
+//111,1.11-&gt;1111.11
+amount = amount.replace(',', '');
+var transfer = this.getPW('IBKE2E_AccountPay_amountText', 'value');
+var leftMoney= Number(amount)-Number(transfer);
+
+if (transfer &lt;= 0) {
+ this.setPW('IBKE2E_AccountPay_checkAmountLabel', 'text', 'Amount is wrong');
+ //window.alert(&quot;Amount is wrong&quot;);
+}
+else if (leftMoney &lt; 0) {
+ //window.alert(&quot;The money you are transfering should not exceed &quot; + amount);
+ this.setPW('IBKE2E_AccountPay_checkAmountLabel',  'text',  'Amount should not exceed ' + amount);
+}
+else {
+ this.setPW('IBKE2E_AccountPay_checkAmountLabel',  'text',  '');
+ var realTimeTransfer = this.getPW('IBKE2E_AccountPay_inRealTimeCheckBox', 'value');
+      var rate = 0.01;
+ if (realTimeTransfer == true || realTimeTransfer == &quot;true&quot;)
+ {
+       rate = rate * 1.1;
+ }
+
+     var fee = Number(transfer)*rate;
+     this.setPW('IBKE2E_AccountPay_feeNumberLabel',  'text',  fee);
+ 
+}
+"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="realTimeCheck">
+      <events>
+        <event widget="inRealTimeCheckBox" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="3" script=" var transfer = this.getPW('IBKE2E_AccountPay_amountText', 'value');
+ 
+ var realTimeTransfer = this.getPW('IBKE2E_AccountPay_inRealTimeCheckBox', 'value');
+      var rate = 0.01;
+ if (realTimeTransfer == true || realTimeTransfer == &quot;true&quot;)
+ {
+       rate = rate * 1.1;
+ }
+
+     var fee = Number(transfer)*rate;
+     this.setPW('IBKE2E_AccountPay_feeNumberLabel',  'text',  fee);
+ 
+
+"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="confirmFee">
+      <events>
+        <event widget="feeConfirmCheck" event="onChange"/>
+      </events>
+      <condition>
+        <value type="widgetProperty" widget="feeConfirmCheck" property="isChecked"/>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="submitButton" property="disabled">
+          <value type="constant" constant="false"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="submitButton" property="disabled">
+          <value type="constant" constant="true"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="setHiddenValues">
+      <events>
+        <event widget="submitButton" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="FromAccount" property="value">
+          <value type="widgetProperty" widget="selectList" property="value"/>
+        </action>
+        <action type="widgetProperty" widget="ToAccount" property="value">
+          <value type="widgetProperty" widget="combo" property="value"/>
+        </action>
+        <action type="widgetProperty" widget="Amount" property="value">
+          <value type="widgetProperty" widget="amountText" property="value"/>
+        </action>
+        <action type="widgetProperty" widget="TransferFee" property="value">
+          <value type="widgetProperty" widget="feeNumberLabel" property="text"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

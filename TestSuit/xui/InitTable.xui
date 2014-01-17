@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="78,20,400,300" dataBinding="{'ctxType':'proc','ctxFile':'TableFlow','ctxName':'TableCtx'}" isRuleDirty="false">
+  <styles/>
+  <container name="Form" id="form">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label" text="This a common Table">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Table" paginationParams="{'timeout':'10000','operationNameForPagination':'TablePaginationOp','rowsPerPage':'25','directPagination':'false','paginationType':'default','errorOutputMapping':'errorOutputMapping','normalOutputMapping':'normalOutputMapping','nextInputMapping':'nextInputMapping','initialInputMapping':'initialInputMapping','paginationWhenLoading':'true','previousInputMapping':'previousInputMapping','directInputMapping':''}" dataNameForList="TableList" isPageable="true" id="table">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <column widthType="FixedSize" sortPriority="1" unCheckedValue="false" editable="true" widget="CheckBox" rowSpan="1" level="1" width="80" alwaysEditing="false" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" checkedValue="true" text="FirstColumn" noresize="false" dataName="FirstColumn" titleStyle="text" relativeWidth="1" repeat="true" id="columnId0" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="ThirdColumn" noresize="false" dataName="ThirdColumn" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" action="flowEvent=viewEvt" id="link" text="Return">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <title>TableTitle</title>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

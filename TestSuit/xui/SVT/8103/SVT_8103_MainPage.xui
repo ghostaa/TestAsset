@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="106,91,1009,392" dataBinding="{'ctxType':'proc','ctxFile':'svt/a8103/SVT_8103_main_Flow','ctxName':'SVT_8103_main_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'SVT_8103_MainPage.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="392" verticalAlignment="1" widthHint="1009" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="com_ibm_btt_svt_head" visibility="inherit" location="/xui/snippet/com/ibm/btt/svt/head.xui" id="com_ibm_btt_svt_head">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="com_ibm_btt_svt_checkuser" visibility="inherit" location="/xui/snippet/com/ibm/btt/svt/checkuser.xui" id="com_ibm_btt_svt_checkuser">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" visibility="gone" action="flowEvent=account information" id="link" text="account information">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" hint="If the account information link is not shown,please click me " id="button" buttonType="button" text="Help">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+    <hiddenWidget name="HiddenField" dataName="{'ctxType':'proc','ctxFile':'svt/a8103/SVT_8103_main_Flow','ctxName':'SVT_8103_main_Ctx','dataName':'checkUserResult'}" id="hiddenField01"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="com_ibm_btt_svt_checkuser_success" event="onClick"/>
+        <event widget="com_ibm_btt_svt_checkuser_form" event="onAsyncOK"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetProperty" widget="com_ibm_btt_svt_checkuser_success" property="visibility"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'visible'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="visibility">
+          <value type="constant" constant="'visible'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="visibility">
+          <value type="constant" constant="'gone'"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetProperty" widget="com_ibm_btt_svt_checkuser_success" property="visibility"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'visible'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="visibility">
+          <value type="constant" constant="'visible'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="link" property="visibility">
+          <value type="constant" constant="'gone'"/>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+</XUI>

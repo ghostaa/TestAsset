@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_NestedPopupFlowFlow>
+
+
+	<htmlProcessor context="Q008_NestedPopupFlowCtx" id="Q008_NestedPopupFlowFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NestedPopupFlowNestedPageOne"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<popupSubFlowState typeIdInfo="Q008_NestedPopupSubOneFlow" id="Q008_NestedPopupSubOneFlow" closable="true" title="SecondNested" type="subFlow">
+			<transitions>
+				<htmlTransition id="Q008_NestedPopupSubOneFlow.OK" targetState="NestedPopupFlowNestedPageTwo"/>
+				<htmlTransition id="Q008_NestedPopupSubOneFlow.close" targetState="close"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<htmlState type="page" typeIdInfo="NestedPopupFlow/NestedPageOne.jsp" id="NestedPopupFlowNestedPageOne">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowNestedPageOne.viewEvt" targetState="Q008_NestedPopupSubOneFlow"/>
+				<htmlTransition id="NestedPopupFlowNestedPageOne.close" targetState="Q008_NestedPopupSubOneFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NestedPopupFlow/NestedPageTwo.jsp" id="NestedPopupFlowNestedPageTwo">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowNestedPageTwo.viewEvt" targetState="OK"/>
+				<htmlTransition id="NestedPopupFlowNestedPageTwo.close" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="close" id="close" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q008_NestedPopupFlowCtx" type="op">
+		<refKColl refId="Q008_NestedPopupFlowRecord"/>
+	</context>
+
+	<kColl id="Q008_NestedPopupFlowRecord">
+		<field id="NestedPopupFlowField"/>
+	</kColl>
+
+</Q008_NestedPopupFlowFlow>

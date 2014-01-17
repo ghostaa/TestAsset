@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X073_test_Flow>
+
+
+	<htmlProcessor context="X073_test_Ctx" id="X073_test_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X073_test_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="X073_test_Op" id="X073_test_Op" type="operation">
+			<transitions>
+				<htmlTransition id="X073_test_Op.opEvt" targetState="X073X073_Function_Test"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X073/X073_Function_Test.jsp" id="X073X073_Function_Test">
+			<transitions>
+				<htmlTransition id="X073X073_Function_Test.submit" targetState="X073X073_Function_Test_Result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X073/X073_Function_Test_Result.jsp" id="X073X073_Function_Test_Result">
+			<transitions>
+				<htmlTransition id="X073X073_Function_Test_Result.viewEvt" targetState="OK"/>
+				<htmlTransition id="X073X073_Function_Test_Result.back" targetState="X073X073_Function_Test"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="X073_test_Op" implClass="com.ibm.btt.application.op.x073.X073_test_Flow_op"/>
+
+	<context id="X073_test_Ctx" type="op">
+		<refKColl refId="X073_test_Record"/>
+	</context>
+
+	<kColl id="X073_test_Record">
+		<field id="testValidation"/>
+		<iColl id="TestMutiWidgetList" size="10">
+			<refData refId="TestMutiWidgetRecord" lazy="false"/>
+		</iColl>
+		<iColl id="TestMutiWidgetListResult" size="10">
+			<refData refId="TestMutiWidgetRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="TestMutiWidgetRecord">
+		<field id="Field1"/>
+		<field id="Field2"/>
+		<field id="Field3"/>
+		<field id="Image"/>
+	</kColl>
+
+</X073_test_Flow>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="190,25,649,367" dataBinding="{'ctxType':'proc','ctxFile':'X070/X070_UC5_Flow','ctxName':'X070_UC5_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'X070_UC5.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="367" verticalAlignment="1" widthHint="649" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="311" verticalAlignment="1" widthHint="629" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="UC5: Verify sorting is maintained after pagination">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" paginationParams="{'operationNameForPagination':'X070\/X070_UC5_PaginateOp','timeout':'8000','directPagination':'false','rowsPerPage':'25','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'normalOutputMapping','nextInputMapping':'nextInputMapping','paginationWhenLoading':'false','initialInputMapping':'','previousInputMapping':'previousInputMapping','directInputMapping':''}" dataNameForList="{'ctxType':'proc','ctxFile':'X070_UC1_Flow','ctxName':'X070_UC1_Ctx','dataName':'cashAcctList'}" isPageable="true" sortEnabled="true" id="Table01" columnReordering="true">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="2" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="name" canSort="true" sortOrder="Ascending" noresize="false" dataName="name" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="surname" canSort="true" sortOrder="Ascending" noresize="false" dataName="surname" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="3" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="balance" canSort="true" sortOrder="Ascending" noresize="false" dataName="balance" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="5" level="1" rowSpan="1" widget="" width="80" showTooltip="false" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="branch_location" canSort="false" sortOrder="Ascending" noresize="false" dataName="branch_location" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="2" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="branch_id" canSort="true" sortOrder="Unsorted" noresize="false" dataName="branch_id" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button" buttonType="button" text="table.setSortableColumn('columnId3',true)">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button01" buttonType="button" text="table.sortColumn('branch_id', false)">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="Table01">
+          <function name="setSortableColumn">
+            <parameter>
+              <value type="constant" constant="'columnId3'"/>
+              <value type="constant" constant="true"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="button01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="Table01">
+          <function name="sortColumn">
+            <parameter>
+              <value type="constant" constant="'branch_id'"/>
+              <value type="constant" constant="false"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

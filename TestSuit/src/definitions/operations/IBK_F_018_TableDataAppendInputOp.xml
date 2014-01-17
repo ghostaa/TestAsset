@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_018_TableDataAppendInputOp>
+
+	<operation id="IBK_F_018_TableDataAppendInputOp" context="IBK_F_018_TableDataAppendInputCtx" implClass="com.ibm.btt.application.op.TableDataAppendInput"/>
+
+	<context id="IBK_F_018_TableDataAppendInputCtx" type="op">
+		<refKColl refId="IBK_F_018_TableDataAppendInputRecord"/>
+	</context>
+
+	<kColl id="IBK_F_018_TableDataAppendInputRecord">
+		<refData refId="TableRecord" lazy="false" alias="selectedRecord"/>
+	</kColl>
+
+	<kColl id="TableRecord">
+		<field id="name" value="King"/>
+		<field id="account" value="111222333"/>
+		<data id="age" value="35" refType="Integer"/>
+	</kColl>
+
+</IBK_F_018_TableDataAppendInputOp>

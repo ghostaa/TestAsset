@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<operation id="AJAX_MAPPING_X072$X072_UC4_OP" implClass="com.ibm.btt.base.BTTServerOperation">
+		<refFormat refId="X072_UC4_8_input" name="X072_UC4_8_input"/>
+		<refFormat refId="X072_UC4_7_output" name="X072_UC4_7_output"/>
+		<refFormat refId="X072_UC4_0_input" name="X072_UC4_0_input"/>
+		<refFormat refId="X072_UC4_0_output" name="X072_UC4_0_output"/>
+		<refFormat refId="X072_UC4_1_input" name="X072_UC4_1_input"/>
+		<refFormat refId="X072_UC4_1_output" name="X072_UC4_1_output"/>
+		<refFormat refId="X072_UC4_2_input" name="X072_UC4_2_input"/>
+		<refFormat refId="X072_UC4_2_output" name="X072_UC4_2_output"/>
+		<refFormat refId="X072_UC4_3_input" name="X072_UC4_3_input"/>
+		<refFormat refId="X072_UC4_3_output" name="X072_UC4_3_output"/>
+		<refFormat refId="X072_UC4_4_input" name="X072_UC4_4_input"/>
+		<refFormat refId="X072_UC4_4_output" name="X072_UC4_4_output"/>
+		<refFormat refId="X072_UC4_5_input" name="X072_UC4_5_input"/>
+		<refFormat refId="X072_UC4_5_output" name="X072_UC4_5_output"/>
+		<refFormat refId="X072_UC4_6_output" name="X072_UC4_6_output"/>
+		<refFormat refId="X072_UC4_6_input" name="X072_UC4_6_input"/>
+	</operation>
+
+	<fmtDef id="X072_UC4_8_input">
+		<mapperConverterExpression>
+			<map from="customer.name" to="customer.name"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_7_output">
+		<mapperConverterExpression>
+			<map from="customer.children" to="customer.children" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_0_input">
+		<mapperConverterExpression>
+			<map from="customer.children.*.name" to="customer.children.*.name" append="false"/>
+			<map from="customer.children.*.birth" to="customer.children.*.birth" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_0_output">
+		<mapperConverterExpression>
+			<map from="customer.name" to="customer.name"/>
+			<map from="customer.birth" to="customer.birth"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_1_input">
+		<mapperConverterExpression>
+			<map from="customer.name" to="customer.birth"/>
+			<map from="customer.birth" to="customer.name"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_1_output">
+		<mapperConverterExpression>
+			<map from="customer.children.*.name" to="customer.children.*.birth" append="false"/>
+			<map from="customer.children.*.birth" to="customer.children.*.name" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_2_input">
+		<mapperConverterExpression>
+			<map from="customer.name" to="customer.name"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_2_output">
+		<mapperConverterExpression>
+			<map from="customer.children.*.birth" to="customer.children.*.name" append="false"/>
+			<map from="customer.children.*.name" to="customer.children.*.birth" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_3_input">
+		<mapperConverterExpression>
+			<map from="customer.name" to="customer.name"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_3_output">
+		<mapperConverterExpression>
+			<map from="customer.children.*" to="children.*" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_4_input">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_4_output">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_5_input">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_5_output">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_6_output">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+			<map from="children" to="children" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4_6_input">
+		<mapperConverterExpression>
+			<map from="children.*.birth" to="children.*.name" append="false"/>
+			<map from="children.*.birth" to="children.*.birth" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</format.xml>

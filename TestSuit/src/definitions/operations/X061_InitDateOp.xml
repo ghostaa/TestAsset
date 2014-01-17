@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_InitDateOp>
+
+	<operation id="X061_InitDateOp" context="X061_InitDateCtx01" implClass="com.ibm.btt.application.op.X061_InitDateOp"/>
+
+	<context id="X061_InitDateCtx01" type="op">
+		<refKColl refId="X061_InitDateRecord"/>
+	</context>
+
+	<kColl id="X061_InitDateRecord">
+		<iColl id="X061_TableList" size="10">
+			<refData refId="X061_DateCalendarRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_DateCalendarRecord" lazy="false"/>
+	</kColl>
+
+	<kColl id="X061_DateCalendarRecord">
+		<data id="date_slash" refType="Date">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="date_bar" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_bar" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+</X061_InitDateOp>

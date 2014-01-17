@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetTransferHistoryPaginationOp>
+
+	<operation id="GetTransferHistoryPaginationOp" context="GetTransferHistoryPaginationCtx" implClass="com.ibm.btt.application.op.GetTransferHistoryPaginationOp"/>
+
+	<context id="GetTransferHistoryPaginationCtx" type="op">
+		<refKColl refId="GetTransferHistoryPaginationRecord"/>
+	</context>
+
+	<kColl id="GetTransferHistoryPaginationRecord">
+		<!-- Data for transfer history -->
+		<iColl id="transferHistory">
+			<kColl id="history">
+				<data id="historyID" refType="Integer"/>
+				<data id="toAccount" refType="String"/>
+				<data id="transfer_date" refType="Date">
+					<param value="yyyy-MM-dd HH:mm:ss" id="pattern"/>
+				</data>
+				<data id="amount" refType="Currency"/>
+				<field id="comments"/>
+			</kColl>
+		</iColl>
+		<refData refId="paginationData" lazy="false"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="enableNext" refType="Boolean"/>
+		<data id="enablePrevious" refType="Boolean"/>
+		<data id="totalRowNumber" refType="Integer"/>
+		<data id="rowsPerPage" refType="Integer"/>
+		<data id="pageNumber" refType="Integer"/>
+		<data id="errMsg" refType="String"/>
+		<field id="pageEvent"/>
+	</kColl>
+
+</GetTransferHistoryPaginationOp>

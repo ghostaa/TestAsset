@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SelectionResultInPanePopupFlow>
+
+
+	<htmlProcessor context="SelectionResultInPanePopupCtx01" id="SelectionResultInPanePopupFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SelectionResultInPanePage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="back" id="OK" type="final"/>
+
+		<popupPageState type="page" typeIdInfo="SelectionResultPage/SelectionResultInPanePage.jsp" id="SelectionResultInPanePage">
+			<transitions>
+				<htmlTransition id="SelectionResultInPanePage.back" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="SelectionResultInPanePopupCtx01" type="op">
+		<refKColl refId="SelectionResultInPanePopupRecord01"/>
+	</context>
+
+	<kColl id="SelectionResultInPanePopupRecord01">
+		<refData refId="AccountInfoList" alias="selectAccountList"/>
+	</kColl>
+
+</SelectionResultInPanePopupFlow>

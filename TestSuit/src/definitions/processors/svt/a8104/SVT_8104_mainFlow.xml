@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SVT_8104_mainFlow>
+
+
+	<htmlProcessor context="SVT_8104_mainCtx" id="SVT_8104_mainFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="StockTransaction"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="SVT/8104/StockTransaction.jsp" id="StockTransaction">
+			<transitions>
+				<htmlTransition id="StockTransaction.viewEvt" targetState="OK"/>
+				<htmlTransition id="StockTransaction.queryStockNumber" inputMapFmt="StockTransaction.queryStockNumber_InputFmt" targetState="B004ChartCurrentStockDayLineOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CurrentStockDayLineOp" id="B004ChartCurrentStockDayLineOp" type="operation">
+			<transitions>
+				<htmlTransition id="B004ChartCurrentStockDayLineOp.returnStock" outputMapFmt="B004ChartCurrentStockDayLineOp.returnStock_OutputFmt" targetState="SVT8104stockstock"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="SVT/8104/stock/stock.jsp" id="SVT8104stockstock">
+			<transitions>
+				<htmlTransition id="SVT8104stockstock.queryStockNumber" inputMapFmt="SVT8104stockstock.queryStockNumber_InputFmt" targetState="B004ChartCurrentStockDayLineOp"/>
+				<htmlTransition id="SVT8104stockstock.buy" inputMapFmt="SVT8104stockstock.buy_InputFmt" targetState="SVT8104stockbuy"/>
+				<htmlTransition id="SVT8104stockstock.sale" inputMapFmt="SVT8104stockstock.sale_InputFmt" targetState="SVT8104stocksale"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="SVT/8104/stock/buy.jsp" id="SVT8104stockbuy">
+			<transitions>
+				<htmlTransition id="SVT8104stockbuy.queryStockNumber" inputMapFmt="SVT8104stockstock.queryStockNumber_InputFmt" targetState="B004ChartCurrentStockDayLineOp"/>
+				<htmlTransition id="SVT8104stockbuy.sale" inputMapFmt="SVT8104stockstock.sale_InputFmt" targetState="SVT8104stocksale"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="SVT/8104/stock/sale.jsp" id="SVT8104stocksale">
+			<transitions>
+				<htmlTransition id="SVT8104stocksale.queryStockNumber" inputMapFmt="SVT8104stockstock.queryStockNumber_InputFmt" targetState="B004ChartCurrentStockDayLineOp"/>
+				<htmlTransition id="SVT8104stocksale.buy" inputMapFmt="SVT8104stockstock.buy_InputFmt" targetState="SVT8104stockbuy"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="SVT_8104_mainCtx" type="op">
+		<refKColl refId="SVT_8104_mainRecord"/>
+	</context>
+
+	<kColl id="SVT_8104_mainRecord">
+		<field id="stockID" value="600220"/>
+		<iColl id="CurrentStockDayLineList">
+			<kColl id="CurrentStockDayLineRecord01">
+				<field id="Date"/>
+				<field id="open"/>
+				<field id="high"/>
+				<field id="low"/>
+				<field id="close"/>
+				<field id="mid"/>
+			</kColl>
+		</iColl>
+		<data id="stockNumber" value="20" refType="Integer"/>
+		<iColl id="CurrentStockInfoList" size="15">
+			<kColl id="CurrentStockDayLineRecord02">
+				<field id="key"/>
+				<field id="value"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+				<field id="stockID"/>
+				<field id="stockName"/>
+				<field id="stockTime" description="行情时间"/>
+				<field id="stockLatestPrices" description="最新价"/>
+				<field id="stockYesterdayClosed" description="昨收盘"/>
+				<field id="stockOpeningPrice" description="开盘价"/>
+				<field id="stockChangeAmount" description="涨跌额"/>
+				<field id="stockLowest" description="最低"/>
+				<field id="stockHighest" description=" 最高"/>
+				<field id="stockPriceChangeRatio " description="涨跌幅"/>
+				<field id="stockTradingVolume" description="成交量"/>
+				<field id="stockVolumeOfBusiness" description="成交额"/>
+			</kColl>
+		</iColl>
+		<iColl id="CurrentStockBuy" size="5">
+			<kColl id="SVT_8104_mainRecord01">
+				<field id="buyType"/>
+				<field id="buyPrice"/>
+				<field id="buyAmount"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<iColl id="CurrentStockSale" size="5">
+			<kColl id="SVT_8104_mainRecord01">
+				<field id="saleType"/>
+				<field id="salePrice"/>
+				<field id="saleAmount"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<field id="buyPrice"/>
+		<field id="salePrice"/>
+		<data id="BuyIndex" refType="Integer"/>
+		<data id="SaleIndex" refType="Integer"/>
+	</kColl>
+
+	<fmtDef id="StockTransaction.queryStockNumber_InputFmt">
+		<mapperConverterExpression>
+			<map from="stockID" to="stockID"/>
+			<map from="stockNumber" to="stockNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="B004ChartCurrentStockDayLineOp.returnStock_OutputFmt">
+		<mapperConverterExpression>
+			<map from="CurrentStockDayLineList" to="CurrentStockDayLineList" append="false"/>
+			<map from="CurrentStockInfoList" to="CurrentStockInfoList" append="false"/>
+			<map from="CurrentStockBuy" to="CurrentStockBuy" append="false"/>
+			<map from="CurrentStockSale" to="CurrentStockSale" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="SVT8104stockstock.queryStockNumber_InputFmt">
+		<mapperConverterExpression>
+			<map from="stockID" to="stockID"/>
+			<map from="stockNumber" to="stockNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="SVT8104stockstock.sale_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getDataValueFromCollection(functs_BTTCollectionFunctions.getRowByIndex(CurrentStockSale, SaleIndex), &apos;salePrice&apos;)" to="salePrice"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="SVT8104stockstock.buy_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getDataValueFromCollection(functs_BTTCollectionFunctions.getRowByIndex(CurrentStockBuy, BuyIndex), &apos;buyPrice&apos;)" to="buyPrice"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</SVT_8104_mainFlow>

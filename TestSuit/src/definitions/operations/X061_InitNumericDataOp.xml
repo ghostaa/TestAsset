@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_InitNumericDataOp>
+
+	<operation id="X061_InitNumericDataOp" context="X061_InitNumericDataCtx" implClass="com.ibm.btt.application.op.X061_InitNumericDataOp"/>
+
+	<context id="X061_InitNumericDataCtx" type="op">
+		<refKColl refId="X061_InitNumericDataRecord01"/>
+	</context>
+
+	<kColl id="X061_InitNumericDataRecord01">
+		<iColl id="X061_TableList" size="10">
+			<refData refId="X061_NumericRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_NumericRecord" lazy="false"/>
+	</kColl>
+
+	<kColl id="X061_NumericRecord">
+		<data id="num_1" refType="Number">
+			<param value="1" id="default:decimalPlaces"/>
+		</data>
+		<data id="num_2" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="float_2" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="float_3" refType="Float">
+			<param value="3" id="default:decimalPlaces"/>
+		</data>
+	</kColl>
+
+</X061_InitNumericDataOp>

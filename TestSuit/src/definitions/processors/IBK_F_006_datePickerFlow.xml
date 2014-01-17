@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_006_datePickerFlow>
+
+
+	<htmlProcessor context="IBK_F_006_datePickerCtx" id="IBK_F_006_datePickerFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_F_006DatePicker"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="IBK_F_006/finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="IBK_F_006/DatePicker.jsp" id="IBK_F_006DatePicker">
+			<transitions>
+				<htmlTransition id="IBK_F_006DatePicker.ok" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="IBK_F_006_datePickerCtx" type="op" parent="sessionCtx">
+		<refKColl refId="IBK_F_006_datePickerRecord"/>
+	</context>
+
+	<kColl id="IBK_F_006_datePickerRecord" dynamic="true">
+		<data id="sampleData" refType="Date">
+			<param value="today+1d" id="maximumDate"/>
+			<param value="today-1d" id="minimumDate"/>
+		</data>
+	</kColl>
+
+</IBK_F_006_datePickerFlow>

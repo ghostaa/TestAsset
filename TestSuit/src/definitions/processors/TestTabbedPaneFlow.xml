@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestTabbedPaneFlow>
+
+
+	<htmlProcessor context="TestTabbedPaneCtx01" id="TestTabbedPaneFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TabbedPaneTestPageTabbedPaneTesting"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState type="page" typeIdInfo="TabbedPaneTestPage/TabbedPaneTesting.jsp" id="TabbedPaneTestPageTabbedPaneTesting">
+			<transitions>
+				<htmlTransition id="TabbedPaneTestPageTabbedPaneTesting.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestTabbedPaneCtx01" type="op">
+		<refKColl refId="TestTabbedPaneRecord01"/>
+	</context>
+
+	<kColl id="TestTabbedPaneRecord01">
+	</kColl>
+
+</TestTabbedPaneFlow>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_StringOp>
+
+	<operation id="X061_StringOp" context="X061_StringCtx01" implClass="com.ibm.btt.application.op.X061_StringOp"/>
+
+	<context id="X061_StringCtx01" type="op">
+		<refKColl refId="X061_StringRecord01"/>
+	</context>
+
+	<kColl id="X061_StringRecord01">
+		<refData refId="X061_StringRecord" lazy="false"/>
+		<refData refId="X061_StringList" alias="X061_StringList_01"/>
+		<refData refId="X061_StringList" alias="X061_StringList_02"/>
+	</kColl>
+
+	<kColl id="X061_StringRecord">
+		<!--11122\n222222222222222222222222222\nqqqqqqqqqqqqqqqqqqqqqqqq\rqqqqqqqqqqqq333333333333333333333333333334444444444444444444444-->
+		<data id="longString" refType="String"/>
+		<data id="longString222" value="222" refType="String"/>
+		<data id="longString_default" value="11122\n222222222222222222222222222\nqqqqqqqqqqqqqqqqqqqqqqqq\rqqqqqqqqqqqq333333333333333333333333333334444444444444444444444" refType="String"/>
+	</kColl>
+
+	<iColl id="X061_StringList" size="10">
+		<refData refId="X061_StringRecord" lazy="false"/>
+	</iColl>
+
+</X061_StringOp>

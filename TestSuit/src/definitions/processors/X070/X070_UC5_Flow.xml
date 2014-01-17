@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X070_UC5_Flow>
+
+
+	<htmlProcessor context="X070_UC5_Ctx" id="X070_UC5_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X070_InitDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="X070_InitDataOp" id="X070_InitDataOp" outputMapFmt="X070_InitDataOp_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="X070_InitDataOp.opEvt" outputMapFmt="X070_InitDataOp_OutputFmt" targetState="X070X070_UC5"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X070/X070_UC5.jsp" id="X070X070_UC5">
+			<transitions>
+				<htmlTransition id="X070X070_UC5.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X070_UC5_Ctx" type="op">
+		<refKColl refId="X070_UC5_Record"/>
+	</context>
+
+	<kColl id="X070_UC5_Record">
+		<refData refId="cashAcctList"/>
+		<refData refId="paginationData" lazy="false"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="cashAcctList">
+		<kColl id="cashAcct">
+			<data id="name" refType="String"/>
+			<data id="surname" refType="String"/>
+			<data id="balance" refType="Double"/>
+			<field id="branch_location"/>
+			<field id="branch_id"/>
+		</kColl>
+	</iColl>
+
+	<kColl id="paginationData">
+		<data id="X070_UC5_Table01_enableNext" refType="Boolean"/>
+		<data id="X070_UC5_Table01_enablePrevious" refType="Boolean"/>
+		<data id="X070_UC5_Table01_totalRowNumber" refType="Integer"/>
+		<data id="X070_UC5_Table01_rowsPerPage" refType="Integer"/>
+		<data id="X070_UC5_Table01_pageNumber" refType="Long"/>
+		<data id="X070_UC5_Table01_errMsg" refType="String"/>
+	</kColl>
+
+	<fmtDef id="X070_InitDataOp_OutputFmt">
+		<mapperConverterExpression>
+			<map from="cashAcctList" to="cashAcctList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X070_UC5_Flow>

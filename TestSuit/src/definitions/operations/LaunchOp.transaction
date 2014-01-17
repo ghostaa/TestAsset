@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_8eLvwGZOEeK7kuvysbBBtg">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_8eLvwmZOEeK7kuvysbBBtg">
+    <contexts xmi:type="transaction:Context" xmi:id="_AfPxcGZPEeK7kuvysbBBtg" tag="context" id="LaunchCtx01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AfPxcWZPEeK7kuvysbBBtg" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AfPxcmZPEeK7kuvysbBBtg" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AfPxc2ZPEeK7kuvysbBBtg" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AfPxdGZPEeK7kuvysbBBtg" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AfPxdWZPEeK7kuvysbBBtg" key="_AfPxcmZPEeK7kuvysbBBtg" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AfPxdmZPEeK7kuvysbBBtg" key="_AfPxcWZPEeK7kuvysbBBtg" value="LaunchCtx01"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_Bt3gsGZPEeK7kuvysbBBtg" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_Bt3gsWZPEeK7kuvysbBBtg" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_CSM80GZPEeK7kuvysbBBtg" key="_Bt3gsWZPEeK7kuvysbBBtg" value="LaunchRecord01"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_8eLvw2ZOEeK7kuvysbBBtg">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_BW39AGZPEeK7kuvysbBBtg" tag="kColl" id="LaunchRecord01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_BW39AWZPEeK7kuvysbBBtg" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_BW39AmZPEeK7kuvysbBBtg" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_BW39A2ZPEeK7kuvysbBBtg" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_BW39BGZPEeK7kuvysbBBtg" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_BW39BWZPEeK7kuvysbBBtg" key="_BW39A2ZPEeK7kuvysbBBtg" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_BW39BmZPEeK7kuvysbBBtg" key="_BW39AWZPEeK7kuvysbBBtg" value="LaunchRecord01"/>
+      <elements xmi:type="transaction:Data" xmi:id="_66MBcGbSEeKDAaKJGnAICA" tag="data" id="dse_timezone">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_66MBcWbSEeKDAaKJGnAICA" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_66MBcmbSEeKDAaKJGnAICA" name="value" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_66MBc2bSEeKDAaKJGnAICA" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_66MBdGbSEeKDAaKJGnAICA" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_66MBdWbSEeKDAaKJGnAICA" name="refType" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_66MBdmbSEeKDAaKJGnAICA" key="_66MBcWbSEeKDAaKJGnAICA" value="dse_timezone"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_66MBd2bSEeKDAaKJGnAICA" key="_66MBc2bSEeKDAaKJGnAICA" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_66MBeGbSEeKDAaKJGnAICA" key="_66MBdWbSEeKDAaKJGnAICA" value="String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_66MBeWbSEeKDAaKJGnAICA" key="_66MBcmbSEeKDAaKJGnAICA" value="xxx"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_8eLvxGZOEeK7kuvysbBBtg"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_8eLvxWZOEeK7kuvysbBBtg">
+    <operations xmi:type="transaction:Operation" xmi:id="__71iYGZOEeK7kuvysbBBtg" tag="operation" id="LaunchOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="__71iYWZOEeK7kuvysbBBtg" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="__71iYmZOEeK7kuvysbBBtg" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="__71iY2ZOEeK7kuvysbBBtg" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="__71iZGZOEeK7kuvysbBBtg" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="__71iZWZOEeK7kuvysbBBtg" key="__71iY2ZOEeK7kuvysbBBtg" value="com.ibm.btt.application.op.LaunchOperation"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="__71iZmZOEeK7kuvysbBBtg" key="__71iYWZOEeK7kuvysbBBtg" value="LaunchOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_DFurgGZPEeK7kuvysbBBtg" key="__71iYmZOEeK7kuvysbBBtg" value="LaunchCtx01"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_8eLvxmZOEeK7kuvysbBBtg"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_8eLvx2ZOEeK7kuvysbBBtg"/>
+</transaction:WorkProduct>

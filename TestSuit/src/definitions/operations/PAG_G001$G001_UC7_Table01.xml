@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_G001G001_UC7_Table01>
+
+	<operation id="PAG_G001$G001_UC7_Table01" context="pagOpCtx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="initialInputMapping" name="initialInputMapping"/>
+		<refFormat refId="directInputMapping" name="directInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+	</operation>
+
+	<context id="pagOpCtx" type="op">
+		<refKColl refId="pagOpData"/>
+	</context>
+
+	<kColl id="pagOpData">
+		<kColl id="tableProperties">
+			<field id="tableId" value="Table01"/>
+			<field id="dataName" value="multiSelectedList"/>
+			<field id="dataNameForList" value="transferHistory"/>
+			<field id="rowsPerPage" value="10"/>
+			<field id="operationNameForPagination" value="GetTransferHistoryPaginationOp"/>
+			<field id="directPagination" value="true"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="historyID,toAccount,transfer_date,amount,comments,status"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="initialInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="1" to="paginationData.pageNumber"/>
+			<map fromExpression="10" to="paginationData.rowsPerPage"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="directInputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.G001_UC7_Table01_pageNumber" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+			<map from="paginationData.enableNext" to="paginationData.G001_UC7_Table01_enableNext"/>
+			<map from="paginationData.totalRowNumber" to="paginationData.G001_UC7_Table01_totalRowNumber"/>
+			<map from="paginationData.enablePrevious" to="paginationData.G001_UC7_Table01_enablePrevious"/>
+			<map from="paginationData.errMsg" to="paginationData.G001_UC7_Table01_errMsg"/>
+			<map from="paginationData.pageNumber" to="paginationData.G001_UC7_Table01_pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_G001G001_UC7_Table01>

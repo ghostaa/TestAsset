@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X075_Mandatory_FVT_Flow>
+
+
+	<htmlProcessor context="X075_Mandatory_FVT_Ctx" id="X075_Mandatory_FVT_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X075MandatoryX075_FVT_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_index.jsp" id="X075MandatoryX075_FVT_index">
+			<transitions>
+				<htmlTransition id="X075MandatoryX075_FVT_index.viewEvt" targetState="OK"/>
+				<htmlTransition id="X075MandatoryX075_FVT_index.testServerMandatory" targetState="X075_FVT_Client_and_Server"/>
+				<htmlTransition id="X075MandatoryX075_FVT_index.to use case" targetState="X075MandatoryX075_FVT_UseCase"/>
+				<htmlTransition id="X075MandatoryX075_FVT_index.to formID" targetState="X075_FVT_formID"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_Client_and_Server_result.jsp" id="X075MandatoryX075_FVT_Client_and_Server_result">
+			<transitions>
+				<htmlTransition id="X075MandatoryX075_FVT_Client_and_Server_result.back" targetState="X075_FVT_Client_and_Server"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_Client_and_Server.jsp" id="X075_FVT_Client_and_Server">
+			<transitions>
+				<htmlTransition id="X075_FVT_Client_and_Server.testServerMandatory" targetState="X075MandatoryX075_FVT_Client_and_Server_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_UseCase.jsp" id="X075MandatoryX075_FVT_UseCase">
+			<transitions>
+				<htmlTransition id="X075MandatoryX075_FVT_UseCase.viewEvt" targetState="X075_FVT_user_result"/>
+				<htmlTransition id="X075MandatoryX075_FVT_UseCase.mutil" targetState="X075_FVT_user_result"/>
+				<htmlTransition id="X075MandatoryX075_FVT_UseCase.ref" targetState="X075_FVT_user_result"/>
+				<htmlTransition id="X075MandatoryX075_FVT_UseCase.lazy" targetState="X075_FVT_user_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_user_result.jsp" id="X075_FVT_user_result">
+			<transitions>
+				<htmlTransition id="X075_FVT_user_result.back" targetState="X075MandatoryX075_FVT_UseCase"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_formID.jsp" id="X075_FVT_formID">
+			<transitions>
+				<htmlTransition id="X075_FVT_formID.submit" targetState="X075_FVT_formID_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X075Mandatory/X075_FVT_formID_result.jsp" id="X075_FVT_formID_result">
+			<transitions>
+				<htmlTransition id="X075_FVT_formID_result.return" targetState="X075_FVT_formID"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X075_Mandatory_FVT_Ctx" type="op">
+		<refKColl refId="X075_Mandatory_FVT_Record"/>
+	</context>
+
+	<kColl id="X075_Mandatory_FVT_Record">
+		<data id="X075_Test_Server_isMandatory" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="X075_Test_Client_Used" refType="String"/>
+		<kColl id="X075_Mandatory_FVT_UserInfo">
+			<data id="X075_Mandatory_FVT_Username" refType="String"/>
+			<data id="X075_Mandatory_FVT_isMarried" value="true" refType="Boolean"/>
+			<data id="X075_Mandatory_FVT_partnerName" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+		</kColl>
+		<kColl id="X075_Mandatory_FVT_multi">
+			<iColl id="X075_Mandatory_FVT_one" size="1">
+				<kColl id="X075_Mandatory_FVT_Record01">
+					<field id="X075_Mandatory_FVT_Field" value="test1"/>
+					<data id="X075_Mandatory_FVT_Field_value" refType="String"/>
+				</kColl>
+			</iColl>
+			<data id="X075_Mandatory_FVT_type" value="false" refType="Boolean"/>
+			<data id="X075_Mandatory_FVT_one_result" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+			<data id="X075_Mandatory_FVT_textArea" refType="String">
+				<param value="true" id="isMandatory"/>
+			</data>
+		</kColl>
+		<kColl id="X075_Mandatory_FVT_ref">
+			<refData refId="X075_Mandatory_FVT_Ref" alias="X075_Mandatory_FVT_Ref1"/>
+			<refData refId="X075_Mandatory_FVT_Ref" alias="X075_Mandatory_FVT_Ref2"/>
+			<data id="X075_Mandatory_FVT_ref1_checked" value="true" refType="Boolean"/>
+			<data id="X075_Mandatory_FVT_ref2_checked" value="true" refType="Boolean"/>
+		</kColl>
+		<refData refId="X075_Mandatory_FVT_lazy" lazy="false"/>
+	</kColl>
+
+	<data id="X075_Mandatory_FVT_Ref" refType="String">
+		<param value="true" id="isMandatory"/>
+	</data>
+
+	<kColl id="X075_Mandatory_FVT_lazy">
+		<refData refId="X075_Mandatory_FVT_lazy" lazy="true"/>
+		<data id="X075_Mandatory_FVT_Data_lazy" refType="String">
+			<param value="true" id="isMandatory"/>
+		</data>
+		<data id="X075_Mandatory_FVT_Data_isCheck" value="true" refType="Boolean"/>
+	</kColl>
+
+</X075_Mandatory_FVT_Flow>

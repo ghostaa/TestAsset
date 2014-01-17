@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_007_1Flow>
+
+
+	<htmlProcessor context="IBK_F_007_1Ctx" id="IBK_F_007_1Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_F_007_1Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_F_007_multiLanguage/IBK_F_007_index.jsp" id="IBK_F_007_multiLanguageIBK_F_007_index">
+			<transitions>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.ch" targetState="IBK_F_007_1Op_Ch"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.ko" targetState="IBK_F_007_1Op_Ko"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.sp" targetState="IBK_F_007_1Op_Sp"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.en" targetState="IBK_F_007_1Op_En"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.submit" targetState="IBK_F_007_multiLanguageIBK_F_007_pop"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_index.final" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op" id="IBK_F_007_1Op" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_En" id="IBK_F_007_1Op_En" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_En.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Ko" id="IBK_F_007_1Op_Ko" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Ko.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Sp" id="IBK_F_007_1Op_Sp" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Sp.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Ch" id="IBK_F_007_1Op_Ch" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Ch.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</operationState>
+
+		<popupPageState type="page" typeIdInfo="IBK_F_007_multiLanguage/IBK_F_007_pop.jsp" id="IBK_F_007_multiLanguageIBK_F_007_pop" closable="false" height="500" left="100" title="%nls.bttsample/Welcome_To_Btt_Sample" top="100" width="600">
+			<transitions>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.en" targetState="IBK_F_007_1Op_En-1"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.ch" targetState="IBK_F_007_1Op_Ch-1"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.ko" targetState="IBK_F_007_1Op_Ko-1"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.sp" targetState="IBK_F_007_1Op_Sp-1"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.final" targetState="OK"/>
+				<htmlTransition id="IBK_F_007_multiLanguageIBK_F_007_pop.submit" targetState="IBK_F_007_multiLanguageIBK_F_007_index"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_En" id="IBK_F_007_1Op_En-1" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_En-1.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_pop"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Ko" id="IBK_F_007_1Op_Ko-1" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Ko-1.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_pop"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Sp" id="IBK_F_007_1Op_Sp-1" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Sp-1.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_pop"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_F_007_1Op_Ch" id="IBK_F_007_1Op_Ch-1" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_F_007_1Op_Ch-1.ok" targetState="IBK_F_007_multiLanguageIBK_F_007_pop"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="IBK_F_007_1Op" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_InitiateOp"/>
+
+	<operation id="IBK_F_007_1Op_En" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_En_Op"/>
+
+	<operation id="IBK_F_007_1Op_Ko" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_Ko_Op"/>
+
+	<operation id="IBK_F_007_1Op_Sp" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_Sp_Op"/>
+
+	<operation id="IBK_F_007_1Op_Ch" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocaleOp"/>
+
+	<context id="IBK_F_007_1Ctx" type="op">
+		<refKColl refId="IBK_F_007_1Record"/>
+	</context>
+
+	<kColl id="IBK_F_007_1Record">
+		<field id="textbox1" value="1"/>
+	</kColl>
+
+</IBK_F_007_1Flow>

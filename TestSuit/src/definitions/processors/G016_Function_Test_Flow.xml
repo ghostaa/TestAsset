@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G016_Function_Test_Flow>
+
+
+	<htmlProcessor context="G016_Function_Test_Ctx" id="G016_Function_Test_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G016_Function_Test_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_function_test_index.jsp" id="G016FunctionG016_function_test_index">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_function_test_index.submitEveryForm" targetState="G016FunctionG016_Fun_form_submit"/>
+				<htmlTransition id="G016FunctionG016_function_test_index.submitWholeForm" targetState="G016FunctionG016_Fun_form_submit_whole_panle"/>
+				<htmlTransition id="G016FunctionG016_function_test_index.submitTableEveryForm" targetState="G016FunctionG016_Fun_form_submit_table"/>
+				<htmlTransition id="G016FunctionG016_function_test_index.submitTableWholeForm" targetState="G016FunctionG016_Fun_form_submit_whole_table"/>
+				<htmlTransition id="G016FunctionG016_function_test_index.testRecordList" outputMapFmt="G016FunctionG016_function_test_index.testRecordList_OutputFmt" targetState="G016FunctionG016_Fun_record_list"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G016_Function_Test_Op" id="G016_Function_Test_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G016_Function_Test_Op.opEvt" targetState="G016FunctionG016_function_test_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit.jsp" id="G016FunctionG016_Fun_form_submit">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit.submit" targetState="G016FunctionG016_Fun_form_submit_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_result.jsp" id="G016FunctionG016_Fun_form_submit_result">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_result.back" targetState="G016FunctionG016_Fun_form_submit"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_whole_panle.jsp" id="G016FunctionG016_Fun_form_submit_whole_panle">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_whole_panle.submit" targetState="G016FunctionG016_Fun_form_submit_whole_panle_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_whole_panle_result.jsp" id="G016FunctionG016_Fun_form_submit_whole_panle_result">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_whole_panle_result.back" targetState="G016FunctionG016_Fun_form_submit_whole_panle"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_table.jsp" id="G016FunctionG016_Fun_form_submit_table">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_table.submit" targetState="G016FunctionG016_Fun_form_submit_table_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_table_result.jsp" id="G016FunctionG016_Fun_form_submit_table_result">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_table_result.backToEveryTable" targetState="G016FunctionG016_Fun_form_submit_table"/>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_table_result.backToWholeTable" targetState="G016FunctionG016_Fun_form_submit_whole_table"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_form_submit_whole_table.jsp" id="G016FunctionG016_Fun_form_submit_whole_table">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_Fun_form_submit_whole_table.submit" targetState="G016FunctionG016_Fun_form_submit_table_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_Fun_record_list.jsp" id="G016FunctionG016_Fun_record_list"/>
+	</htmlProcessor>
+
+	<operation id="G016_Function_Test_Op" implClass="com.ibm.btt.application.op.g016.G016_Function_test_Op"/>
+
+	<context id="G016_Function_Test_Ctx" type="op">
+		<refKColl refId="G016_Function_Test_Record"/>
+	</context>
+
+	<kColl id="G016_Function_Test_Record">
+		<iColl id="G016_Function_Test_List" size="4">
+			<kColl id="G016_Function_Test_Record01">
+				<field id="Inner_Image"/>
+				<data id="Inner_LabelValue" refType="String"/>
+				<refData refId="TestTable"/>
+				<refData refId="TestTable" alias="TestTableResult"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<data id="Image" refType="String"/>
+		<field id="LabelValue"/>
+		<iColl id="G016_Function_Test_List01">
+			<kColl id="G016_Function_Test_Record02">
+				<field id="G016_Function_Test_Field"/>
+			</kColl>
+		</iColl>
+		<refData refId="Countrys"/>
+		<kColl id="G016_Function_Record">
+			<iColl id="G016_Function_Test_List" size="4">
+				<kColl id="G016_Function_Test_Record01">
+					<field id="Inner_Image"/>
+					<data id="Inner_LabelValue" refType="String"/>
+					<refData refId="TestTable"/>
+					<refData refId="TestTable" alias="TestTableResult"/>
+					<data id="ProductName" refType="String"/>
+					<field id="RequiredPoints"/>
+				</kColl>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<iColl id="TestTable" size="4">
+		<kColl id="row">
+			<field id="A"/>
+			<field id="B"/>
+			<field id="C"/>
+			<field id="D"/>
+			<field id="CountrysResult"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="Countrys" size="4">
+		<kColl id="Country">
+			<field id="CountryName"/>
+			<data id="CountryNameNumber" refType="Integer"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="G016FunctionG016_function_test_index.testRecordList_OutputFmt">
+		<mapperConverterExpression>
+			<map from="G016_Function_Test_List" to="G016_Function_Record.G016_Function_Test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G016_Function_Test_Flow>

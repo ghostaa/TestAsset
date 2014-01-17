@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMR_FeatureFlow>
+
+
+	<htmlProcessor context="PMR_FeatureCtx" id="PMR_FeatureFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SelectOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="MixUse/MixUseFirstPage.jsp" id="MixUseFirstPage">
+			<transitions>
+				<htmlTransition id="MixUseFirstPage.viewEvt" targetState="MixUseSecondPage"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="MixUse/MixUseSecondPage.jsp" id="MixUseSecondPage" closable="false" title="Submitted from normal page">
+			<transitions>
+				<htmlTransition id="MixUseSecondPage.viewEvt" targetState="MixUseThirdPage"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState type="page" typeIdInfo="MixUse/MixUseThirdPage.jsp" id="MixUseThirdPage">
+			<transitions>
+				<htmlTransition id="MixUseThirdPage.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="SelectOp" id="SelectOp" type="operation">
+			<transitions>
+				<htmlTransition id="SelectOp.Mapping" outputMapFmt="SelectOp.Mapping_OutputFmt" targetState="MixUseFirstPage"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="PMR_FeatureCtx" type="op">
+		<refKColl refId="PMR_FeatureRecord"/>
+	</context>
+
+	<kColl id="PMR_FeatureRecord">
+		<data id="PMR_FeatureData" refType="String">
+			<param value="6" id="maximumLength"/>
+		</data>
+		<data id="TheFirst" refType="String">
+			<param value="[120]*" id="regExp"/>
+		</data>
+		<iColl id="SelectList">
+			<kColl id="SelectRecord01">
+				<field id="Label"/>
+				<field id="Value"/>
+			</kColl>
+		</iColl>
+		<field id="Combo"/>
+		<field id="Select"/>
+		<data id="TheSecond" refType="String">
+			<param value="6" id="maximumLength"/>
+		</data>
+		<data id="TheThird" refType="String"/>
+		<data id="PMR_FeatureData01" refType="Number">
+			<param value="99999" id="maximumNumber"/>
+		</data>
+		<data id="PMR_FeatureData02" refType="String"/>
+	</kColl>
+
+	<fmtDef id="SelectOp.Mapping_OutputFmt">
+		<mapperConverterExpression>
+			<map from="SelectList" to="SelectList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PMR_FeatureFlow>

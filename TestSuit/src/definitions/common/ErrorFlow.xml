@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ErrorFlow>
+
+
+	<htmlProcessor context="ErrorCtx" id="ErrorFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="error_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="exit" id="exit" type="final"/>
+
+		<htmlState type="page" typeIdInfo="B002/error_1.jsp" id="error_1">
+			<transitions>
+				<htmlTransition id="error_1.next" targetState="error_2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/error_2.jsp" id="error_2">
+			<transitions>
+				<htmlTransition id="error_2.exit" targetState="exit"/>
+				<htmlTransition id="error_2.retry" targetState="retry"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="retry" id="retry" type="final"/>
+	</htmlProcessor>
+
+	<context id="ErrorCtx" type="op">
+		<refKColl refId="ErrorRecord"/>
+	</context>
+
+	<kColl id="ErrorRecord">
+	</kColl>
+
+</ErrorFlow>

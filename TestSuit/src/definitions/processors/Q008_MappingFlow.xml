@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_MappingFlow>
+
+
+	<htmlProcessor context="Q008_MappingCtx" id="Q008_MappingFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="MappingOne"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Mapping/MappingOne.jsp" id="MappingOne">
+			<transitions>
+				<htmlTransition id="MappingOne.viewEvt" targetState="MappingThree"/>
+				<htmlTransition id="MappingOne.close" targetState="close"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Mapping/MappingThree.jsp" id="MappingThree">
+			<transitions>
+				<htmlTransition id="MappingThree.viewEvt" targetState="MappingTwo"/>
+				<htmlTransition id="MappingThree.close" targetState="close"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Mapping/MappingTwo.jsp" id="MappingTwo">
+			<transitions>
+				<htmlTransition id="MappingTwo.viewEvt" targetState="OK"/>
+				<htmlTransition id="MappingTwo.close" targetState="close"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="close" id="close" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q008_MappingCtx" type="op">
+		<refKColl refId="Q008_MappingRecord"/>
+	</context>
+
+	<kColl id="Q008_MappingRecord">
+		<field id="one"/>
+		<field id="two"/>
+		<field id="three"/>
+		<field id="four"/>
+	</kColl>
+
+</Q008_MappingFlow>

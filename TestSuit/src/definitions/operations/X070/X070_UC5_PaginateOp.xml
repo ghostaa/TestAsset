@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X070_UC5_PaginateOp>
+
+	<operation id="X070_UC5_PaginateOp" context="X070_UC5_PaginateCtx" implClass="com.ibm.btt.application.op.X070.X070_UC5_PaginateOp"/>
+
+	<context id="X070_UC5_PaginateCtx" type="op">
+		<refKColl refId="X070_UC5_PaginateRecord"/>
+	</context>
+
+	<kColl id="X070_UC5_PaginateRecord">
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="cashAcctList"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="enableNext" refType="Boolean"/>
+		<data id="enablePrevious" refType="Boolean"/>
+		<data id="totalRowNumber" refType="Integer"/>
+		<data id="rowsPerPage" refType="Integer"/>
+		<data id="pageNumber" refType="Integer"/>
+		<data id="errMsg" value="this is an error message" refType="String"/>
+		<field id="pageEvent"/>
+		<data id="curPageNum" refType="Integer"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="cashAcctList">
+		<kColl id="cashAcct">
+			<data id="name" refType="String"/>
+			<data id="surname" refType="String"/>
+			<data id="balance" refType="Double"/>
+			<field id="branch_location"/>
+			<field id="branch_id"/>
+		</kColl>
+	</iColl>
+
+</X070_UC5_PaginateOp>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="38,5,752,464" dataBinding="{'ctxType':'proc','ctxFile':'mybank/loanOfferFlow','ctxName':'loanOfferCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'mybank_loan_offer_01.js'}">
+  <styles>
+    <css file="../../WebContent/css/mybank/slider/mybankSlider.css"/>
+    <css file="../../WebContent/css/mybank/mybankMain.css"/>
+    <css file="../../WebContent/css/mybank/titlepane/titlepane.css"/>
+    <css file="../../WebContent/css/mybank/button/button.css"/>
+  </styles>
+  <container name="Form" id="form">
+    <gridData heightHint="464" verticalAlignment="1" widthHint="752" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="dijit_TitlePane" styleClass=" mybankTitlePane" preload="true" preventCache="false" open="true" id="titlePane" text-align="left" ioMethod="dojo.xhrGet" loadingMessage__Template="&lt;span class='dijitContentPaneLoading'&gt;%s&lt;/span&gt;" refreshOnShow="false" errorMessage__Template="&lt;span class='dijitContentPaneError'&gt;%s&lt;/span&gt;">
+        <extendWidgetInfo styleClass="dijitTitlePane"/>
+        <gridData heightHint="486" verticalAlignment="1" widthHint="702" heightType="AutoSize" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" styleClass="sliderPanel" id="panel">
+            <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+            <gridData heightHint="362" verticalAlignment="1" widthHint="700" heightType="FixedSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightHint="170" horizontalAlignment="2" widthHint="227" heightType="FixedSize" widthType="RelativeSize" relativeWidth="33" relativeHeight="52" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel05">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData verticalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass="sliderLabel_03" id="label06" text="1">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_04" id="label07" text="Borrow Ammount">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass="sliderLabel_05" id="label08" text="Adjust the amount you would like to borrow">
+                    <gridData heightHint="48" widthHint="141" textWrap="true" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="170" horizontalAlignment="2" widthHint="226" heightType="FixedSize" widthType="RelativeSize" relativeWidth="36" relativeHeight="52" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel06">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData verticalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_03" id="label09" text="2">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_04" id="label10" text="Term Length">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" id="label11" text="Adjust the term length you would like for repayments">
+                    <gridData heightHint="39" widthHint="158" textWrap="true" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="170" horizontalAlignment="2" widthHint="215" heightType="FixedSize" widthType="RelativeSize" relativeWidth="33" relativeHeight="52" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel06_copy">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData verticalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_03" id="label09_copy" text="3">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_04" id="label10_copy" text="Interest Rate">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" id="label11_copy" text="Interest Rate is calculated here base on you needs">
+                    <gridData heightHint="39" widthHint="158" textWrap="true" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="160" horizontalAlignment="2" widthHint="227" heightType="FixedSize" widthType="RelativeSize" relativeWidth="33" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="50" horizontalAlignment="2" verticalAlignment="3" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass="sliderLabel" id="amountLabel" text="$50,000">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData horizontalAlignment="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="dijit_form_HorizontalSlider" bottomLabels="true" intermediateChanges="true" bottomRules="false" minimum="50000" bottom__labels="[&quot;$50,000&quot;,&quot;$250,000&quot;]" id="dijit_form_HorizontalSlider" bottom__rule__count="3" maximum="250000" topRules="true" clickSelect="true" top__count="1" top__rule__count="6" bottom__rule__height="5" showButtons="false" styleClass="mybankSlider" bottom__label__font__size="11" top__rule__height="5" readOnly="false" widgetName="{'ctxType':'proc','ctxFile':'loanOfferFlow','ctxName':'loanOfferCtx','dataName':'borrowAmount'}" value="{&quot;path&quot;:&quot;borrowAmount&quot;,&quot;storeId&quot;:&quot;localContextStore&quot;}" bottom__label__item__color="RGB {255, 255, 255}" bottom__count="2" discreteValues="21" disabled="false" top__label__font__size="11">
+                    <extendWidgetInfo styleClass="dijitSliderH dijitSlider"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="160" heightType="AutoSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="160" widthHint="226" heightType="FixedSize" widthType="RelativeSize" relativeWidth="36" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel03_copy">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="50" horizontalAlignment="2" verticalAlignment="3" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_02" id="yearLabel" text="1 years">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData horizontalAlignment="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="dijit_form_HorizontalSlider" bottomLabels="true" intermediateChanges="true" bottomRules="false" minimum="1" bottom__labels="[&quot;1 year&quot;,&quot;15 years&quot;]" id="dijit_form_HorizontalSlider01" maximum="15" bottom__rule__count="3" topRules="true" clickSelect="true" top__count="3" topLabels="false" top__rule__count="8" bottom__rule__height="5" showButtons="false" styleClass="mybankSlider" bottom__label__font__size="11" bottom__label__item__width="50" top__rule__height="5" readOnly="false" widgetName="{'ctxType':'proc','ctxFile':'loanOfferFlow','ctxName':'loanOfferCtx','dataName':'termLength'}" value="{&quot;path&quot;:&quot;termLength&quot;,&quot;storeId&quot;:&quot;localContextStore&quot;}" bottom__label__item__color="RGB {128, 128, 0}" discreteValues="15" bottom__count="2" disabled="false" top__label__font__size="11">
+                    <extendWidgetInfo styleClass="dijitSliderH dijitSlider"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="160" heightType="AutoSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="160" widthHint="215" heightType="FixedSize" widthType="RelativeSize" relativeWidth="33" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel04">
+                <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData horizontalAlignment="2" verticalAlignment="3" widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass=" sliderLabel_03" id="label05" text="6%">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="58" horizontalAlignment="2" widthHint="227" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" styleClass="mybankButtonGreen" id="button" buttonType="button" text="ACCEPT">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0" verticalSpacing="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+    <hiddenWidget name="BttStoreWidget" Service="{}" id="localContextStore"/>
+  </container>
+  <rules>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="centerPanel" path="xui/mybank/mybank_index.xui">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form" property="id"/>
+              <value type="constant" constant="'submit'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule">
+      <events>
+        <event widget="dijit_form_HorizontalSlider01" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="yearLabel" property="text">
+          <value type="expression">
+            <leftValue type="widgetProperty" widget="dijit_form_HorizontalSlider01" property="value"/>
+            <operator name="+"/>
+            <rightValue type="constant" constant="' years'"/>
+          </value>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="dijit_form_HorizontalSlider" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="format" script=" dijit.byId('mybank_loan_offer_01_amountLabel').set('text',
+   dojo.currency.format(dijit.byId('mybank_loan_offer_01_dijit_form_HorizontalSlider').get('value'), {currency:&quot;$&quot;}));"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

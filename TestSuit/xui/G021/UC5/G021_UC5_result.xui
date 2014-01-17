@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="234,107,400,349" dataBinding="{'projectName':'btt-demo-2', 'ctxType':'proc', 'ctxFile':'accountQueryFlow', 'ctxName':'accountQueryCtx'} " isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'accountDetails.js'}">
+  <styles>
+    <css file="../WebContent/css/styles.css"/>
+  </styles>
+  <container name="Panel">
+    <gridData heightHint="349" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="mainForm">
+        <gridData heightHint="152" horizontalAlignment="4" verticalAlignment="4" widthHint="216" heightType="RelativeSize" widthType="RelativeSize" relativeWidth="100" relativeHeight="152" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="title" id="label" text="Account Detail">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Image" location="img/line.png" id="image">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel02">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="numberNLS" text="Number:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" Label="selectedAccount.number" dataName="selectedAccount.number" id="selectedAccountLabel.number" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="balanceNLS" text="Balance:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" Label="selectedAccount.balance" dataName="selectedAccount.balance" id="selectedAccount.balanceLabel" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="descriptionNLS" text="Description:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" Label="selectedAccount.description" dataName="selectedAccount.description" id="selectedAccountLabel.description" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="creationDateNLS" text="Creation Date:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" Label="selectedAccount.creationDate" dataName="{'ctxType':'proc','ctxFile':'G021_Test_Flow','ctxName':'G021_Test_Ctx','dataName':'fromDate'}" id="selectedAccountLabel.creationDate" text="Label">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="creationDateNLS_copy" text="BankCode:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" Label="selectedAccount.creationDate" dataName="{'ctxType':'proc','ctxFile':'G021_Test_Flow','ctxName':'G021_Test_Ctx','dataName':'bankCode'}" id="branch" text="ABC_001">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel02_copy">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Link" action="flowEvent=index" id="link" text="Back to G021 Index page">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

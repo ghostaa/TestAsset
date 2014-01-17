@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="56,38,820,1404" dataBinding="{'ctxType':'proc','ctxFile':'B003_UC1Flow','ctxName':'B003_UC1Ctx'}" isRuleDirty="false">
+  <styles>
+    <css file="../../WebContent/css/testGridEnhancement.css"/>
+  </styles>
+  <container name="Panel" id="panel">
+    <gridData heightHint="1404" verticalAlignment="1" widthHint="820" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" action="flowEvent=viewEvt01" id="link" text="&gt;&gt; Next Page">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="TabbedPane" styleClass="test redblue" id="tabbedPane">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <container name="ContentPane" title="Tab03" id="ContentPane03" selected="true" iconClass="myEditorIcon myEditorIconCancel">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label" text="Inherite the red color from the parent container">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label07" text="use the container's child css, write the child css directly">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" styleClass="fontstyle background" id="label01" text="this label's background color is yellow, and the text color is red, font style is Georgia">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="2"/>
+        </container>
+        <container name="ContentPane" title="Tab04" id="ContentPane04" iconClass="dijitEditorIcon dijitEditorIconBackColor dijitArrowNode">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'B003_UC1Flow','ctxName':'B003_UC1Ctx','dataName':'B003_UC1List'}" styleClass="area_title" id="table">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="[{&quot;forr&quot;:[&quot;H&quot;],&quot;name&quot;:&quot;border-style&quot;}, {&quot;forr&quot;:[&quot;E&quot;,&quot;R&quot;,2,3],&quot;name&quot;:&quot;area_title_haveline&quot;}, {&quot;forr&quot;:[&quot;R&quot;],&quot;name&quot;:&quot;area_title&quot;}]" headerHAlign="16384" colSpan="1" hidden="false" text="B003_UC1Field" canSort="false" noresize="false" dataName="B003_UC1Field" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                <tableColumnAlignment>16384</tableColumnAlignment>
+              </column>
+              <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="B003_UC1Data" canSort="false" noresize="false" dataName="B003_UC1Data" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                <tableColumnAlignment>16384</tableColumnAlignment>
+              </column>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label03" text="Label">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'B003_UC1Flow','ctxName':'B003_UC1Ctx','dataName':'B003_UC1List'}" styleClass="blue border-style" id="table01">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column0" canSort="false" noresize="false" dataName="B003_UC1Field" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                <tableColumnAlignment>16384</tableColumnAlignment>
+              </column>
+              <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="column1" canSort="false" noresize="false" dataName="B003_UC1Data" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                <tableColumnAlignment>16384</tableColumnAlignment>
+              </column>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="1"/>
+        </container>
+        <container name="ContentPane" title="Tab01" id="ContentPane01" iconClass="dijitEditorIconCopy dijitEditorIcon">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label04" text="Tab01: dijitEditorIconCopy">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="1"/>
+        </container>
+        <container name="ContentPane" title="Tab02" id="ContentPane02" iconClass="dijitEditorIcon dijitEditorIconBackColor">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label05" text="Tab 02: dijitEditorIconBackColor">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="1"/>
+        </container>
+        <container name="ContentPane" title="Tab05" id="ContentPane05">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label06" text="Tab 05: icon class none">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="1"/>
+        </container>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" styleClass=" test" id="panel01">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="font-style background" id="label02" text="Label">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" styleClass="fontstyle" id="panel02">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="TabbedPane" id="tabbedPane01">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <container name="ContentPane" title="Tab01" id="ContentPane06">
+          <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </container>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

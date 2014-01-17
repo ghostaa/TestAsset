@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_G028G028_UC4_FT_single_table>
+
+	<operation id="PAG_G028$G028_UC4_FT_single_table" context="pagOpCtx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="initialInputMapping" name="initialInputMapping"/>
+		<refFormat refId="nextInputMapping" name="nextInputMapping"/>
+		<refFormat refId="previousInputMapping" name="previousInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+		<refFormat refId="errorOutputMapping" name="errorOutputMapping"/>
+	</operation>
+
+	<context id="pagOpCtx" type="op">
+		<refKColl refId="pagOpData"/>
+	</context>
+
+	<kColl id="pagOpData">
+		<kColl id="tableProperties">
+			<field id="tableId" value="table"/>
+			<field id="dataName"/>
+			<field id="dataNameForList" value="accounts"/>
+			<field id="rowsPerPage" value="25"/>
+			<field id="operationNameForPagination" value="G028_CreatePaginationDataOp"/>
+			<field id="directPagination" value="false"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="idx,acctNum"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="initialInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="1" to="paginationData.pageNumber"/>
+			<map fromExpression="10" to="paginationData.rowsPerPage"/>
+			<map fromExpression="100" to="paginationData.totalRowNumber"/>
+			<map from="accounts" to="accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="nextInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="paginationData$G028_UC4_FT_single_table_pageNumber + 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="previousInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="paginationData$G028_UC4_FT_single_table_pageNumber - 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.enableNext" to="paginationData.G028_UC4_FT_single_table_enableNext"/>
+			<map from="paginationData.enablePrevious" to="paginationData.G028_UC4_FT_single_table_enablePrevious"/>
+			<map from="paginationData.pageNumber" to="paginationData.G028_UC4_FT_single_table_pageNumber"/>
+			<map from="accounts" to="accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="errorOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.errMsg" to="paginationData.G028_UC4_FT_single_table_errMsg"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_G028G028_UC4_FT_single_table>

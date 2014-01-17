@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="226,143,1369,454" dataBinding="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G016_UC14_auto.js'}">
+  <styles>
+    <css file="../../../../WebContent/css/G016/gift.css"/>
+    <css file="../../../../WebContent/css/G016/gbp-mult-pa_a.css"/>
+  </styles>
+  <container name="Panel" styleClass="layoutCenter" id="panel">
+    <gridData heightHint="454" verticalAlignment="1" widthHint="1369" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" styleClass="headArea" id="panel01">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listLeft">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listCenter">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="panel02">
+        <gridData heightHint="284" verticalAlignment="1" widthHint="100" heightType="RelativeSize" widthType="RelativeSize" relativeWidth="30" relativeHeight="284" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="UC14 - Vertical sizing - relative">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products'}" id="repetitivePanel">
+            <gridData heightHint="79" verticalAlignment="1" widthHint="165" heightType="RelativeSize" widthType="RelativeSize" relativeWidth="50" relativeHeight="50" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Image" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.ProductImageURL'}" id="image">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel04">
+                <gridData heightHint="79" verticalAlignment="1" widthHint="44" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.ProductName'}" styleClass="nombre" id="label02" text="Label">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.RequiredPoints'}" styleClass="puntos" id="label03" text="Label">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="giftlink" id="link" text="Consultar  &gt;&gt;">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listRight">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="footArea">
+      <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="3"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

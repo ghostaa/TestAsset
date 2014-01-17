@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ErrorFlow2>
+
+
+	<htmlProcessor context="ErrorFlow2Ctx" id="ErrorFlow2">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="error_2_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="exit" id="exit" type="final"/>
+
+		<htmlState type="page" typeIdInfo="B002/error_2_1.jsp" id="error_2_1">
+			<transitions>
+				<htmlTransition id="error_2_1.next" targetState="error_2_2"/>
+				<htmlTransition id="error_2_1.close" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/error_2_2.jsp" id="error_2_2">
+			<transitions>
+				<htmlTransition id="error_2_2.exit" targetState="exit"/>
+				<htmlTransition id="error_2_2.retry" targetState="retry"/>
+				<htmlTransition id="error_2_2.close" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="retry" id="retry" type="final"/>
+
+		<htmlState typeIdInfo="close" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="ErrorFlow2Ctx" type="op">
+		<refKColl refId="ErrorFlow2Record"/>
+	</context>
+
+	<kColl id="ErrorFlow2Record">
+		<field id="ErrorField"/>
+		<field id="flowHandleError"/>
+	</kColl>
+
+</ErrorFlow2>

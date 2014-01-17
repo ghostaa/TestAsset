@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_G016FunctionG016_and_G021_Form_out_repetitivePanel.xml>
+<operation id="xval_G016$Function$G016_and_G021_Form_out_repetitivePanel" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form_xValidations" name="form_xValidations"/>
+
+</operation>
+<fmtDef id="form_xValidations">
+	<xValConditions repeatAt="accounts">
+		<condition  expression="!(! accounts${index}$isAccept)"/>
+		<condition  expression="functs_BTTStringFunctions.subString(accounts${index}$bankCode, 0, 4) == &apos;ABC_&apos;"/>
+		<condition  expression="functs_BTTDateFunctions.daysBetween(accounts${index}$toDate, accounts${index}$fromDate) &gt;= 1"/>
+	</xValConditions>
+</fmtDef>
+
+</xval_G016FunctionG016_and_G021_Form_out_repetitivePanel.xml>

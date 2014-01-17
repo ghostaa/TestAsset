@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_mainFlow>
+
+
+	<htmlProcessor context="Q009_mainCtx" id="Q009_mainFlow">
+		<htmlState type="page" typeIdInfo="Q009/Q009_main.jsp" id="main">
+			<transitions>
+				<htmlTransition id="main.testSubFlow" targetState="Q009Q009_BTTContainerFlow"/>
+				<htmlTransition id="main.toSubFinalPage" targetState="SubFinal state"/>
+				<htmlTransition id="main.toTestSubFinalLayoutAndMapping" inputMapFmt="main.toTestSubFinalLayoutAndMapping_InputFmt" targetState="Q009Q009_Test_subFinal_layout_mapping_Flow"/>
+				<htmlTransition id="main.testForm" targetState="Q009TestForm"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="main"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="final" type="final"/>
+
+		<htmlState typeIdInfo="Q009_BTTContainerFlow" id="Q009Q009_BTTContainerFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainerFlow.OK" targetState="Q009Q009_BTTContainer_Div02"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div02.jsp" id="Q009Q009_BTTContainer_Div02">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainer_Div02.exit" targetState="final"/>
+			</transitions>
+		</htmlState>
+
+		<subPageState typeIdInfo="OK" data="[{&quot;divPage&quot;:&quot;Q009\/Q009_main.xui&quot;,&quot;divId&quot;:&quot;Q009_main_mainContent&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div01.jsp&quot;,&quot;widgetId&quot;:&quot;mainContent&quot;}]" id="SubFinal state" type="subFinal"/>
+
+		<htmlState typeIdInfo="Q009_Test_subFinal_layout_mapping_Flow" id="Q009Q009_Test_subFinal_layout_mapping_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="Q009Q009_Test_subFinal_layout_mapping_Flow.next" targetState="Q009Q009_BTTContainer_Div01"/>
+				<htmlTransition id="Q009Q009_Test_subFinal_layout_mapping_Flow.Sub" targetState="Q009Q009_BTTContainer_Div03"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div01.jsp" id="Q009Q009_BTTContainer_Div01"/>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div03.jsp" id="Q009Q009_BTTContainer_Div03"/>
+
+		<htmlState type="page" typeIdInfo="Q009/TestForm.jsp" id="Q009TestForm">
+			<transitions>
+				<htmlTransition id="Q009TestForm.viewEvt" targetState="Q009Q009_BTTContainer_Div01"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q009_mainCtx" type="op" parent="sessionCtx">
+		<refKColl refId="Q009_mainRecord"/>
+	</context>
+
+	<kColl id="Q009_mainRecord">
+		<field id="mainField"/>
+		<field id="labelData" value="Test Label"/>
+		<field id="textData" value="testData"/>
+		<field id="comboData" value="c2"/>
+	</kColl>
+
+	<fmtDef id="main.toTestSubFinalLayoutAndMapping_InputFmt">
+		<mapperConverterExpression>
+			<map from="textData" to="A"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q009_mainFlow>

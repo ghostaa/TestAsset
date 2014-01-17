@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G003_UC2_Flow>
+
+
+	<htmlProcessor context="G003_UC2_Ctx" id="G003_UC2_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G003_initial_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G003/UC2/G003_UC2_index.jsp" id="G003G003_UC2_index">
+			<transitions>
+				<htmlTransition id="G003G003_UC2_index.alwaysEditableTrue" targetState="G003UC2G003_UC2_Radio_Edit_true"/>
+				<htmlTransition id="G003G003_UC2_index.alwaysEditableFalse" targetState="G003UC2G003_UC2_Radio_Edit_false"/>
+				<htmlTransition id="G003G003_UC2_index.alwaysEditableTruePagination" targetState="G003/UC2/G003_UC2_Radio_Edit_true_pagination"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC2/G003_UC2_Radio_Edit_true.jsp" id="G003UC2G003_UC2_Radio_Edit_true">
+			<transitions>
+				<htmlTransition id="G003UC2G003_UC2_Radio_Edit_true.submit" targetState="G003UC2G003_UC2_radio_result"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G003_initial_Op" id="G003_initial_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G003_initial_Op.ok" outputMapFmt="G003_initial_Op.ok_OutputFmt" targetState="G003G003_UC2_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G003/UC2/G003_UC2_radio_result.jsp" id="G003UC2G003_UC2_radio_result">
+			<transitions>
+				<htmlTransition id="G003UC2G003_UC2_radio_result.viewEvt" targetState="OK"/>
+				<htmlTransition id="G003UC2G003_UC2_radio_result.back to radio (alwaysEditing is true)" targetState="G003UC2G003_UC2_Radio_Edit_true"/>
+				<htmlTransition id="G003UC2G003_UC2_radio_result.back to radio (alwaysEditing is false)" targetState="G003UC2G003_UC2_Radio_Edit_false"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC2/G003_UC2_Radio_Edit_false.jsp" id="G003UC2G003_UC2_Radio_Edit_false">
+			<transitions>
+				<htmlTransition id="G003UC2G003_UC2_Radio_Edit_false.submit" targetState="G003UC2G003_UC2_radio_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC2/G003_UC2_Radio_Edit_true_pagination.jsp" id="G003/UC2/G003_UC2_Radio_Edit_true_pagination">
+			<transitions>
+				<htmlTransition id="G003/UC2/G003_UC2_Radio_Edit_true_pagination.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G003_UC2_Ctx" type="op">
+		<refKColl refId="G003_UC2_Record01"/>
+	</context>
+
+	<kColl id="G003_UC2_Record01">
+		<iColl id="G003_test_List">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+		<iColl id="G003_test_List_result">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+		<refData refId="paginationData" lazy="false"/>
+	</kColl>
+
+	<kColl id="G003_test_Record01">
+		<data id="task name" refType="String"/>
+		<data id="due date" refType="Date"/>
+		<data id="completed" refType="Boolean"/>
+		<data id="working" refType="Boolean"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_enableNext" refType="Boolean"/>
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_enablePrevious" refType="Boolean"/>
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_totalRowNumber" value="100" refType="Integer"/>
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_errMsg" refType="String"/>
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_pageNumber" refType="Long"/>
+		<field id="G003_UC2_Radio_Edit_true_pagination_table02_pageEvent"/>
+		<data id="G003_UC2_Radio_Edit_true_pagination_table02_rowsPerPage" value="10" refType="Integer"/>
+	</kColl>
+
+	<fmtDef id="G003_initial_Op.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="G003_test_List" to="G003_test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G003_UC2_Flow>

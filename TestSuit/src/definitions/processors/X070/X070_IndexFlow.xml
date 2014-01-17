@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X070_IndexFlow>
+
+
+	<htmlProcessor context="X070_IndexCtx" id="X070_IndexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X070_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X070/X070_Index.jsp" id="X070_Index">
+			<transitions>
+				<htmlTransition id="X070_Index.UC1" targetState="X070_UC1_Flow"/>
+				<htmlTransition id="X070_Index.UC3" targetState="X070_UC3_Flow"/>
+				<htmlTransition id="X070_Index.UC4" targetState="X070_UC4_Flow"/>
+				<htmlTransition id="X070_Index.UC5" targetState="X070_UC5_Flow"/>
+				<htmlTransition id="X070_Index.UC6" targetState="X070_UC6_Flow"/>
+				<htmlTransition id="X070_Index.UC7" targetState="X070_UC7_Flow"/>
+				<htmlTransition id="X070_Index.UC8" targetState="X070_UC8_Flow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC1_Flow" id="X070_UC1_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC1_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC3_Flow" id="X070_UC3_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC3_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC4_Flow" id="X070_UC4_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC4_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC5_Flow" id="X070_UC5_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC5_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC6_Flow" id="X070_UC6_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC6_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC7_Flow" id="X070_UC7_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC7_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X070_UC8_Flow" id="X070_UC8_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X070_UC8_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+	</htmlProcessor>
+
+	<context id="X070_IndexCtx" type="op">
+		<refKColl refId="X070_IndexRecord"/>
+	</context>
+
+	<kColl id="X070_IndexRecord">
+	</kColl>
+
+</X070_IndexFlow>

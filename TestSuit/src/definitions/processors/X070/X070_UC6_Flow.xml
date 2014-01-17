@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X070_UC6_Flow>
+
+
+	<htmlProcessor context="X070_UC6_Ctx" id="X070_UC6_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X070_InitDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<operationState typeIdInfo="X070_InitDataOp" id="X070_InitDataOp" outputMapFmt="X070_InitDataOp_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="X070_InitDataOp.opEvt" outputMapFmt="X070_InitDataOp_OutputFmt" targetState="X070X070_UC6"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X070/X070_UC6.jsp" id="X070X070_UC6">
+			<transitions>
+				<htmlTransition id="X070X070_UC6.viewEvt01" targetState="OK"/>
+				<htmlTransition id="X070X070_UC6.viewEvt" targetState="X070X070_UC6_2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X070/X070_UC6_2.jsp" id="X070X070_UC6_2"/>
+	</htmlProcessor>
+
+	<context id="X070_UC6_Ctx" type="op">
+		<refKColl refId="X070_UC6_Record"/>
+	</context>
+
+	<kColl id="X070_UC6_Record">
+		<refData refId="cashAcctList"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="cashAcctList">
+		<kColl id="cashAcct">
+			<data id="name" refType="String"/>
+			<data id="surname" refType="String"/>
+			<data id="balance" refType="Double"/>
+			<field id="branch_location"/>
+			<field id="branch_id"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="X070_InitDataOp_OutputFmt">
+		<mapperConverterExpression>
+			<map from="cashAcctList" to="cashAcctList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X070_UC6_Flow>

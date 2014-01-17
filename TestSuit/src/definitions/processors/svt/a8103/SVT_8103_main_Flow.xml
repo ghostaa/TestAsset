@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SVT_8103_main_Flow>
+
+
+	<htmlProcessor context="SVT_8103_main_Ctx" id="SVT_8103_main_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SVT8103SVT_8103_MainPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="SVT/8103/SVT_8103_MainPage.jsp" id="SVT8103SVT_8103_MainPage">
+			<transitions>
+				<htmlTransition id="SVT8103SVT_8103_MainPage.account information" targetState="SVT_8103_account_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="IBK_F_006/finalPage.jsp"/>
+
+		<operationState typeIdInfo="SVT_8103_account_Op" id="SVT_8103_account_Op" type="operation">
+			<transitions>
+				<htmlTransition id="SVT_8103_account_Op.opEvt" targetState="SVT8103SVT_8103_AccountInfo"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="SVT/8103/SVT_8103_AccountInfo.jsp" id="SVT8103SVT_8103_AccountInfo">
+			<transitions>
+				<htmlTransition id="SVT8103SVT_8103_AccountInfo.viewEvt" inputMapFmt="SVT8103SVT_8103_AccountInfo.viewEvt_InputFmt" targetState="svta8103SVT_8103_popflow_withdrawal_Flow"/>
+			</transitions>
+		</htmlState>
+
+		<popupSubFlowState typeIdInfo="SVT_8103_popflow_withdrawal_Flow" id="svta8103SVT_8103_popflow_withdrawal_Flow" closable="true" type="subFlow">
+			<transitions>
+				<htmlTransition id="svta8103SVT_8103_popflow_withdrawal_Flow.close" targetState="SVT8103SVT_8103_AccountInfo"/>
+				<htmlTransition id="svta8103SVT_8103_popflow_withdrawal_Flow.OK" targetState="SVT_8103_account_Op"/>
+				<htmlTransition id="svta8103SVT_8103_popflow_withdrawal_Flow.NotOk" targetState="SVT8103SVT_8103_MainPage"/>
+			</transitions>
+		</popupSubFlowState>
+	</htmlProcessor>
+
+	<operation id="SVT_8103_account_Op" implClass="com.ibm.btt.application.op.svt.a8103.SVT_8103_account_Op"/>
+
+	<context id="SVT_8103_main_Ctx" type="op">
+		<refKColl refId="SVT_8103_main_Record"/>
+	</context>
+
+	<kColl id="SVT_8103_main_Record">
+		<refData refId="User" lazy="false"/>
+		<field id="checkUserResult"/>
+		<refData refId="account_List"/>
+		<refData refId="account_record" lazy="false" alias="selected_account"/>
+		<data id="TestErrorMapping" value="2.22" refType="Number"/>
+	</kColl>
+
+	<kColl id="User">
+		<data id="UserName" refType="String"/>
+		<data id="UserPassword" refType="String"/>
+	</kColl>
+
+	<iColl id="account_List" size="5">
+		<refData refId="account_record" lazy="false"/>
+	</iColl>
+
+	<kColl id="account_record">
+		<data id="AccountOpeningDate" refType="Date"/>
+		<data id="accountNO" refType="Integer"/>
+		<data id="balance" refType="Float"/>
+	</kColl>
+
+	<fmtDef id="SVT8103SVT_8103_AccountInfo.viewEvt_InputFmt">
+		<mapperConverterExpression>
+			<map from="selected_account.accountNO" to="accountNO"/>
+			<map from="TestErrorMapping" to="TestErrorMapping"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</SVT_8103_main_Flow>

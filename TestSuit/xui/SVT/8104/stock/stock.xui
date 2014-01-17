@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="30,12,0,0" dataBinding="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'stock.js'}">
+  <styles>
+    <css file="../../../../WebContent/css/G016/G016.css"/>
+  </styles>
+  <container name="Panel" id="panel">
+    <gridData heightHint="414" verticalAlignment="1" widthHint="781" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightHint="331" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="dijit_layout_BorderContainer" RightPanel="true" gutters="true" BottomPanel="false" id="borderContainer" LeftPanel="false" TopPanel="false">
+        <extendWidgetInfo>
+          <extendNode extendNodeId="topPanel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="top" onLoad="dijit.byId('borderContainer').layout();" __uuid="topPanel" id="borderContainer_topPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="leftPanel">
+            <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="left" __uuid="leftPanel" id="borderContainer_leftPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="centerPanel">
+            <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+            <properties region="center" __uuid="centerPanel" id="borderContainer_centerPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="rightPanel">
+            <gridData verticalAlignment="1" widthHint="178" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+            <properties region="right" styleClass=" backGroundBlackColor" __uuid="rightPanel" id="borderContainer_rightPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="bottomPanel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="bottom" __uuid="bottomPanel" id="borderContainer_bottomPanel"/>
+          </extendNode>
+        </extendWidgetInfo>
+        <gridData heightHint="396" verticalAlignment="1" widthHint="781" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1"/>
+          <gridData widthHint="533" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dojox_charting_widget_Chart2D" y__maxLabelCharCount="0" fixUpper="none" maxLabelSize="0" microTicks="false" y__fixUpper="none" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" y__microTicks="false" id="chart2D" y__includeZero="false" minorTicks="true" y__minorTicks="true" maxLabelCharCount="0" theme="dojox.charting.themes.Tom" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" fixLower="none" includeZero="false" y__fixLower="none" rotation="1" templateId="chart2d">
+            <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1"/>
+            <gridData heightHint="309" verticalAlignment="1" widthHint="446" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="dojox_charting_widget_plot" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="plot" MoveSlice="true" type="Candlesticks" y__minorTicks="true" MagnifyScale="1.5" maxLabelCharCount="0" hMajorLines="true" y__minorLabels="false" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" Magnify="true" MoveSlice__Scale="1.5" fixUpper="none" y__fixUpper="none" Highlight="true" y__microTicks="false" y__includeZero="false" minorTicks="true" MoveSlice__Shift="0" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" Tooltip="true" Shake="true" fixLower="none" y__fixLower="none" templateId="Plot">
+              <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+              <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+              <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" ShadowColor="RGB{0, 0, 0}" fill="RGB {0, 255, 0}" htmlLabels="true" StrokeWidth="1" radius="0" Highlight="false" gap="0" Markers="false" id="series" labelStyle="default" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" MoveSlice="false" seriesName="series" Tooltip="false" Shake="false" rootPath="CurrentStockDayLineList" labelOffset="0" StrokeColor="RGB {255, 0, 0}" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;high&quot;:&quot;@high&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;low&quot;:&quot;@low&quot;,&quot;x&quot;:&quot;&quot;,&quot;close&quot;:&quot;@close&quot;,&quot;mid&quot;:&quot;&quot;,&quot;y&quot;:&quot;&quot;,&quot;open&quot;:&quot;@open&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Stock&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+            </container>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TitlePane" divFlowContainer="false" id="titlePane01">
+            <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Form" id="form">
+                <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="dijit_layout_ContentPane" text-align="left" ioMethod="dojo.xhrPost" preload="true" preventCache="false" loadingMessage__Template="&lt;span class='dijitContentPaneLoading'&gt;%s&lt;/span&gt;" refreshOnShow="false" errorMessage__Template="&lt;span class='dijitContentPaneError'&gt;%s&lt;/span&gt;" id="contentPane">
+                    <extendWidgetInfo extendNodeId="contentNode" styleClass="dijitContentPane dijitStackContainer-child dijitStackContainer-dijitContentPane dijitVisible"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale'}" dataNameForRow="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'SaleIndex'}" id="repetitivePanel01_copy" selectionMode="single">
+                        <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+                        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <container name="ConditionalPanel" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.upOrDonw'}" id="conditionalPanel01_copy">
+                            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                            <container name="OptionPanel" id="OptionPanel03_copy" optionValue="1">
+                              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.saleType'}" styleClass=" fontWhiteColor" id="label02_copy01" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.salePrice'}" styleClass=" fontRedColor" id="label03_copy01" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.saleAmount'}" styleClass=" fontYellowColor" id="label04_copy01" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <gridLayout numColumns="5"/>
+                            </container>
+                            <container name="OptionPanel" id="OptionPanel04_copy" optionValue="2">
+                              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.saleType'}" styleClass=" fontWhiteColor" id="label02_copy_copy" text="%nls.svt/sale2">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.salePrice'}" styleClass=" fontGreenColor" id="label03_copy_copy" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockSale.0.saleAmount'}" styleClass=" fontYellowColor" id="label04_copy_copy" text="Label">
+                                  <gridData widthHint="30" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <gridLayout numColumns="5"/>
+                            </container>
+                          </container>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <gridLayout numColumns="1"/>
+                      </container>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0" verticalSpacing="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TitlePane" divFlowContainer="false" id="titlePane">
+            <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Form" id="form01">
+                <extendWidgetInfo parentExtendNodeId="containerNode" extendNodeColNum="1"/>
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="dijit_layout_ContentPane" text-align="left" ioMethod="dojo.xhrGet" preload="true" preventCache="false" loadingMessage__Template="&lt;span class='dijitContentPaneLoading'&gt;%s&lt;/span&gt;" refreshOnShow="false" errorMessage__Template="&lt;span class='dijitContentPaneError'&gt;%s&lt;/span&gt;" id="contentPane01">
+                    <extendWidgetInfo extendNodeId="contentNode" styleClass="dijitContentPane dijitStackContainer-child dijitStackContainer-dijitContentPane dijitVisible"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy'}" dataNameForRow="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'BuyIndex'}" id="repetitivePanel01" selectionMode="single">
+                        <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+                        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <container name="ConditionalPanel" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.upOrDonw'}" id="conditionalPanel01">
+                            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                            <container name="OptionPanel" id="OptionPanel03" optionValue="1">
+                              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyType'}" styleClass=" fontWhiteColor" id="label02" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyPrice'}" styleClass=" fontRedColor" id="label03" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyAmount'}" styleClass=" fontYellowColor" id="label04" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <gridLayout numColumns="5"/>
+                            </container>
+                            <container name="OptionPanel" id="OptionPanel04" optionValue="2">
+                              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyType'}" styleClass=" fontWhiteColor" id="label02_copy" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyPrice'}" styleClass=" fontGreenColor" id="label03_copy" text="Label">
+                                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <widget name="PlaceHolder">
+                                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockBuy.0.buyAmount'}" styleClass=" fontYellowColor" id="label04_copy" text="Label">
+                                  <gridData widthHint="30" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                                </widget>
+                                <gridLayout numColumns="0"/>
+                              </widget>
+                              <gridLayout numColumns="5"/>
+                            </container>
+                          </container>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <gridLayout numColumns="1"/>
+                      </container>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0" verticalSpacing="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList'}" id="repetitivePanel">
+            <extendWidgetInfo parentExtendNodeId="rightPanel" extendNodeColNum="1"/>
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="ConditionalPanel" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList.0.upOrDonw'}" id="conditionalPanel">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <container name="OptionPanel" id="OptionPanel01" optionValue="1">
+                  <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <container name="Panel" id="panel01">
+                      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="PlaceHolder">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList.0.key'}" styleClass="fontWriteColor fontWhiteColor" id="label01" text="Label">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        </widget>
+                        <gridLayout numColumns="0"/>
+                      </widget>
+                      <widget name="PlaceHolder">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList.0.value'}" styleClass=" fontRedColor" id="label" text="Label">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        </widget>
+                        <gridLayout numColumns="0"/>
+                      </widget>
+                      <gridLayout numColumns="2"/>
+                    </container>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <gridLayout numColumns="1"/>
+                </container>
+                <container name="OptionPanel" id="OptionPanel02" optionValue="2">
+                  <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <container name="Panel" id="panel01_copy">
+                      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="PlaceHolder">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList.0.key'}" styleClass=" fontWhiteColor" id="label01_copy" text="Label">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        </widget>
+                        <gridLayout numColumns="0"/>
+                      </widget>
+                      <widget name="PlaceHolder">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'CurrentStockInfoList.0.value'}" styleClass=" fontGreenColor" id="label_copy" text="Label">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        </widget>
+                        <gridLayout numColumns="0"/>
+                      </widget>
+                      <gridLayout numColumns="2"/>
+                    </container>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <gridLayout numColumns="1"/>
+                </container>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1" maxCol="1" maxRow="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+    <hiddenWidget name="BttStoreWidget" Service="{}" id="bttStoreWidget"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="label02_copy01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="actionGroup" name="saleAction" method="execute()"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="label02_copy_copy" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="actionGroup" name="saleAction" method="execute()"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="label02" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="actionGroup" name="buyAction" method="execute()"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="label02_copy" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="actionGroup" name="buyAction" method="execute()"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups>
+    <actionGroup name="buyAction">
+      <trueActions>
+        <action type="widgetFunction" widget="contentPane01">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form01" property="id"/>
+              <value type="constant" constant="'buy'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions/>
+    </actionGroup>
+    <actionGroup name="saleAction">
+      <trueActions>
+        <action type="widgetFunction" widget="contentPane">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form" property="id"/>
+              <value type="constant" constant="'sale'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions/>
+    </actionGroup>
+  </groups>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

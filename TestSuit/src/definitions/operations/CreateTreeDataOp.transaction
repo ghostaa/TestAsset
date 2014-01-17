@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_WpcPoASPEeK-44XygIja_A">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_WpcPogSPEeK-44XygIja_A">
+    <contexts xmi:type="transaction:Context" xmi:id="_Y-XfoASPEeK-44XygIja_A" tag="context" id="CreateTreeDataCtx01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_Y-XfoQSPEeK-44XygIja_A" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_Y-XfogSPEeK-44XygIja_A" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_Y-XfowSPEeK-44XygIja_A" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_Y-XfpASPEeK-44XygIja_A" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_Y-XfpQSPEeK-44XygIja_A" key="_Y-XfogSPEeK-44XygIja_A" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_Y-XfpgSPEeK-44XygIja_A" key="_Y-XfoQSPEeK-44XygIja_A" value="CreateTreeDataCtx01"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_ZrS3EASPEeK-44XygIja_A" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_ZrS3EQSPEeK-44XygIja_A" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_aDZOAASPEeK-44XygIja_A" key="_ZrS3EQSPEeK-44XygIja_A" value="CreateTreeDataRecord01"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_WpcPowSPEeK-44XygIja_A">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_ZUYy8ASPEeK-44XygIja_A" tag="kColl" id="CreateTreeDataRecord01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ZUYy8QSPEeK-44XygIja_A" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ZUYy8gSPEeK-44XygIja_A" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ZUYy8wSPEeK-44XygIja_A" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_ZUYy9ASPEeK-44XygIja_A" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ZUYy9QSPEeK-44XygIja_A" key="_ZUYy8wSPEeK-44XygIja_A" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_ZUYy9gSPEeK-44XygIja_A" key="_ZUYy8QSPEeK-44XygIja_A" value="CreateTreeDataRecord01"/>
+      <elements xmi:type="transaction:KeyedCollection" xmi:id="_35es8ASPEeK-44XygIja_A" tag="treeModel" id="root">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_35es8QSPEeK-44XygIja_A" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_35es8gSPEeK-44XygIja_A" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_35es8wSPEeK-44XygIja_A" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_35es9ASPEeK-44XygIja_A" name="label" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_35es9QSPEeK-44XygIja_A" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_35es9gSPEeK-44XygIja_A" key="_35es8wSPEeK-44XygIja_A" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_35es9wSPEeK-44XygIja_A" key="_35es8QSPEeK-44XygIja_A" value="root"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_WpcPpASPEeK-44XygIja_A"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_WpcPpQSPEeK-44XygIja_A">
+    <operations xmi:type="transaction:Operation" xmi:id="_M2CIUGt7EeKswZJMs0EhIw" tag="operation" id="CreateTreeDataOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_M2CIUWt7EeKswZJMs0EhIw" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_M2CIUmt7EeKswZJMs0EhIw" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_M2CIU2t7EeKswZJMs0EhIw" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_M2CIVGt7EeKswZJMs0EhIw" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_M2CIVWt7EeKswZJMs0EhIw" key="_M2CIU2t7EeKswZJMs0EhIw" value="com.ibm.btt.application.op.CreateTreeData"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_M2CIVmt7EeKswZJMs0EhIw" key="_M2CIUWt7EeKswZJMs0EhIw" value="CreateTreeDataOp"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_WpcPpgSPEeK-44XygIja_A"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_WpcPpwSPEeK-44XygIja_A"/>
+</transaction:WorkProduct>

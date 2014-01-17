@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G001_UC3_Flow>
+
+
+	<htmlProcessor context="G001_UC3_Ctx" id="G001_UC3_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G001_UC3_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3.jsp" id="G001_UC3">
+			<transitions>
+				<htmlTransition id="G001_UC3.simple1" targetState="G001_UC3_Simple1"/>
+				<htmlTransition id="G001_UC3.simple2" targetState="G001_UC3_Simple2"/>
+				<htmlTransition id="G001_UC3.simple3" targetState="G001_UC3_Simple3"/>
+				<htmlTransition id="G001_UC3.simple4" targetState="G001_UC3_Simple4"/>
+				<htmlTransition id="G001_UC3.basic" targetState="G001_UC3_Simple5"/>
+				<htmlTransition id="G001_UC3.complex" targetState="G001_UC3_Complex"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G001_UC3_Op" id="G001_UC3_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G001_UC3_Op.opEvt" outputMapFmt="G001_UC1_Op.opEvt_OutputFmt" targetState="G001_UC3"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3_Simple1.jsp" id="G001_UC3_Simple1">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple1.final1" targetState="OK"/>
+				<htmlTransition id="G001_UC3_Simple1.back1" targetState="G001_UC3"/>
+				<htmlTransition id="G001_UC3_Simple1.submit" targetState="G001_Result_UC3"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="G001/G001_UC3_Simple2.jsp" id="G001_UC3_Simple2" closable="false" title="">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple2.final2" targetState="OK"/>
+				<htmlTransition id="G001_UC3_Simple2.back2" targetState="G001_UC3"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3_Simple3.jsp" id="G001_UC3_Simple3">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple3.final3" targetState="OK"/>
+				<htmlTransition id="G001_UC3_Simple3.back3" targetState="G001_UC3"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3_Simple4.jsp" id="G001_UC3_Simple4">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple4.back4" targetState="G001_UC3"/>
+				<htmlTransition id="G001_UC3_Simple4.fozen2" targetState="G001_UC3_Simple4_frozen2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3_Simple5.jsp" id="G001_UC3_Simple5">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple5.back5" targetState="G001_UC3"/>
+				<htmlTransition id="G001_UC3_Simple5.submit" targetState="G001_Result_UC3"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="G001/G001_UC3_Simple4_frozen2.jsp" id="G001_UC3_Simple4_frozen2" closable="false" title="">
+			<transitions>
+				<htmlTransition id="G001_UC3_Simple4_frozen2.final4" targetState="OK"/>
+				<htmlTransition id="G001_UC3_Simple4_frozen2.back4" targetState="G001_UC3_Simple4"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC3_Complex.jsp" id="G001_UC3_Complex">
+			<transitions>
+				<htmlTransition id="G001_UC3_Complex.back6" targetState="G001_UC3"/>
+				<htmlTransition id="G001_UC3_Complex.final6" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_Result_UC3.jsp" id="G001_Result_UC3">
+			<transitions>
+				<htmlTransition id="G001_Result_UC3.back" targetState="G001_UC3_Simple5"/>
+				<htmlTransition id="G001_Result_UC3.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G001_UC3_Op" context="G001_UC3_Ctx" implClass="com.ibm.btt.application.op.G001_initDataOp"/>
+
+	<context id="G001_UC3_Ctx" type="op">
+		<refKColl refId="G001_UC3_Record"/>
+	</context>
+
+	<kColl id="G001_UC3_Record">
+		<refData refId="singleSelectedRecord" lazy="false"/>
+		<refData refId="multiSelectedList"/>
+		<refData refId="transferHistory"/>
+	</kColl>
+
+	<kColl id="singleSelectedRecord">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<kColl id="history">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="transferHistory">
+		<refData refId="history" lazy="false"/>
+	</iColl>
+
+	<iColl id="multiSelectedList">
+		<refData refId="history"/>
+	</iColl>
+
+	<fmtDef id="G001_UC1_Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G001_UC3_Flow>

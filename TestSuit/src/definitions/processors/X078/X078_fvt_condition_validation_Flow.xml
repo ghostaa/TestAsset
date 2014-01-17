@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X078_fvt_condition_validation_Flow>
+
+
+	<htmlProcessor context="X078_fvt_condition_validation_Ctx" id="X078_fvt_condition_validation_Flow">
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NoDefaultEvent"/>
+			</transitions>
+		</htmlState>
+
+		<conditionState defaultEvent="" id="NoDefaultEvent" type="condition">
+			<transitions>
+				<htmlTransition id="NoDefaultEvent.condEvt" targetState="NoUseDefault"/>
+			</transitions>
+			<conditions>
+				<condition expression="'' == ''" event="condEvt" />
+			</conditions>
+		</conditionState>
+
+		<htmlState typeIdInfo="X078_fvt_subFlow" id="X078X078_fvt_subFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X078X078_fvt_subFlow.OK" targetState="OK"/>
+				<htmlTransition id="X078X078_fvt_subFlow.flowEvt" targetState="NotOk"/>
+			</transitions>
+		</htmlState>
+
+		<conditionState defaultEvent="default" id="NoUseDefault" type="condition">
+			<transitions>
+				<htmlTransition id="NoUseDefault.condEvt" targetState="X078X078_fvt_subFlow"/>
+			</transitions>
+			<conditions>
+				<condition expression="'' == ''" event="condEvt" />
+				<condition expression="'a' == 'b'" event="condEvt01" />
+			</conditions>
+		</conditionState>
+
+		<htmlState typeIdInfo="NotOk" id="NotOk" type="final"/>
+	</htmlProcessor>
+
+	<context id="X078_fvt_condition_validation_Ctx" type="op">
+		<refKColl refId="X078_fvt_condition_validation_Record"/>
+	</context>
+
+	<kColl id="X078_fvt_condition_validation_Record">
+	</kColl>
+
+</X078_fvt_condition_validation_Flow>

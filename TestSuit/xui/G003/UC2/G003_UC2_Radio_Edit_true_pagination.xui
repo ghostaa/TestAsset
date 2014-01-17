@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="136,82,494,404" dataBinding="{'ctxType':'proc','ctxFile':'G003_UC2_Flow','ctxName':'G003_UC2_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G003_UC2_Radio_Edit_true_pagination.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="404" verticalAlignment="1" widthHint="494" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label" text="UC2 radio-- alwaysEditable=true.">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="Form01">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" paginationParams="{'timeout':'10000','operationNameForPagination':'G003_PaginationDataOp','rowsPerPage':'10','directPagination':'false','paginationType':'default','errorOutputMapping':'errorOutputMapping','normalOutputMapping':'normalOutputMapping','nextInputMapping':'nextInputMapping','initialInputMapping':'initialInputMapping','paginationWhenLoading':'true','previousInputMapping':'previousInputMapping','directInputMapping':''}" dataNameForList="G003_test_List" isPageable="true" id="table02">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="99" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="task name " noresize="false" dataName="task name" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" level="1" rowSpan="1" widget="TextBox" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="due date" noresize="false" dataName="due date" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" unCheckedValue="false" editable="true" widget="CheckBox" rowSpan="1" level="1" width="80" alwaysEditing="true" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" checkedValue="true" text="completed" noresize="false" dataName="completed" titleStyle="checkbox" relativeWidth="1" repeat="true" id="columnId2" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" unCheckedValue="false" editable="true" widget="Radio" rowSpan="1" level="1" width="80" rowCSS="" alwaysEditing="true" headerHAlign="16384" colSpan="1" hidden="false" checkedValue="true" text="working" noresize="false" dataName="working" relativeWidth="1" repeat="true" id="columnId3" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Group" id="group" text="Radio ECA">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="RadioCheckRow2" buttonType="button" text="RadioCheckRow2">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="RadioUncheckRow2" buttonType="button" text="RadioUncheckRow2">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label01" text="Check 'onChange' event:">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="RadioChangeResult" text="radio">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="6"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Group" id="group01" text="Checkbox ECA">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel02">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="CheckedCheckRow3" buttonType="button" text="CheckedCheckRow3">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="CheckedUncheckRow3" buttonType="button" text="CheckedUncheckRow3">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="label02" text="Check value of checkbox:">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="CheckboxChangeResult" text="check">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="4"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+    <hiddenWidget name="HiddenField" value="1" id="HiddenField01"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="CheckedCheckRow3" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table02">
+          <function name="setCellValueByName">
+            <parameter>
+              <value type="constant" constant="'completed'"/>
+              <value type="constant" constant="2"/>
+              <value type="constant" constant="true"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="CheckedUncheckRow3" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table02">
+          <function name="setCellValueByName">
+            <parameter>
+              <value type="constant" constant="'completed'"/>
+              <value type="constant" constant="2"/>
+              <value type="constant" constant="false"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="RadioCheckRow2" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table02">
+          <function name="setCellValueByName">
+            <parameter>
+              <value type="constant" constant="'working'"/>
+              <value type="constant" constant="1"/>
+              <value type="constant" constant="true"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="RadioUncheckRow2" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table02">
+          <function name="setCellValueByName">
+            <parameter>
+              <value type="constant" constant="'working'"/>
+              <value type="constant" constant="1"/>
+              <value type="constant" constant="false"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule05">
+      <events>
+        <event widget="table02.columnId3" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="RadioChangeResult" property="text">
+          <value type="expression">
+            <leftValue type="expression">
+              <leftValue type="widgetProperty" widget="HiddenField01" property="value"/>
+              <operator name="*"/>
+              <rightValue type="constant" constant="1"/>
+            </leftValue>
+            <operator name="+"/>
+            <rightValue type="constant" constant="1"/>
+          </value>
+        </action>
+        <action type="widgetProperty" widget="HiddenField01" property="value">
+          <value type="widgetProperty" widget="RadioChangeResult" property="text"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule04">
+      <events>
+        <event widget="table02.columnId2" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="CheckboxChangeResult" property="text">
+          <value type="widgetProperty" widget="table02.columnId2" property="isChecked"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TablePaginationOp>
+
+	<operation id="TablePaginationOp" context="TablePaginationCtx" implClass="com.ibm.btt.application.op.MeiPaginationTable"/>
+
+	<context id="TablePaginationCtx" type="op">
+		<refKColl refId="TablePaginationRecord"/>
+	</context>
+
+	<kColl id="TablePaginationRecord">
+		<refData refId="PaginationTable" lazy="false"/>
+		<refData refId="TableList"/>
+	</kColl>
+
+	<kColl id="PaginationTable">
+		<data id="EnableNext" refType="Boolean"/>
+		<data id="EnablePrevious" refType="Boolean"/>
+		<data id="TotalRowNumber" refType="Integer"/>
+		<data id="RowsPerPage" refType="Integer"/>
+		<data id="PageNumber" refType="Integer"/>
+		<data id="errMsg" refType="String"/>
+	</kColl>
+
+	<iColl id="TableList" size="10">
+		<kColl id="Table">
+			<field id="FirstColumn"/>
+			<field id="SecondColumn" value="22222222"/>
+			<field id="ThirdColumn"/>
+		</kColl>
+	</iColl>
+
+</TablePaginationOp>

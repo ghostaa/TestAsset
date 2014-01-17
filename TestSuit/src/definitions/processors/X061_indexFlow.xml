@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_indexFlow>
+
+
+	<htmlProcessor context="X061_indexCtx" id="X061_indexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Index.jsp" id="X061_Index">
+			<transitions>
+				<htmlTransition id="X061_Index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="X061_indexCtx" type="op">
+		<refKColl refId="X061_indexRecord"/>
+	</context>
+
+	<kColl id="X061_indexRecord">
+	</kColl>
+
+</X061_indexFlow>

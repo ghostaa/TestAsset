@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<jsp:useBean id="utb" scope="page" class="com.ibm.btt.cs.html.DSEJspContextServices">
+	
+</jsp:useBean>	
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Generated from index.xui by liujuan, on Thu Feb 21 14:32:21 CST 2013 -->
+<head>
+
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+<style type="text/css">
+@import "js/dojo/resources/dojo.css";
+@import "js/dijit/themes/claro/claro.css";		
+@import "js/dojox/grid/enhanced/resources/claro/EnhancedGrid.css";
+@import "css/dijit/message.css";
+@import "js/com/ibm/btt/dijit/templates/FileUpload.css";
+@import "js/dijit/themes/claro/document.css";
+@import "js/com/ibm/btt/dijit/templates/Grid.css";
+@import "js/com/ibm/btt/dijit/templates/ScreenCover.css";
+@import "js/com/ibm/btt/dijit/templates/Group.css";
+@import "js/com/ibm/btt/dijit/templates/Label.css";
+
+.dojoxGrid table { margin: 0; }
+.dj_gecko .dijitTextBoxReadOnly INPUT.dijitInputInner {
+    -moz-user-input: auto;
+}
+.dj_gecko .dijitTextBoxReadOnlyFocused INPUT.dijitInputInner {
+	-moz-user-input: none;
+}
+/** override the default CSS(claro) of dojo, otherwise, 
+	on Chrome, the value of disabled text box can't be told from its background
+**/
+.dj_webkit .dijitTextBoxDisabled INPUT {
+	color: #777777;
+}
+html, body {
+	height:100%;
+}
+.BTTTableStyle {
+	display:table;
+	border-collapse:collapse;
+}
+
+.BTTRowStyle {
+	display:table-row;
+}
+
+.BTTCellStyle {
+	display:table-cell;
+	padding:5px;
+}
+</style>
+<script type="text/javascript">
+	var djConfig =  {
+		baseUrl:"js/dojo/",
+		locale:'',
+		isDebug: true, 
+		parseOnLoad: true
+	};
+</script>
+<script type="text/javascript" src="js/dojo/dojo_BTT.js.uncompressed.js"></script>
+<script type="text/javascript" src="js/com/ibm/btt/btt.js.uncompressed.js"></script>
+<script type="text/javascript" >
+dojo.addOnLoad(function(){
+	dojo.style(document.body, "visibility", "");
+});
+</script>
+<script type="text/javascript">
+dojo.addOnLoad(function(){
+	if(window.dse_widgetsConfig){
+		for(var idx = window.dse_widgetsConfig.length -1; idx>=0; idx --){
+			var config = window.dse_widgetsConfig[idx];
+			if(config.id){
+				try{
+					dojo.parser.instantiate([dojo.byId(config.id)], config);
+				} catch(e) {
+					console.error(e);
+				}
+			}
+		}
+	}
+});
+</script>
+
+<script type="text/javascript">
+	if(!window.engine){
+		
+			window.engine = new com.ibm.btt.event.NavigationEngine();
+		
+			window.engine = new com.ibm.btt.event.Engine();
+		
+		engine.setMonitor(new com.ibm.btt.event.BaseMonitor());
+		engine.registerCond("js/condition/condition.js");
+		/** Uncomment this to use Global Function Key **/
+		/** load definition in global project if necessary **/
+		// engine.registerKeys("<url to global project>js/keymap/globalKeyMap.js");
+		/** load definition in this(local) project **/
+		// engine.registerKeys("js/keymap/globalKeyMap.js");
+		/** please note that the local definition will override the global definition with the same name **/
+	}
+</script>
+</head>
+<body class="claro" style="visibility:hidden">
+  <table id="index_null">
+    <tr>
+      <td style="text-align:left;vertical-align:top;">
+<form id="index_form" dojoType="com.ibm.btt.dijit.Form" method="post" bttParams="{}" bttErrorPage="index.jsp">          <table style="width:353px;">
+            <tr>
+              <td style="height:100px;padding-left:50px;border:solid 1px #E8FFFF;background-color:#E2F8FA;text-align:left;vertical-align:middle;">
+<label id="index_label" dojoType="com.ibm.btt.dijit.Label" text="%nls.bttsample/Welcome_To_Btt_Sample"></label>              </td>
+            </tr>
+            <tr>
+              <td style="text-align:left;vertical-align:middle;">
+<div id="index_tabbedPane" dojoType="com.ibm.btt.dijit.TabbedPane"><div title="%nls.bttsample/TBK_Index_Tab01" dojoType="com.ibm.btt.dijit.ContentPane" id="index_ContentPane01" bttParams="{}">                    <table style="table-layout:fixed">
+                    </table>
+</div><div title="%nls.bttsample/TBK_Index_Tab02" layoutStyle="block" dojoType="com.ibm.btt.dijit.ContentPane" id="index_ContentPane02" bttParams="{}">                    <div class="BTTTableStyle">
+                    </div>
+</div></div>              </td>
+            </tr>
+          </table>
+</form>      </td>
+      <td style="text-align:left;vertical-align:top;">
+<a id="index_link01" dojoType="com.ibm.btt.dijit.Anchor" action="#" text="%nls.bttsample/lang_Korean"></a>      </td>
+      <td style="padding-left:20px;text-align:left;vertical-align:top;">
+<a id="index_link02" dojoType="com.ibm.btt.dijit.Anchor" action="#" text="%nls.bttsample/lang_English"></a>      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left;vertical-align:middle;">
+      </td>
+      <td style="text-align:left;vertical-align:middle;">
+      </td>
+      <td style="text-align:left;vertical-align:middle;">
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

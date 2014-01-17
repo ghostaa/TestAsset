@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CreateAccountInfoOp>
+
+	<operation id="CreateAccountInfoOp" context="CreateAccountInfoCtx01" implClass="com.ibm.btt.application.op.CreateAccountInfoOp"/>
+
+	<context id="CreateAccountInfoCtx01" type="op">
+		<refKColl refId="CreateAccountInfoRecord01"/>
+	</context>
+
+	<kColl id="CreateAccountInfoRecord01">
+		<iColl id="forTableLinkList" size="10">
+			<kColl id="nonEditableTableRecord">
+				<data id="linkName" refType="String"/>
+				<field id="forLink"/>
+				<field id="forTooltip"/>
+				<kColl id="nonEditableTableRecord">
+					<data id="linkName" refType="String"/>
+					<field id="forLink"/>
+					<field id="forTooltip"/>
+				</kColl>
+				<data id="clickAble" refType="Boolean"/>
+				<field id="forImage"/>
+				<field id="ContentMenu_Link_NoAction"/>
+				<field id="ContentMenu_Link_URLAndSubmit"/>
+				<field id="ContentMenu_Link_CancelAndSave"/>
+				<field id="ContentMenu_Button_NoAction"/>
+				<field id="ContentMenu_Button_URLAndSubmit"/>
+				<field id="ContentMenu_Button_CancelAndSave"/>
+				<field id="Column2"/>
+				<field id="Column3"/>
+			</kColl>
+		</iColl>
+		<refData refId="AccountInfoList"/>
+		<refData refId="AccountTypeForSelect"/>
+		<refData refId="LocaltionForComboBox"/>
+	</kColl>
+
+</CreateAccountInfoOp>

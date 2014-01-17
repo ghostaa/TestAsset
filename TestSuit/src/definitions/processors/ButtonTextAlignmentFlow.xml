@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ButtonTextAlignmentFlow>
+
+
+	<htmlProcessor context="ButtonTextAlignmentCtx" id="ButtonTextAlignmentFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="ButtonAlignmentList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ButtonAlignment/List.jsp" id="ButtonAlignmentList">
+			<transitions>
+				<htmlTransition id="ButtonAlignmentList.buttonOtherCss" targetState="ButtonAlignmentButtonWithOtherCss"/>
+				<htmlTransition id="ButtonAlignmentList.buttonTextAlignment" targetState="ButtonAlignmentButton"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ButtonAlignment/Button.jsp" id="ButtonAlignmentButton">
+			<transitions>
+				<htmlTransition id="ButtonAlignmentButton.ok" targetState="OK"/>
+				<htmlTransition id="ButtonAlignmentButton.return" targetState="ButtonAlignmentList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ButtonAlignment/ButtonWithOtherCss.jsp" id="ButtonAlignmentButtonWithOtherCss">
+			<transitions>
+				<htmlTransition id="ButtonAlignmentButtonWithOtherCss.ok" targetState="OK"/>
+				<htmlTransition id="ButtonAlignmentButtonWithOtherCss.return" targetState="ButtonAlignmentList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="ButtonTextAlignmentCtx" type="op">
+		<refKColl refId="ButtonTextAlignmentRecord01"/>
+	</context>
+
+	<kColl id="ButtonTextAlignmentRecord01">
+	</kColl>
+
+</ButtonTextAlignmentFlow>

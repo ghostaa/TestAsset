@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_X075MandatoryX075_FVT_formID.xml>
+<operation id="xval_X075Mandatory$X075_FVT_formID" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form_ecaRule" name="form_ecaRule"/>
+      <refFormat refId="form01_ecaRule01" name="form01_ecaRule01"/>
+      <refFormat refId="form02_ecaRule02" name="form02_ecaRule02"/>
+      <refFormat refId="form03_ecaRule06" name="form03_ecaRule06"/>
+      <refFormat refId="form04_ecaRule07" name="form04_ecaRule07"/>
+      <refFormat refId="form05_ecaRule08" name="form05_ecaRule08"/>
+      <refFormat refId="form06_ecaRule09" name="form06_ecaRule09"/>
+      <refFormat refId="form07_ecaRule10" name="form07_ecaRule10"/>
+
+</operation>
+<mandatories id="form_ecaRule">
+		<condition  expression="true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifTrue>
+		</condition>
+</mandatories>
+<mandatories id="form01_ecaRule01">
+		<condition  expression="true">
+		 <ifTrue>
+<mandatories id="form01_text01isMandatoryGroup">
+		<condition  expression="true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifTrue>
+		</condition>
+</mandatories>
+		 </ifTrue>
+		</condition>
+</mandatories>
+<mandatories id="form02_ecaRule02">
+		<condition  expression="true">
+		 <ifTrue>
+<mandatories id="form02_nestActionGroup1">
+		<condition  expression="true">
+		 <ifTrue>
+<mandatories id="form02_nestActionGroup2">
+		<condition  expression="true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifTrue>
+		</condition>
+</mandatories>
+		 </ifTrue>
+		</condition>
+</mandatories>
+		 </ifTrue>
+		</condition>
+</mandatories>
+<mandatories id="form03_ecaRule06">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true &amp;&amp; X075_Mandatory_FVT_multi$X075_Mandatory_FVT_type == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form04_ecaRule07">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_Username" value="false" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_Username" value="true" />
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form05_ecaRule08">
+		<condition  expression="true == X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form06_ecaRule09">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+<mandatories id="form06_text01isMandatoryGroup">
+		<condition  expression="true">
+		</condition>
+</mandatories>
+<mandatories id="form06_actionGroup4">
+		<condition  expression="true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifTrue>
+		</condition>
+</mandatories>
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form07_ecaRule10">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true">
+		 <ifTrue>
+<mandatories id="form07_actionGroup">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		 </ifTrue>
+		</condition>
+</mandatories>
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+
+</xval_X075MandatoryX075_FVT_formID.xml>

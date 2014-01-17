@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SVT_8103_popflow_withdrawal_Flow>
+
+
+	<htmlProcessor context="SVT_8103_popflow_withdrawal_Ctx" id="SVT_8103_popflow_withdrawal_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SVT_8103_popflow_accountDetails_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="close" id="close" type="final"/>
+
+		<htmlState type="page" typeIdInfo="SVT/8103/SVT_8103_accountDetail.jsp" id="SVT_8103_accountDetail">
+			<transitions>
+				<htmlTransition id="SVT_8103_accountDetail.close" targetState="close"/>
+				<htmlTransition id="SVT_8103_accountDetail.Withdrawal" targetState="SVT_8103_Withdrawal"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="SVT_8103_popflow_accountDetails_Op" id="SVT_8103_popflow_accountDetails_Op" type="operation">
+			<transitions>
+				<htmlTransition id="SVT_8103_popflow_accountDetails_Op.opEvt" targetState="SVT_8103_accountDetail"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="SVT/8103/SVT_8103_Withdrawal.jsp" id="SVT_8103_Withdrawal">
+			<transitions>
+				<htmlTransition id="SVT_8103_Withdrawal.close" targetState="close"/>
+				<htmlTransition id="SVT_8103_Withdrawal.ok" targetState="SVT_8103_popflow_withdrawal_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="SVT_8103_popflow_withdrawal_Op" id="SVT_8103_popflow_withdrawal_Op" type="operation">
+			<transitions>
+				<htmlTransition id="SVT_8103_popflow_withdrawal_Op.ok" targetState="SVT8103SVT_8103_print_withdrawal_result"/>
+				<htmlTransition id="SVT_8103_popflow_withdrawal_Op.error" targetState="NotOk"/>
+			</transitions>
+		</operationState>
+
+		<printState type="page" typeIdInfo="SVT/8103/SVT_8103_print_withdrawal_result.pui" id="SVT8103SVT_8103_print_withdrawal_result">
+			<transitions>
+				<htmlTransition id="SVT8103SVT_8103_print_withdrawal_result.success" targetState="OK"/>
+				<htmlTransition id="SVT8103SVT_8103_print_withdrawal_result.error" targetState="NotOk"/>
+			</transitions>
+		</printState>
+
+		<htmlState typeIdInfo="NotOk" id="NotOk" type="final"/>
+	</htmlProcessor>
+
+	<operation id="SVT_8103_popflow_accountDetails_Op" implClass="com.ibm.btt.application.op.svt.a8103.SVT_8103_accountDetails_Op"/>
+
+	<operation id="SVT_8103_popflow_withdrawal_Op" implClass="com.ibm.btt.application.op.svt.a8103.SVT_8103_Withdrawal_Op"/>
+
+	<context id="SVT_8103_popflow_withdrawal_Ctx" type="op">
+		<refKColl refId="SVT_8103_popflow_withdrawal_Record"/>
+	</context>
+
+	<kColl id="SVT_8103_popflow_withdrawal_Record">
+		<data id="accountNO" refType="Integer"/>
+		<data id="AccountOpeningDate" refType="Date"/>
+		<data id="balance" refType="Float"/>
+		<data id="WithdrawalAmount" refType="Float"/>
+		<data id="WithdrawalPassword" refType="String"/>
+		<data id="UserName" value="user" refType="String"/>
+		<data id="TestErrorMapping" refType="Date"/>
+	</kColl>
+
+</SVT_8103_popflow_withdrawal_Flow>

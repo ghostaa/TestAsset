@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_UC1_Date_NonEditableFlow>
+
+
+	<htmlProcessor context="X061_UC1_Date_NonEditableCtx" id="X061_UC1_Date_NonEditableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_UC1Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<operationState typeIdInfo="X061_UC1Op" id="X061_UC1Op" type="operation">
+			<transitions>
+				<htmlTransition id="X061_UC1Op.opEvt" outputMapFmt="X061_UC1Op.opEvt_OutputFmt" targetState="X061_UC1_date_noneditable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_UC1_date_noneditable.jsp" id="X061_UC1_date_noneditable">
+			<transitions>
+				<htmlTransition id="X061_UC1_date_noneditable.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X061_UC1_Date_NonEditableCtx" type="op">
+		<refKColl refId="X061UC1Record"/>
+	</context>
+
+	<kColl id="X061UC1Record">
+		<iColl id="TableList">
+			<refData refId="UC1TableRefRecord" lazy="false"/>
+		</iColl>
+		<data id="CalendarTextbox" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="DateTextbox" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<iColl id="TableList01" size="10">
+			<refData refId="UC1TableRefRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="UC1TableRefRecord">
+		<data id="Date_slash" refType="Date">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="Calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+	<fmtDef id="X061_UC1Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TableList" to="TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_UC1_Date_NonEditableFlow>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_4_12_ContextMenuFlow>
+
+
+	<htmlProcessor context="IBK_4_12_ContextMenuCtx" id="IBK_4_12_ContextMenuFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_4_12_ContextMenuContextMenuSubmitResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_12_ContextMenu/ContextMenuSubmitResult.jsp" id="IBK_4_12_ContextMenuContextMenuSubmitResult">
+			<transitions>
+				<htmlTransition id="IBK_4_12_ContextMenuContextMenuSubmitResult.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="IBK_4_12_ContextMenuCtx" type="op">
+		<refKColl refId="IBK_4_12_ContextMenuRecord"/>
+	</context>
+
+	<kColl id="IBK_4_12_ContextMenuRecord">
+		<iColl id="forTableLinkList" size="10">
+			<kColl id="nonEditableTableRecord">
+				<data id="linkName" refType="String"/>
+				<field id="forLink"/>
+				<field id="forTooltip"/>
+				<kColl id="nonEditableTableRecord">
+					<data id="linkName" refType="String"/>
+					<field id="forLink"/>
+					<field id="forTooltip"/>
+				</kColl>
+				<data id="clickAble" refType="Boolean"/>
+				<field id="forImage"/>
+				<field id="ContentMenu_Link_NoAction"/>
+				<field id="ContentMenu_Link_URLAndSubmit"/>
+				<field id="ContentMenu_Link_CancelAndSave"/>
+				<field id="ContentMenu_Button_NoAction"/>
+				<field id="ContentMenu_Button_URLAndSubmit"/>
+				<field id="ContentMenu_Button_CancelAndSave"/>
+				<field id="Column2"/>
+				<field id="Column3"/>
+			</kColl>
+		</iColl>
+		<field id="DataOutOfTable1"/>
+		<field id="DataOutOfTable2"/>
+		<field id="DataOutOfTable3"/>
+		<iColl id="MutipleSelectData">
+			<refData refId="SingleSelectData" lazy="false"/>
+		</iColl>
+		<refData refId="SingleSelectData" lazy="false"/>
+	</kColl>
+
+	<kColl id="SingleSelectData">
+		<data id="linkName" refType="String"/>
+		<field id="ContentMenu_Link_NoAction"/>
+		<field id="ContentMenu_Link_URLAndSubmit"/>
+		<field id="ContentMenu_Link_CancelAndSave"/>
+		<field id="ContentMenu_Button_NoAction"/>
+		<field id="ContentMenu_Button_URLAndSubmit"/>
+		<field id="ContentMenu_Button_CancelAndSave"/>
+		<field id="Column2"/>
+		<field id="Column3"/>
+	</kColl>
+
+</IBK_4_12_ContextMenuFlow>

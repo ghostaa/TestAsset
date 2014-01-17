@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G003_UC6_Flow>
+
+
+	<htmlProcessor context="G003_UC6_Ctx" id="G003_UC6_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G003_initial_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G003/UC6/G003_UC6_index.jsp" id="G003UC6G003_UC6_index">
+			<transitions>
+				<htmlTransition id="G003UC6G003_UC6_index.text" targetState="G003UC6G003_UC6_Text"/>
+				<htmlTransition id="G003UC6G003_UC6_index.checkbox" targetState="G003UC6G003_UC6_Checkbox"/>
+				<htmlTransition id="G003UC6G003_UC6_index.both" targetState="G003UC6G003_UC6_Both"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC6/G003_UC6_Text.jsp" id="G003UC6G003_UC6_Text">
+			<transitions>
+				<htmlTransition id="G003UC6G003_UC6_Text.submit" targetState="G003UC6G003_UC6_checkbox_result"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G003_initial_Op" id="G003_initial_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G003_initial_Op.ok" outputMapFmt="G003_initial_Op.ok_OutputFmt" targetState="G003UC6G003_UC6_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G003/UC6/G003_UC6_checkbox_result.jsp" id="G003UC6G003_UC6_checkbox_result">
+			<transitions>
+				<htmlTransition id="G003UC6G003_UC6_checkbox_result.viewEvt" targetState="OK"/>
+				<htmlTransition id="G003UC6G003_UC6_checkbox_result.back to text" targetState="G003UC6G003_UC6_Text"/>
+				<htmlTransition id="G003UC6G003_UC6_checkbox_result.back to checkbox" targetState="G003UC6G003_UC6_Checkbox"/>
+				<htmlTransition id="G003UC6G003_UC6_checkbox_result.back to both" targetState="G003UC6G003_UC6_Both"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC6/G003_UC6_Checkbox.jsp" id="G003UC6G003_UC6_Checkbox">
+			<transitions>
+				<htmlTransition id="G003UC6G003_UC6_Checkbox.submit" targetState="G003UC6G003_UC6_checkbox_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC6/G003_UC6_Both.jsp" id="G003UC6G003_UC6_Both">
+			<transitions>
+				<htmlTransition id="G003UC6G003_UC6_Both.submit" targetState="G003UC6G003_UC6_checkbox_result"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G003_UC6_Ctx" type="op">
+		<refKColl refId="G003_UC6_Record01"/>
+	</context>
+
+	<kColl id="G003_UC6_Record01">
+		<iColl id="G003_test_List">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+		<iColl id="G003_test_List_result">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="G003_test_Record01">
+		<data id="task name" refType="String"/>
+		<data id="due date" refType="Date"/>
+		<data id="completed" refType="Boolean"/>
+		<data id="working" refType="Boolean"/>
+	</kColl>
+
+	<fmtDef id="G003_initial_Op.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="G003_test_List" to="G003_test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G003_UC6_Flow>

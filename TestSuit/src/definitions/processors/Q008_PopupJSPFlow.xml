@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_PopupJSPFlow>
+
+
+	<htmlProcessor context="Q008_PopupJSPCtx" id="Q008_PopupJSPFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="DIsFalseKeyboard"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="DIsFalseKeyboard.jsp" id="DIsFalseKeyboard">
+			<transitions>
+				<htmlTransition id="DIsFalseKeyboard.viewEvt" targetState="DIsTrueKeyboard"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Submit.jsp" id="Submit">
+			<transitions>
+				<htmlTransition id="Submit.viewEvt" targetState="Accept"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="DIsTrueKeyboard.jsp" id="DIsTrueKeyboard" closable="false" title="">
+			<transitions>
+				<htmlTransition id="DIsTrueKeyboard.viewEvt" targetState="Submit"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="Accept.jsp" id="Accept" closable="false" title="">
+			<transitions>
+				<htmlTransition id="Accept.viewEvt" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="Q008_PopupJSPCtx" type="op">
+		<refKColl refId="Q008_PopupJSPRecord"/>
+	</context>
+
+	<kColl id="Q008_PopupJSPRecord">
+		<field id="No1"/>
+		<field id="No2"/>
+		<field id="No3"/>
+		<field id="sampleField"/>
+	</kColl>
+
+</Q008_PopupJSPFlow>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CurrentStockDayLineOp>
+
+	<operation id="CurrentStockDayLineOp" context="CurrentStockDayLineCtx" implClass="com.ibm.btt.application.op.B004.CurrentStockDayLineOp"/>
+
+	<context id="CurrentStockDayLineCtx" type="op">
+		<refKColl refId="CurrentStockDayLineRecord"/>
+	</context>
+
+	<kColl id="CurrentStockDayLineRecord">
+		<iColl id="CurrentStockDayLineList">
+			<kColl id="CurrentStockDayLineRecord01">
+				<field id="Date"/>
+				<field id="open"/>
+				<field id="high"/>
+				<field id="low"/>
+				<field id="close"/>
+				<field id="mid"/>
+			</kColl>
+		</iColl>
+		<field id="stockID" value="600220"/>
+		<data id="stockNumber" value="20" refType="Integer"/>
+		<iColl id="CurrentStockInfoList" size="15">
+			<kColl id="CurrentStockDayLineRecord02">
+				<field id="key"/>
+				<field id="value"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<iColl id="CurrentStockBuy" size="5">
+			<kColl id="SVT_8104_mainRecord01">
+				<field id="buyType"/>
+				<field id="buyPrice"/>
+				<field id="buyAmount"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<iColl id="CurrentStockSale" size="5">
+			<kColl id="SVT_8104_mainRecord01">
+				<field id="saleType"/>
+				<field id="salePrice"/>
+				<field id="saleAmount"/>
+				<!--2 down-->
+				<!--1 up-->
+				<data id="upOrDonw" refType="Integer"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</CurrentStockDayLineOp>

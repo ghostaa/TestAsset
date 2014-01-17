@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service.xml>
+
+	<!-- Client-Server Service-->
+	<CSServer id="realCSServer" implClass="com.ibm.btt.cs.servlet.CSServer" inactivityClientTimeout="1800000" timeBetweenSessionCheck="20000"/>
+
+	<WebMessage id="webMessageService" implClass="com.ibm.btt.services.webmsg.WebMsgServiceWASImpl"/>
+
+	<WebMessage id="webMsgService" BroadcastTopic="/btt/broadcast" PrivateTopic="/btt/private/" implClass="com.ibm.btt.services.webmsg.WebMsgServiceWASImpl"/>
+
+</service.xml>

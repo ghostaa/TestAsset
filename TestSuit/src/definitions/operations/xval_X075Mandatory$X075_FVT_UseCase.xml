@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_X075MandatoryX075_FVT_UseCase.xml>
+<operation id="xval_X075Mandatory$X075_FVT_UseCase" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form_xValidations" name="form_xValidations"/>
+      <refFormat refId="form_ecaRule1" name="form_ecaRule1"/>
+      <refFormat refId="form01_ecaRule" name="form01_ecaRule"/>
+      <refFormat refId="form02_ecaRule01" name="form02_ecaRule01"/>
+      <refFormat refId="form02_ecaRule02" name="form02_ecaRule02"/>
+      <refFormat refId="form03_ecaRule03" name="form03_ecaRule03"/>
+      <refFormat refId="form03_ecaRule04" name="form03_ecaRule04"/>
+      <refFormat refId="form03_ecaRule05" name="form03_ecaRule05"/>
+
+</operation>
+<mandatories id="form_ecaRule1">
+		<condition  expression="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_isMarried == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_partnerName" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form01_ecaRule">
+		<condition  expression="X075_Mandatory_FVT_multi$X075_Mandatory_FVT_type == false">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_multi$X075_Mandatory_FVT_textArea" value="true" />
+		   <setMandatory dataName="X075_Mandatory_FVT_multi$X075_Mandatory_FVT_one_result" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_multi$X075_Mandatory_FVT_textArea" value="false" />
+		   <setMandatory dataName="X075_Mandatory_FVT_multi$X075_Mandatory_FVT_one_result" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form02_ecaRule01">
+		<condition  expression="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_ref1_checked == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_Ref1" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_Ref1" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form02_ecaRule02">
+		<condition  expression="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_ref2_checked == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_Ref2" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_ref$X075_Mandatory_FVT_Ref2" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form03_ecaRule03">
+		<condition  expression="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_isCheck == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form03_ecaRule04">
+		<condition  expression="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_isCheck == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<mandatories id="form03_ecaRule05">
+		<condition  expression="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_isCheck == true">
+		 <ifTrue>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="true" />
+		 </ifTrue>
+		 <ifFalse>
+		   <setMandatory dataName="X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_lazy$X075_Mandatory_FVT_Data_lazy" value="false" />
+		 </ifFalse>
+		</condition>
+</mandatories>
+<fmtDef id="form_xValidations">
+	<xValConditions>
+		<condition  expression="functs_BTTStringFunctions.length(X075_Mandatory_FVT_UserInfo$X075_Mandatory_FVT_Username) &gt; 6"/>
+	</xValConditions>
+</fmtDef>
+
+</xval_X075MandatoryX075_FVT_UseCase.xml>

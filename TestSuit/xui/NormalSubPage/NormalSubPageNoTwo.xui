@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="103,39,400,300" dataBinding="{'ctxType':'proc','ctxFile':'NormalSubFlowFlow','ctxName':'NormalSubFlowCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'NormalSubPageNoTwo.js'}">
+  <styles/>
+  <container name="TabbedPane" id="tabbedPane">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <container name="ContentPane" title="Tab01" id="ContentPane01">
+      <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="PlaceHolder">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="Label" id="label01" text="Condition is False">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        </widget>
+        <gridLayout numColumns="0"/>
+      </widget>
+      <gridLayout numColumns="1"/>
+    </container>
+    <container name="ContentPane" title="Tab02" id="ContentPane02">
+      <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </container>
+    <container name="ContentPane" title="Tab03" id="ContentPane03">
+      <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="PlaceHolder">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <container name="Form" id="form">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Label" id="label" text="No.2">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Text" dataName="{'ctxType':'proc','ctxFile':'NormalSubFlowFlow','ctxName':'NormalSubFlowCtx','dataName':'NormalSubFlowField'}" id="text">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <widget name="PlaceHolder">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="Button" action="flowEvent=viewEvt" id="button" text="Change Flow Event---&gt;FinallyPage">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            </widget>
+            <gridLayout numColumns="0"/>
+          </widget>
+          <gridLayout numColumns="1"/>
+        </container>
+        <gridLayout numColumns="0"/>
+      </widget>
+      <widget name="PlaceHolder">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="Link" action="flowEvent=viewEvt" id="link" text="Change Flow Event---&gt;FinallyPage">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        </widget>
+        <gridLayout numColumns="0"/>
+      </widget>
+      <gridLayout numColumns="1"/>
+    </container>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false"/>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

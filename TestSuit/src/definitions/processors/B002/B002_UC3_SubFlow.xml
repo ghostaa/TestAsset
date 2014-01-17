@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_UC3_SubFlow>
+
+
+	<htmlProcessor context="B002_UC3_SubCtx" id="B002_UC3_SubFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC3_Sub_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC3_Sub_0.jsp" id="B002_UC3_Sub_0">
+			<transitions>
+				<htmlTransition id="B002_UC3_Sub_0.viewEvt" targetState="OK"/>
+				<htmlTransition id="B002_UC3_Sub_0.toPage" targetState="errorHandling_Page"/>
+				<htmlTransition id="B002_UC3_Sub_0.toOperation" targetState="errorHandling_Operation"/>
+				<htmlTransition id="B002_UC3_Sub_0.toPopup" targetState="errorHandling_Popup"/>
+				<htmlTransition id="B002_UC3_Sub_0.toPopupSubFlow" targetState="errorHandling_PopupSubFlow"/>
+				<htmlTransition id="B002_UC3_Sub_0.toSubFlow" targetState="errorHandling_SubFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="errorHandling_Page" id="errorHandling_Page" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState typeIdInfo="errorHandling_Operation" id="errorHandling_Operation" type="final"/>
+
+		<htmlState typeIdInfo="errorHandling_Popup" id="errorHandling_Popup" type="final"/>
+
+		<htmlState typeIdInfo="errorHandling_PopupSubFlow" id="errorHandling_PopupSubFlow" type="final"/>
+
+		<htmlState typeIdInfo="errorHandling_SubFlow" id="errorHandling_SubFlow" type="final"/>
+	</htmlProcessor>
+
+	<context id="B002_UC3_SubCtx" type="op">
+		<refKColl refId="B002_UC3_SubRecord"/>
+	</context>
+
+	<kColl id="B002_UC3_SubRecord">
+		<field id="stateFlag"/>
+	</kColl>
+
+</B002_UC3_SubFlow>

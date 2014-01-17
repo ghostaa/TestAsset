@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestImageActionFlow>
+
+
+	<htmlProcessor context="TestImageActionCtx" id="TestImageActionFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TestImageWidget"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestImageWidget.jsp" id="TestImageWidget">
+			<transitions>
+				<htmlTransition id="TestImageWidget.submit" outputMapFmt="TestImageWidget.submit_OutputFmt" targetState="finalPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="finalPage.jsp" id="finalPage">
+			<transitions>
+				<htmlTransition id="finalPage.Back" targetState="TestImageWidget"/>
+				<htmlTransition id="finalPage.viewEvt01" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestImageActionCtx" type="op">
+		<refKColl refId="TestImageActionRecord"/>
+	</context>
+
+	<kColl id="TestImageActionRecord">
+		<field id="name" value="Lucy"/>
+		<field id="address" value="China"/>
+	</kColl>
+
+	<fmtDef id="TestImageWidget.submit_OutputFmt">
+		<mapperConverterExpression>
+			<map from="address" to="address"/>
+			<map from="name" to="name"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TestImageActionFlow>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="187,116,722,300" dataBinding="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx'}" isRuleDirty="false">
+  <styles>
+    <css file="../WebContent/css/dijit/tableScrollbar.css"/>
+    <css file="../WebContent/css/master.css"/>
+  </styles>
+  <container name="Panel" layoutStyle="block" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="722" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" layoutStyle="block" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" styleClass="labelAccountList" id="label" text="%nls.bttsample/IBKE2E_Account_Summary">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" frozenColumnNum="2" dataNameForList="AccountList" frozenCNum="2" hint="demo req 15 (column resize), req 18(enable/disable table scroll), req31(DIV Layout), req20(new line character) and req4(extendable table)" styleClass="hScrollbarScroll vScrollbarScroll" id="table" columnReordering="true">
+            <gridData widthHint="661" heightType="AutoSize" widthType="FixedSize" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Account Number" noresize="false" dataName="AccountNumber" relativeWidth="15" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Link" width="80" dataNameForRow="" linkText="" rowCSS="" flowEvent="" dataNameForClickable="" dataNameForLink="" dataName="AccountType" renderMode="text" relativeWidth="15" id="columnId1" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" headerHAlign="16384" dataNameForColumn="" hidden="false" colSpan="1" text="Type" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Status" noresize="false" dataName="AccountStatus" relativeWidth="15" id="columnId4" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Balance" noresize="false" dataName="AccountBalance" relativeWidth="15" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Open Date" noresize="false" dataName="OpenDate" relativeWidth="15" id="columnId5" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="180" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Description" noresize="false" dataName="Description" relativeWidth="20" id="columnId3" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Link" width="80" dataNameForRow="TableSelection.RowSelect" linkText="View Transactions" rowCSS="" flowEvent="detail" dataNameForClickable="Clickable" dataNameForLink="" dataName="" renderMode="text" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" headerHAlign="16384" dataNameForColumn="TableSelection.ColumnSelect" hidden="false" colSpan="1" text="Operation" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <menu hasCloseButton="true" leftClickToOpen="false" bindingCellWidgetId="columnId6" position="below">
+              <menuItem newWindow="false" type="noAction" id="menu0_item1" text="More Selection"/>
+              <menuItem newWindow="" action="flowEvent=detail" type="submit" id="menu0_item0" text="detail"/>
+            </menu>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=finish" id="button" text="Finish">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

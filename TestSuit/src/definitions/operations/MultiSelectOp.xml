@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MultiSelectOp>
+
+	<operation id="MultiSelectOp" context="MultiSelectCtx" implClass="com.ibm.btt.application.op.CreateMultiData"/>
+
+	<context id="MultiSelectCtx" type="op">
+		<refKColl refId="MultiSelectRecord"/>
+	</context>
+
+	<kColl id="MultiSelectRecord">
+		<iColl id="TestMultiSelectList" size="10">
+			<kColl id="TestMultiSelectRecord01">
+				<field id="FieldForLabel"/>
+				<field id="FieldForValue"/>
+				<field id="FieldForSelect"/>
+				<field id="FieldForDisable"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</MultiSelectOp>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuerySettledBillOp>
+
+	<operation id="QuerySettledBillOp" context="QuerySettledBillCtx" implClass="com.ibm.btt.application.op.B001.QuerySettledBillOp"/>
+
+	<context id="QuerySettledBillCtx" type="op">
+		<refKColl refId="QuerySettledBillRecord"/>
+	</context>
+
+	<kColl id="QuerySettledBillRecord">
+		<refData refId="Bill" lazy="false"/>
+		<refData refId="SettledBillList"/>
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="SearchCondition" lazy="false"/>
+	</kColl>
+
+	<kColl id="Bill">
+		<data id="AcctNo" refType="String"/>
+		<data id="ShortAcctNo" refType="String"/>
+		<data id="TradeDate" refType="Date"/>
+		<data id="BookDate" refType="Date"/>
+		<data id="TradeType" refType="String"/>
+		<data id="CurType" refType="String"/>
+		<data id="Amount" refType="Double"/>
+		<data id="Comments" refType="String"/>
+	</kColl>
+
+	<iColl id="SettledBillList">
+		<refData refId="Bill" lazy="false"/>
+	</iColl>
+
+	<kColl id="SearchCondition">
+		<data id="CurType" refType="String"/>
+		<data id="TimePeriod" refType="String"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="enableNext" refType="Boolean"/>
+		<data id="enablePrevious" refType="Boolean"/>
+		<data id="totalRowNumber" refType="Integer"/>
+		<data id="rowsPerPage" refType="Integer"/>
+		<data id="pageNumber" refType="Integer"/>
+		<data id="errMsg" refType="String"/>
+		<field id="pageEvent"/>
+	</kColl>
+
+</QuerySettledBillOp>

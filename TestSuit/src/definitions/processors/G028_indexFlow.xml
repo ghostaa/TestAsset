@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_indexFlow>
+
+
+	<htmlProcessor context="G028_indexCtx" id="G028_indexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_index.jsp" id="G028_index">
+			<transitions>
+				<htmlTransition id="G028_index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_indexCtx" type="op">
+		<refKColl refId="G028_indexRecord01"/>
+	</context>
+
+	<kColl id="G028_indexRecord01">
+	</kColl>
+
+</G028_indexFlow>

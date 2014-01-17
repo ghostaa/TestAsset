@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="30,21,0,0" dataBinding="{'ctxType':'proc','ctxFile':'mybank/sampleFlow','ctxName':'sampleFlowCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'mybank_index.js'}">
+  <styles>
+    <css file="../../WebContent/css/mybank/mybankMain.css"/>
+  </styles>
+  <container name="dijit_layout_BorderContainer" ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" RightPanel="false" gutters="true" BottomPanel="true" id="dijit_layout_BorderContainer" TopPanel="true">
+    <extendWidgetInfo>
+      <extendNode extendNodeId="topPanel">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;padding-main&quot;:{&quot;padding-right&quot;:0.0,&quot;padding-left&quot;:0.0,&quot;padding-bottom&quot;:0.0,&quot;padding-top&quot;:0.0},&quot;border&quot;:{&quot;style&quot;:&quot;none&quot;,&quot;color_red&quot;:0,&quot;width&quot;:0,&quot;color_blue&quot;:0,&quot;color_green&quot;:0}}" horizontalIndentType="FixedSize"/>
+        <properties ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" region="top" onLoad="dijit.byId('dijit_layout_BorderContainer').layout();" styleClass="mainFrameTop" __uuid="topPanel" id="dijit_layout_BorderContainer_topPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="leftPanel">
+        <gridData verticalAlignment="1" widthHint="124" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <properties ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" region="left" __uuid="leftPanel" id="dijit_layout_BorderContainer_leftPanel" overflow-y="auto"/>
+      </extendNode>
+      <extendNode extendNodeId="centerPanel">
+        <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;padding-main&quot;:{&quot;padding-right&quot;:0.0,&quot;padding-left&quot;:0.0,&quot;padding-bottom&quot;:0.0,&quot;padding-top&quot;:0.0},&quot;border&quot;:{&quot;style&quot;:&quot;none&quot;,&quot;color_red&quot;:0,&quot;width&quot;:3,&quot;color_blue&quot;:0,&quot;color_green&quot;:0}}" horizontalIndentType="FixedSize"/>
+        <properties timeout="3000" ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" region="center" ioMethod="dojo.xhrPost" __uuid="centerPanel" loadingMessage="%nls.bttsample/Final_Page_Flow" id="dijit_layout_BorderContainer_centerPanel" errorMessage="test' \error message\"/>
+      </extendNode>
+      <extendNode extendNodeId="rightPanel">
+        <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <properties ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" region="right" __uuid="rightPanel" id="dijit_layout_BorderContainer_rightPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="bottomPanel">
+        <gridData heightHint="190" verticalAlignment="1" heightType="FixedSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;padding-main&quot;:{&quot;padding-right&quot;:0.0,&quot;padding-left&quot;:0.0,&quot;padding-bottom&quot;:0.0,&quot;padding-top&quot;:0.0},&quot;border&quot;:{&quot;style&quot;:&quot;none&quot;,&quot;color_red&quot;:0,&quot;width&quot;:3,&quot;color_blue&quot;:0,&quot;color_green&quot;:0}}" horizontalIndentType="FixedSize"/>
+        <properties ioArgs="{content:{dse_sessionId:'&lt;%=request.getSession().getId()%&gt;'}}" region="bottom" styleClass="mainFrameBottom" __uuid="bottomPanel" id="dijit_layout_BorderContainer_bottomPanel"/>
+      </extendNode>
+    </extendWidgetInfo>
+    <gridData heightHint="528" verticalAlignment="1" widthHint="1058" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;padding-main&quot;:{&quot;padding-right&quot;:0.0,&quot;padding-left&quot;:0.0,&quot;padding-bottom&quot;:0.0,&quot;padding-top&quot;:0.0}}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+      <gridData heightHint="168" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="panel06">
+        <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+        <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel07">
+            <gridData verticalAlignment="1" widthHint="1024" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{&quot;padding&quot;:{&quot;padding-right&quot;:-1.0,&quot;padding-left&quot;:-1.0,&quot;padding-bottom&quot;:-1.0,&quot;padding-top&quot;:20.0}}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel08">
+                <gridData verticalAlignment="1" widthHint="403" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass="titleMain" id="label" text="Welcom Back, Carlos">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData horizontalAlignment="3" verticalAlignment="3" verticalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Text" id="text">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" styleClass="subtitle" id="label04" text="Platinum Relationship - Member since 2007">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder" styleClass="splitter">
+          <gridData heightHint="70" horizontalAlignment="2" verticalAlignment="1" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel09">
+            <gridData verticalAlignment="1" widthHint="1024" heightType="AutoSize" widthType="FixedSize" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData verticalAlignment="3" widthHint="100" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link13" text="Dashboard">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="2" verticalAlignment="3" widthHint="100" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link10" text="Transactions">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="2" verticalAlignment="3" widthHint="100" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link09" text="Goals">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="2" verticalAlignment="3" widthHint="100" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link11" text="Advice">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="2" verticalAlignment="3" widthHint="100" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link12" text="Network">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="3" verticalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel10">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" id="label10" text="Contact Us">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Image" location="img/mybank/setting.png" id="image04">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="7"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1"/>
+      <gridData horizontalAlignment="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="dijit_layout_BorderContainer" RightPanel="false" gutters="true" BottomPanel="false" id="borderContainer" LeftPanel="true" TopPanel="false">
+        <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1" styleClass="dijitBorderContainer dijitContainer dijitLayoutContainer">
+          <extendNode extendNodeId="topPanel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="top" onLoad="dijit.byId('borderContainer').layout();" __uuid="topPanel" id="borderContainer_topPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="leftPanel">
+            <gridData verticalAlignment="1" widthHint="150" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;border&quot;:{&quot;style&quot;:&quot;none&quot;,&quot;color_red&quot;:0,&quot;width&quot;:0,&quot;color_blue&quot;:0,&quot;color_green&quot;:0}}" horizontalIndentType="FixedSize"/>
+            <properties region="left" __uuid="leftPanel" id="borderContainer_leftPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="centerPanel">
+            <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;border&quot;:{&quot;style&quot;:&quot;none&quot;,&quot;color_red&quot;:0,&quot;width&quot;:3,&quot;color_blue&quot;:0,&quot;color_green&quot;:0}}" horizontalIndentType="FixedSize"/>
+            <properties region="center" ioMethod="dojo.xhrPost" __uuid="centerPanel" id="centerPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="rightPanel">
+            <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="right" __uuid="rightPanel" id="borderContainer_rightPanel"/>
+          </extendNode>
+          <extendNode extendNodeId="bottomPanel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <properties region="bottom" __uuid="bottomPanel" id="borderContainer_bottomPanel"/>
+          </extendNode>
+        </extendWidgetInfo>
+        <gridData heightHint="200" verticalAlignment="1" widthHint="1024" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;padding-main&quot;:{&quot;padding-right&quot;:0.0,&quot;padding-left&quot;:0.0,&quot;padding-bottom&quot;:0.0,&quot;padding-top&quot;:0.0}}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="leftPanel" extendNodeColNum="1"/>
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel">
+            <extendWidgetInfo parentExtendNodeId="leftPanel" extendNodeColNum="1"/>
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" styleClass="menuItem" id="link14" text="Loan Offer">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1" maxCol="1" maxRow="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="bottomPanel" extendNodeColNum="1"/>
+      <gridData heightHint="190" horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="panel01">
+        <extendWidgetInfo parentExtendNodeId="bottomPanel" extendNodeColNum="1"/>
+        <gridData verticalAlignment="1" widthHint="1024" heightType="Fill" widthType="FixedSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01_copy">
+            <gridData verticalAlignment="1" widthHint="679" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightHint="175" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{&quot;padding&quot;:{&quot;padding-right&quot;:-1.0,&quot;padding-left&quot;:-1.0,&quot;padding-bottom&quot;:-1.0,&quot;padding-top&quot;:20.0}}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData verticalAlignment="1" widthHint="386" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link" text="ATM / BRANCH LOCATOR">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link04" text="MORTGAGES">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link01" text="LET US CALL YOU">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link05" text="CREDIT CARDS">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link02" text="SCHEDULE A BRANCH VISIT">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link06" text="PRODUCT NAME">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link07" text="OTHER PRODUCTS">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link03" text="CONNECT WITH US">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="linkStyle" id="link08" text="ADD A SERVICE">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" widthHint="227" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Panel" id="panel03">
+                    <gridData heightHint="30" verticalAlignment="1" widthHint="150" heightType="FixedSize" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Image" location="img/mybank/fb.png" id="image">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Image" location="img/mybank/tt.png" id="image01">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Image" location="img/mybank/in.png" id="image02">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Image" location="img/mybank/at.png" id="image03">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="4"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" widthHint="78" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="3"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightHint="175" widthHint="220" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="dijit_layout_ContentPane" location="xui/mybank/bottom_others.xui" styleClass="bottomPanel" id="bottomContentPane">
+                <extendWidgetInfo extendNodeId="contentNode" styleClass="dijitContentPane dijitStackContainer-child dijitStackContainer-dijitContentPane dijitVisible"/>
+                <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1" maxCol="1" maxRow="3"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="link14" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="centerPanel">
+          <function name="lanuchNewFlow">
+            <parameter>
+              <value type="constant" constant="'loanOfferFlow'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="link12" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="bottomContentPane">
+          <function name="setHref">
+            <parameter>
+              <value type="constant" constant="'href'"/>
+              <value type="constant" constant="'xui/mybank/bottom_4_network.xui'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="link13" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="bottomContentPane">
+          <function name="setHref">
+            <parameter>
+              <value type="constant" constant="'href'"/>
+              <value type="constant" constant="'xui/mybank/bottom_others.xui'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="link10" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="bottomContentPane">
+          <function name="setHref">
+            <parameter>
+              <value type="constant" constant="'href'"/>
+              <value type="constant" constant="'xui/mybank/bottom_others.xui'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

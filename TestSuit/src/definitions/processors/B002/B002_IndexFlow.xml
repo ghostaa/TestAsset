@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_IndexFlow>
+
+
+	<htmlProcessor context="B002_IndexCtx" id="B002_IndexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002B002_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_Index.jsp" id="B002B002_Index">
+			<transitions>
+				<htmlTransition id="B002B002_Index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="B002_IndexCtx" type="op">
+		<refKColl refId="B002_IndexRecord"/>
+	</context>
+
+	<kColl id="B002_IndexRecord">
+	</kColl>
+
+</B002_IndexFlow>

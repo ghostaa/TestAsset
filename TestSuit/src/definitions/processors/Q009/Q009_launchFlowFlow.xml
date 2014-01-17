@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_launchFlowFlow>
+
+
+	<htmlProcessor context="Q009_launchFlowCtx" id="Q009_launchFlowFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_launchFlowOperation"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_launchFlowOperation.jsp" id="Q009Q009_launchFlowOperation">
+			<transitions>
+				<htmlTransition id="Q009Q009_launchFlowOperation.next" targetState="Q009Q009_BTTContainer_Div01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div01.jsp" id="Q009Q009_BTTContainer_Div01">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainer_Div01.exit" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q009_launchFlowCtx" type="op">
+		<refKColl refId="Q009_launchFlowRecord"/>
+	</context>
+
+	<kColl id="Q009_launchFlowRecord">
+	</kColl>
+
+</Q009_launchFlowFlow>

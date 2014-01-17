@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X078_fvt_subFlow>
+
+
+	<htmlProcessor context="X078_fvt_subCtx" id="X078_fvt_subFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="OK"/>
+				<htmlTransition id="initial.start01" targetState="NotOk"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState typeIdInfo="NotOk" id="NotOk" type="final"/>
+	</htmlProcessor>
+
+	<context id="X078_fvt_subCtx" type="op">
+		<refKColl refId="X078_fvt_subRecord"/>
+	</context>
+
+	<kColl id="X078_fvt_subRecord">
+	</kColl>
+
+</X078_fvt_subFlow>

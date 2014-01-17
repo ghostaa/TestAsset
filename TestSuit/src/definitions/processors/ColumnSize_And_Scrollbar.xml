@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColumnSize_And_Scrollbar>
+
+
+	<htmlProcessor context="ColumnSize_And_ScrollbarCtx" id="ColumnSize_And_Scrollbar">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TestTableScrollAndPercentSizeOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<operationState typeIdInfo="TestTableScrollAndPercentSizeOp" id="TestTableScrollAndPercentSizeOp" type="operation">
+			<transitions>
+				<htmlTransition id="TestTableScrollAndPercentSizeOp.ok" outputMapFmt="TestTableScrollAndPercentSizeOp.ok_OutputFmt" targetState="TestTable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="TestTable.jsp" id="TestTable">
+			<transitions>
+				<htmlTransition id="TestTable.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ColumnSize_And_ScrollbarCtx" type="op">
+		<refKColl refId="ColumnSize_And_ScrollbarRecord"/>
+	</context>
+
+	<kColl id="ColumnSize_And_ScrollbarRecord">
+		<iColl id="aList" size="5">
+			<kColl id="TestTableScrollAndPercentSize">
+				<field id="index"/>
+				<field id="cardNo"/>
+				<field id="amount"/>
+				<field id="ImageField"/>
+				<field id="Size"/>
+				<field id="Name"/>
+				<field id="Age"/>
+				<field id="Date"/>
+			</kColl>
+		</iColl>
+		<field id="DataName"/>
+		<iColl id="aSelect">
+			<kColl id="Record">
+				<field id="labelField"/>
+				<field id="valueField"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="TestTableScrollAndPercentSizeOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="aList" to="aList" append="false"/>
+			<map from="aSelect" to="aSelect" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</ColumnSize_And_Scrollbar>

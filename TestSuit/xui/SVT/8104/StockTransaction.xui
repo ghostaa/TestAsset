@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="30,18,0,0" dataBinding="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'StockTransaction.js'}">
+  <styles>
+    <css file="../../../WebContent/css/G016/G016.css"/>
+  </styles>
+  <container name="dijit_layout_BorderContainer" RightPanel="false" gutters="true" BottomPanel="true" id="borderContainer" TopPanel="true">
+    <extendWidgetInfo>
+      <extendNode extendNodeId="topPanel">
+        <gridData heightHint="39" verticalAlignment="1" heightType="FixedSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+        <properties region="top" onLoad="dijit.byId('borderContainer').layout();" __uuid="topPanel" id="borderContainer_topPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="leftPanel">
+        <gridData verticalAlignment="1" widthHint="651" heightType="Fill" widthType="FixedSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <properties region="left" __uuid="leftPanel" id="borderContainer_leftPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="centerPanel">
+        <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+        <properties region="center" ioMethod="dojo.xhrPost" __uuid="centerPanel" id="borderContainer_centerPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="rightPanel">
+        <gridData verticalAlignment="1" heightType="Fill" widthType="AutoSize" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <properties region="right" __uuid="rightPanel" id="borderContainer_rightPanel"/>
+      </extendNode>
+      <extendNode extendNodeId="bottomPanel">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+        <properties region="bottom" __uuid="bottomPanel" id="borderContainer_bottomPanel"/>
+      </extendNode>
+    </extendWidgetInfo>
+    <gridData heightHint="789" verticalAlignment="1" widthHint="868" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:24,&quot;color_blue&quot;:24,&quot;color_green&quot;:24}}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" styleClass=" fontWhiteColor" id="label" text="%nls.svt/stockNumber?[{&quot;p&quot;:&quot;value&quot;,&quot;t&quot;:&quot;w&quot;,&quot;id&quot;:&quot;StockTransaction_text&quot;,&quot;n&quot;:&quot;number&quot;}]">
+        <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Text" dataName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'stockID'}" id="text">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="button" buttonType="button" text="submit">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass=" fontWhiteColor" id="label01" text="test dynamic flow:002351">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass=" fontWhiteColor" id="label02" text="default value:600220">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="5"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label03" text="%nls.svt/stockName">
+        <extendWidgetInfo parentExtendNodeId="topPanel" extendNodeColNum="1"/>
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="leftPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="leftPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="leftPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="dijit_layout_ContentPane" text-align="left" ioMethod="dojo.xhrPost" preload="true" preventCache="false" loadingMessage__Template="&lt;span class='dijitContentPaneLoading'&gt;%s&lt;/span&gt;" refreshOnShow="false" errorMessage__Template="&lt;span class='dijitContentPaneError'&gt;%s&lt;/span&gt;" id="contentPaneStock">
+        <extendWidgetInfo parentExtendNodeId="centerPanel" extendNodeColNum="1" extendNodeId="contentNode" styleClass="dijitContentPane dijitStackContainer-child dijitStackContainer-dijitContentPane dijitVisible"/>
+        <gridData heightHint="0" verticalAlignment="1" widthHint="0" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TabbedPane" id="tabbedPane">
+            <extendWidgetInfo parentExtendNodeId="contentNode" extendNodeColNum="1"/>
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="ContentPane" title="Tab01" id="ContentPane01" iconClass="dijitEditorIcon dijitEditorIconBold">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <container name="dojox_charting_widget_Chart2D" y__maxLabelCharCount="0" fixUpper="none" maxLabelSize="0" microTicks="false" y__fixUpper="none" minorLabels="false" y__enable__axis="true" y__maxLabelSize="0" majorLabels="true" y__microTicks="false" id="dojox_charting_widget_Chart2D_copy" y__includeZero="false" enableCache="false" minorTicks="true" y__minorTicks="true" maxLabelCharCount="0" theme="dojox.charting.themes.ThreeD" y__minorLabels="false" hMajorLines="true" hMinorLines="false" y__majorLabels="true" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" fixLower="none" includeZero="false" y__fixLower="none" y__enableCache="false" rotation="1" templateId="chart2d">
+                  <extendWidgetInfo/>
+                  <gridData heightHint="300" verticalAlignment="1" widthHint="412" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="dojox_charting_widget_plot" y__maxLabelCharCount="0" ShadowColor="RGB {0, 0, 0}" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotLines" shadowX="1" shadowY="1" type="Lines" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" ShadowWidth="1" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" Highlight="true" y__microTicks="false" y__includeZero="false" enableCache="false" Animate="true" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" titleFontColor="RGB{0, 0, 0}" vMajorLines="true" enable__axis="false" Shake="true" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" fill="RGB {255, 0, 0}" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_series04" labelStyle="default" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" MoveSlice="false" seriesName="series05" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaBig" StrokeColor="RGB {255, 0, 0}" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;&quot;,&quot;y&quot;:&quot;@BBK&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <container name="dojox_charting_widget_plot" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotSmallArea_copy" type="Areas" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" y__microTicks="false" y__includeZero="false" enableCache="false" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" fill="RGB {255, 255, 255}" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_seriesSmallArea_copy" labelStyle="default" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" MoveSlice="false" seriesName="series01" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaSmall" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;@x&quot;,&quot;y&quot;:&quot;&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <container name="dojox_charting_widget_plot" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotBigArea_copy" type="Areas" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" y__microTicks="false" y__includeZero="false" enableCache="false" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" fill="RGB {0, 0, 0}" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_series_copy" labelStyle="default" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" MoveSlice="false" seriesName="series" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaBig" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;@x&quot;,&quot;y&quot;:&quot;&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <container name="dojox_charting_widget_plot" minBarSize="27" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotHiddenHead_copy" type="Bars" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" y__microTicks="false" y__includeZero="false" enableCache="false" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" StrokeColor="RGB {255, 255, 255}" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" fill="RGB {255, 255, 255}" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_series03_copy" labelStyle="default" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" MoveSlice="false" seriesName="series04" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaBig" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;&quot;,&quot;y&quot;:&quot;@hiddenHead&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <container name="dojox_charting_widget_plot" minBarSize="25" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotTHead_copy" type="Bars" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" y__microTicks="false" y__includeZero="false" enableCache="false" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_series02_copy" labelStyle="default" MoveSlice="false" store="{&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;,&quot;id&quot;:&quot;bttStoreWidget&quot;}" seriesName="series03" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaBig" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;&quot;,&quot;y&quot;:&quot;@head&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <container name="dojox_charting_widget_plot" minBarSize="25" y__maxLabelCharCount="0" maxLabelSize="0" microTicks="false" minorLabels="false" y__enable__axis="false" y__maxLabelSize="0" majorLabels="true" id="dojox_charting_widget_plotT_copy" type="Columns" y__minorTicks="true" maxLabelCharCount="0" y__minorLabels="false" hMajorLines="true" y__majorLabels="true" vMinorLines="false" y__titleFontColor="RGB{0, 0, 0}" Grid="false" includeZero="false" precision="1" rotation="1" fixUpper="none" y__fixUpper="none" y__microTicks="false" y__includeZero="false" enableCache="false" minorTicks="true" theme="dojox.charting.themes.Claro" hMinorLines="false" vMajorLines="true" titleFontColor="RGB{0, 0, 0}" enable__axis="false" fixLower="none" y__fixLower="none" y__enableCache="false" templateId="Plot">
+                    <extendWidgetInfo parentExtendNodeId="contentArea" extendNodeColNum="1"/>
+                    <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <gridLayout numColumns="1" maxCol="1" maxRow="1" minCol="1" minRow="2"/>
+                    <hiddenWidget name="dojox_charting_widget_series" Shadow="false" Magnify="false" Animate="false" minBarSize="0" fill="RGB {45, 118, 186}" ShadowColor="RGB{0, 0, 0}" htmlLabels="true" radius="0" Highlight="false" gap="0" Markers="false" id="dojox_charting_widget_series01_copy" labelStyle="default" store="{&quot;id&quot;:&quot;bttStoreWidget&quot;,&quot;baseType&quot;:&quot;BTT_DOJO_STORE&quot;}" MoveSlice="false" seriesName="series02" Tooltip="false" Shake="false" labelOffset="0" rootPath="ForAreaBig" mappingOptions="{&quot;value&quot;:{&quot;size&quot;:&quot;&quot;,&quot;tooltip&quot;:&quot;&quot;,&quot;x&quot;:&quot;&quot;,&quot;y&quot;:&quot;@high&quot;,&quot;legend&quot;:&quot;&quot;},&quot;__btt_value&quot;:&quot;&quot;,&quot;__btt_type&quot;:&quot;Complex&quot;}" maxBarSize="-1" type="Default" axisType="plot" precision="1" labels="false"/>
+                  </container>
+                  <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+                </container>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab02" id="ContentPane02" iconClass="dijitEditorIconSubscript dijitEditorIcon">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+            <container name="ContentPane" title="Tab03" id="ContentPane03" iconClass=" dijitEditorIcon dijitEditorIconSuperscript">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </container>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="bottomPanel" extendNodeColNum="2"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form01">
+        <extendWidgetInfo parentExtendNodeId="bottomPanel" extendNodeColNum="2"/>
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dijit_form_HorizontalSlider" intermediateChanges="false" bottomLabels="false" bottomRules="false" top__label__item__color="RGB {128, 128, 255}" minimum="10" id="horizontalSlider" maximum="50" bottom__rule__count="3" topRules="true" clickSelect="true" top__count="5" top__labels="[&quot;10 days&quot;,&quot;20 days&quot;,&quot;30 days&quot;,&quot;40 days&quot;,&quot;50 days&quot;]" topLabels="true" top__rule__count="5" bottom__rule__height="5" showButtons="true" bottom__label__font__size="11" top__rule__height="5" readOnly="false" top__label__item__width="100" widgetName="{'ctxType':'proc','ctxFile':'svt/a8104/SVT_8104_mainFlow','ctxName':'SVT_8104_mainCtx','dataName':'stockNumber'}" value="{&quot;path&quot;:&quot;stockNumber&quot;,&quot;storeId&quot;:&quot;localContextStore&quot;}" bottom__count="3" discreteValues="5" disabled="false" top__label__font__size="11">
+            <extendWidgetInfo styleClass="dijitSliderH dijitSlider"/>
+            <gridData heightHint="300" verticalAlignment="1" widthHint="400" heightType="AutoSize" widthType="FixedSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo parentExtendNodeId="bottomPanel" extendNodeColNum="2"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1" maxCol="1" maxRow="3"/>
+    <hiddenWidget name="BttStoreWidget" Service="{}" id="localContextStore"/>
+    <hiddenWidget name="BttStoreWidget" Service="{&quot;serviceName&quot;:&quot;WelComeBTTOp&quot;,&quot;transactionResourcePath&quot;:&quot;src\/definitions\/operations\/B004Chart\/WelComeBTTOp.transaction&quot;,&quot;project&quot;:&quot;InternetBankTestWeb&quot;,&quot;objectType&quot;:&quot;bttService&quot;,&quot;xmlResourcePath&quot;:&quot;src\/definitions\/operations\/B004Chart\/WelComeBTTOp.xml&quot;,&quot;serviceType&quot;:&quot;OPERATION&quot;}" id="bttStoreWidget"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="contentPaneStock">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form" property="id"/>
+              <value type="constant" constant="'queryStockNumber'"/>
+            </parameter>
+          </function>
+        </action>
+        <action type="widgetProperty" widget="label" property="text">
+          <value type="constant" constant="'%nls.svt/stockNumber?[{&quot;p&quot;:&quot;value&quot;,&quot;t&quot;:&quot;w&quot;,&quot;id&quot;:&quot;StockTransaction_text&quot;,&quot;n&quot;:&quot;number&quot;}]'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="horizontalSlider" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="contentPaneStock">
+          <function name="changeFlowEvent">
+            <parameter>
+              <value type="widgetProperty" widget="form01" property="id"/>
+              <value type="constant" constant="'queryStockNumber'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="label01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="text" property="value">
+          <value type="constant" constant="'002351'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="label02" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="text" property="value">
+          <value type="constant" constant="'600220'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>true</useECALoader>
+  <versionNo>8104</versionNo>
+</XUI>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_M7y0sGYuEeK0TKLZheh7JQ">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_M7y0smYuEeK0TKLZheh7JQ">
+    <contexts xmi:type="transaction:Context" xmi:id="_SG5noGYuEeK0TKLZheh7JQ" tag="context" id="IBK_18_GetAccountsCtx01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SG5noWYuEeK0TKLZheh7JQ" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SG5nomYuEeK0TKLZheh7JQ" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SG5no2YuEeK0TKLZheh7JQ" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SG5npGYuEeK0TKLZheh7JQ" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_SG5npWYuEeK0TKLZheh7JQ" key="_SG5nomYuEeK0TKLZheh7JQ" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_SG5npmYuEeK0TKLZheh7JQ" key="_SG5noWYuEeK0TKLZheh7JQ" value="IBK_18_GetAccountsCtx01"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_Tta5gGYuEeK0TKLZheh7JQ" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_Tta5gWYuEeK0TKLZheh7JQ" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UcNSIGYuEeK0TKLZheh7JQ" key="_Tta5gWYuEeK0TKLZheh7JQ" value="IBK_18_GetAccountsRecord01"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_M7y0s2YuEeK0TKLZheh7JQ">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_SraC4GYuEeK0TKLZheh7JQ" tag="kColl" id="IBK_18_GetAccountsRecord01">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SraC4WYuEeK0TKLZheh7JQ" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SraC4mYuEeK0TKLZheh7JQ" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SraC42YuEeK0TKLZheh7JQ" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_SraC5GYuEeK0TKLZheh7JQ" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_SraC5WYuEeK0TKLZheh7JQ" key="_SraC42YuEeK0TKLZheh7JQ" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_SraC5mYuEeK0TKLZheh7JQ" key="_SraC4WYuEeK0TKLZheh7JQ" value="IBK_18_GetAccountsRecord01"/>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_M7y0tGYuEeK0TKLZheh7JQ"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_M7y0tWYuEeK0TKLZheh7JQ">
+    <operations xmi:type="transaction:Operation" xmi:id="_RwZzMGYuEeK0TKLZheh7JQ" tag="operation" id="IBK_18_GetAccountsOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_RwZzMWYuEeK0TKLZheh7JQ" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_RwZzMmYuEeK0TKLZheh7JQ" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_RwZzM2YuEeK0TKLZheh7JQ" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_RwZzNGYuEeK0TKLZheh7JQ" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_RwZzNWYuEeK0TKLZheh7JQ" key="_RwZzM2YuEeK0TKLZheh7JQ" value="com.ibm.btt.application.op.IBK_18_GetAccounts"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_RwZzNmYuEeK0TKLZheh7JQ" key="_RwZzMWYuEeK0TKLZheh7JQ" value="IBK_18_GetAccountsOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_VRQq0GYuEeK0TKLZheh7JQ" key="_RwZzMmYuEeK0TKLZheh7JQ" value="IBK_18_GetAccountsCtx01"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_M7y0tmYuEeK0TKLZheh7JQ"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_M7y0t2YuEeK0TKLZheh7JQ"/>
+</transaction:WorkProduct>

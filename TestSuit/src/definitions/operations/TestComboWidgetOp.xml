@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestComboWidgetOp>
+
+	<operation id="TestComboWidgetOp" context="TestComboWidgetCtx" implClass="com.ibm.btt.application.op.TestComboWidgetOp"/>
+
+	<context id="TestComboWidgetCtx" type="op">
+		<refKColl refId="TestComboRecord"/>
+	</context>
+
+	<kColl id="TestComboRecord">
+		<iColl id="TestComboList" size="10">
+			<refData refId="TestComboRecord01" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="TestComboRecord01">
+		<field id="FieldForLabel"/>
+		<field id="FieldForValue"/>
+	</kColl>
+
+</TestComboWidgetOp>

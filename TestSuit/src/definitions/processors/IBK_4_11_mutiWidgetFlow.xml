@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_4_11_mutiWidgetFlow>
+
+
+	<htmlProcessor context="IBK_4_11_mutiWidgetCtx" id="IBK_4_11_mutiWidgetFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_4_11_MutiWidgetOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="IBK_4_11_MutiWidgetOp" id="IBK_4_11_MutiWidgetOp" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_4_11_MutiWidgetOp.opEvt" outputMapFmt="IBK_4_11_MutiWidgetOp.opEvt_OutputFmt" targetState="IBK_4_11_mutiWidget_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_Button.jsp" id="IBK_4_11_mutiWidget_Button">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidget_Button.evt" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidgetResult.jsp" id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.viewEvt" targetState="OK"/>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.back" targetState="IBK_4_11_mutiWidget_Button"/>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.backLink" targetState="IBK_4_11_mutiWidget_Link"/>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.back to link testing(by tooling)" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_link_byTooling"/>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.back to button testing(by tooling)" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_button_byTooling"/>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult.back to IBK33658 formatter" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_formatter"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_index.jsp" id="IBK_4_11_mutiWidget_index">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidget_index.toButton" targetState="IBK_4_11_mutiWidget_Button"/>
+				<htmlTransition id="IBK_4_11_mutiWidget_index.toLink" targetState="IBK_4_11_mutiWidget_Link"/>
+				<htmlTransition id="IBK_4_11_mutiWidget_index.Link multi-widget by tooling" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_link_byTooling"/>
+				<htmlTransition id="IBK_4_11_mutiWidget_index.Button multi-widget by tooling" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_button_byTooling"/>
+				<htmlTransition id="IBK_4_11_mutiWidget_index.formatter" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_formatter"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_Link.jsp" id="IBK_4_11_mutiWidget_Link">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidget_Link.evtLink" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_link_byTooling.jsp" id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_link_byTooling">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_link_byTooling.evtLink" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_button_byTooling.jsp" id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_button_byTooling">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_button_byTooling.evtLink" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_formatter.jsp" id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_formatter">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_formatter.next" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidgetResult"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="IBK_4_11_mutiWidgetCtx" type="op">
+		<refKColl refId="IBK_4_11_mutiWidgetRecord"/>
+	</context>
+
+	<kColl id="IBK_4_11_mutiWidgetRecord">
+		<iColl id="TestMutiWidgetList">
+			<refData refId="sampleRecord" lazy="false"/>
+		</iColl>
+		<iColl id="TestMutiWidgetListResult">
+			<refData refId="sampleRecord" lazy="false"/>
+		</iColl>
+		<refData refId="sampleRecord" lazy="false" alias="singleResult"/>
+		<data id="testValidation" refType="Number"/>
+	</kColl>
+
+	<kColl id="sampleRecord">
+		<field id="Field1"/>
+		<field id="Field2"/>
+		<field id="Field3"/>
+		<field id="IBK_4_11_mutiWidgetField" value="a"/>
+		<field id="flag"/>
+	</kColl>
+
+	<fmtDef id="IBK_4_11_MutiWidgetOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TestMutiWidgetList" to="TestMutiWidgetList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</IBK_4_11_mutiWidgetFlow>

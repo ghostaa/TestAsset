@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="55,50,714,300" dataBinding="{'ctxType':'proc','ctxFile':'IBK_F_006_datePickerFlow','ctxName':'sampleFlowCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'DatePicker.js'}">
+  <styles>
+    <css file="../../WebContent/css/sample.css"/>
+  </styles>
+  <container name="Form" id="form">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="714" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Combo" urlForList="listFiles/year.js" id="combo_year">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Combo" urlForList="listFiles/month.js" id="combo_month">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Combo" id="combo_day">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Text" dataName="sampleData" styleClass="hidden" id="calendar">
+        <gridData widthHint="30" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=ok" id="button" text="ok">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="4"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="combo_year" event="onChange"/>
+        <event widget="combo_month" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="s" script="var widget_year = dijit.byId(&quot;DatePicker_combo_year&quot;);
+var widget_month = dijit.byId(&quot;DatePicker_combo_month&quot;);
+var widget_day = dijit.byId(&quot;DatePicker_combo_day&quot;);
+var widget_calendar = dijit.byId(&quot;DatePicker_calendar&quot;);
+
+var year = widget_year.get(&quot;value&quot;);
+var month = widget_month.get(&quot;value&quot;);
+if (year &amp;&amp; month) {
+ if (month == 12) {
+  widget_day.loadStoreFromURL(&quot;listFiles/day31.js&quot;);
+ } else {
+  month++;
+  if (month &lt; 10) {
+   month = &quot;0&quot; + month;
+  }
+  var date = new Date(year + &quot;-&quot; + month + &quot;-01&quot;);
+  date.setDate(0);
+  widget_day.loadStoreFromURL(&quot;listFiles/day&quot; + date.getDate() + &quot;.js&quot;);
+ }
+ var day = widget_day.get(&quot;value&quot;);
+ if (day) {
+month --;
+    if (month &lt; 10){
+     month = &quot;0&quot; + month;
+    }
+  var value = year + &quot;-&quot; + month + &quot;-&quot; + day;
+  widget_calendar.set(&quot;value&quot;, value);
+ }
+}"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="combo_day" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="a" script="var widget_year = dijit.byId(&quot;DatePicker_combo_year&quot;);
+var widget_month = dijit.byId(&quot;DatePicker_combo_month&quot;);
+var widget_day = dijit.byId(&quot;DatePicker_combo_day&quot;);
+var widget_calendar = dijit.byId(&quot;DatePicker_calendar&quot;);
+
+var year = widget_year.get(&quot;value&quot;);
+var month = widget_month.get(&quot;value&quot;);
+var day = widget_day.get(&quot;value&quot;);
+if (year &amp;&amp; month &amp;&amp; day) {
+
+ var value = year + &quot;-&quot; + month + &quot;-&quot; + day;
+ widget_calendar.set(&quot;value&quot;, value);
+}"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="calendar" event="onChange"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="inlineScript" id="a" script="var widget_year = dijit.byId(&quot;DatePicker_combo_year&quot;);
+var widget_month = dijit.byId(&quot;DatePicker_combo_month&quot;);
+var widget_day = dijit.byId(&quot;DatePicker_combo_day&quot;);
+var widget_calendar = dijit.byId(&quot;DatePicker_calendar&quot;);
+
+var date = widget_calendar.get(&quot;value&quot;);
+widget_year.set(&quot;value&quot;, date.getFullYear(), false);
+var month = date.getMonth();
+month++;
+if (month &lt; 10) {
+ month = &quot;0&quot; + month;
+}
+widget_month.set(&quot;value&quot;, month, false);
+var day = date.getDate();
+if (day &lt; 10) {
+ day = &quot;0&quot; + day;
+}
+widget_day.set(&quot;value&quot;, day, false);"/>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

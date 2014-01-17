@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SVT_8104_errorFlow>
+
+
+	<htmlProcessor context="SVT_8104_errorCtx" id="SVT_8104_errorFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SVT8104error"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="back" id="back" type="final"/>
+
+		<htmlState type="page" typeIdInfo="SVT/8104/error.jsp" id="SVT8104error">
+			<transitions>
+				<htmlTransition id="SVT8104error.back" targetState="back"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="SVT_8104_errorCtx" type="op">
+		<refKColl refId="SVT_8104_errorRecord"/>
+	</context>
+
+	<kColl id="SVT_8104_errorRecord">
+	</kColl>
+
+</SVT_8104_errorFlow>

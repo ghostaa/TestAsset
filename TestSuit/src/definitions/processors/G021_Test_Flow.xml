@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G021_Test_Flow>
+
+
+	<htmlProcessor context="G021_Test_Ctx" id="G021_Test_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G021_Test_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_test_index.jsp" id="G021_index">
+			<transitions>
+				<htmlTransition id="G021_index.uc2_root" targetState="G021_UC2_root"/>
+				<htmlTransition id="G021_index.uc2_subfolder" targetState="G021_UC2_subfolder"/>
+				<htmlTransition id="G021_index.uc5" targetState="G021_UC5"/>
+				<htmlTransition id="G021_index.uc4" targetState="G021G021_UC4"/>
+				<htmlTransition id="G021_index.uc1" targetState="G021G021_UC1"/>
+				<htmlTransition id="G021_index.uc2_inbed" targetState="G021G021_UC2_inbed"/>
+				<htmlTransition id="G021_index.uc2_tabPane" targetState="G021G021_UC2_tabPanel"/>
+				<htmlTransition id="G021_index.uc2_repetitive" targetState="G021G021G021_UC2_repetitive"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021_UC2_root.jsp" id="G021_UC2_root">
+			<transitions>
+				<htmlTransition id="G021_UC2_root.confirm" targetState="G021_UC2_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC2_subfolder.jsp" id="G021_UC2_subfolder">
+			<transitions>
+				<htmlTransition id="G021_UC2_subfolder.confirm" targetState="G021_UC2_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC2_result.jsp" id="G021_UC2_result">
+			<transitions>
+				<htmlTransition id="G021_UC2_result.index" targetState="G021_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/UC5/G021_UC5_result.jsp" id="G021_UC5_result">
+			<transitions>
+				<htmlTransition id="G021_UC5_result.index" targetState="G021_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/UC5/G021_UC5.jsp" id="G021_UC5">
+			<transitions>
+				<htmlTransition id="G021_UC5.ok" targetState="G021_UC5_result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="G021_Test_Op" id="G021_Test_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G021_Test_Op.ok" targetState="G021_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC4.jsp" id="G021G021_UC4">
+			<transitions>
+				<htmlTransition id="G021G021_UC4.index" targetState="G021_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC1.jsp" id="G021G021_UC1">
+			<transitions>
+				<htmlTransition id="G021G021_UC1.index" targetState="G021_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC2_inbed.jsp" id="G021G021_UC2_inbed">
+			<transitions>
+				<htmlTransition id="G021G021_UC2_inbed.next" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021_UC2_tabPanel.jsp" id="G021G021_UC2_tabPanel">
+			<transitions>
+				<htmlTransition id="G021G021_UC2_tabPanel.confirm" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G021/G021/G021_UC2_repetitive.jsp" id="G021G021G021_UC2_repetitive">
+			<transitions>
+				<htmlTransition id="G021G021G021_UC2_repetitive.confirm" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G021_Test_Op" implClass="com.ibm.btt.application.op.G021_initDataOp"/>
+
+	<context id="G021_Test_Ctx" type="op">
+		<refKColl refId="G021FlowData"/>
+	</context>
+
+	<kColl id="account">
+		<data id="number" refType="String"/>
+		<data id="description" refType="String"/>
+		<data id="balance" refType="BigDecimal">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+	</kColl>
+
+	<kColl id="G021FlowData">
+		<data id="pw1" refType="String"/>
+		<data id="pw2" refType="String"/>
+		<data id="fromDate" refType="Date"/>
+		<data id="toDate" refType="Date"/>
+		<data id="balance" value="9999" refType="Double"/>
+		<data id="amount" refType="Double"/>
+		<data id="country" refType="String"/>
+		<data id="bankCode" refType="String"/>
+		<data id="isMarried" refType="Boolean"/>
+		<data id="sex" refType="String"/>
+		<iColl id="countryList">
+			<kColl id="countryRecord">
+				<data id="country" refType="String"/>
+			</kColl>
+		</iColl>
+		<data id="isAccept" refType="Boolean"/>
+		<iColl id="accountList" size="4">
+			<refData refId="account"/>
+		</iColl>
+		<refData refId="account" alias="selectedAccount"/>
+		<iColl id="SelectedAccountList">
+			<refData refId="account"/>
+		</iColl>
+		<field id="nullField"/>
+		<data id="wrongTypeCast" refType="Date"/>
+		<kColl id="AllBTTWgtData">
+			<field id="dataForTextBox"/>
+			<field id="dataForCombo"/>
+			<data id="dataForCheckbox" refType="Boolean"/>
+			<field id="dataForSelectList"/>
+			<iColl id="dataForMultiSelect_submit" size="3">
+				<kColl id="MS1Record01">
+					<field id="a"/>
+					<field id="v"/>
+				</kColl>
+			</iColl>
+			<iColl id="dataForMultiSelect_render" size="3">
+				<kColl id="o1">
+					<field id="name"/>
+					<field id="value"/>
+					<field id="selected"/>
+					<field id="disabled"/>
+				</kColl>
+			</iColl>
+			<data id="dataForRichText" refType="String"/>
+			<data id="dataForTextArea" refType="String"/>
+			<treeModel id="dataForTree">
+			</treeModel>
+			<field id="dataForRadio"/>
+			<field id="dataForTreeValue"/>
+			<data id="dataForHidden" value="true" refType="String"/>
+		</kColl>
+	</kColl>
+
+</G021_Test_Flow>

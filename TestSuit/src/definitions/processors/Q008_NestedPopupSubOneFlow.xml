@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_NestedPopupSubOneFlow>
+
+
+	<htmlProcessor context="Q008_NestedPopupSubOneCtx" id="Q008_NestedPopupSubOneFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NestedPopupFlowNestedPageThree"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState typeIdInfo="Q008_NestedPopupSubTwoFlow" id="NestedPopupSubTwoFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="NestedPopupSubTwoFlow.OK" outputMapFmt="NestedPopupSubTwoFlow.OK_OutputFmt" targetState="NestedPopupFlowNestedPageFive"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NestedPopupFlow/NestedPageThree.jsp" id="NestedPopupFlowNestedPageThree">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowNestedPageThree.viewEvt" inputMapFmt="NestedPopupFlowNestedPageThree.viewEvt_InputFmt" targetState="NestedPopupSubTwoFlow"/>
+				<htmlTransition id="NestedPopupFlowNestedPageThree.close" targetState="close"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NestedPopupFlow/NestedPageFive.jsp" id="NestedPopupFlowNestedPageFive">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowNestedPageFive.viewEvt" targetState="OK"/>
+				<htmlTransition id="NestedPopupFlowNestedPageFive.close" targetState="close"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="close" id="close" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q008_NestedPopupSubOneCtx" type="op">
+		<refKColl refId="Q008_NestedPopupSubOneRecord"/>
+	</context>
+
+	<kColl id="Q008_NestedPopupSubOneRecord">
+		<data id="NestedPopupSubOneData" refType="String"/>
+		<field id="Nested"/>
+	</kColl>
+
+	<fmtDef id="NestedPopupFlowNestedPageThree.viewEvt_InputFmt">
+		<mapperConverterExpression>
+			<map from="NestedPopupSubOneData" to="NestedPopupSubTwoField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NestedPopupSubTwoFlow.OK_OutputFmt">
+		<mapperConverterExpression>
+			<map from="NestedPopupSubTwoField" to="NestedPopupSubOneData"/>
+			<map from="NestedPopupSubTwoField01" to="Nested"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q008_NestedPopupSubOneFlow>

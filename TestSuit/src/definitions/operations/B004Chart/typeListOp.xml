@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeListOp>
+
+	<operation id="typeListOp" context="typeListCtx" implClass="com.ibm.btt.application.op.B004.TypeListOp"/>
+
+	<context id="typeListCtx" type="op">
+		<refKColl refId="typeListRecord"/>
+	</context>
+
+	<kColl id="typeListRecord">
+		<iColl id="typeList">
+			<kColl id="childItem">
+				<field id="id"/>
+				<field id="name"/>
+				<iColl id="children">
+					<kColl id="account">
+						<field id="id"/>
+						<field id="account_id"/>
+						<field id="type"/>
+						<field id="name"/>
+						<field id="currency"/>
+						<field id="balance"/>
+						<field id="available"/>
+						<field id="branch"/>
+						<field id="status"/>
+						<iColl id="children">
+							<kColl id="transaction">
+								<field id="id"/>
+								<field id="account_id"/>
+								<field id="name"/>
+								<field id="currency"/>
+								<field id="balance"/>
+								<field id="available"/>
+								<field id="status"/>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</typeListOp>

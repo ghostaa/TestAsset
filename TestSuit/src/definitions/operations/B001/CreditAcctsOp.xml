@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CreditAcctsOp>
+
+	<operation id="CreditAcctsOp" context="CreditAcctsCtx" implClass="com.ibm.btt.application.op.B001.MyCreditAcctsOp"/>
+
+	<context id="CreditAcctsCtx" type="op">
+		<refKColl refId="CreditAcctsRecord"/>
+	</context>
+
+	<kColl id="CreditAcctsRecord">
+		<refData refId="MyCreditAccts"/>
+	</kColl>
+
+	<iColl id="MyCreditAccts">
+		<refData refId="CreditAcct" lazy="false"/>
+	</iColl>
+
+	<kColl id="CreditAcct">
+		<data id="GivenName" refType="String"/>
+		<data id="AcctNo" refType="String"/>
+		<data id="BranchBank" refType="String"/>
+		<iColl id="CurBalanceList" size="2">
+			<refData refId="CurBalance" lazy="false"/>
+		</iColl>
+		<data id="ParentType" refType="String"/>
+	</kColl>
+
+	<kColl id="CurBalance">
+		<data id="CurType" refType="String"/>
+		<data id="CreditLine" refType="Double"/>
+		<data id="WithdrawalLine" refType="Double"/>
+		<data id="AvailableCredit" refType="Double"/>
+		<data id="Balance" refType="Double"/>
+	</kColl>
+
+</CreditAcctsOp>

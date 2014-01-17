@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_Test_subFinal_layout_mapping_Flow>
+
+
+	<htmlProcessor context="Q009_Test_subFinal_layout_mapping_Ctx" id="Q009_Test_subFinal_layout_mapping_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009_page_main"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Layout/Q009_page_main.jsp" id="Q009_page_main">
+			<transitions>
+				<htmlTransition id="Q009_page_main.go" inputMapFmt="Q009_page_main.go_InputFmt" targetState="first"/>
+			</transitions>
+		</htmlState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane01&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page2.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane02&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page3.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane02&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane03&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page4.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane03&quot;}]" id="first" type="subPage">
+			<transitions>
+				<htmlTransition id="first.ChangeLayout" targetState="ChangeLayout"/>
+			</transitions>
+		</subPageState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page4_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane01&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page3_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane02&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page2_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane02&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane03&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page1_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane03&quot;}]" id="ChangeLayout" type="subPage" outputMapFmt="ChangeLayout_OutputFmt">
+			<transitions>
+				<htmlTransition id="ChangeLayout.mapping" outputMapFmt="ChangeLayout_OutputFmt" targetState="mapping"/>
+			</transitions>
+		</subPageState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page4_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane01&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page3_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane02&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page2_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane02&quot;}, {&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane03&quot;,&quot;page&quot;:&quot;Q009\/Layout\/Q009_page1_1.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane03&quot;}]" id="mapping" type="subPage">
+			<transitions>
+				<htmlTransition id="mapping.SubOK" targetState="next"/>
+				<htmlTransition id="mapping.Sub" targetState="SubSub"/>
+			</transitions>
+		</subPageState>
+
+		<subPageState typeIdInfo="Sub" data="[{&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane02&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div04.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane02&quot;}]" id="SubSub" type="subFinal"/>
+
+		<subPageState typeIdInfo="next" data="[{&quot;divPage&quot;:&quot;Q009\/Layout\/Q009_page_main.xui&quot;,&quot;divId&quot;:&quot;Q009_page_main_titlePane&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div02.jsp&quot;,&quot;widgetId&quot;:&quot;titlePane&quot;}]" id="next" type="subFinal"/>
+	</htmlProcessor>
+
+	<context id="Q009_Test_subFinal_layout_mapping_Ctx" type="op">
+		<refKColl refId="Q009_Test_subFinal_layout_mapping_Record"/>
+	</context>
+
+	<kColl id="Q009_Test_subFinal_layout_mapping_Record">
+		<field id="Q009_Test_subFinal_layout_mapping_Field"/>
+		<field id="A"/>
+		<field id="B"/>
+		<field id="C"/>
+		<field id="D"/>
+	</kColl>
+
+	<fmtDef id="Q009_page_main.go_InputFmt">
+		<mapperConverterExpression>
+			<map from="A" to="B"/>
+			<map fromExpression="&apos;This is C&apos;" to="C"/>
+			<map fromExpression="functs_BTTStringFunctions.subString(&apos;aaaTest Global Function&apos;, 3, 23)" to="D"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ChangeLayout_OutputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="&apos;A&apos;" to="A"/>
+			<map fromExpression="&apos;B&apos;" to="B"/>
+			<map fromExpression="&apos;C&apos;" to="C"/>
+			<map fromExpression="&apos;D&apos;" to="D"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q009_Test_subFinal_layout_mapping_Flow>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_onlySubPageFlow>
+
+
+	<htmlProcessor context="Q009_onlySubPageCtx" id="Q009_onlySubPageFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="outterLoad"/>
+			</transitions>
+		</htmlState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Q009_contentContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_contentContainer_innerContainer01&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div01.jsp&quot;,&quot;widgetId&quot;:&quot;innerContainer01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Q009_contentContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_contentContainer_innerContainer02&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div02.jsp&quot;,&quot;widgetId&quot;:&quot;innerContainer02&quot;}]" id="load" type="subPage">
+			<transitions>
+				<htmlTransition id="load.exit" targetState="OK"/>
+			</transitions>
+		</subPageState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Q009_stateInDifferFlow.xui&quot;,&quot;divId&quot;:&quot;Q009_stateInDifferFlow_outterContainer&quot;,&quot;page&quot;:&quot;Q009\/Q009_contentContainer.jsp&quot;,&quot;widgetId&quot;:&quot;outterContainer&quot;}]" id="outterLoad" type="subPage">
+			<transitions>
+				<htmlTransition id="outterLoad.update" targetState="load"/>
+			</transitions>
+		</subPageState>
+	</htmlProcessor>
+
+	<context id="Q009_onlySubPageCtx" type="op">
+		<refKColl refId="Q009_onlySubPageRecord"/>
+	</context>
+
+	<kColl id="Q009_onlySubPageRecord">
+	</kColl>
+
+</Q009_onlySubPageFlow>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebMsgOp>
+
+	<operation id="WebMsgOp" context="WebMsgCtx" implClass="com.ibm.btt.application.op.Q006.WebMsgOperation"/>
+
+	<context id="WebMsgCtx" type="op">
+		<refKColl refId="WebMsgRecord"/>
+	</context>
+
+	<kColl id="WebMsgRecord">
+		<refData refId="kcMsg" lazy="false"/>
+	</kColl>
+
+	<kColl id="kcMsg">
+		<data id="type" refType="String"/>
+		<data id="time" refType="Date"/>
+		<kColl id="data">
+			<data id="request" refType="String"/>
+			<data id="response" refType="String"/>
+		</kColl>
+	</kColl>
+
+</WebMsgOp>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G001_UC7_Flow>
+
+
+	<htmlProcessor context="G001_UC7_Ctx" id="G001_UC7_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G001_UC7"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC7.jsp" id="G001_UC7">
+			<transitions>
+				<htmlTransition id="G001_UC7.toSubmit" targetState="G001_Result_UC7"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G001/G001_Result_UC7.jsp" id="G001_Result_UC7">
+			<transitions>
+				<htmlTransition id="G001_Result_UC7.viewEvt" targetState="OK"/>
+				<htmlTransition id="G001_Result_UC7.back" targetState="G001_UC7"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G001_UC7_Ctx" type="op">
+		<refKColl refId="G001_UC7_Record"/>
+	</context>
+
+	<kColl id="G001_UC7_Record">
+		<refData refId="paginationData" lazy="false"/>
+		<!-- Data for transfer history -->
+		<iColl id="transferHistory">
+			<refData refId="history" lazy="false"/>
+		</iColl>
+		<refData refId="searchCondition" lazy="false"/>
+		<refData refId="singleSelectedRecord" lazy="false"/>
+		<refData refId="multiSelectedList"/>
+	</kColl>
+
+	<kColl id="searchCondition">
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<field id="comments"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="G001_UC7_Table01_enableNext" refType="Boolean"/>
+		<data id="G001_UC7_Table01_enablePrevious" refType="Boolean"/>
+		<data id="G001_UC7_Table01_totalRowNumber" refType="Integer"/>
+		<data id="G001_UC7_Table01_rowsPerPage" refType="Integer"/>
+		<data id="G001_UC7_Table01_pageNumber" refType="Long"/>
+		<data id="G001_UC7_Table01_errMsg" refType="String"/>
+		<data id="G001_UC7_Simple_Table01_enableNext" refType="Boolean"/>
+		<data id="G001_UC7_Simple_Table01_enablePrevious" refType="Boolean"/>
+		<data id="G001_UC7_Simple_Table01_totalRowNumber" refType="Integer"/>
+		<data id="G001_UC7_Simple_Table01_rowsPerPage" refType="Integer"/>
+		<data id="G001_UC7_Simple_Table01_pageNumber" refType="Long"/>
+		<data id="G001_UC7_Simple_Table01_errMsg" refType="String"/>
+	</kColl>
+
+	<kColl id="singleSelectedRecord">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<iColl id="multiSelectedList">
+		<refData refId="history"/>
+	</iColl>
+
+	<kColl id="history">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<fmtDef id="InitTransferHistoryOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G001_UC7_Flow>

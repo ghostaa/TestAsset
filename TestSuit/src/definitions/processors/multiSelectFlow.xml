@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<multiSelectFlow>
+
+
+	<htmlProcessor context="multiSelectCtx" id="multiSelectFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="FillDummyDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="R7Index.jsp" id="R7Index">
+			<transitions>
+				<htmlTransition id="R7Index.o1" targetState="multiselect"/>
+				<htmlTransition id="R7Index.o2" targetState="checkedmultiselect"/>
+				<htmlTransition id="R7Index.o3" targetState="emultiselect"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="multiselect.jsp" id="multiselect">
+			<transitions>
+				<htmlTransition id="multiselect.MS1Op" targetState="MS1Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="checkedmultiselect.jsp" id="checkedmultiselect">
+			<transitions>
+				<htmlTransition id="checkedmultiselect.MS1Op" targetState="MS1Op"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="FillDummyDataOp" id="FillDummyDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="FillDummyDataOp.OK" targetState="R7Index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="MS1Op" id="MS1Op" type="operation">
+			<transitions>
+				<htmlTransition id="MS1Op.OK" targetState="OK"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="emultiselect.jsp" id="emultiselect">
+			<transitions>
+				<htmlTransition id="emultiselect.MS1Op" targetState="MS1Op"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="multiSelectCtx" type="op">
+		<refKColl refId="multiSelectRecord"/>
+	</context>
+
+	<kColl id="multiSelectRecord" dynamic="true">
+		<iColl id="submit">
+			<kColl id="MS1Record01">
+				<field id="a"/>
+				<field id="v"/>
+			</kColl>
+		</iColl>
+		<iColl id="render">
+			<kColl id="o1">
+				<field id="name"/>
+				<field id="value"/>
+				<field id="selected"/>
+				<field id="disabled"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</multiSelectFlow>

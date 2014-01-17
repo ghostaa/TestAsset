@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_IndexFlow>
+
+
+	<htmlProcessor context="X072_IndexCtx" id="X072_IndexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X072_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_Index.jsp" id="X072_Index">
+			<transitions>
+				<htmlTransition id="X072_Index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="X072_IndexCtx" type="op">
+		<refKColl refId="X072_IndexRecord"/>
+	</context>
+
+	<kColl id="X072_IndexRecord">
+	</kColl>
+
+</X072_IndexFlow>

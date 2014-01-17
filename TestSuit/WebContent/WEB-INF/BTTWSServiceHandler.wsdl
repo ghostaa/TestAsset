@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://service.web.btt.ibm.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.web.btt.ibm.com" xmlns:intf="http://service.web.btt.ibm.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://service.web.btt.ibm.com">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="callBTT">
+    <complexType>
+     <sequence>
+      <element name="requestData" type="apachesoap:Map"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="callBTTResponse">
+    <complexType>
+     <sequence>
+      <element name="callBTTReturn" type="apachesoap:Map"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap">
+   <complexType name="mapItem">
+    <sequence>
+     <element name="key" nillable="true" type="xsd:anyType"/>
+     <element name="value" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="Map">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="apachesoap:mapItem"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="callBTTRequest">
+      <wsdl:part element="impl:callBTT" name="parameters">
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="callBTTResponse">
+
+      <wsdl:part element="impl:callBTTResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BTTWSServiceHandler">
+
+      <wsdl:operation name="callBTT">
+
+         <wsdl:input message="impl:callBTTRequest" name="callBTTRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:callBTTResponse" name="callBTTResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BTTWSServiceHandlerSoapBinding" type="impl:BTTWSServiceHandler">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="callBTT">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="callBTTRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="callBTTResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BTTWSServiceHandlerService">
+
+      <wsdl:port binding="impl:BTTWSServiceHandlerSoapBinding" name="BTTWSServiceHandler">
+
+         <wsdlsoap:address location="http://localhost:8080/BTTWebServiceProvider/services/BTTWSServiceHandler"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

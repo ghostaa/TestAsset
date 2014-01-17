@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_NestedPopupSubTwoFlow>
+
+
+	<htmlProcessor context="Q008_NestedPopupSubTwoCtx" id="Q008_NestedPopupSubTwoFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NestedPopupFlowNestedPageFour"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="NestedPopupFlow/NestedPageFour.jsp" id="NestedPopupFlowNestedPageFour">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowNestedPageFour.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q008_NestedPopupSubTwoCtx" type="op">
+		<refKColl refId="Q008_NestedPopupSubTwoRecord"/>
+	</context>
+
+	<kColl id="Q008_NestedPopupSubTwoRecord">
+		<field id="NestedPopupSubTwoField"/>
+		<field id="NestedPopupSubTwoField01"/>
+	</kColl>
+
+</Q008_NestedPopupSubTwoFlow>

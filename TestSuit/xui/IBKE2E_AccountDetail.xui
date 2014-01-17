@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="228,61,540,300" dataBinding="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx'}" isRuleDirty="false">
+  <styles>
+    <css file="../WebContent/css/master.css"/>
+  </styles>
+  <container name="Form" id="form">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="540" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalAlignment="2" horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" styleClass="labelAccountList" id="label" text="%nls.bttsample/IBKE2E_transaction_details">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label01" text="Account Number">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx','dataName':'AccountDetails.AccountNumber'}" id="label02">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Table" paginationParams="{'operationNameForPagination':'PAG_IBKE2E_AccountDetail_table','timeout':'','directPagination':'true','rowsPerPage':'10','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'','nextInputMapping':'','paginationWhenLoading':'true','initialInputMapping':'','previousInputMapping':'','directInputMapping':'directInputMapping'}" dataNameForList="{'ctxType':'proc','ctxFile':'IBKE2E_TestFlowFlow','ctxName':'IBKE2E_TestFlowCtx','dataName':'AccountDetails.AccountDetailList'}" sortEnabled="true" id="table" columnReordering="true">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Sequence" noresize="false" dataName="Seq" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="120" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="TransactionID" noresize="false" dataName="TransactionID" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" editable="true" widget="ComboBox" rowSpan="1" level="1" labelField="LabelField" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Usage" dataNameForList="AccountDetails.UsageList" noresize="false" dataName="Usage" urlForList="" relativeWidth="1" repeat="true" id="columnId3" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Amount" noresize="false" dataName="Amount" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Date" noresize="false" dataName="TransactionDate" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=back" id="button01" text="Back">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData horizontalAlignment="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" action="flowEvent=finish" id="button" text="Close">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

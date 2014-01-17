@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<req19_21>
+
+
+	<htmlProcessor context="req19_21Ctx" id="req19_21">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="popup_size"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="finalPage.jsp" id="finalPage"/>
+
+		<popupPageState type="page" typeIdInfo="popup_size.jsp" id="popup_size" width="300" height="300" closable="true" left="200" top="200">
+			<transitions>
+				<htmlTransition id="popup_size.viewEvt" targetState="OK"/>
+				<htmlTransition id="popup_size.close" targetState="finalPage"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="req19_21Ctx" type="op" parent="sessionCtx">
+		<refKColl refId="req19_21Record"/>
+	</context>
+
+	<kColl id="req19_21Record" dynamic="true">
+	</kColl>
+
+</req19_21>

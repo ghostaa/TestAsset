@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="86,25,918,783" dataBinding="{'ctxType':'proc','ctxFile':'G001/G001_UC3_Flow','ctxName':'G001_UC3_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G001_UC3_Simple1.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="783" verticalAlignment="1" widthHint="918" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="763" verticalAlignment="1" widthHint="861" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Link" action="flowEvent=back6" id="link" text="&gt;&gt;back">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TabbedPane" id="tabbedPane">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="ContentPane" title="Tab01" id="ContentPane01">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Label" id="label01" text="last column's width incorrect">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" dataNameForList="transferHistory" sortEnabled="true" headerRows="3" id="table" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="433" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="40" rowCSS="" headerHAlign="16777216" colSpan="2" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="240" rowCSS="" headerHAlign="16777216" colSpan="2" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="40" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="F" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId7" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="G" noresize="false" dataName="status" relativeWidth="1" id="columnId8" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="3" hidden="false" text="H" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId9" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="I" noresize="false" dataName="amount" relativeWidth="1" id="columnId10" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="J" noresize="false" dataName="status" relativeWidth="1" id="columnId11" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab02" id="ContentPane02">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Label" id="label" text="header and content not in a level">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" frozenColumnNum="3" dataNameForList="transferHistory" sortEnabled="true" headerRows="3" id="table_copy" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="605" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="2" widget="" width="40" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="240" rowCSS="" headerHAlign="16777216" colSpan="2" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="120" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="F" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId7" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="120" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="G" noresize="false" dataName="status" relativeWidth="1" id="columnId8" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="120" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="H" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId9" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="I" noresize="false" dataName="amount" relativeWidth="1" id="columnId10" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="400" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="J" noresize="false" dataName="status" relativeWidth="1" id="columnId11" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="K" noresize="false" dataName="comments" relativeWidth="1" id="columnId12" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab03" id="ContentPane03">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Label" id="label02" text="Label">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" frozenColumnNum="2" dataNameForList="transferHistory" sortEnabled="true" headerRows="3" id="table_copy01" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="433" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="2" widget="" width="40" rowCSS="" headerHAlign="16777216" colSpan="2" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="240" rowCSS="" headerHAlign="16777216" colSpan="2" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="40" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="F" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId7" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="200" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="G" noresize="false" dataName="status" relativeWidth="1" id="columnId8" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="H" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId9" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="I" noresize="false" dataName="amount" relativeWidth="1" id="columnId10" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="400" rowCSS="" headerHAlign="16384" colSpan="4" hidden="false" text="J" noresize="false" dataName="status" relativeWidth="1" id="columnId11" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab04" id="ContentPane04">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" frozenColumnNum="4" dataNameForList="transferHistory" sortEnabled="true" headerRows="2" id="table_copy02" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="333" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="2" widget="" width="40" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="false" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="false" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab05" id="ContentPane05">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" frozenColumnNum="4" dataNameForList="transferHistory" sortEnabled="true" headerRows="2" id="table_copy03" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="333" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="2" widget="" width="40" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="false" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="false" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="F" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId7" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Tab06" id="ContentPane06">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Table" dataNameForList="transferHistory" sortEnabled="true" headerRows="3" id="table_copy04" columnReordering="true" multiRowHeader="true">
+                  <gridData widthHint="609" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="580" rowCSS="" headerHAlign="16777216" colSpan="5" hidden="false" text="A" noresize="false" dataName="historyID" relativeWidth="1" id="columnId0" repeat="false" headerVAlign="16384">
+                    <tableColumnAlignment>16777216</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="240" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="B" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="1024">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="C" noresize="false" dataName="amount" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="140" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="D" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="40" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="E" noresize="false" dataName="amount" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="F" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId7" repeat="true" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                  <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="580" rowCSS="" headerHAlign="16384" colSpan="5" hidden="false" text="G" noresize="false" dataName="status" relativeWidth="1" id="columnId8" repeat="false" headerVAlign="16384">
+                    <tableColumnAlignment>16384</tableColumnAlignment>
+                  </column>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

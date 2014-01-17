@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<operation id="AJAX_MAPPING_SVT$8103$SVT_8103_MSG_manager_OP" implClass="com.ibm.btt.base.BTTServerOperation">
+		<refFormat refId="SVT_8103_MSG_manager_2_input" name="SVT_8103_MSG_manager_2_input"/>
+		<refFormat refId="SVT_8103_MSG_manager_1_output" name="SVT_8103_MSG_manager_1_output"/>
+	</operation>
+
+	<fmtDef id="SVT_8103_MSG_manager_2_input">
+		<mapperConverterExpression>
+			<map from="BroadType" to="msg_type"/>
+			<map from="message" to="message"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="SVT_8103_MSG_manager_1_output">
+		<mapperConverterExpression>
+			<map from="message" to="message"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</format.xml>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_UC3Flow>
+
+
+	<htmlProcessor context="B002_UC3Ctx" id="B002_UC3Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC3_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC3_1.jsp" id="B002_UC3_1">
+			<transitions>
+				<htmlTransition id="B002_UC3_1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC3_0.jsp" id="B002_UC3_0">
+			<transitions>
+				<htmlTransition id="B002_UC3_0.toSub" targetState="B002_UC3_SubFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="B002_UC3_SubFlow" id="B002_UC3_SubFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="B002_UC3_SubFlow.OK" targetState="B002_UC3_1"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B002_UC3Ctx" type="op">
+		<refKColl refId="B002_UC3Record"/>
+	</context>
+
+	<kColl id="B002_UC3Record">
+		<field id="stateFlag"/>
+	</kColl>
+
+</B002_UC3Flow>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<F003_2_BodyCell_Flow>
+
+
+	<htmlProcessor context="F003_2_BodyCell_Ctx" id="F003_2_BodyCell_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="F003_2_BodyCell_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="IBK_F_003/F003_2/F003_BodyCell.jsp" id="F003_BodyCell">
+			<transitions>
+				<htmlTransition id="F003_BodyCell.viewEvt" targetState="F003_Result_BodyCell"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="F003_2_BodyCell_Op" id="F003_2_BodyCell_Op" type="operation">
+			<transitions>
+				<htmlTransition id="F003_2_BodyCell_Op.opEvt" outputMapFmt="G001_UC1_Op.opEvt_OutputFmt" targetState="F003_BodyCell"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBK_F_003/F003_2/F003_Result_BodyCell.jsp" id="F003_Result_BodyCell">
+			<transitions>
+				<htmlTransition id="F003_Result_BodyCell.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="F003_2_BodyCell_Op" context="F003_2_BodyCell_Ctx" implClass="com.ibm.btt.application.op.IBK_F003_InitData2Op"/>
+
+	<context id="F003_2_BodyCell_Ctx" type="op">
+		<refKColl refId="F003_2_BodyCell_Record"/>
+	</context>
+
+	<kColl id="F003_2_BodyCell_Record">
+		<!-- Data for transfer history -->
+		<iColl id="transferHistory">
+			<kColl id="history">
+				<data id="historyID" refType="Integer"/>
+				<data id="toAccount" refType="String"/>
+				<data id="transfer_date" refType="Date">
+					<param value="yyyy-MM-dd" id="pattern"/>
+				</data>
+				<data id="amount" refType="Currency"/>
+				<field id="comments"/>
+				<data id="status" refType="String"/>
+				<data id="summaryTitle" value="Summary" refType="String"/>
+				<data id="summary" value="Summary contents" refType="String"/>
+			</kColl>
+		</iColl>
+		<refData refId="singleSelectedRecord" lazy="false"/>
+		<refData refId="multiSelectedList"/>
+	</kColl>
+
+	<kColl id="singleSelectedRecord">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<iColl id="multiSelectedList">
+		<refData refId="history" lazy="false"/>
+	</iColl>
+
+	<kColl id="history">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<fmtDef id="G001_UC1_Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</F003_2_BodyCell_Flow>

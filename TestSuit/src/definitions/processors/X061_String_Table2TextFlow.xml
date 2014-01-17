@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_String_Table2TextFlow>
+
+
+	<htmlProcessor context="X061_String_Table2TextCtx" id="X061_String_Table2TextFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_StringOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="X061/X061_String_Table2Text.jsp" id="X061_Table2Text_String">
+			<transitions>
+				<htmlTransition id="X061_Table2Text_String.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="X061_StringOp" id="X061_StringOp" type="operation">
+			<transitions>
+				<htmlTransition id="X061_StringOp.opEvt" outputMapFmt="X061_StringOp.ok_OutputFmt" targetState="X061_Table2Text_String"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="X061_String_Table2TextCtx" type="op">
+		<refKColl refId="X061_String_Table2TextRecord01"/>
+	</context>
+
+	<kColl id="X061_String_Table2TextRecord01">
+		<refData refId="X061_StringRecord" lazy="false"/>
+		<refData refId="X061_String_TableList" alias="X061_String_TableList_01"/>
+		<refData refId="X061_String_TableList" alias="X061_String_TableList_02"/>
+	</kColl>
+
+	<iColl id="X061_String_TableList">
+		<refData refId="X061_StringRecord" lazy="false"/>
+	</iColl>
+
+	<kColl id="X061_StringRecord">
+		<!--11122\n222222222222222222222222222\nqqqqqqqqqqqqqqqqqqqqqqqq\rqqqqqqqqqqqq333333333333333333333333333334444444444444444444444-->
+		<data id="longString" refType="String"/>
+		<data id="longString222" value="222" refType="String"/>
+		<data id="longString_default" value="" refType="String"/>
+	</kColl>
+
+	<fmtDef id="X061_StringOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="X061_StringList_01" to="X061_String_TableList_01" append="false"/>
+			<map from="X061_StringList_02" to="X061_String_TableList_02" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_String_Table2TextFlow>

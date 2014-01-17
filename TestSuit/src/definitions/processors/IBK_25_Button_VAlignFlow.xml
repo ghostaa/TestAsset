@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_25_Button_VAlignFlow>
+
+
+	<htmlProcessor context="IBK_25_Button_VAlignCtx01" id="IBK_25_Button_VAlignFlow">
+		<htmlState type="page" typeIdInfo="IBK_25_Test_Button_VAlign.jsp" id="IBK_25_Test_Button_VAlign">
+			<transitions>
+				<htmlTransition id="IBK_25_Test_Button_VAlign.ok" targetState="finalPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_25_Test_Button_VAlign"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="finalPage" type="final" finalPage="finalPage.jsp"/>
+	</htmlProcessor>
+
+	<context id="IBK_25_Button_VAlignCtx01" type="op" parent="sessionCtx">
+		<refKColl refId="IBK_25_Button_VAlignRecord01"/>
+	</context>
+
+	<kColl id="IBK_25_Button_VAlignRecord01">
+	</kColl>
+
+</IBK_25_Button_VAlignFlow>

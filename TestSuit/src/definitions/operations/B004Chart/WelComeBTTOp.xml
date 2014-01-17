@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WelComeBTTOp>
+
+	<operation id="WelComeBTTOp" context="WelComeBTTCtx" implClass="com.ibm.btt.application.op.B004.WelComeBTTOp"/>
+
+	<context id="WelComeBTTCtx" type="op">
+		<refKColl refId="WelComeBTTRecord"/>
+	</context>
+
+	<kColl id="WelComeBTTRecord">
+		<iColl id="ForAreaBig" size="51">
+			<kColl id="ForAreaBigRecord">
+				<data id="x" refType="Double"/>
+				<data id="high" refType="Integer"/>
+				<data id="head" refType="Integer"/>
+				<data id="hiddenHead" refType="Integer"/>
+				<data id="BBK" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<iColl id="ForAreaSmall" size="51">
+			<kColl id="ForAreaSmallRecord">
+				<data id="x" refType="Double"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</WelComeBTTOp>

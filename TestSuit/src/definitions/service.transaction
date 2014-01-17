@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_AcdKwJMREeChZeskSsdmLg">
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_AcdKwZMREeChZeskSsdmLg">
+    <services xmi:type="transaction:Service" xmi:id="_AcdKwpMREeChZeskSsdmLg" tag="CSServer" id="realCSServer" comment=" Client-Server Service">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AcdKw5MREeChZeskSsdmLg" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AcdKxJMREeChZeskSsdmLg" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AcdKxZMREeChZeskSsdmLg" name="inactivityClientTimeout" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_AcdKxpMREeChZeskSsdmLg" name="timeBetweenSessionCheck" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AcdKx5MREeChZeskSsdmLg" key="_AcdKxJMREeChZeskSsdmLg" value="com.ibm.btt.cs.servlet.CSServer"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AcdKyJMREeChZeskSsdmLg" key="_AcdKw5MREeChZeskSsdmLg" value="realCSServer"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AcdKyZMREeChZeskSsdmLg" key="_AcdKxZMREeChZeskSsdmLg" value="1800000"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_AcdKypMREeChZeskSsdmLg" key="_AcdKxpMREeChZeskSsdmLg" value="20000"/>
+    </services>
+    <services xmi:type="transaction:Service" xmi:id="_qIjMsBFqEeOVmubExJue9Q" tag="WebMessage" id="webMessageService">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qIjMsRFqEeOVmubExJue9Q" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qIjMshFqEeOVmubExJue9Q" name="BroadcastTopic" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qIjMsxFqEeOVmubExJue9Q" name="PrivateTopic" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_qIjMtBFqEeOVmubExJue9Q" name="implClass" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qIjMtRFqEeOVmubExJue9Q" key="_qIjMtBFqEeOVmubExJue9Q" value="com.ibm.btt.services.webmsg.WebMsgServiceWASImpl"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_qIjMthFqEeOVmubExJue9Q" key="_qIjMsRFqEeOVmubExJue9Q" value="webMessageService"/>
+    </services>
+    <services xmi:type="transaction:Service" xmi:id="_hsGscDVnEeOb2KwAVoOA3w" tag="WebMessage" id="webMsgService">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_hsGscTVnEeOb2KwAVoOA3w" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_hsGscjVnEeOb2KwAVoOA3w" name="BroadcastTopic" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_hsGsczVnEeOb2KwAVoOA3w" name="PrivateTopic" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_hsGsdDVnEeOb2KwAVoOA3w" name="implClass" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hsGsdTVnEeOb2KwAVoOA3w" key="_hsGsdDVnEeOb2KwAVoOA3w" value="com.ibm.btt.services.webmsg.WebMsgServiceWASImpl"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hsGsdjVnEeOb2KwAVoOA3w" key="_hsGscTVnEeOb2KwAVoOA3w" value="webMsgService"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hsGsdzVnEeOb2KwAVoOA3w" key="_hsGscjVnEeOb2KwAVoOA3w" value="/btt/broadcast"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_hsGseDVnEeOb2KwAVoOA3w" key="_hsGsczVnEeOb2KwAVoOA3w" value="/btt/private/"/>
+    </services>
+  </service>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_AcdKy5MREeChZeskSsdmLg"/>
+</transaction:WorkProduct>

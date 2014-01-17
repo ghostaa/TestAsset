@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G001_IndexFlow>
+
+
+	<htmlProcessor context="G001_IndexCtx" id="G001_IndexFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G001_Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_Index.jsp" id="G001_Index">
+			<transitions>
+				<htmlTransition id="G001_Index.UC1" targetState="G001G001_UC1_Flow"/>
+				<htmlTransition id="G001_Index.UC3" targetState="G001G001_UC3_Flow"/>
+				<htmlTransition id="G001_Index.UC7" targetState="G001G001_UC7_Flow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState typeIdInfo="G001_UC1_Flow" id="G001G001_UC1_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="G001G001_UC1_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="G001_UC3_Flow" id="G001G001_UC3_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="G001G001_UC3_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="G001_UC7_Flow" id="G001G001_UC7_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="G001G001_UC7_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G001_IndexCtx" type="op">
+		<refKColl refId="G001_IndexRecord"/>
+	</context>
+
+	<kColl id="G001_IndexRecord">
+	</kColl>
+
+</G001_IndexFlow>

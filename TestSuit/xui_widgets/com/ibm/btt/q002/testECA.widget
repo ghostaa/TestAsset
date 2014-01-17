@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtendWidget xmlns="http://btt.cn.ibm.com/xui/2.0">
+  <properties>
+    <property>
+      <name>id</name>
+      <type>String</type>
+      <showInProperties>true</showInProperties>
+      <showInAction>false</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+      <generate>none</generate>
+      <description>A unique, opaque ID string that can be assigned by users or by the system</description>
+    </property>
+    <property>
+      <name>dataName</name>
+      <type>DataName</type>
+      <showInProperties>true</showInProperties>
+      <showInAction>false</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+      <rule>checkDataNameRule</rule>
+      <description>JSP source page</description>
+    </property>
+    <property>
+      <name>location</name>
+      <type>String</type>
+      <defaultValue>/xui/snippet/com/ibm/btt/q002/testECA.xui</defaultValue>
+      <showInProperties>false</showInProperties>
+      <showInAction>false</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+      <generate>none</generate>
+      <description>JSP source page</description>
+    </property>
+    <property>
+      <name>visibility</name>
+      <defaultValue>inherit</defaultValue>
+      <type>Enum{inherit,visible,hidden,gone}</type>
+      <showInProperties>true</showInProperties>
+      <showInAction>false</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+      <rule>visibilityRule</rule>
+      <useAsInnerHtml>true</useAsInnerHtml>
+      <valueFormat>&lt;c:param name="%s" value="%s"/&gt;</valueFormat>
+      <description>This property indicates whether the widget is displayed or not which can take values: visible, hidden or gone.</description>
+    </property>
+  </properties>
+  <container name="Panel" id="panel">
+    <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo generateOption="always"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="JSPInclude" id="jstlImport" location="/xui/snippet/com/ibm/btt/q002/testECA.xui" paramId="${id}" dataName="${dataName}" visibility="${visibility}">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <extendWidgetInfo generateOption="hasRule" ruleLocationProperty="url" ruleProvider="child" visibleOption="false"/>
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+       <widget name="com_ibm_btt_event_ECALoader" id="jsImportWrapper" url="${location}" prefix="${id}">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1" maxRow="0" maxCol="0"/>
+  </container>
+</ExtendWidget>

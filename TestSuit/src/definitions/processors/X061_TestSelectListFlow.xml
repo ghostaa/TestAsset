@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_TestSelectListFlow>
+
+
+	<htmlProcessor context="X061_TestSelectListCtx" id="X061_TestSelectListFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061X061_testSelectList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState type="page" typeIdInfo="X061/X061_testSelectList.jsp" id="X061X061_testSelectList">
+			<transitions>
+				<htmlTransition id="X061X061_testSelectList.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X061_TestSelectListCtx" type="op">
+		<refKColl refId="X061_TestSelectListRecord01"/>
+	</context>
+
+	<kColl id="X061_TestSelectListRecord01">
+		<iColl id="TestSelectTableList" size="5">
+			<kColl id="TestSelectTableRecord">
+				<data id="StringData" value="43" refType="String"/>
+				<data id="NumberData" value="44" refType="Number"/>
+			</kColl>
+		</iColl>
+		<iColl id="TestSelectSelectList">
+			<kColl id="TestSelectSelectRecord">
+				<data id="StringData" value="1" refType="String"/>
+				<data id="NumberData" value="" refType="Number"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</X061_TestSelectListFlow>

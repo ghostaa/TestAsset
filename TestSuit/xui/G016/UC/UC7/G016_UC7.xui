@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="226,143,1369,436" dataBinding="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G016_UC7.js'}">
+  <styles>
+    <css file="../../../../WebContent/css/G016/gbp-mult-pa_a.css"/>
+    <css file="../../../../WebContent/css/G016/gift.css"/>
+  </styles>
+  <container name="Panel" styleClass="layoutCenter" id="panel">
+    <gridData heightHint="436" verticalAlignment="1" widthHint="1369" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" styleClass="headArea" id="panel01">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listLeft">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listCenter">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="panel02">
+        <gridData heightHint="139" verticalAlignment="1" widthHint="685" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="UC7 - verify that the getVisibility and setVisibility ECA functions of the repetitive panel behave as described by the spec">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel03">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Button" id="button" buttonType="button" text="cycle visibility of first product">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="label01" text="Product 0 is visible">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="RepetitivePanel" dataNameForList="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products'}" id="repetitivePanel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Image" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.ProductImageURL'}" id="image">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel04">
+                <gridData heightHint="79" verticalAlignment="1" widthHint="44" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.ProductName'}" styleClass="nombre" id="label02" text="Label">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'G016_UC_productList_Flow','ctxName':'G016_UC_productList_Ctx','dataName':'products.0.RequiredPoints'}" styleClass="puntos" id="label03" text="Label">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Link" styleClass="giftlink" id="link" text="Consultar  &gt;&gt;">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="1"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label04" text="Test height of the repetitive panel">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="listRight">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder" styleClass="footArea">
+      <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="3"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetFunction" widget="repetitivePanel">
+            <function name="getVisibility">
+              <parameter>
+                <value type="constant" constant="0"/>
+              </parameter>
+            </function>
+          </leftValue>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'visible'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="repetitivePanel">
+          <function name="setVisibility">
+            <parameter>
+              <value type="constant" constant="0"/>
+              <value type="constant" constant="'hidden'"/>
+            </parameter>
+          </function>
+        </action>
+        <action type="widgetProperty" widget="label01" property="text">
+          <value type="constant" constant="'Product 0 is hidden'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="actionGroup" name="actionGroupRule2" method="execute()"/>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups>
+    <actionGroup name="actionGroupRule2">
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetFunction" widget="repetitivePanel">
+            <function name="getVisibility">
+              <parameter>
+                <value type="constant" constant="0"/>
+              </parameter>
+            </function>
+          </leftValue>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'hidden'"/>
+        </value>
+      </condition>
+      <trueActions>
+        <action type="widgetFunction" widget="repetitivePanel">
+          <function name="setVisibility">
+            <parameter>
+              <value type="constant" constant="0"/>
+              <value type="constant" constant="'gone'"/>
+            </parameter>
+          </function>
+        </action>
+        <action type="widgetProperty" widget="label01" property="text">
+          <value type="constant" constant="'Product 0 is gone'"/>
+        </action>
+      </trueActions>
+      <falseActions>
+        <action type="actionGroup" name="actionGroupRule3" method="execute()"/>
+      </falseActions>
+    </actionGroup>
+    <actionGroup name="actionGroupRule3">
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetFunction" widget="repetitivePanel">
+            <function name="getVisibility">
+              <parameter>
+                <value type="constant" constant="0"/>
+              </parameter>
+            </function>
+          </leftValue>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'gone'"/>
+        </value>
+      </condition>
+      <trueActions>
+        <action type="widgetFunction" widget="repetitivePanel">
+          <function name="setVisibility">
+            <parameter>
+              <value type="constant" constant="0"/>
+              <value type="constant" constant="'visible'"/>
+            </parameter>
+          </function>
+        </action>
+        <action type="widgetProperty" widget="label01" property="text">
+          <value type="constant" constant="'Product 0 is visible'"/>
+        </action>
+      </trueActions>
+      <falseActions/>
+    </actionGroup>
+  </groups>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_18_Table_Scrollbar_Flow>
+
+
+	<htmlProcessor context="IBK_18_Table_Scrollbar_Ctx01" id="IBK_18_Table_Scrollbar_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_18_GetAccountsOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="IBK_18_Test_Table_Scrollbar.jsp" id="IBK_18_Test_Table_Scrollbar">
+			<transitions>
+				<htmlTransition id="IBK_18_Test_Table_Scrollbar.ok" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBK_18_GetAccountsOp" id="IBK_18_GetAccountsOp" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_18_GetAccountsOp.ok" targetState="IBK_18_Test_Table_Scrollbar"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="IBK_18_Table_Scrollbar_Ctx01" type="op">
+		<refKColl refId="IBK_18_Table_Scrollbar_Record02"/>
+	</context>
+
+	<kColl id="IBK_18_Table_Scrollbar_Record02">
+		<iColl id="accounts">
+			<kColl id="IBK_18_Table_Scrollbar_Record01">
+				<field id="type"/>
+				<field id="accountId"/>
+				<field id="openDate"/>
+				<field id="balance"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</IBK_18_Table_Scrollbar_Flow>

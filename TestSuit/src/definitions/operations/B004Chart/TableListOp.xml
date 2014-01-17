@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TableListOp>
+
+	<operation id="TableListOp" context="TableListCtx" implClass="com.ibm.btt.application.op.B004.TableListOp"/>
+
+	<context id="TableListCtx" type="op">
+		<refKColl refId="TableListRecord"/>
+	</context>
+
+	<kColl id="TableListRecord">
+		<iColl id="listFL">
+			<kColl id="TableListRecord01">
+				<field id="id"/>
+				<field id="label"/>
+				<field id="amount"/>
+				<field id="size"/>
+			</kColl>
+		</iColl>
+		<kColl id="pagination">
+			<field id="start"/>
+			<field id="count"/>
+			<field id="total"/>
+		</kColl>
+	</kColl>
+
+</TableListOp>

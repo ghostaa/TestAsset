@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X076_NLSFlow>
+
+
+	<htmlProcessor context="X076_NLSCtx" id="X076_NLSFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" outputMapFmt="initial.start_OutputFmt" inputMapFmt="initial.start_InputFmt" targetState="Widget"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="X076/X076_Widget.jsp" id="Widget">
+			<transitions>
+				<htmlTransition id="Widget.test_mapping" outputMapFmt="Widget.test_mapping_OutputFmt" inputMapFmt="Widget.test_mapping_InputFmt" targetState="Mapping"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X076/X076_Mapping.jsp" id="Mapping">
+			<transitions>
+				<htmlTransition id="Mapping.final" targetState="OK"/>
+				<htmlTransition id="Mapping.back" outputMapFmt="Mapping.back_OutputFmt" inputMapFmt="Mapping.back_InputFmt" targetState="Widget"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X076_NLSCtx" type="op" parent="sessionCtx">
+		<refKColl refId="X076_NLSRecord"/>
+	</context>
+
+	<kColl id="X076_NLSRecord" dynamic="true">
+		<field id="sampleField" value=""/>
+		<iColl id="sampleList" size="5">
+			<kColl id="sampleRecord">
+				<field id="sampleField01" value="ccc"/>
+				<field id="sampleField02" value="cccc"/>
+			</kColl>
+		</iColl>
+		<field id="sampleField03" value="data from context"/>
+		<field id="ForMappingTest_Constant"/>
+		<field id="ForMappingTest_Expression"/>
+		<field id="ForMappingTest_Context"/>
+		<field id="ForMappingTest_globlefunction"/>
+		<field id="ForMappingTest_globlefunction1"/>
+		<field id="ForMappingTest_globlefunction2"/>
+	</kColl>
+
+	<fmtDef id="initial.start_OutputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="&apos;%nls.bttsample/MTC&apos;" to="ForMappingTest_Constant"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="initial.start_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.compare(&apos;%nls.bttsample/compare&apos;, &apos;%nls.bttsample/compare&apos;) == 0" to="ForMappingTest_Expression"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="Widget.test_mapping_OutputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.length(&apos;%nls.bttsample/length&apos;)" to="ForMappingTest_globlefunction"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="Widget.test_mapping_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField03" to="ForMappingTest_Context"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="Mapping.back_OutputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(&apos;%nls.bttsample/half1&apos;, &apos;%nls.bttsample/half2&apos;)" to="ForMappingTest_globlefunction1"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="Mapping.back_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.contains(&apos;%nls.bttsample/father&apos;, &apos;%nls.bttsample/son&apos;)" to="ForMappingTest_globlefunction2"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X076_NLSFlow>

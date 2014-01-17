@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_X070X070_UC5_Table01>
+
+	<operation id="PAG_X070$X070_UC5_Table01" context="pagOpCtx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="nextInputMapping" name="nextInputMapping"/>
+		<refFormat refId="previousInputMapping" name="previousInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+	</operation>
+
+	<context id="pagOpCtx" type="op">
+		<refKColl refId="pagOpData"/>
+	</context>
+
+	<kColl id="pagOpData">
+		<kColl id="tableProperties">
+			<field id="tableId" value="Table01"/>
+			<field id="dataName"/>
+			<field id="dataNameForList" value="cashAcctList"/>
+			<field id="rowsPerPage" value="25"/>
+			<field id="operationNameForPagination" value="X070_UC5_PaginateOp"/>
+			<field id="directPagination" value="false"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="name,surname,balance,branch_location,branch_id"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="nextInputMapping">
+		<mapperConverterExpression>
+			<map from="cashAcctList" to="cashAcctList" append="false"/>
+			<map fromExpression="paginationData$X070_UC5_Table01_pageNumber + 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="previousInputMapping">
+		<mapperConverterExpression>
+			<map from="cashAcctList" to="cashAcctList" append="false"/>
+			<map fromExpression="paginationData$X070_UC5_Table01_pageNumber - 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="cashAcctList" to="cashAcctList" append="false"/>
+			<map from="paginationData.enableNext" to="paginationData.X070_UC5_Table01_enableNext"/>
+			<map from="paginationData.enablePrevious" to="paginationData.X070_UC5_Table01_enablePrevious"/>
+			<map from="paginationData.pageNumber" to="paginationData.X070_UC5_Table01_pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_X070X070_UC5_Table01>

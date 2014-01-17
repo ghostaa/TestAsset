@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="71,26,1019,570" dataBinding="{'ctxType':'proc','ctxFile':'G001/G001_UC7_Flow','ctxName':'G001_UC7_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G001_UC7.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="570" verticalAlignment="1" widthHint="1019" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightHint="228" horizontalSpan="2" widthHint="100" heightType="RelativeSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="5" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="pagination table">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" paginationParams="{'timeout':'10000','operationNameForPagination':'GetTransferHistoryPaginationOp','rowsPerPage':'10','directPagination':'true','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'normalOutputMapping','nextInputMapping':'','initialInputMapping':'initialInputMapping','paginationWhenLoading':'true','previousInputMapping':'','directInputMapping':'directInputMapping'}" dataNameForList="transferHistory" isPageable="true" sortEnabled="true" dataName="{'ctxType':'proc','ctxFile':'G001_UC7_Flow','ctxName':'G001_UC7_Ctx','dataName':'multiSelectedList'}" headerRows="3" id="Table01" columnReordering="true" multiRowHeader="true" selectionMode="multiple">
+            <gridData autoSize="false" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="3" widget="" width="280" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="HistoryID" noresize="false" dataName="historyID" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="128">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="2" widget="" width="280" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" tooltipPosition="below" columnTooltip="toAccount" text="ToAccount" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16777216">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="280" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="TransferTime" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId4" repeat="false" headerVAlign="1024">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16777216" colSpan="1" text="Amount" noresize="false" dataName="amount" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="125" rowCSS="" headerHAlign="16777216" colSpan="1" hidden="false" text="Comments" noresize="false" dataName="comments" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="1024">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="3" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="131072" colSpan="3" hidden="false" text="Status" noresize="false" dataName="status" relativeWidth="1" id="columnId6" repeat="false" headerVAlign="1024">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=toSubmit" id="button" text="Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="2"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <title></title>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="110,111,486,422" dataBinding="{'ctxType':'proc','ctxFile':'Q002/Q002_test_Flow','ctxName':'Q002_test_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'Q002_ECA_test.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="422" verticalAlignment="1" widthHint="486" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Label" id="label" text="Test include eca page">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="com_ibm_btt_q002_testECA" visibility="inherit" location="/xui/snippet/com/ibm/btt/q002/testECA.xui" id="com_ibm_btt_q002_testECA">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Group" id="group" text="Test outer ECA">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button" buttonType="button" text="multiply">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" id="button01" buttonType="button" text="Hidden Text">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label01" text="Label">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="3"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="com_ibm_btt_q002_testECA_result" property="text">
+          <value type="expression">
+            <leftValue type="expression">
+              <leftValue type="widgetProperty" widget="com_ibm_btt_q002_testECA_text01" property="value"/>
+              <operator name="*"/>
+              <rightValue type="constant" constant="1"/>
+            </leftValue>
+            <operator name="*"/>
+            <rightValue type="expression">
+              <leftValue type="widgetProperty" widget="com_ibm_btt_q002_testECA_text02" property="value"/>
+              <operator name="*"/>
+              <rightValue type="constant" constant="1"/>
+            </rightValue>
+          </value>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="com_ibm_btt_q002_testECA_button" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetProperty" widget="com_ibm_btt_q002_testECA_label" property="text"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'eb'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label01" property="text">
+          <value type="constant" constant="'bc'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="label01" property="text">
+          <value type="constant" constant="'cb'"/>
+        </action>
+      </falseActions>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="button01" event="onClick"/>
+      </events>
+      <condition>
+        <value type="expression">
+          <leftValue type="widgetProperty" widget="com_ibm_btt_q002_testECA_text" property="visibility"/>
+          <operator name="=="/>
+          <rightValue type="constant" constant="'visible'"/>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetProperty" widget="com_ibm_btt_q002_testECA_text" property="visibility">
+          <value type="constant" constant="'hidden'"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetProperty" widget="com_ibm_btt_q002_testECA_text" property="visibility">
+          <value type="constant" constant="'visible'"/>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+</XUI>

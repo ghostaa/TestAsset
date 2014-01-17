@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G001_UC7_Simple_Flow>
+
+
+	<htmlProcessor context="G001_UC7_Simple_Ctx" id="G001_UC7_Simple_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G001_UC7_Simple_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC7_Simple.jsp" id="G001_UC7_Simple">
+			<transitions>
+				<htmlTransition id="G001_UC7_Simple.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G001_UC7_Simple_Op" id="G001_UC7_Simple_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G001_UC7_Simple_Op.opEvt" outputMapFmt="G001_UC1_Op.opEvt_OutputFmt" targetState="G001_UC7_Simple"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="G001_UC7_Simple_Op" context="G001_UC7_Simple_Ctx" implClass="com.ibm.btt.application.op.G001_initDataOp"/>
+
+	<context id="G001_UC7_Simple_Ctx" type="op">
+		<refKColl refId="G001_UC7_Simple_Record"/>
+	</context>
+
+	<kColl id="G001_UC7_Simple_Record">
+		<!-- Data for transfer history -->
+		<iColl id="transferHistory">
+			<kColl id="history">
+				<data id="historyID" refType="Integer"/>
+				<data id="toAccount" refType="String"/>
+				<data id="transfer_date" refType="Date">
+					<param value="yyyy-MM-dd" id="pattern"/>
+				</data>
+				<data id="amount" refType="Currency"/>
+				<field id="comments"/>
+				<data id="status" refType="String"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="G001_UC1_Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G001_UC7_Simple_Flow>

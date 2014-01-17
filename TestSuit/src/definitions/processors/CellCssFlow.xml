@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CellCssFlow>
+
+
+	<htmlProcessor context="CellCssCtx" id="CellCssFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CellStylelist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="CellStyle/list.jsp" id="CellStylelist">
+			<transitions>
+				<htmlTransition id="CellStylelist.styleFile" targetState="CellStylecellStyleFile"/>
+				<htmlTransition id="CellStylelist.styleInline" targetState="CellStylecellInlineStyleFile"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="CellStyle/cellInlineStyleFile.jsp" id="CellStylecellInlineStyleFile">
+			<transitions>
+				<htmlTransition id="CellStylecellInlineStyleFile.ok" targetState="OK"/>
+				<htmlTransition id="CellStylecellInlineStyleFile.return" targetState="CellStylelist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="CellStyle/cellStyleFile.jsp" id="CellStylecellStyleFile">
+			<transitions>
+				<htmlTransition id="CellStylecellStyleFile.ok" targetState="OK"/>
+				<htmlTransition id="CellStylecellStyleFile.return" targetState="CellStylelist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="CellCssCtx" type="op">
+		<refKColl refId="CellCssRecord01"/>
+	</context>
+
+	<kColl id="CellCssRecord01">
+	</kColl>
+
+</CellCssFlow>

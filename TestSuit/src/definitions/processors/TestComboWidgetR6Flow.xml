@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestComboWidgetR6Flow>
+
+
+	<htmlProcessor context="TestComboWidgetR6Ctx" id="TestComboWidgetR6Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TestComboWidgetOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="TestComboWidgetOp" id="TestComboWidgetOp" type="operation">
+			<transitions>
+				<htmlTransition id="TestComboWidgetOp.opEvt" outputMapFmt="TestComboWidgetOp.opEvt_OutputFmt" targetState="TestComboWidget"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestComboWidget.jsp" id="TestComboWidget">
+			<transitions>
+				<htmlTransition id="TestComboWidget.submit" targetState="TestComboResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestComboResult.jsp" id="TestComboResult">
+			<transitions>
+				<htmlTransition id="TestComboResult.viewEvt" targetState="OK"/>
+				<htmlTransition id="TestComboResult.back" targetState="TestComboWidget"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestComboWidgetR6Ctx" type="op">
+		<refKColl refId="TestComboWidgetR6Record"/>
+	</context>
+
+	<kColl id="TestComboWidgetR6Record">
+		<iColl id="TestComboWidgetR6List" size="10">
+			<refData refId="labelAndValue" lazy="false"/>
+		</iColl>
+		<refData refId="LabelDataName"/>
+		<refData refId="defaultLabelInDataNameForList"/>
+		<refData refId="defaultLabelNotInForList"/>
+		<refData refId="defaultLabelInUrlForList"/>
+		<field id="ul"/>
+		<field id="dl"/>
+		<field id="dlv"/>
+		<field id="dv"/>
+	</kColl>
+
+	<kColl id="labelAndValue">
+		<field id="FieldForLabel"/>
+		<field id="FieldForValue"/>
+	</kColl>
+
+	<field id="LabelDataName"/>
+
+	<field id="defaultLabelInDataNameForList" value="value--5"/>
+
+	<field id="defaultLabelNotInForList" value="label"/>
+
+	<field id="defaultLabelInUrlForList" value="Value0005"/>
+
+	<fmtDef id="TestComboWidgetOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TestComboList" to="TestComboWidgetR6List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TestComboWidgetR6Flow>

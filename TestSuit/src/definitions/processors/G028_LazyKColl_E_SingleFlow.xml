@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_LazyKColl_E_SingleFlow>
+
+
+	<htmlProcessor context="G028_LazyKColl_E_SingleCtx" id="G028_LazyKColl_E_SingleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028_initLazyKCollEOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_LazyKColl_single.jsp" id="G028G028_LazyKColl_single">
+			<transitions>
+				<htmlTransition id="G028G028_LazyKColl_single.ok" targetState="G028G028_Result_lazyKColl_single"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G028_initLazyKCollEOp" id="G028_initLazyKCollEOp" type="operation">
+			<transitions>
+				<htmlTransition id="G028_initLazyKCollEOp.ok" outputMapFmt="initAccountsOp.ok_OutputFmt" targetState="G028G028_LazyKColl_single"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_lazyKColl_single.jsp" id="G028G028_Result_lazyKColl_single">
+			<transitions>
+				<htmlTransition id="G028G028_Result_lazyKColl_single.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_LazyKColl_E_SingleCtx" type="op">
+		<refKColl refId="G028_LazyKColl_E_SingleRecord01"/>
+	</context>
+
+	<kColl id="G028_LazyKColl_E_SingleRecord01">
+		<refData refId="lazyKColl_E_Accounts"/>
+		<refData refId="lazyKColl_E_SelectedAccount" lazy="false"/>
+	</kColl>
+
+	<kColl id="E">
+		<field id="F"/>
+		<refData refId="E" lazy="true"/>
+	</kColl>
+
+	<kColl id="lazyKCOll_E_Account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="E" lazy="false"/>
+	</kColl>
+
+	<iColl id="lazyKColl_E_Accounts" size="10">
+		<refData refId="lazyKCOll_E_Account" lazy="false"/>
+	</iColl>
+
+	<kColl id="lazyKColl_E_SelectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="E" lazy="false"/>
+	</kColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="lazyKColl_E_Accounts" to="lazyKColl_E_Accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_LazyKColl_E_SingleFlow>

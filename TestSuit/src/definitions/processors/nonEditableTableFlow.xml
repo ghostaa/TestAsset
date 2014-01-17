@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nonEditableTableFlow>
+
+
+	<htmlProcessor context="nonEditableTableCtx" id="nonEditableTableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CreateAccountInfoOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CreateAccountInfoOp" id="CreateAccountInfoOp" type="operation">
+			<transitions>
+				<htmlTransition id="CreateAccountInfoOp.ShowAccountInfo" outputMapFmt="CreateAccountInfoOp.ShowAccountInfo_OutputFmt" targetState="NonEditableTable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="NonEditableTablePage/NonEditableTable.jsp" id="NonEditableTable">
+			<transitions>
+				<htmlTransition id="NonEditableTable.LinkToGroup" targetState="NonEditableTableInGroup"/>
+				<htmlTransition id="NonEditableTable.LinkToPane" targetState="NonEditableTableInTabbedPane"/>
+				<htmlTransition id="NonEditableTable.group popup" targetState="PopupNonEditableTableInGroup"/>
+				<htmlTransition id="NonEditableTable.manipulatetable" targetState="NonEditableTableIsManipulated"/>
+				<htmlTransition id="NonEditableTable.pane popup" targetState="PopupNonEditableTableInTabbedPane"/>
+				<htmlTransition id="NonEditableTable.submit to group page" inputMapFmt="NonEditableTable.submit to pane page_InputFmt" targetState="SelectionResultInGroupFlow"/>
+				<htmlTransition id="NonEditableTable.submit to pane page" inputMapFmt="NonEditableTable.submit to pane page_InputFmt" targetState="SelectionResultInPaneFlow"/>
+				<htmlTransition id="NonEditableTable.submit to group popup page" inputMapFmt="NonEditableTable.submit to pane page_InputFmt" targetState="SelectionResultInGroupPopupFlow"/>
+				<htmlTransition id="NonEditableTable.submit to pane popup page" inputMapFmt="NonEditableTable.submit to pane page_InputFmt" targetState="SelectionResultInPanePopupFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NonEditableTablePage/NonEditableTableInGroup.jsp" id="NonEditableTableInGroup">
+			<transitions>
+				<htmlTransition id="NonEditableTableInGroup.returnToNonEditableTable" targetState="NonEditableTable"/>
+				<htmlTransition id="NonEditableTableInGroup.to group popup page" inputMapFmt="NonEditableTableInGroup.to pane page_InputFmt" targetState="SelectionResultInGroupPopupFlow"/>
+				<htmlTransition id="NonEditableTableInGroup.to pane page" inputMapFmt="NonEditableTableInGroup.to pane page_InputFmt" targetState="SelectionResultInPaneFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NonEditableTablePage/NonEditableTableInTabbedPane.jsp" id="NonEditableTableInTabbedPane">
+			<transitions>
+				<htmlTransition id="NonEditableTableInTabbedPane.returnToNonEditableTable" targetState="NonEditableTable"/>
+				<htmlTransition id="NonEditableTableInTabbedPane.to group page" inputMapFmt="NonEditableTableInTabbedPane.to group page_InputFmt" targetState="SelectionResultInGroupFlow"/>
+				<htmlTransition id="NonEditableTableInTabbedPane.to pane popup page" inputMapFmt="NonEditableTableInTabbedPane.to group page_InputFmt" targetState="SelectionResultInPanePopupFlow"/>
+				<htmlTransition id="NonEditableTableInTabbedPane.eventForMenu" targetState="IBK_4_12_ContextMenuContextMenuResultForEvent"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="NonEditableTablePage/NonEditableTableInGroup.jsp" id="PopupNonEditableTableInGroup">
+			<transitions>
+				<htmlTransition id="PopupNonEditableTableInGroup.returnToNonEditableTable" targetState="NonEditableTable"/>
+				<htmlTransition id="PopupNonEditableTableInGroup.to group popup page" inputMapFmt="NonEditableTableInGroup.to pane page_InputFmt" targetState="SelectionResultInGroupPopupFlow"/>
+				<htmlTransition id="PopupNonEditableTableInGroup.to pane page" inputMapFmt="NonEditableTableInGroup.to pane page_InputFmt" targetState="SelectionResultInPaneFlow"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState type="page" typeIdInfo="NonEditableTablePage/NonEditableTableIsManipulated.jsp" id="NonEditableTableIsManipulated">
+			<transitions>
+				<htmlTransition id="NonEditableTableIsManipulated.returnToNonEditableTable" targetState="NonEditableTable"/>
+				<htmlTransition id="NonEditableTableIsManipulated.end" targetState="OK"/>
+				<htmlTransition id="NonEditableTableIsManipulated.to group popup page" inputMapFmt="NonEditableTableIsManipulated.to group popup page_InputFmt" targetState="SelectionResultInGroupPopupFlow"/>
+				<htmlTransition id="NonEditableTableIsManipulated.to pane popup page" inputMapFmt="NonEditableTableIsManipulated.to pane popup page_InputFmt" targetState="SelectionResultInPanePopupFlow"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="NonEditableTablePage/NonEditableTableInTabbedPane.jsp" id="PopupNonEditableTableInTabbedPane">
+			<transitions>
+				<htmlTransition id="PopupNonEditableTableInTabbedPane.returnToNonEditableTable" targetState="NonEditableTable"/>
+				<htmlTransition id="PopupNonEditableTableInTabbedPane.to group page" inputMapFmt="NonEditableTableInTabbedPane.to group page_InputFmt" targetState="SelectionResultInGroupFlow"/>
+				<htmlTransition id="PopupNonEditableTableInTabbedPane.to pane popup page" inputMapFmt="NonEditableTableInTabbedPane.to group page_InputFmt" targetState="SelectionResultInPanePopupFlow"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState typeIdInfo="SelectionResultInGroupFlow" id="SelectionResultInGroupFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="SelectionResultInGroupFlow.back" targetState="NonEditableTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="SelectionResultInPaneFlow" id="SelectionResultInPaneFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="SelectionResultInPaneFlow.back" targetState="NonEditableTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="SelectionResultInGroupPopupFlow" id="SelectionResultInGroupPopupFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="SelectionResultInGroupPopupFlow.back" targetState="NonEditableTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="SelectionResultInPanePopupFlow" id="SelectionResultInPanePopupFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="SelectionResultInPanePopupFlow.back" targetState="NonEditableTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="IBK_4_12_ContextMenu/ContextMenuResultForEvent.jsp" id="IBK_4_12_ContextMenuContextMenuResultForEvent">
+			<transitions>
+				<htmlTransition id="IBK_4_12_ContextMenuContextMenuResultForEvent.back" targetState="NonEditableTableInTabbedPane"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="nonEditableTableCtx" type="op">
+		<refKColl refId="nonEditableTableRecord01"/>
+	</context>
+
+	<kColl id="nonEditableTableRecord01">
+		<refData refId="AccountInfoList" alias="nonEditableAccountList"/>
+		<refData refId="AccountInfoList" alias="selectAccountList"/>
+		<refData refId="AccountInfoRecord" alias="AccountInfo"/>
+		<field id="forColumn"/>
+		<field id="forRow"/>
+		<iColl id="forTableLinkList" size="10">
+			<kColl id="nonEditableTableRecord">
+				<data id="linkName" refType="String"/>
+				<field id="forLink"/>
+				<field id="forTooltip"/>
+				<kColl id="nonEditableTableRecord">
+					<data id="linkName" refType="String"/>
+					<field id="forLink"/>
+					<field id="forTooltip"/>
+				</kColl>
+				<data id="clickAble" refType="Boolean"/>
+				<field id="forImage"/>
+				<field id="ContentMenu_Link_NoAction"/>
+				<field id="ContentMenu_Link_URLAndSubmit"/>
+				<field id="ContentMenu_Link_CancelAndSave"/>
+				<field id="ContentMenu_Button_NoAction"/>
+				<field id="ContentMenu_Button_URLAndSubmit"/>
+				<field id="ContentMenu_Button_CancelAndSave"/>
+				<field id="Column2"/>
+				<field id="Column3"/>
+			</kColl>
+		</iColl>
+		<field id="DataOutOfTable1"/>
+		<field id="DataOutOfTable2"/>
+		<field id="DataOutOfTable3"/>
+		<iColl id="MutipleSelectData">
+			<refData refId="SingleSelectData" lazy="false"/>
+		</iColl>
+		<refData refId="SingleSelectData" lazy="false"/>
+	</kColl>
+
+	<kColl id="SingleSelectData">
+		<data id="linkName" refType="String"/>
+		<field id="ContentMenu_Link_NoAction"/>
+		<field id="ContentMenu_Link_URLAndSubmit"/>
+		<field id="ContentMenu_Link_CancelAndSave"/>
+		<field id="ContentMenu_Button_NoAction"/>
+		<field id="ContentMenu_Button_URLAndSubmit"/>
+		<field id="ContentMenu_Button_CancelAndSave"/>
+		<field id="Column2"/>
+		<field id="Column3"/>
+	</kColl>
+
+	<fmtDef id="CreateAccountInfoOp.ShowAccountInfo_OutputFmt">
+		<mapperConverterExpression>
+			<map from="AccountInfoList" to="nonEditableAccountList" append="false"/>
+			<map from="forTableLinkList" to="forTableLinkList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NonEditableTable.submit to pane page_InputFmt">
+		<mapperConverterExpression>
+			<map from="selectAccountList" to="selectAccountList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NonEditableTableInGroup.to pane page_InputFmt">
+		<mapperConverterExpression>
+			<map from="AccountInfo" to="AccountInfo"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NonEditableTableInTabbedPane.to group page_InputFmt">
+		<mapperConverterExpression>
+			<map from="selectAccountList" to="selectAccountList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NonEditableTableIsManipulated.to pane popup page_InputFmt">
+		<mapperConverterExpression>
+			<map from="selectAccountList" to="selectAccountList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="NonEditableTableIsManipulated.to group popup page_InputFmt">
+		<mapperConverterExpression>
+			<map from="selectAccountList" to="selectAccountList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</nonEditableTableFlow>

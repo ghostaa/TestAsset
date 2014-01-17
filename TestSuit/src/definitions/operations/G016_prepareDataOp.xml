@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G016_prepareDataOp>
+
+	<operation id="G016_prepareDataOp" context="G016_prepareDataCtx" implClass="com.ibm.btt.application.op.g016.G016_common_Op"/>
+
+	<context id="G016_prepareDataCtx" type="op">
+		<refKColl refId="G016_prepareDataRecord"/>
+	</context>
+
+	<kColl id="G016_prepareDataRecord">
+		<iColl id="products" size="4">
+			<kColl id="product">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+				<data id="ProductId" refType="Integer"/>
+				<iColl id="Countrys" size="4">
+					<kColl id="Country">
+						<field id="CountryName"/>
+						<data id="CountryNameNumber" refType="Integer"/>
+					</kColl>
+				</iColl>
+				<data id="CountrySelction" refType="String"/>
+				<data id="CountrySelctionNumber" refType="Integer"/>
+				<field id="ProductSpecialName"/>
+				<refData refId="ForTableTest"/>
+			</kColl>
+		</iColl>
+		<data id="Image" refType="String"/>
+		<field id="LabelValue"/>
+		<iColl id="productsGroup1" size="2">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<iColl id="productsGroup2" size="2">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<iColl id="ForTableTest" size="4">
+		<kColl id="ForTableTestRecord">
+			<field id="A"/>
+			<field id="B"/>
+		</kColl>
+	</iColl>
+
+</G016_prepareDataOp>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC1_Flow>
+
+
+	<htmlProcessor context="X072_UC1_Ctx" id="X072_UC1_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X072_UC1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_UC1.jsp" id="X072_UC1">
+			<transitions>
+				<htmlTransition id="X072_UC1.toView" outputMapFmt="X072_UC1.toView_OutputFmt" inputMapFmt="X072_UC1.toView_InputFmt" targetState="X072X072_Result_UC1"/>
+				<htmlTransition id="X072_UC1.toSubFlow" outputMapFmt="X072_UC1.toSubFlow_OutputFmt" inputMapFmt="X072_UC1.toSubFlow_InputFmt" targetState="X072_UC1_SubFlow"/>
+				<htmlTransition id="X072_UC1.toOp" outputMapFmt="X072_UC1.toOp_OutputFmt" inputMapFmt="X072_UC1.toOp_InputFmt" targetState="X072_UC1Op"/>
+				<htmlTransition id="X072_UC1.toOp1" inputMapFmt="X072_UC1Op_InputFmt" targetState="X072_UC1Op-1"/>
+				<htmlTransition id="X072_UC1.toSubFlow1" inputMapFmt="X072_UC1_SubFlow_InputFmt" targetState="X072_UC1_SubFlow-2"/>
+				<htmlTransition id="X072_UC1.toView1" inputMapFmt="X072_UC1-1_InputFmt" targetState="X072X072_Result_UC1-1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_Result_UC1.jsp" id="X072X072_Result_UC1">
+			<transitions>
+				<htmlTransition id="X072X072_Result_UC1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="X072/X072_Index.jsp"/>
+
+		<operationState typeIdInfo="X072_UC1Op" id="X072_UC1Op" type="operation">
+			<transitions>
+				<htmlTransition id="X072_UC1Op.opEvt" outputMapFmt="X072_UC1Op.opEvt_OutputFmt" inputMapFmt="X072_UC1Op.opEvt_InputFmt" targetState="X072_UC1_SubFlow-1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState typeIdInfo="X072_UC1_SubFlow" id="X072_UC1_SubFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="X072_UC1_SubFlow.OK" outputMapFmt="X072_UC1_SubFlow.OK_OutputFmt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="X072_UC1_SubFlow" id="X072_UC1_SubFlow-1" type="subFlow">
+			<transitions>
+				<htmlTransition id="X072_UC1_SubFlow-1.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="X072_UC1Op" id="X072_UC1Op-1" inputMapFmt="X072_UC1Op_InputFmt" outputMapFmt="X072_UC1Op_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="X072_UC1Op-1.opEvt" outputMapFmt="X072_UC1Op_OutputFmt" inputMapFmt="X072_UC1Op-1.opEvt_InputFmt" targetState="X072_UC1_SubFlow-1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState typeIdInfo="X072_UC1_SubFlow" id="X072_UC1_SubFlow-2" inputMapFmt="X072_UC1_SubFlow_InputFmt" outputMapFmt="X072_UC1_SubFlow_OutputFmt" type="subFlow">
+			<transitions>
+				<htmlTransition id="X072_UC1_SubFlow-2.OK" outputMapFmt="X072_UC1_SubFlow_OutputFmt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="X072/X072_Result_UC1.jsp" id="X072X072_Result_UC1-1" inputMapFmt="X072_UC1-1_InputFmt" outputMapFmt="X072_UC1-1_OutputFmt" closable="false" title="">
+			<transitions>
+				<htmlTransition id="X072X072_Result_UC1-1.viewEvt" outputMapFmt="X072_UC1-1_OutputFmt" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="X072_UC1_Ctx" type="op">
+		<refKColl refId="X072_UC1_Record"/>
+	</context>
+
+	<kColl id="X072_UC1_Record">
+		<field id="fstr" value="08/06/2013"/>
+		<data id="date" value="2013-07-22" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="testString" value="test string" refType="String"/>
+		<data id="testNum" value="9" refType="Number"/>
+		<refData refId="kColl1" lazy="false"/>
+		<refData refId="iColl1"/>
+	</kColl>
+
+	<kColl id="kColl1">
+		<field id="fstr" value="hello"/>
+		<data id="num" value="hello" refType="String"/>
+		<data id="testDate" value="test" refType="String"/>
+	</kColl>
+
+	<iColl id="iColl1" size="10">
+		<refData refId="kColl1" lazy="false"/>
+	</iColl>
+
+	<fmtDef id="X072_UC1.submit_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+			<map from="date" to="fstr"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Op_date"/>
+			<map from="fstr" to="Op_fstr"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Op_fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1_SubFlow_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Sub_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1_SubFlow_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Sub_fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1-1_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+			<map from="date" to="testString"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1-1_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toOp_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Op_date"/>
+			<map from="fstr" to="Op_fstr"/>
+			<map from="kColl1" to="kColl1"/>
+			<map from="iColl1" to="iColl1" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toSubFlow_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Sub_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toSubFlow_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+			<map from="fstr" to="fstr"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toView_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toView_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1.toOp_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="fstr"/>
+			<map from="date" to="date"/>
+			<map from="testString" to="testNum"/>
+			<map from="testNum" to="testString"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op.opEvt_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Sub_fstr"/>
+			<map from="date" to="Sub_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op-1.opEvt_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Sub_fstr"/>
+			<map from="date" to="Sub_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Op_fstr" to="fstr"/>
+			<map from="Op_date" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1_SubFlow.OK_OutputFmt">
+		<mapperConverterExpression>
+			<map from="Sub_fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X072_UC1_Flow>

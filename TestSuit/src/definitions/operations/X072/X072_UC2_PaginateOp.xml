@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC2_PaginateOp>
+
+	<operation id="X072_UC2_PaginateOp" context="X072_UC2_PaginateCtx" implClass="com.ibm.btt.application.op.X072.X072_UC2_PaginateOp"/>
+
+	<context id="X072_UC2_PaginateCtx" type="op">
+		<refKColl refId="X072_UC2_PaginateRecord"/>
+	</context>
+
+	<kColl id="X072_UC2_PaginateRecord">
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="transferHistory"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="enableNext" refType="Boolean"/>
+		<data id="enablePrevious" refType="Boolean"/>
+		<data id="totalRowNumber" refType="Integer"/>
+		<data id="rowsPerPage" refType="Integer"/>
+		<data id="pageNumber" refType="Integer"/>
+		<data id="errMsg" value="this is an error message" refType="String"/>
+		<field id="pageEvent"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="transferHistory">
+		<kColl id="history">
+			<data id="historyID" refType="Integer"/>
+			<data id="toAccount" refType="String"/>
+			<data id="transfer_date" refType="Date">
+				<param value="yyyy-MM-dd HH:mm:ss" id="pattern"/>
+			</data>
+			<data id="amount" refType="Currency"/>
+			<field id="comments"/>
+		</kColl>
+	</iColl>
+
+</X072_UC2_PaginateOp>

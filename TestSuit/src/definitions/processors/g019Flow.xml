@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<g019Flow>
+
+
+	<htmlProcessor context="g019Ctx" id="g019Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/list.jsp" id="G019_widgetslist">
+			<transitions>
+				<htmlTransition id="G019_widgetslist.label" targetState="widgetslabel"/>
+				<htmlTransition id="G019_widgetslist.link" targetState="widgetslink"/>
+				<htmlTransition id="G019_widgetslist.textArea" targetState="widgetstextArea"/>
+				<htmlTransition id="G019_widgetslist.text" targetState="widgetstext"/>
+				<htmlTransition id="G019_widgetslist.combo" targetState="widgetscombo"/>
+				<htmlTransition id="G019_widgetslist.selectList" targetState="widgetsselectList"/>
+				<htmlTransition id="G019_widgetslist.richText" targetState="widgetsrichText"/>
+				<htmlTransition id="G019_widgetslist.tree" targetState="treeOp"/>
+				<htmlTransition id="G019_widgetslist.table" targetState="tableOp"/>
+				<htmlTransition id="G019_widgetslist.tableColumn" targetState="tableOp-1"/>
+				<htmlTransition id="G019_widgetslist.panel" targetState="containerpanel"/>
+				<htmlTransition id="G019_widgetslist.form" targetState="containerform"/>
+				<htmlTransition id="G019_widgetslist.group" targetState="containergroup"/>
+				<htmlTransition id="G019_widgetslist.tabbedPane" targetState="containertabbedPane"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/label.jsp" id="widgetslabel">
+			<transitions>
+				<htmlTransition id="widgetslabel.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/link.jsp" id="widgetslink">
+			<transitions>
+				<htmlTransition id="widgetslink.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/textArea.jsp" id="widgetstextArea">
+			<transitions>
+				<htmlTransition id="widgetstextArea.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/text.jsp" id="widgetstext">
+			<transitions>
+				<htmlTransition id="widgetstext.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/selectList.jsp" id="widgetsselectList">
+			<transitions>
+				<htmlTransition id="widgetsselectList.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/richText.jsp" id="widgetsrichText">
+			<transitions>
+				<htmlTransition id="widgetsrichText.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/combo.jsp" id="widgetscombo">
+			<transitions>
+				<htmlTransition id="widgetscombo.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/tree.jsp" id="widgetstree">
+			<transitions>
+				<htmlTransition id="widgetstree.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="treeOp" id="treeOp" type="operation">
+			<transitions>
+				<htmlTransition id="treeOp.ok" targetState="widgetstree"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/table.jsp" id="widgetstable">
+			<transitions>
+				<htmlTransition id="widgetstable.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableOp" id="tableOp" type="operation">
+			<transitions>
+				<htmlTransition id="tableOp.ok" targetState="widgetstable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G019_widgets/tableColumn.jsp" id="widgetstableColumn">
+			<transitions>
+				<htmlTransition id="widgetstableColumn.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableOp" id="tableOp-1" type="operation">
+			<transitions>
+				<htmlTransition id="tableOp-1.ok" targetState="widgetstableColumn"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G019_container/panel.jsp" id="containerpanel">
+			<transitions>
+				<htmlTransition id="containerpanel.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_container/form.jsp" id="containerform">
+			<transitions>
+				<htmlTransition id="containerform.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_container/group.jsp" id="containergroup">
+			<transitions>
+				<htmlTransition id="containergroup.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G019_container/tabbedPane.jsp" id="containertabbedPane">
+			<transitions>
+				<htmlTransition id="containertabbedPane.return" targetState="G019_widgetslist"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="g019Ctx" type="op">
+		<refKColl refId="g019Record"/>
+	</context>
+
+	<kColl id="g019Record">
+		<refData refId="tableList"/>
+		<refData refId="tree" lazy="false"/>
+		<field id="str" value="abc"/>
+	</kColl>
+
+	<iColl id="tableList">
+		<kColl id="table">
+			<field id="A"/>
+			<field id="B"/>
+			<field id="C"/>
+			<field id="D"/>
+		</kColl>
+	</iColl>
+
+	<treeModel id="tree">
+	</treeModel>
+
+</g019Flow>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_Date_Table2Text_Multi_EditableFlow>
+
+
+	<htmlProcessor context="X061_Date_Table2Text_Multi_EditableCtx" id="X061_Date_Table2Text_Multi_EditableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_InitDateOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Date_Table2Text_Multi_Editable.jsp" id="X061_Date_Table2Text_Multi_Editable">
+			<transitions>
+				<htmlTransition id="X061_Date_Table2Text_Multi_Editable.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="X061_InitDateOp" id="X061_InitDateOp" type="operation">
+			<transitions>
+				<htmlTransition id="X061_InitDateOp.opEvt" outputMapFmt="X061_InitDateOp.opEvt_OutputFmt" targetState="X061_Date_Table2Text_Multi_Editable"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="X061_Date_Table2Text_Multi_EditableCtx" type="op">
+		<refKColl refId="X061_Date_Table2Text_Multi_EditableRecord01"/>
+	</context>
+
+	<kColl id="X061_Date_Table2Text_Multi_EditableRecord01">
+		<iColl id="X061_TableList">
+			<refData refId="X061_DateCalendarRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_DateCalendarRecord" lazy="false"/>
+	</kColl>
+
+	<kColl id="X061_DateCalendarRecord">
+		<data id="date_slash" refType="Date">
+			<param value="dd/MM/yyyy HH:mm:ss" id="pattern"/>
+		</data>
+		<data id="date_bar" refType="Date">
+			<param value="dd-MM-yyyy HH:mm:ss" id="pattern"/>
+		</data>
+		<data id="calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy HH:mm:ss" id="pattern"/>
+		</data>
+		<data id="calendar_bar" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy HH:mm:ss" id="pattern"/>
+		</data>
+	</kColl>
+
+	<fmtDef id="X061_InitDateOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="X061_TableList" to="X061_TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_Date_Table2Text_Multi_EditableFlow>

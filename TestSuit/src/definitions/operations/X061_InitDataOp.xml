@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_InitDataOp>
+
+	<operation id="X061_InitDataOp" context="X061_InitDataCtx01" implClass="com.ibm.btt.application.op.X061_InitDataOp"/>
+
+	<context id="X061_InitDataCtx01" type="op">
+		<refKColl refId="X061_InitDataRecord"/>
+	</context>
+
+	<kColl id="X061_InitDataRecord">
+		<iColl id="X061_TableList" size="10">
+			<refData refId="X061_DataRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_DataRecord" lazy="false"/>
+	</kColl>
+
+	<kColl id="X061_DataRecord">
+		<data id="date_slash" refType="Date">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="date_bar" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_bar" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="num_1" refType="Number">
+			<param value="1" id="html:decimalPlaces"/>
+		</data>
+		<data id="num_2" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="float_2" refType="Float">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="float_3" refType="Float">
+			<param value="3" id="html:decimalPlaces"/>
+		</data>
+		<data id="currency_cny" refType="Currency">
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="currency_usd" refType="Currency">
+			<param value="USD" id="currency"/>
+		</data>
+	</kColl>
+
+</X061_InitDataOp>

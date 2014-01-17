@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC1_SubFlow>
+
+
+	<htmlProcessor context="X072_UC1_SubCtx" id="X072_UC1_SubFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X072_Sub_Result"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_Sub_Result.jsp" id="X072_Sub_Result">
+			<transitions>
+				<htmlTransition id="X072_Sub_Result.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="X072_UC1_SubCtx" type="op">
+		<refKColl refId="X072_UC1_SubRecord"/>
+	</context>
+
+	<kColl id="X072_UC1_SubRecord">
+		<field id="Sub_fstr"/>
+		<data id="Sub_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+	</kColl>
+
+</X072_UC1_SubFlow>

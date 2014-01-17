@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_MainPopupFlow>
+
+
+	<htmlProcessor context="Q008_MainPopupCtx" id="Q008_MainPopupFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="LaunchPopupSubFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<popupSubFlowState typeIdInfo="Q008_PopupJSPFlow" id="JSPStatePopupFlow" closable="true" title="%nls.bttsample/Click_Link_Run_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="JSPStatePopupFlow.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<htmlState type="page" typeIdInfo="LaunchPopupSubFlow.jsp" id="LaunchPopupSubFlow">
+			<transitions>
+				<htmlTransition id="LaunchPopupSubFlow.First" inputMapFmt="LaunchPopupSubFlow.First_InputFmt" targetState="JSPStatePopupFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.NormalSubFolw" inputMapFmt="LaunchPopupSubFlow.NormalSubFolw_InputFmt" targetState="NormalSubFlowFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.Second" inputMapFmt="LaunchPopupSubFlow.Second_InputFmt" targetState="NestedPopupFlowFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.Third" inputMapFmt="LaunchPopupSubFlow.Third_InputFmt" targetState="OperationFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.Condition" inputMapFmt="LaunchPopupSubFlow.Condition_InputFmt" targetState="NormalAttributeFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.PaginationTable" targetState="PaginationTableFlow"/>
+				<htmlTransition id="LaunchPopupSubFlow.NormalPagination" targetState="PaginationTableFlow-1"/>
+				<htmlTransition id="LaunchPopupSubFlow.Mapping" inputMapFmt="LaunchPopupSubFlow.Mapping_InputFmt" targetState="MappingFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="Q008_NormalSubFlowFlow" id="NormalSubFlowFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="NormalSubFlowFlow.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</htmlState>
+
+		<popupSubFlowState typeIdInfo="Q008_NestedPopupFlowFlow" id="NestedPopupFlowFlow" closable="true" height="100" left="0" title="FirstNestedPopupFlow" top="0" type="subFlow" width="100">
+			<transitions>
+				<htmlTransition id="NestedPopupFlowFlow.OK" targetState="MainFlowFinallyPage"/>
+				<htmlTransition id="NestedPopupFlowFlow.close" targetState="MappingMainMapping"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<popupSubFlowState typeIdInfo="Q008_OperationFlow" id="OperationFlow" closable="true" title="This is OperationFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="OperationFlow.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<popupSubFlowState typeIdInfo="Q008_NormalAttributeFlow" id="NormalAttributeFlow" closable="true" height="50" left="0" title="This PopupFlow exit Condition" top="0" type="subFlow" width="50">
+			<transitions>
+				<htmlTransition id="NormalAttributeFlow.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<htmlState type="page" typeIdInfo="MainFlowFinallyPage.jsp" id="MainFlowFinallyPage">
+			<transitions>
+				<htmlTransition id="MainFlowFinallyPage.finally" targetState="OK"/>
+				<htmlTransition id="MainFlowFinallyPage.return" targetState="LaunchPopupSubFlow"/>
+			</transitions>
+		</htmlState>
+
+		<popupSubFlowState typeIdInfo="Q008_TableFlow" id="PaginationTableFlow" closable="true" title="PopupFlowTitle" type="subFlow">
+			<transitions>
+				<htmlTransition id="PaginationTableFlow.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<htmlState typeIdInfo="Q008_TableFlow" id="PaginationTableFlow-1" type="subFlow">
+			<transitions>
+				<htmlTransition id="PaginationTableFlow-1.OK" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</htmlState>
+
+		<popupSubFlowState typeIdInfo="Q008_MappingFlow" id="MappingFlow" closable="true" title="This is Mapping Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="MappingFlow.OK" outputMapFmt="MappingFlow.OK_OutputFmt" targetState="MappingMainMapping"/>
+				<htmlTransition id="MappingFlow.close" targetState="MainFlowFinallyPage"/>
+			</transitions>
+		</popupSubFlowState>
+
+		<htmlState type="page" typeIdInfo="Mapping/MainMapping.jsp" id="MappingMainMapping">
+			<transitions>
+				<htmlTransition id="MappingMainMapping.viewEvt" targetState="MappingFlow"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q008_MainPopupCtx" type="op" parent="sessionCtx">
+		<refKColl refId="Q008_MainPopupRecord"/>
+	</context>
+
+	<kColl id="Q008_MainPopupRecord" dynamic="true">
+		<field id="sampleField"/>
+		<field id="sampleField01"/>
+		<field id="sampleField02"/>
+		<field id="sampleField03"/>
+	</kColl>
+
+	<fmtDef id="LaunchPopupSubFlow.NormalSubFolw_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="NormalSubFlowField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="LaunchPopupSubFlow.First_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="No1"/>
+			<map from="sampleField01" to="No2"/>
+			<map from="sampleField02" to="No3"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="LaunchPopupSubFlow.Second_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="NestedPopupFlowField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="LaunchPopupSubFlow.Third_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="PopupSubFlowNo2Field"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="LaunchPopupSubFlow.Condition_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="NormalAttributeField"/>
+			<map from="sampleField01" to="NormalAttributeData"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="LaunchPopupSubFlow.Mapping_InputFmt">
+		<mapperConverterExpression>
+			<map from="sampleField" to="four"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="MappingFlow.close_OutputFmt">
+		<mapperConverterExpression>
+			<map from="one" to="sampleField01"/>
+			<map from="two" to="sampleField02"/>
+			<map from="three" to="sampleField03"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="MappingFlow.close_OutputFmt01">
+		<mapperConverterExpression>
+			<map from="one" to="sampleField01"/>
+			<map from="two" to="sampleField02"/>
+			<map from="three" to="sampleField03"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="MappingFlow.OK_OutputFmt">
+		<mapperConverterExpression>
+			<map from="one" to="sampleField01"/>
+			<map from="two" to="sampleField02"/>
+			<map from="three" to="sampleField03"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q008_MainPopupFlow>

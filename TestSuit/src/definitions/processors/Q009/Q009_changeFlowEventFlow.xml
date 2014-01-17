@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_changeFlowEventFlow>
+
+
+	<htmlProcessor context="Q009_changeFlowEventCtx" id="Q009_changeFlowEventFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_changeFlowEvent"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_changeFlowEvent.jsp" id="Q009Q009_changeFlowEvent">
+			<transitions>
+				<htmlTransition id="Q009Q009_changeFlowEvent.next" targetState="Q009Q009_BTTContainer_Div05"/>
+				<htmlTransition id="Q009Q009_changeFlowEvent.outdiv" targetState="Q009Q009_BTTContainer_Div05"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div05.jsp" id="Q009Q009_BTTContainer_Div05">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainer_Div05.next" targetState="Q009Q009_BTTContainer_Div06"/>
+				<htmlTransition id="Q009Q009_BTTContainer_Div05.outdiv" targetState="Q009Q009_BTTContainer_Div05"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_BTTContainer_Div06.jsp" id="Q009Q009_BTTContainer_Div06">
+			<transitions>
+				<htmlTransition id="Q009Q009_BTTContainer_Div06.exit" targetState="OK"/>
+				<htmlTransition id="Q009Q009_BTTContainer_Div06.outdiv" targetState="Q009Q009_BTTContainer_Div05"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q009_changeFlowEventCtx" type="op">
+		<refKColl refId="Q009_changeFlowEventRecord"/>
+	</context>
+
+	<kColl id="Q009_changeFlowEventRecord">
+		<field id="textValue_Group" value="default value"/>
+		<field id="textValue_Panel" value="default"/>
+		<field id="textValue_TabbedPane02" value="div5"/>
+		<field id="textValue_TabbedPane03" value="div6"/>
+	</kColl>
+
+</Q009_changeFlowEventFlow>

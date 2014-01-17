@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_UC4Flow>
+
+
+	<htmlProcessor context="B002_UC4Ctx" id="B002_UC4Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC4_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<conditionState id="condition" defaultEvent="default" type="condition">
+			<transitions>
+				<htmlTransition id="condition.default" targetState="B002B002_UC4_1"/>
+			</transitions>
+			<conditions>
+				<condition expression="stateFlag == 'Operation'" event="condEvt" />
+				<condition expression="stateFlag == 'SubFlow'" event="condEvt01" />
+				<condition expression="stateFlag == 'Page'" event="condEvt02" />
+			</conditions>
+		</conditionState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC4_1.jsp" id="B002B002_UC4_1">
+			<transitions>
+				<htmlTransition id="B002B002_UC4_1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC4_0.jsp" id="B002_UC4_0">
+			<transitions>
+				<htmlTransition id="B002_UC4_0.toCondition" targetState="condition"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B002_UC4Ctx" type="op">
+		<refKColl refId="B002_UC4Record"/>
+	</context>
+
+	<kColl id="B002_UC4Record">
+		<field id="stateFlag"/>
+	</kColl>
+
+</B002_UC4Flow>

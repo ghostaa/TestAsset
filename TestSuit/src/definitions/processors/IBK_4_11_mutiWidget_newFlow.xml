@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_4_11_mutiWidget_newFlow>
+
+
+	<htmlProcessor context="IBK_4_11_mutiWidget_newCtx" id="IBK_4_11_mutiWidget_newFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_newFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_4_11_mutiWidget/IBK_4_11_mutiWidget_newFlow.jsp" id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_newFlow">
+			<transitions>
+				<htmlTransition id="IBK_4_11_mutiWidgetIBK_4_11_mutiWidget_newFlow.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="IBK_4_11_mutiWidget_newCtx" type="op">
+		<refKColl refId="IBK_4_11_mutiWidget_newRecord"/>
+	</context>
+
+	<kColl id="IBK_4_11_mutiWidget_newRecord">
+		<iColl id="TestMutiWidgetList">
+			<refData refId="sampleRecord" lazy="false"/>
+		</iColl>
+		<iColl id="TestMutiWidgetListResult">
+			<refData refId="sampleRecord" lazy="false"/>
+		</iColl>
+		<refData refId="sampleRecord" lazy="false" alias="singleResult"/>
+		<data id="testValidation" refType="Number"/>
+	</kColl>
+
+	<kColl id="sampleRecord">
+		<field id="Field1"/>
+		<field id="Field2"/>
+		<field id="Field3"/>
+		<field id="flag"/>
+	</kColl>
+
+</IBK_4_11_mutiWidget_newFlow>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_G021G021_UC2_subfolder.xml>
+<operation id="xval_G021$G021_UC2_subfolder" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form1_xValidations" name="form1_xValidations"/>
+      <refFormat refId="form2_xValidations" name="form2_xValidations"/>
+      <refFormat refId="form3_xValidations" name="form3_xValidations"/>
+
+</operation>
+<fmtDef id="form1_xValidations">
+	<xValConditions>
+	</xValConditions>
+</fmtDef>
+<fmtDef id="form2_xValidations">
+	<xValConditions>
+		<condition  expression="functs_BTTDateFunctions.daysBetween(toDate, fromDate) &gt;= 1"/>
+	</xValConditions>
+</fmtDef>
+<fmtDef id="form3_xValidations">
+	<xValConditions>
+		<condition  expression="functs_BTTStringFunctions.subString(bankCode, 0, 4) == &apos;ABC_&apos;"/>
+		<condition  expression="!(! isAccept)"/>
+	</xValConditions>
+</fmtDef>
+
+</xval_G021G021_UC2_subfolder.xml>

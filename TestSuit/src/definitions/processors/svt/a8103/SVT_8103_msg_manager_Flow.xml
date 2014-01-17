@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SVT_8103_msg_manager_Flow>
+
+
+	<htmlProcessor context="SVT_8103_msg_manager_Ctx" id="SVT_8103_msg_manager_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SVT_8103_MSG_manager"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="SVT/8103/SVT_8103_MSG_manager.jsp" id="SVT_8103_MSG_manager">
+			<transitions>
+				<htmlTransition id="SVT_8103_MSG_manager.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="SVT_8103_msg_manager_Ctx" type="op">
+		<refKColl refId="SVT_8103_msg_manager_Record"/>
+	</context>
+
+	<kColl id="SVT_8103_msg_manager_Record">
+		<field id="BroadType" value="1"/>
+		<kColl id="kcMsg">
+			<field id="msg"/>
+		</kColl>
+		<field id="message"/>
+	</kColl>
+
+</SVT_8103_msg_manager_Flow>

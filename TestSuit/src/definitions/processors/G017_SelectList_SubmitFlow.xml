@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G017_SelectList_SubmitFlow>
+
+
+	<htmlProcessor context="G017_SelectList_SubmitCtx" id="G017_SelectList_SubmitFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G017_InitSelectListDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G017/G017_submit01.jsp" id="G017_submit01">
+			<transitions>
+				<htmlTransition id="G017_submit01.viewEvt" targetState="G017_Result_submit"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G017_InitSelectListDataOp" id="G017_InitSelectListDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="G017_InitSelectListDataOp.opEvt" outputMapFmt="G017_InitSelectListDataOp.opEvt_OutputFmt" targetState="G017_submit01"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G017/G017_Result_submit.jsp" id="G017_Result_submit">
+			<transitions>
+				<htmlTransition id="G017_Result_submit.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G017_SelectListOp" context="G017_SelectList_SubmitCtx" implClass="com.ibm.btt.application.op.G017_SelectListDataOp"/>
+
+	<context id="G017_SelectList_SubmitCtx" type="op">
+		<refKColl refId="G017_SelectList_SubmitRecord01"/>
+	</context>
+
+	<kColl id="G017_SelectList_SubmitRecord01">
+		<refData refId="AccountInfoList"/>
+		<refData refId="AccountInfoRecord" lazy="false" alias="accFCombo"/>
+		<refData refId="AccountInfoRecord" lazy="false" alias="accTCombo"/>
+		<refData refId="AccountInfoRecord" lazy="false" alias="accFSelect"/>
+		<refData refId="AccountInfoRecord" lazy="false" alias="accTSelect"/>
+	</kColl>
+
+	<kColl id="AccountInfoRecord">
+		<data id="AccountNo" refType="Integer"/>
+		<data id="AccountName" refType="String"/>
+	</kColl>
+
+	<iColl id="AccountInfoList" size="10">
+		<refData refId="AccountInfoRecord"/>
+	</iColl>
+
+	<fmtDef id="G017_InitSelectListDataOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="AccountInfoList" to="AccountInfoList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G017_SelectList_SubmitFlow>

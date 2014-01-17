@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_OperationFlow>
+
+
+	<htmlProcessor context="Q008_OperationCtx" id="Q008_OperationFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="PopupSubFlowNo2Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="LaunchOperation.jsp" id="LaunchOperation">
+			<transitions>
+				<htmlTransition id="LaunchOperation.viewEvt" targetState="PopupSubFlowNo1Op"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="PopupSubFlowNo2Op" id="PopupSubFlowNo2Op" type="operation">
+			<transitions>
+				<htmlTransition id="PopupSubFlowNo2Op.opEvt" targetState="PopupFlowSecondPage"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="PopupFlowSecond/Page.jsp" id="PopupFlowSecondPage">
+			<transitions>
+				<htmlTransition id="PopupFlowSecondPage.viewEvt" targetState="LaunchOperation"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="A.jsp" id="A">
+			<transitions>
+				<htmlTransition id="A.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="PopupSubFlowNo1Op" id="PopupSubFlowNo1Op" type="operation">
+			<transitions>
+				<htmlTransition id="PopupSubFlowNo1Op.opEvt" targetState="A"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="PopupSubFlowNo2Op" context="Q008_OperationCtx" implClass="com.ibm.btt.sample.operation.LaunchOperation"/>
+
+	<operation id="PopupSubFlowNo1Op" implClass="com.ibm.btt.sample.operation.DisplayTheSpecialPage"/>
+
+	<context id="Q008_OperationCtx" type="op">
+		<refKColl refId="Q008_OperationRecord"/>
+	</context>
+
+	<kColl id="Q008_OperationRecord">
+		<field id="PopupSubFlowNo2Field"/>
+	</kColl>
+
+</Q008_OperationFlow>

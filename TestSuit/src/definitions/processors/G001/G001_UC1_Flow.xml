@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G001_UC1_Flow>
+
+
+	<htmlProcessor context="G001_UC1_Ctx" id="G001_UC1_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G001_UC1_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G001/G001_UC1.jsp" id="G001_UC1">
+			<transitions>
+				<htmlTransition id="G001_UC1.viewEvt" targetState="G001G001_Result_UC1"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G001_UC1_Op" id="G001_UC1_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G001_UC1_Op.opEvt" outputMapFmt="G001_UC1_Op.opEvt_OutputFmt" targetState="G001_UC1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G001/G001_Result_UC1.jsp" id="G001G001_Result_UC1">
+			<transitions>
+				<htmlTransition id="G001G001_Result_UC1.viewEvt" targetState="OK"/>
+				<htmlTransition id="G001G001_Result_UC1.back" targetState="G001_UC1"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G001_UC1_Op" context="G001_UC1_Ctx" implClass="com.ibm.btt.application.op.G001_initDataOp"/>
+
+	<context id="G001_UC1_Ctx" type="op">
+		<refKColl refId="G001_UC1_Record"/>
+	</context>
+
+	<kColl id="G001_UC1_Record">
+		<!-- Data for transfer history -->
+		<iColl id="transferHistory">
+			<refData refId="history" lazy="false"/>
+		</iColl>
+		<refData refId="singleSelectedRecord" lazy="false"/>
+		<refData refId="multiSelectedList" lazy="false"/>
+	</kColl>
+
+	<kColl id="singleSelectedRecord">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<iColl id="multiSelectedList">
+		<refData refId="history" lazy="false"/>
+	</iColl>
+
+	<kColl id="history">
+		<data id="historyID" refType="Integer"/>
+		<data id="toAccount" refType="String"/>
+		<data id="transfer_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<data id="amount" refType="Currency"/>
+		<field id="comments"/>
+		<data id="status" refType="String"/>
+	</kColl>
+
+	<fmtDef id="G001_UC1_Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="transferHistory" to="transferHistory" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G001_UC1_Flow>

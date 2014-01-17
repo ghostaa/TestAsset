@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G016_UC15_Flow>
+
+
+	<htmlProcessor context="G016_UC15_Ctx" id="G016_UC15_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G016_UC15_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="G016_UC15_Op" id="G016_UC15_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G016_UC15_Op.opEvt" targetState="G016UCUC15G016_UC15"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC15/G016_UC15.jsp" id="G016UCUC15G016_UC15">
+			<transitions>
+				<htmlTransition id="G016UCUC15G016_UC15.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G016_UC15_Op" implClass="com.ibm.btt.application.op.g016.G016_UC15_Op"/>
+
+	<context id="G016_UC15_Ctx" type="op">
+		<refKColl refId="G016_UC15_Record"/>
+	</context>
+
+	<kColl id="G016_UC15_Record">
+		<iColl id="cards" size="2">
+			<kColl id="card">
+				<field id="image"/>
+				<field id="name"/>
+				<kColl id="advantages">
+					<field id="one"/>
+					<field id="two"/>
+					<field id="three"/>
+				</kColl>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</G016_UC15_Flow>

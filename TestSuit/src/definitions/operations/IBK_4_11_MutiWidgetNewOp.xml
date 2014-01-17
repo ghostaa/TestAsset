@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_4_11_MutiWidgetNewOp>
+
+	<operation id="IBK_4_11_MutiWidgetNewOp" context="IBK_4_11_MutiWidgetNewCtx" implClass="com.ibm.btt.application.op.IBK_4_11_MutiWidgetNewOp"/>
+
+	<context id="IBK_4_11_MutiWidgetNewCtx" type="op">
+		<refKColl refId="IBK_4_11_MutiWidgetNewRecord"/>
+	</context>
+
+	<kColl id="IBK_4_11_MutiWidgetNewRecord">
+		<kColl id="singleResult">
+			<field id="Field1"/>
+			<field id="Field2"/>
+			<field id="Field3"/>
+			<field id="flag"/>
+		</kColl>
+		<data id="testValidation" refType="Number"/>
+		<iColl id="TestMutiWidgetListResult">
+			<refData refId="sampleRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="sampleRecord">
+		<field id="Field1"/>
+		<field id="Field2"/>
+		<field id="Field3"/>
+		<field id="IBK_4_11_mutiWidgetField" value="a"/>
+		<field id="flag"/>
+	</kColl>
+
+</IBK_4_11_MutiWidgetNewOp>

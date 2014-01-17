@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_simpleFlow>
+
+
+	<htmlProcessor context="X061_simpleCtx" id="X061_simpleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_simpleOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="X061/X061_simple01.jsp" id="X060_simple01">
+			<transitions>
+				<htmlTransition id="X060_simple01.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="X061_simpleOp" id="X061_simpleOp" type="operation">
+			<transitions>
+				<htmlTransition id="X061_simpleOp.opEvt" outputMapFmt="X061_simpleOp.opEvt_OutputFmt01" targetState="X060_simple01"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="X061_simpleCtx" type="op">
+		<refKColl refId="X061Flow01Record"/>
+	</context>
+
+	<data id="X061_simpleData" refType="Currency">
+		<param value="RMB" id="currency"/>
+		<param value="###.##" id="pattern"/>
+	</data>
+
+	<kColl id="X061Flow01Record">
+		<iColl id="TableList" size="10">
+			<refData refId="TableRefRecord" lazy="false"/>
+		</iColl>
+		<data id="CalendarTextbox" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="CalendarLable" refType="XMLGregorianCalendar"/>
+		<data id="CalendarTextbox02" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+	<kColl id="TableRefRecord">
+		<data id="Date01" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="Calendar_bar" refType="XMLGregorianCalendar"/>
+		<data id="Calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+	<fmtDef id="X061_simpleOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TableList" to="TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X061_simpleOp.opEvt_OutputFmt01">
+		<mapperConverterExpression>
+			<map from="TableList" to="TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_simpleFlow>

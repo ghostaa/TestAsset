@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="131,148,820,944" dataBinding="{'ctxType':'proc','ctxFile':'sampleFlow','ctxName':'sampleFlowCtx'}" isRuleDirty="false">
+  <styles>
+    <css file="../WebContent/css/dijit/buttonTextVerticalAlign.css"/>
+    <css file="../WebContent/css/w006/image.css"/>
+    <css file="../WebContent/css/w006/panel,form.css"/>
+    <css file="../WebContent/css/cell/border_styles.css"/>
+    <css file="../WebContent/css/w006/G019_panel,form,image.css"/>
+    <css file="../WebContent/css/G016/G016.css"/>
+    <css file="../WebContent/css/w006/w006.css"/>
+    <css file="../WebContent/css/testGridEnhancement.css"/>
+    <css file="../WebContent/css/main.css"/>
+    <css file="../WebContent/css/test.css"/>
+  </styles>
+  <container name="Panel">
+    <gridData heightHint="944" verticalAlignment="1" widthHint="820" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" layoutStyle="block" id="form">
+        <gridData verticalAlignment="1" autoSize="false" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightHint="100" horizontalIndent="50" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{&quot;background-color&quot;:{&quot;color_red&quot;:226,&quot;color_blue&quot;:250,&quot;color_green&quot;:248},&quot;border&quot;:{&quot;style&quot;:&quot;solid&quot;,&quot;color_red&quot;:232,&quot;width&quot;:1,&quot;color_blue&quot;:255,&quot;color_green&quot;:255}}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="%nls.bttsample/Welcome_To_Btt_Sample">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" layoutStyle="block" id="panel">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData horizontalIndent="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="operationId=IBK_F_007_setLocale01Op" id="Link01" text="%nls.bttsample/lang_ch">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalIndent="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="operationId=IBK_F_007_setLocale02Op" id="link13" text="%nls.bttsample/lang_English">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalIndent="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="operationId=IBK_F_007_setLocale_Ko_Op" id="link14" text="%nls.bttsample/lang_Korean">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalIndent="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="operationId=IBK_F_007_setLocale_Sp_Op" id="link15" text="%nls.bttsample/lang_sp">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="5"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="TabbedPane" id="tabbedPane">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <container name="ContentPane" title="IBK-FVT" id="ContentPane01">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_4_11_mutiWidgetFlow;flowEvent=" id="link01" text="Click link to launch test case for IBK4-11( muti-Widget )">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F_001_IBK_F_007_TitleFlow;flowEvent=" id="link01_copy01" text="Click link to launch test case for IBK_F_001&amp;IBK_F_017">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F_006_datePickerFlow;flowEvent=" id="link12" text="Click link to launch test case for IBK_F_006:Date Picker">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F_007_1Flow;flowEvent=" id="link16" text="Click link to launch test case for IBK_F_007:multilanguage switch">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F003/F003_IndexFlow;flowEvent=" id="link17" text="Click link to launch test case for F003: header merge and body cell merge">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F013/F013_IndexFlow;flowEvent=" id="link18" text="Click link to launch test case for IBK_F_013: indirect selection">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_F_018_TableDataAppendFlow;flowEvent=" id="link18_copy" text="Click link to launch test case for IBK_F_018: Table data append">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_SubFolder_19_21PopupWindow;flowEvent=" id="link07_copy01" text="Click link to launch test case for IBK19 and 21 for sub folder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_inner_SubFolder_19_21PopupWindow;flowEvent=" id="link07_copy01_copy" text="Click link to launch test case for IBK19 and 21 for inner sub folder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=req19_21;flowEvent=" id="IBK15_19And21" text="Click link to launch test case for IBK 19 and 21 (Popup Window)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_19_21PopupWindow;flowEvent=start" id="link07" text="Click link to launch test case for IBK19 and 21(Popup window size, position and close box)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=widgetCssFlow;flowEvent=start" id="link04" text="Click link to launch test case for IBK 1&amp;3 multiple Css &amp; Css detail">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_25_Button_VAlignFlow;flowEvent=" id="IBK25" text="Click link to launch test case for IBK 25 Button Text Vertical Alignment">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=CellCssFlow;flowEvent=start" id="link05" text="Click link to launch test case for IBK 26&amp;14 Cell's Css(use InlineStyle&amp;Css file)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=nonEditableTableFlow;flowEvent=" id="link01_copy" text="Click link to launch test case for IBK4-12( Table Widget Extension : Context menu support )">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_testFlow1;flowEvent=" id="IBK20And6" text="Click link to launch test case for IBK20 (new line character in table) and IBK6 (Combox supports disabling edit)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G018Flow;flowEvent=" id="link11_copy" text="Click link to launch test case for IBK 31 (Changing Table/Grid Structure with DIV layout)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G030_scriptWidgetFlow;flowEvent=start" id="link09_copy01" text="Click link to launch test case for IBK 28 : Script widget">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_18_Table_Scrollbar_Flow;flowEvent=" id="IBK18" text="Click link to launch test case for IBK18 Table Scrollbar">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBK_30_Test_XHTML_Index_Flow;flowEvent=" id="IBK30" text="Click link to launch test case for IBK 30 XHTML support">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=ButtonTextAlignmentFlow;flowEvent=start" id="link06" text="Click link to launch test case for IBK 25 Text's alignment of button">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=TestComboWidgetR6Flow;flowEvent=" id="link08_copy" text="Click link to launch test case for IBK 6: Support Label/Value field on Combo widget">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=ColumnSize_And_Scrollbar;flowEvent=" id="link09_copy02" text="Click link to launch test case for IBK 15: Set the relative width for certain column in a table widget">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=TestImageActionFlow;flowEvent=" id="link07_copy" text="Click link to launch test case for IBK 9/34: &quot;onClick&quot; event for image">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=TestMultiSelectFlow;flowEvent=start" id="link04_copy" text="Click link to launch test case for IBK 7: three new multi-select widget">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="operationId=mainPageOp" id="link_mainpage" text="Click link to launch My Pages sample implementation">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=PMR_FeatureFlow;flowEvent=" id="link21" text="Click link to launch IBK33683&amp;IBK33643&amp;IBK33690">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" title="Banco Popular-FVT" id="ContentPane02" selected="true">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <container name="Group" id="group01" text="8104">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=B004Chart/B004_main_Flow;flowEvent=" id="link33" text="B004 Chart">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=X075/X075_Mandatory_FVT_Flow;flowEvent=" id="link32" text="X075 isMandatory">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=Q009/Q009_mainFlow;flowEvent=" id="link29" text="Q009 div flow">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=X076/X076_NLSFlow;flowEvent=" id="link34" text="X076 Dynamic NLS flow">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=B001/B001_QueryCreditCardFlow;flowEvent=" id="link35" text="B001 Enhencement in repetitive panel">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=B002/B002_IndexFlow;flowEvent=" id="link36" text="B002 Aspect flow for error handling">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=B003/B003_UC1Flow;flowEvent=" id="link37" text="B003 &amp; B006 TabbedPane enhance and Style enhance">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=mybank/mybankFlow;flowEvent=" id="link38" text="Test Silder in Mexico bank">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <gridLayout numColumns="1"/>
+                </container>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <container name="Group" id="group" text="8103">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=Q002/Q002_test_Flow;flowEvent=" id="link23" text="Q002 include page">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=Q006/webMessageFlow;flowEvent=" id="link30" text="Q006 Server push">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="operationId=DisplayPageOp" extraParams="pageName=AjaxValue.jsp" id="link27" text="Q007 Ajax Test ShowCover">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=Q008_MainPopupFlow;flowEvent=" id="link28" text="Q008 Popup Flow">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=X070/X070_IndexFlow;flowEvent=" id="link24" text="X070: Table sorting enhancements">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <widget name="PlaceHolder">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="Link" action="flowId=X072/X072_IndexFlow;flowEvent=" id="link25" text="X-072: Provide details in mapping errors">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    </widget>
+                    <gridLayout numColumns="0"/>
+                  </widget>
+                  <gridLayout numColumns="1"/>
+                </container>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=X073/X073_test_Flow;flowEvent=" id="link22" text="Click link to launch test case for X073 ">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G030_scriptWidgetFlow;flowEvent=start" id="link09" text="Click link to launch test case for G030(External JavaScript support)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=X061_indexFlow;flowEvent=" id="link08" text="Click link to launch test case for X061(  retrieve the typed data from table)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G003_Index_Flow;flowEvent=" id="link10" text="Click link to launch test case for G003(Checkbox &amp; radio table row selection)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G017_indexFlow;flowEvent=" id="link" text="Click link to launch test case for G017(clickModeForDropDown)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G028_indexFlow;flowEvent=" id="link02" text="Click link to launch test case for G028( table column filtering)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G018Flow;flowEvent=" id="link11" text="Click link to launch test case for G018: DIV-based widget layout">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=g019Flow;flowEvent=start" id="link09_copy" text="Click link to launch test case for G019">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G016_UC_productList_Flow;flowEvent=" id="link19" text="Click link to launch test case for G016 (Repetitive Panel)">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G021_Test_Flow;flowEvent=" id="link19_copy" text="Click link to launch test case for G021">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=G001/G001_IndexFlow;flowEvent=" id="link20" text="Click link to launch test case for G001">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+            <container name="ContentPane" layoutStyle="block" title="%nls.bttsample/TBK_Index_Tab03" id="ContentPane03">
+              <gridData horizontalAlignment="4" verticalAlignment="4" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=svt/a8104/SVT_8104_mainFlow;flowEvent=" id="link31" text="8104 SVT">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=svt/a8103/SVT_8103_main_Flow;flowEvent=" id="link26" text="8103 SVT">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <widget name="PlaceHolder">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="Link" action="flowId=IBKE2E_TestFlowFlow;flowEvent=" id="link03" text="Click to launch end to end test flow">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                </widget>
+                <gridLayout numColumns="0"/>
+              </widget>
+              <gridLayout numColumns="1"/>
+            </container>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <title>%nls.bttsample/Welcome_To_Btt_Sample</title>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

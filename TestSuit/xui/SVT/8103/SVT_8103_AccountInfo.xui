@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="141,110,1009,300" dataBinding="{'ctxType':'proc','ctxFile':'svt/a8103/SVT_8103_main_Flow','ctxName':'SVT_8103_main_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'SVT_8103_AccountInfo.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="1009" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="com_ibm_btt_svt_head" visibility="inherit" location="/xui/snippet/com/ibm/btt/svt/head.xui" id="com_ibm_btt_svt_head">
+        <extendWidgetInfo/>
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'svt/a8103/SVT_8103_main_Flow','ctxName':'SVT_8103_main_Ctx','dataName':'account_List'}" sortEnabled="true" dataName="{'ctxType':'proc','ctxFile':'svt/a8103/SVT_8103_main_Flow','ctxName':'SVT_8103_main_Ctx','dataName':'selected_account'}" id="table" selectionMode="single">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="AccountOpeningDate" canSort="false" sortOrder="Unsorted" noresize="false" dataName="AccountOpeningDate" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                      <tableColumnAlignment>16384</tableColumnAlignment>
+                    </column>
+                    <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="accountNO" canSort="true" sortOrder="Unsorted" noresize="false" dataName="accountNO" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                      <tableColumnAlignment>16384</tableColumnAlignment>
+                    </column>
+                    <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="balance" canSort="true" sortOrder="Descending" noresize="false" dataName="balance" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+                      <tableColumnAlignment>16384</tableColumnAlignment>
+                    </column>
+                    <column widthType="FixedSize" sortPriority="1" editable="false" level="1" rowSpan="1" widget="CellWidgetGroup" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="more" canSort="true" widgets="columnId3_widget0" sortOrder="Unsorted" noresize="false" dataName="" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+                      <tableColumnAlignment>16384</tableColumnAlignment>
+                      <widget name="Button" cellWidgetId="columnId3_widget0" action="flowEvent=viewEvt" text="Withdrawal">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                    </column>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Panel" id="panel03">
+                    <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Button" id="button" buttonType="button" text="accountNo ASC">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Button" id="button01" buttonType="button" text="accountNo DESC">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Button" id="button02" buttonType="button" text="balance ASC">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Button" id="button03" buttonType="button" text="balance DESC">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="sortColumn">
+            <parameter>
+              <value type="constant" constant="'accountNO'"/>
+              <value type="constant" constant="true"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule01">
+      <events>
+        <event widget="button01" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="sortColumn">
+            <parameter>
+              <value type="constant" constant="'accountNO'"/>
+              <value type="constant" constant="false"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule02">
+      <events>
+        <event widget="button02" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="sortColumn">
+            <parameter>
+              <value type="constant" constant="'balance'"/>
+              <value type="constant" constant="true"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+    <rule name="ecaRule03">
+      <events>
+        <event widget="button03" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="sortColumn">
+            <parameter>
+              <value type="constant" constant="'balance'"/>
+              <value type="constant" constant="false"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

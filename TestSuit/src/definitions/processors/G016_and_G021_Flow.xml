@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G016_and_G021_Flow>
+
+
+	<htmlProcessor context="G016_and_G021_Ctx" id="G016_and_G021_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G016_and_G021_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_and_G021_Form_out_repetitivePanel.jsp" id="G016FunctionG016_and_G021_Form_out_repetitivePanel">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_and_G021_Form_out_repetitivePanel.confirm" targetState="G016FunctionG016_and_G021_result"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G016_and_G021_Op" id="G016_and_G021_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G016_and_G021_Op.opEvt" targetState="G016FunctionG016_and_G021_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_and_G021_index.jsp" id="G016FunctionG016_and_G021_index">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_and_G021_index.in" targetState="G016FunctionG016_and_G021_Form_in_repetitivePanel"/>
+				<htmlTransition id="G016FunctionG016_and_G021_index.out" targetState="G016FunctionG016_and_G021_Form_out_repetitivePanel"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_and_G021_result.jsp" id="G016FunctionG016_and_G021_result">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_and_G021_result.viewEvt" targetState="OK"/>
+				<htmlTransition id="G016FunctionG016_and_G021_result.backToIn" targetState="G016FunctionG016_and_G021_Form_in_repetitivePanel"/>
+				<htmlTransition id="G016FunctionG016_and_G021_result.backToOut" targetState="G016FunctionG016_and_G021_Form_out_repetitivePanel"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/Function/G016_and_G021_Form_in_repetitivePanel.jsp" id="G016FunctionG016_and_G021_Form_in_repetitivePanel">
+			<transitions>
+				<htmlTransition id="G016FunctionG016_and_G021_Form_in_repetitivePanel.confirm" targetState="G016FunctionG016_and_G021_result"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="G016_and_G021_Op" implClass="com.ibm.btt.application.op.g016.InitialG021DataOp"/>
+
+	<context id="G016_and_G021_Ctx" type="op">
+		<refKColl refId="G016_and_G021_Record"/>
+	</context>
+
+	<kColl id="G016_and_G021_Record">
+		<iColl id="accounts" size="3">
+			<refData refId="account" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="account">
+		<data id="pw1" refType="String"/>
+		<data id="pw2" refType="String"/>
+		<data id="fromDate" refType="Date"/>
+		<data id="toDate" refType="Date"/>
+		<data id="balance" refType="Double"/>
+		<data id="amount" refType="Double"/>
+		<data id="bankCode" refType="String"/>
+		<data id="isAccept" refType="Boolean"/>
+	</kColl>
+
+</G016_and_G021_Flow>

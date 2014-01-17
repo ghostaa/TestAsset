@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestJSPStateFlow>
+
+
+	<htmlProcessor context="TestJSPStateCtx" id="TestJSPStateFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TestJSPStatenewXuiFile"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="TestJSPState/JSPStateTestXUI.jsp" id="TestJSPStatenewXuiFile">
+			<transitions>
+				<htmlTransition id="TestJSPStatenewXuiFile.viewEvt" targetState="OK"/>
+				<htmlTransition id="TestJSPStatenewXuiFile.JSPState" targetState="HandWrittens"/>
+				<htmlTransition id="TestJSPStatenewXuiFile.PopupJSPState" targetState="HandWrittensPopup"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TestJSPState/HandWrittens.jsp" id="HandWrittens">
+			<transitions>
+				<htmlTransition id="HandWrittens.Back" targetState="TestJSPStatenewXuiFile"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="TestJSPState/HandWrittensPopup.jsp" id="HandWrittensPopup" closable="false">
+			<transitions>
+				<htmlTransition id="HandWrittensPopup.Back" targetState="TestJSPStatenewXuiFile"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="TestJSPStateCtx" type="op">
+		<refKColl refId="TestJSPStateRecord"/>
+	</context>
+
+	<kColl id="TestJSPStateRecord">
+	</kColl>
+
+</TestJSPStateFlow>

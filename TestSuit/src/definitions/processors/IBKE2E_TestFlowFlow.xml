@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBKE2E_TestFlowFlow>
+
+
+	<htmlProcessor context="IBKE2E_TestFlowCtx" id="IBKE2E_TestFlowFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="login"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_login.jsp" id="login">
+			<transitions>
+				<htmlTransition id="login.login" targetState="VerifyUser"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBKE2E_VerifyUser" id="VerifyUser" type="operation">
+			<transitions>
+				<htmlTransition id="VerifyUser.loginFailure" targetState="login"/>
+				<htmlTransition id="VerifyUser.loginSuccess" targetState="Index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_Index.jsp" id="Index">
+			<transitions>
+				<htmlTransition id="Index.accountSummary" targetState="AccountSum"/>
+				<htmlTransition id="Index.creditCard" targetState="CardApp"/>
+				<htmlTransition id="Index.logout" targetState="login"/>
+				<htmlTransition id="Index.accountTransfer" targetState="AccountPay"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_AccountSum.jsp" id="AccountSum">
+			<transitions>
+				<htmlTransition id="AccountSum.finish" targetState="CloseTransaction"/>
+				<htmlTransition id="AccountSum.detail" targetState="GetAccountDetails"/>
+				<htmlTransition id="AccountSum.transfer" targetState="AccountPay"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_AccountPay.jsp" id="AccountPay">
+			<transitions>
+				<htmlTransition id="AccountPay.submit" targetState="AccountPayConfirm"/>
+				<htmlTransition id="AccountPay.cancel" targetState="Index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardApp.jsp" id="CardApp">
+			<transitions>
+				<htmlTransition id="CardApp.continue" targetState="CardSteps"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="IBKE2E_AccountPayConfirm.jsp" id="AccountPayConfirm" width="300" height="200" closable="true" left="200" top="200">
+			<transitions>
+				<htmlTransition id="AccountPayConfirm.cancel" targetState="AccountPay"/>
+				<htmlTransition id="AccountPayConfirm.finish" targetState="AccountPayDone"/>
+				<htmlTransition id="AccountPayConfirm.close" targetState="AccountPay"/>
+			</transitions>
+		</popupPageState>
+
+		<operationState typeIdInfo="IBKE2E_CloseTransactionOp" id="CloseTransaction" type="operation">
+			<transitions>
+				<htmlTransition id="CloseTransaction.OK" targetState="Index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardSteps.jsp" id="CardSteps">
+			<transitions>
+				<htmlTransition id="CardSteps.submit" targetState="CheckApplicationForm"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBKE2E_CheckApplicationFormOp" id="CheckApplicationForm" type="operation">
+			<transitions>
+				<htmlTransition id="CheckApplicationForm.cancelCard" targetState="CardCancelConfirm"/>
+				<htmlTransition id="CheckApplicationForm.missInfo" targetState="CardMissInf"/>
+				<htmlTransition id="CheckApplicationForm.selectCard" targetState="CardSelect"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardMissInf.jsp" id="CardMissInf">
+			<transitions>
+				<htmlTransition id="CardMissInf.back" targetState="CardSteps"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardSelect.jsp" id="CardSelect">
+			<transitions>
+				<htmlTransition id="CardSelect.continue" targetState="CardConfirm"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardCancelConfirm.jsp" id="CardCancelConfirm">
+			<transitions>
+				<htmlTransition id="CardCancelConfirm.no" targetState="CardSteps"/>
+				<htmlTransition id="CardCancelConfirm.yes" targetState="CloseTransaction"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardConfirm.jsp" id="CardConfirm">
+			<transitions>
+				<htmlTransition id="CardConfirm.continue" targetState="CardFinish"/>
+				<htmlTransition id="CardConfirm.cancel" targetState="CardApp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_CardFinish.jsp" id="CardFinish">
+			<transitions>
+				<htmlTransition id="CardFinish.finish" targetState="CloseTransaction"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_AccountPayDone.jsp" id="AccountPayDone">
+			<transitions>
+				<htmlTransition id="AccountPayDone.finish" targetState="CloseTransaction"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBKE2E_GetAccountDetailsOp" id="GetAccountDetails" type="operation">
+			<transitions>
+				<htmlTransition id="GetAccountDetails.ok" targetState="AccountDetail"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="IBKE2E_AccountDetail.jsp" id="AccountDetail">
+			<transitions>
+				<htmlTransition id="AccountDetail.finish" targetState="CloseTransaction"/>
+				<htmlTransition id="AccountDetail.back" targetState="AccountSum"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="IBKE2E_TestFlowCtx" type="op" parent="sessionCtx">
+		<refKColl refId="IBKE2E_TestFlowRecord"/>
+	</context>
+
+	<kColl id="IBKE2E_TestFlowRecord" dynamic="true">
+		<kColl id="Login">
+			<data id="UserName" refType="String"/>
+			<data id="Password" refType="String"/>
+			<data id="Language" refType="String"/>
+			<data id="VerifyResult" refType="String"/>
+		</kColl>
+		<iColl id="AccountList">
+			<refData refId="Account" lazy="false"/>
+		</iColl>
+		<kColl id="AccountDetails">
+			<data id="AccountNumber" refType="String"/>
+			<iColl id="AccountDetailList">
+				<refData refId="AccountDetail" lazy="false"/>
+			</iColl>
+			<iColl id="UsageList">
+				<kColl id="Usage">
+					<data id="LabelField" refType="String"/>
+				</kColl>
+			</iColl>
+		</kColl>
+		<kColl id="AccountTransfer">
+			<data id="FromAccount" refType="String"/>
+			<data id="ToAccount" refType="String"/>
+			<data id="Amount" refType="Number"/>
+			<data id="TransferFee" refType="Number"/>
+		</kColl>
+		<kColl id="CreditCard">
+			<data id="HaveAccountChoice" refType="Boolean"/>
+			<data id="FirstName" refType="String"/>
+			<data id="MiddleName" refType="String"/>
+			<data id="LastName" refType="String"/>
+			<data id="HomeAddress" refType="String"/>
+			<data id="AptNumber" refType="String"/>
+			<data id="City" refType="String"/>
+			<data id="State" refType="String"/>
+			<data id="ZipCode" refType="Integer"/>
+			<data id="DateBirth" refType="Date"/>
+			<data id="SSN" refType="Integer"/>
+			<data id="EmployerName" refType="String"/>
+			<data id="EmpCity" refType="String"/>
+			<data id="EmpState" refType="String"/>
+			<data id="EmpZipCode" refType="Integer"/>
+			<data id="EmpLength" refType="Number"/>
+			<data id="YearMonth" refType="String"/>
+			<data id="PerYearMonth" refType="String"/>
+			<data id="Occupation" refType="String"/>
+			<data id="AnnualIncome" refType="Currency"/>
+			<data id="ApplyContinue" refType="Boolean"/>
+			<iColl id="MyAccountTypeList">
+				<kColl id="Account">
+					<data id="Name" refType="String"/>
+					<data id="Value" refType="String"/>
+					<data id="Selected" refType="String"/>
+					<data id="Disabled" refType="String"/>
+				</kColl>
+			</iColl>
+			<iColl id="SelectedAccountTypeList">
+				<kColl id="Account">
+					<data id="Name" refType="String"/>
+					<data id="Value" refType="String"/>
+				</kColl>
+			</iColl>
+			<data id="HouseIncome" refType="Currency"/>
+			<data id="MissInfo" refType="String"/>
+			<data id="IsUSResident" refType="Boolean"/>
+			<data id="CardType" refType="String"/>
+		</kColl>
+		<kColl id="TableSelection">
+			<field id="RowSelect"/>
+			<field id="ColumnSelect"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="Account" dynamic="true">
+		<data id="AccountNumber" refType="String"/>
+		<data id="AccountType" refType="String"/>
+		<data id="AccountStatus" refType="String"/>
+		<data id="AccountBalance" refType="Number"/>
+		<data id="OpenDate" refType="Date"/>
+		<data id="Description" refType="String"/>
+		<data id="Tooltip" refType="String"/>
+		<data id="Clickable" refType="Boolean"/>
+	</kColl>
+
+	<kColl id="AccountDetail">
+		<data id="Seq" refType="Integer"/>
+		<data id="TransactionID" refType="Long"/>
+		<data id="TransactionDate" refType="Date"/>
+		<data id="Usage" refType="String"/>
+		<data id="Amount" refType="Number"/>
+	</kColl>
+
+	<fmtDef id="Index.accountTransfer_InputFmt">
+		<mapperConverterExpression>
+			<map from="AccountList" to="AccountList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</IBKE2E_TestFlowFlow>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B001_QueryCreditCardFlow>
+
+
+	<htmlProcessor context="B001_QueryCreditCardCtx" id="B001_QueryCreditCardFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CreditAcctsOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="B001/B001_UC4.jsp" id="B001B001_UC4">
+			<transitions>
+				<htmlTransition id="B001B001_UC4.queryPoints" inputMapFmt="queryCreditCardMyCreditAccts.queryPoints_InputFmt" targetState="QueryPointsOp"/>
+				<htmlTransition id="B001B001_UC4.unsettledBill" inputMapFmt="queryCreditCardMyCreditAccts.unsettledBill_InputFmt" targetState="UnsettledBillFlow"/>
+				<htmlTransition id="B001B001_UC4.settledBill" inputMapFmt="queryCreditCardMyCreditAccts.settledBill_InputFmt" targetState="SettledBillFlow"/>
+				<htmlTransition id="B001B001_UC4.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CreditAcctsOp" id="CreditAcctsOp" type="operation">
+			<transitions>
+				<htmlTransition id="CreditAcctsOp.opEvt" outputMapFmt="CreditAcctsOp.opEvt_OutputFmt" targetState="B001B001_Index"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="QueryPointsOp" id="QueryPointsOp" type="operation">
+			<transitions>
+				<htmlTransition id="QueryPointsOp.opEvt" targetState="QueryPoints"/>
+			</transitions>
+		</operationState>
+
+		<popupPageState type="page" typeIdInfo="B001/QueryPoints.jsp" id="QueryPoints" closable="true" title="">
+			<transitions>
+				<htmlTransition id="QueryPoints.close" targetState="B001B001_UC4"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState typeIdInfo="UnsettledBillFlow" id="UnsettledBillFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="UnsettledBillFlow.OK" targetState="B001B001_UC4"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="SettledBillFlow" id="SettledBillFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="SettledBillFlow.OK" targetState="B001B001_UC4"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B001/B001_Index.jsp" id="B001B001_Index">
+			<transitions>
+				<htmlTransition id="B001B001_Index.UC1" targetState="B001B001_UC1"/>
+				<htmlTransition id="B001B001_Index.UC3_2" targetState="B001_UC3_2"/>
+				<htmlTransition id="B001B001_Index.UC4" targetState="B001B001_UC4"/>
+				<htmlTransition id="B001B001_Index.UC3_1" targetState="B001Test"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B001/B001_UC1.jsp" id="B001B001_UC1"/>
+
+		<htmlState type="page" typeIdInfo="B001/B001_UC3_2.jsp" id="B001_UC3_2"/>
+
+		<htmlState type="page" typeIdInfo="B001/Test.jsp" id="B001Test"/>
+	</htmlProcessor>
+
+	<operation id="QueryPointsOp" implClass="com.ibm.btt.application.op.B001.QueryPointsOp"/>
+
+	<context id="B001_QueryCreditCardCtx" type="op">
+		<refKColl refId="B001_QueryCreditCardRecord"/>
+	</context>
+
+	<kColl id="B001_QueryCreditCardRecord">
+		<data id="RowNum" refType="Integer"/>
+		<refData refId="MyCreditAccts"/>
+		<refData refId="MyPoints"/>
+		<refData refId="CreditAcct" lazy="false"/>
+		<data id="selectAcctNo" refType="String"/>
+		<field id="KF" value="0"/>
+	</kColl>
+
+	<iColl id="MyCreditAccts">
+		<refData refId="CreditAcct" lazy="false"/>
+	</iColl>
+
+	<kColl id="CreditAcct">
+		<data id="GivenName" refType="String"/>
+		<data id="AcctNo" refType="String"/>
+		<data id="BranchBank" refType="String"/>
+		<iColl id="CurBalanceList" size="2">
+			<refData refId="CurBalance" lazy="false"/>
+		</iColl>
+		<data id="ParentType" refType="String"/>
+		<kColl id="TestMK">
+			<field id="MKF1" value="MKF1 is the default value"/>
+		</kColl>
+		<refData refId="forSubmit" lazy="false"/>
+	</kColl>
+
+	<kColl id="CurBalance">
+		<data id="CurType" refType="String"/>
+		<data id="CreditLine" refType="Double">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="WithdrawalLine" refType="Double"/>
+		<data id="AvailableCredit" refType="Double"/>
+		<data id="Balance" refType="Double"/>
+	</kColl>
+
+	<kColl id="MyPoint">
+		<data id="GivenName" refType="String"/>
+		<data id="AcctNo" refType="String"/>
+		<data id="BranchBank" refType="String"/>
+		<data id="ParentType" refType="String"/>
+		<data id="AcctType" refType="String"/>
+		<data id="BalancePoints" refType="String"/>
+		<data id="ConsumptionPoints" refType="String"/>
+		<data id="RewardPoints" refType="String"/>
+	</kColl>
+
+	<iColl id="MyPoints">
+		<refData refId="MyPoint" lazy="false"/>
+	</iColl>
+
+	<kColl id="forSubmit">
+		<field id="forText"/>
+		<field id="forRadio"/>
+		<field id="forCheckBox"/>
+		<field id="forSelect"/>
+		<field id="forCombo"/>
+		<kColl id="forTableSingle">
+			<data id="GivenName" refType="String"/>
+			<data id="AcctNo" refType="String"/>
+		</kColl>
+		<iColl id="forMultiSel">
+			<kColl id="selectList">
+				<field id="selectLabel"/>
+				<field id="selectValue"/>
+			</kColl>
+		</iColl>
+		<iColl id="forCheckedMultiSel">
+			<kColl id="selectList">
+				<field id="selectLabel"/>
+				<field id="selectValue"/>
+			</kColl>
+		</iColl>
+		<iColl id="forEnhanceMultiSel">
+			<kColl id="selectList">
+				<field id="selectLabel"/>
+				<field id="selectValue"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="CreditAcctsOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="MyCreditAccts" to="MyCreditAccts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="queryCreditCardMyCreditAccts.unsettledBill_InputFmt">
+		<mapperConverterExpression>
+			<map from="CreditAcct.AcctNo" to="Bill.AcctNo"/>
+			<map from="RowNum" to="RowNum"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="queryCreditCardMyCreditAccts.settledBill_InputFmt">
+		<mapperConverterExpression>
+			<map from="CreditAcct.AcctNo" to="Bill.AcctNo"/>
+			<map from="RowNum" to="RowNum"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="queryCreditCardMyCreditAccts.queryPoints_InputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getDataValueFromCollection(functs_BTTCollectionFunctions.getRowByIndex(MyCreditAccts, RowNum), &apos;AcctNo&apos;)" to="selectAcctNo"/>
+			<map fromExpression="functs_BTTCollectionFunctions.getDataValueFromCollection(functs_BTTCollectionFunctions.getRowByIndex(MyCreditAccts, RowNum), &apos;TestMK.MKF1&apos;)" to="KF"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</B001_QueryCreditCardFlow>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q002_and_repetitivePanel_Flow>
+
+
+	<htmlProcessor context="Q002_and_repetitivePanel_Ctx" id="Q002_and_repetitivePanel_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G016_prepareDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="G016_prepareDataOp" id="G016_prepareDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="G016_prepareDataOp.opEvt" outputMapFmt="G016_prepareDataOp.opEvt_OutputFmt" targetState="Q002_repetitivePanel_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="Q-002/RepetitiePanel/Q002_and_repetitivePanel_UC4.jsp" id="Q-002RepetitiePanelG016_UC4"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/RepetitiePanel/Q002_repetitivePanel_index.jsp" id="Q002_repetitivePanel_index">
+			<transitions>
+				<htmlTransition id="Q002_repetitivePanel_index.UC4" targetState="Q-002RepetitiePanelG016_UC4"/>
+				<htmlTransition id="Q002_repetitivePanel_index.UC10" targetState="Q002_and_repetitivePanel_UC10"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q-002/RepetitiePanel/Q002_and_repetitivePanel_UC10.jsp" id="Q002_and_repetitivePanel_UC10"/>
+	</htmlProcessor>
+
+	<context id="Q002_and_repetitivePanel_Ctx" type="op">
+		<refKColl refId="Q002_and_repetitivePanel_Record"/>
+	</context>
+
+	<kColl id="Q002_and_repetitivePanel_Record">
+		<iColl id="products">
+			<kColl id="product">
+				<treeModel id="G016_UC_productList_TreeModel">
+				</treeModel>
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+				<data id="ProductId" refType="Integer"/>
+				<iColl id="Countrys">
+					<kColl id="Country">
+						<field id="CountryName"/>
+						<data id="CountryNameNumber" refType="Integer"/>
+					</kColl>
+				</iColl>
+				<data id="CountrySelction" refType="String"/>
+				<data id="CountrySelctionNumber" refType="Integer"/>
+				<field id="ProductSpecialName"/>
+				<refData refId="ForTableTest"/>
+				<kColl id="fileUpload">
+				</kColl>
+				<treeModel id="G016_UC_productList_TreeModel02">
+				</treeModel>
+			</kColl>
+		</iColl>
+		<data id="Image" refType="String"/>
+		<field id="LabelValue"/>
+		<iColl id="products01" size="2">
+			<kColl id="product01">
+				<field id="G016_UC_productList_Field" value="test "/>
+			</kColl>
+		</iColl>
+		<iColl id="products02" size="0">
+			<kColl id="product01">
+				<field id="G016_UC_productList_Field" value="test "/>
+			</kColl>
+		</iColl>
+		<iColl id="productsGroup1">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<iColl id="productsGroup2">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<kColl id="G016_UC_productList_Record01">
+			<treeModel id="G016_UC_productList_TreeModel01">
+			</treeModel>
+		</kColl>
+	</kColl>
+
+	<iColl id="ForTableTest">
+		<kColl id="ForTableTestRecord">
+			<field id="A"/>
+			<field id="B"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="G016_prepareDataOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="products" to="products" append="false"/>
+			<map from="Image" to="Image"/>
+			<map from="LabelValue" to="LabelValue"/>
+			<map from="productsGroup1" to="productsGroup1" append="false"/>
+			<map from="productsGroup2" to="productsGroup2" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q002_and_repetitivePanel_Flow>

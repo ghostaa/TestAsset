@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q002_test_allwidget_Flow>
+
+
+	<htmlProcessor context="Q002_test_allwidget_Ctx" id="Q002_test_allwidget_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q002_test_allwidget_Ctx" type="op">
+		<refKColl refId="Q002_test_allwidget_Record"/>
+	</context>
+
+	<kColl id="Q002_test_allwidget_Record">
+		<data id="gender" refType="Integer"/>
+		<kColl id="level">
+			<data id="level1" refType="Boolean"/>
+			<data id="level2" refType="Boolean"/>
+		</kColl>
+		<data id="image" refType="String"/>
+		<iColl id="combo" size="5">
+			<kColl id="record">
+				<field id="comboValue"/>
+				<field id="comboLabel"/>
+			</kColl>
+		</iColl>
+		<iColl id="select" size="5">
+			<kColl id="record">
+				<field id="selectValue"/>
+				<field id="selectLabel"/>
+			</kColl>
+		</iColl>
+		<field id="richtext"/>
+		<field id="textArea"/>
+		<field id="hiddenField"/>
+		<iColl id="MultiSelect" size="10">
+			<kColl id="record">
+				<field id="FieldForLabel"/>
+				<field id="FieldForSelect"/>
+				<field id="FieldForDisable"/>
+				<field id="FieldForValue"/>
+			</kColl>
+		</iColl>
+		<field id="errorMessage"/>
+		<iColl id="table" size="10">
+			<kColl id="record">
+				<field id="column1"/>
+				<field id="column2"/>
+				<field id="column3"/>
+			</kColl>
+		</iColl>
+		<treeModel id="root">
+		</treeModel>
+	</kColl>
+
+</Q002_test_allwidget_Flow>

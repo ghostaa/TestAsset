@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBKE2E_GetAccountBalanceOp>
+
+	<operation id="IBKE2E_GetAccountBalanceOp" context="IBKE2E_GetAccountBalanceCtx" implClass="com.ibm.btt.test.IBKE2E_GetAccountBalance"/>
+
+	<context id="IBKE2E_GetAccountBalanceCtx" type="op">
+		<refKColl refId="IBKE2E_GetAccountBalanceRecord"/>
+	</context>
+
+	<kColl id="IBKE2E_GetAccountBalanceRecord">
+		<data id="FromAccount" refType="String"/>
+		<data id="AvailableAmount" refType="Number"/>
+	</kColl>
+
+</IBKE2E_GetAccountBalanceOp>

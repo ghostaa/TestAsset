@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_NormalAttributeFlow>
+
+
+	<htmlProcessor context="Q008_NormalAttributeCtx" id="Q008_NormalAttributeFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NormalAttributeSubmitAttributeThree"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<conditionState id="condition" defaultEvent="default" type="condition">
+			<transitions>
+				<htmlTransition id="condition.default" targetState="NormalAttributeAttributeOne"/>
+				<htmlTransition id="condition.condEvt" targetState="NormalAttributeAttributeTwo"/>
+			</transitions>
+			<conditions>
+				<condition expression="1 == 1" event="condEvt" />
+			</conditions>
+		</conditionState>
+
+		<htmlState type="page" typeIdInfo="NormalAttribute/SubmitAttributeThree.jsp" id="NormalAttributeSubmitAttributeThree">
+			<transitions>
+				<htmlTransition id="NormalAttributeSubmitAttributeThree.viewEvt" targetState="condition"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NormalAttribute/AttributeOne.jsp" id="NormalAttributeAttributeOne">
+			<transitions>
+				<htmlTransition id="NormalAttributeAttributeOne.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="NormalAttribute/AttributeTwo.jsp" id="NormalAttributeAttributeTwo">
+			<transitions>
+				<htmlTransition id="NormalAttributeAttributeTwo.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q008_NormalAttributeCtx" type="op">
+		<refKColl refId="Q008_NormalAttributeRecord"/>
+	</context>
+
+	<kColl id="Q008_NormalAttributeRecord">
+		<field id="NormalAttributeField"/>
+		<data id="NormalAttributeData" refType="Integer"/>
+	</kColl>
+
+</Q008_NormalAttributeFlow>

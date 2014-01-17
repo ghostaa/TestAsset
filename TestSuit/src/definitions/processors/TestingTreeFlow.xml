@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestingTreeFlow>
+
+
+	<htmlProcessor context="TestingTreeCtx" id="TestingTreeFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CreateTreeDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="tree.jsp" id="tree">
+			<transitions>
+				<htmlTransition id="tree.submit" targetState="tree-1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="IBK_Test_XHTML_index.jsp"/>
+
+		<operationState typeIdInfo="CreateTreeDataOp" id="CreateTreeDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="CreateTreeDataOp.ok" outputMapFmt="CreateTreeDataOp.ok_OutputFmt" targetState="TestingBranch"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="tree.jsp" id="tree-1">
+			<transitions>
+				<htmlTransition id="tree-1.submit" targetState="tree"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TestingBranch.jsp" id="TestingBranch">
+			<transitions>
+				<htmlTransition id="TestingBranch.tree submit" targetState="tree"/>
+				<htmlTransition id="TestingBranch.tree ECA" targetState="TreeECA"/>
+				<htmlTransition id="TestingBranch.tree CSS" targetState="TreeCSS"/>
+				<htmlTransition id="TestingBranch.tree size" targetState="TreeSize"/>
+				<htmlTransition id="TestingBranch.tree Alignment" targetState="TreeAlignment"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TreeECA.jsp" id="TreeECA">
+			<transitions>
+				<htmlTransition id="TreeECA.homepage" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TreeCSS.jsp" id="TreeCSS">
+			<transitions>
+				<htmlTransition id="TreeCSS.homepage" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TreeSize.jsp" id="TreeSize">
+			<transitions>
+				<htmlTransition id="TreeSize.homepage" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="TreeAlignment.jsp" id="TreeAlignment">
+			<transitions>
+				<htmlTransition id="TreeAlignment.homepage" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestingTreeCtx" type="op">
+		<refKColl refId="TestingTreeRecord"/>
+	</context>
+
+	<kColl id="TestingTreeRecord">
+		<treeModel id="root">
+		</treeModel>
+		<field id="TestingTreeField"/>
+	</kColl>
+
+	<fmtDef id="CreateTreeDataOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="root" to="root"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TestingTreeFlow>

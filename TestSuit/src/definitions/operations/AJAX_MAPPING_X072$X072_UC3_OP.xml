@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<operation id="AJAX_MAPPING_X072$X072_UC3_OP" implClass="com.ibm.btt.base.BTTServerOperation">
+		<refFormat refId="X072_UC3_0_input" name="X072_UC3_0_input"/>
+		<refFormat refId="X072_UC3_0_output" name="X072_UC3_0_output"/>
+		<refFormat refId="X072_UC3_1_output" name="X072_UC3_1_output"/>
+	</operation>
+
+	<fmtDef id="X072_UC3_0_input">
+		<mapperConverterExpression>
+			<map from="fstr" to="Op_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC3_0_output">
+		<mapperConverterExpression>
+			<map from="Op_fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC3_1_output">
+		<mapperConverterExpression>
+			<map from="Op_fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</format.xml>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_embededDivContainerFlow>
+
+
+	<htmlProcessor context="Q009_embededDivContainerCtx" id="Q009_embededDivContainerFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_embededDivContainer"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_embededDivContainer.jsp" id="Q009Q009_embededDivContainer">
+			<transitions>
+				<htmlTransition id="Q009Q009_embededDivContainer.update" targetState="outterSubPage"/>
+			</transitions>
+		</htmlState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Q009_embededDivContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_embededDivContainer_outterContainer&quot;,&quot;page&quot;:&quot;Q009\/Q009_contentContainer.jsp&quot;,&quot;widgetId&quot;:&quot;outterContainer&quot;}]" id="outterSubPage" type="subPage">
+			<transitions>
+				<htmlTransition id="outterSubPage.update" targetState="innerSubPage"/>
+			</transitions>
+		</subPageState>
+
+		<subPageState data="[{&quot;divPage&quot;:&quot;Q009\/Q009_contentContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_contentContainer_innerContainer01&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div01.jsp&quot;,&quot;widgetId&quot;:&quot;innerContainer01&quot;}, {&quot;divPage&quot;:&quot;Q009\/Q009_contentContainer.xui&quot;,&quot;divId&quot;:&quot;Q009_contentContainer_innerContainer02&quot;,&quot;page&quot;:&quot;Q009\/Q009_BTTContainer_Div02.jsp&quot;,&quot;widgetId&quot;:&quot;innerContainer02&quot;}]" id="innerSubPage" type="subPage">
+			<transitions>
+				<htmlTransition id="innerSubPage.exit" targetState="OK"/>
+			</transitions>
+		</subPageState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q009_embededDivContainerCtx" type="op">
+		<refKColl refId="Q009_embededDivContainerRecord"/>
+	</context>
+
+	<kColl id="Q009_embededDivContainerRecord">
+	</kColl>
+
+</Q009_embededDivContainerFlow>

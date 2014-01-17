@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC4Op>
+
+	<operation id="X072_UC4Op" context="X072_UC4OpCtx" implClass="com.ibm.btt.application.op.X072.X072_UC4Op"/>
+
+	<context id="X072_UC4OpCtx" type="op">
+		<refKColl refId="X072_UC4Record"/>
+	</context>
+
+	<kColl id="X072_UC4Record">
+		<refData refId="customer" lazy="false"/>
+	</kColl>
+
+	<kColl id="customer">
+		<field id="name"/>
+		<data id="birth" refType="Date"/>
+		<iColl id="children" size="2">
+			<kColl id="childData">
+				<field id="name"/>
+				<data id="birth" refType="Date"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</X072_UC4Op>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q002_pagination_table_Flow>
+
+
+	<htmlProcessor context="Q002_pagination_table_Ctx" id="Q002_pagination_table_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q002_pagination_table_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/pagination/Q002_and_paginationTable.jsp" id="Q-002paginationQ002_and_paginationTable">
+			<transitions>
+				<htmlTransition id="Q-002paginationQ002_and_paginationTable.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="Q002_pagination_table_Op" id="Q002_pagination_table_Op" type="operation">
+			<transitions>
+				<htmlTransition id="Q002_pagination_table_Op.opEvt" targetState="Q-002paginationQ002_and_paginationTable"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="Q002_pagination_table_Op" implClass="com.ibm.btt.application.op.Q002.InitializeTableOp"/>
+
+	<context id="Q002_pagination_table_Ctx" type="op">
+		<refKColl refId="Q002_pagination_table_Record"/>
+	</context>
+
+	<kColl id="Q002_pagination_table_Record">
+		<iColl id="table_List" size="10">
+			<kColl id="table_Record">
+				<field id="filed1"/>
+				<field id="filed2"/>
+				<field id="filed3"/>
+			</kColl>
+		</iColl>
+		<kColl id="paginationData">
+			<data id="com_ibm_btt_pagination_FFTable_table_enableNext" refType="Boolean"/>
+			<data id="com_ibm_btt_pagination_FFTable_table_enablePrevious" refType="Boolean"/>
+			<data id="com_ibm_btt_pagination_FFTable_table_totalRowNumber" value="100" refType="Integer"/>
+			<data id="com_ibm_btt_pagination_FFTable_table_errMsg" refType="String"/>
+			<data id="com_ibm_btt_pagination_FFTable_table_pageNumber" value="1" refType="Integer"/>
+			<field id="com_ibm_btt_pagination_FFTable_table_pageEvent"/>
+			<data id="com_ibm_btt_pagination_FFTable_table_rowsPerPage" value="10" refType="Integer"/>
+			<data id="FFTable_table_enableNext" refType="Boolean"/>
+			<data id="FFTable_table_enablePrevious" refType="Boolean"/>
+			<data id="FFTable_table_totalRowNumber" value="100" refType="Integer"/>
+			<data id="FFTable_table_errMsg" refType="String"/>
+			<data id="FFTable_table_pageNumber" value="1" refType="Integer"/>
+			<field id="FFTable_table_pageEvent"/>
+			<data id="FFTable_table_rowsPerPage" value="10" refType="Integer"/>
+		</kColl>
+	</kColl>
+
+</Q002_pagination_table_Flow>

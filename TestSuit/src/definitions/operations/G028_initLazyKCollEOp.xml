@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_initLazyKCollEOp>
+
+	<operation id="G028_initLazyKCollEOp" context="G028_initLazyKCollECtx01" implClass="com.ibm.btt.application.op.G028_InitLazyKCollEOp"/>
+
+	<context id="G028_initLazyKCollECtx01" type="op">
+		<refKColl refId="G028_initLazyKCollERecord01"/>
+	</context>
+
+	<kColl id="G028_initLazyKCollERecord01">
+		<refData refId="lazyKColl_E_Accounts"/>
+	</kColl>
+
+	<kColl id="E">
+		<field id="F"/>
+		<refData refId="E" lazy="true"/>
+	</kColl>
+
+	<kColl id="lazyKCOll_E_Account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="E" lazy="false"/>
+	</kColl>
+
+	<iColl id="lazyKColl_E_Accounts" size="10">
+		<refData refId="lazyKCOll_E_Account" lazy="false"/>
+	</iColl>
+
+	<kColl id="lazyKColl_E_SelectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<refData refId="E" lazy="false"/>
+	</kColl>
+
+</G028_initLazyKCollEOp>

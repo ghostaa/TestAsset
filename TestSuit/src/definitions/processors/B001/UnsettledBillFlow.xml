@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UnsettledBillFlow>
+
+
+	<htmlProcessor context="UnsettledBillCtx" id="UnsettledBillFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="queryCreditCardUnsettledBill"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<popupPageState type="page" typeIdInfo="B001/UnsettledBill.jsp" id="queryCreditCardUnsettledBill" closable="true" title="" top="20">
+			<transitions>
+				<htmlTransition id="queryCreditCardUnsettledBill.search" targetState="queryCreditCardUnsettledBill"/>
+				<htmlTransition id="queryCreditCardUnsettledBill.close" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="UnsettledBillCtx" type="op">
+		<refKColl refId="UnsettledBillRecord"/>
+	</context>
+
+	<kColl id="UnsettledBillRecord">
+		<refData refId="UnsettledBillList"/>
+		<refData refId="SearchCondition" lazy="false"/>
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="Bill" lazy="false"/>
+		<data id="RowNum" refType="Integer"/>
+	</kColl>
+
+	<kColl id="Bill">
+		<data id="AcctNo" refType="String"/>
+		<data id="ShortAcctNo" refType="String"/>
+		<data id="TradeDate" refType="Date"/>
+		<data id="BookDate" refType="Date"/>
+		<data id="TradeType" refType="String"/>
+		<data id="CurType" refType="String"/>
+		<data id="Amount" refType="Double"/>
+		<data id="Comments" refType="String"/>
+	</kColl>
+
+	<iColl id="UnsettledBillList">
+		<refData refId="Bill" lazy="false"/>
+	</iColl>
+
+	<kColl id="SearchCondition">
+		<data id="CurType" refType="String"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="UnsettledBill_table_enableNext" refType="Boolean"/>
+		<data id="UnsettledBill_table_enablePrevious" refType="Boolean"/>
+		<data id="UnsettledBill_table_totalRowNumber" refType="Integer"/>
+		<data id="UnsettledBill_table_rowsPerPage" refType="Integer"/>
+		<data id="UnsettledBill_table_pageNumber" refType="Long"/>
+		<data id="UnsettledBill_table_errMsg" refType="String"/>
+		<data id="SettledBill_table_enableNext" refType="Boolean"/>
+		<data id="SettledBill_table_enablePrevious" refType="Boolean"/>
+		<data id="SettledBill_table_totalRowNumber" refType="Integer"/>
+		<data id="SettledBill_table_rowsPerPage" refType="Integer"/>
+		<data id="SettledBill_table_pageNumber" refType="Long"/>
+		<data id="SettledBill_table_errMsg" refType="String"/>
+	</kColl>
+
+	<fmtDef id="queryCreditCardUnsettledBill.search_InputFmt">
+		<mapperConverterExpression>
+			<map from="SearchCondition" to="SearchCondition"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="QueryUnsettledBillOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="SearchCondition" to="SearchCondition"/>
+			<map from="UnsettledBillList" to="UnsettledBillList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</UnsettledBillFlow>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_B001UnsettledBill_table>
+
+	<operation id="PAG_B001$UnsettledBill_table" context="pagOpCtx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="initialInputMapping" name="initialInputMapping"/>
+		<refFormat refId="directInputMapping" name="directInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+	</operation>
+
+	<context id="pagOpCtx" type="op">
+		<refKColl refId="pagOpData"/>
+	</context>
+
+	<kColl id="pagOpData">
+		<kColl id="tableProperties">
+			<field id="tableId" value="table"/>
+			<field id="dataName"/>
+			<field id="dataNameForList" value="UnsettledBillList"/>
+			<field id="rowsPerPage" value="10"/>
+			<field id="operationNameForPagination" value="B001/QueryUnsettledBillOp"/>
+			<field id="directPagination" value="true"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="ShortAcctNo,TradeDate,BookDate,TradeType,CurType,Amount,Comments"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="initialInputMapping">
+		<mapperConverterExpression>
+			<map from="UnsettledBillList" to="UnsettledBillList" append="false"/>
+			<map fromExpression="10" to="paginationData.rowsPerPage"/>
+			<map fromExpression="1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="directInputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.UnsettledBill_table_pageNumber" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.enableNext" to="paginationData.UnsettledBill_table_enableNext"/>
+			<map from="paginationData.enablePrevious" to="paginationData.UnsettledBill_table_enablePrevious"/>
+			<map from="paginationData.totalRowNumber" to="paginationData.UnsettledBill_table_totalRowNumber"/>
+			<map from="paginationData.pageNumber" to="paginationData.UnsettledBill_table_pageNumber"/>
+			<map from="UnsettledBillList" to="UnsettledBillList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_B001UnsettledBill_table>

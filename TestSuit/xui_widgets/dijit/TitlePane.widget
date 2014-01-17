@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtendWidget xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="140,119,0,0" isRuleDirty="false">
+  <properties>
+  	<property>
+      <name>id</name>
+      <defaultValue></defaultValue>
+      <type>WidgetID</type>
+      <showInExpression>true</showInExpression>
+      <description>%desc_prop_id</description>
+      <showInProperties>true</showInProperties>
+      <showInAction>false</showInAction>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>true</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+    </property>
+    <property>
+      <name>open</name>
+      <defaultValue>true</defaultValue>
+      <type>Boolean</type>
+      <description>Whether pane is opened or closed</description>
+      <showInProperties>true</showInProperties>
+      <showInAction>true</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+    </property>
+    <property>
+      <name>title</name>
+      <defaultValue></defaultValue>
+      <type>NLS</type>
+      <description>%desc_prop_text</description>
+      <showInProperties>true</showInProperties>
+      <showInAction>true</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <rule>NLSRule</rule>
+      <groupName>data-dojo-props</groupName>
+      <groupTemplate>%s:%s,</groupTemplate>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+    </property>
+    <property>
+      <name>tooltip</name>
+      <type>NLS</type>
+      <description>When this widget's title attribute is used to for a tab label, accordion pane title, etc., this specifies the tooltip to appear when the mouse is hovered over that text.</description>
+      <showInProperties>true</showInProperties>
+      <showInAction>true</showInAction>
+      <showInExpression>false</showInExpression>
+      <showInMultiple>false</showInMultiple>
+      <required>false</required>
+      <showInColumn>false</showInColumn>
+      <showInTooltip>false</showInTooltip>
+      <rule>NLSRule</rule>
+      <groupName>data-dojo-props</groupName>
+      <groupTemplate>%s:%s,</groupTemplate>
+      <showInColumnExpression>false</showInColumnExpression>
+      <isLink>false</isLink>
+    </property>
+  </properties>
+  <parameters>
+    <directEditablePropertyName>title</directEditablePropertyName>
+    <generateStyle>true</generateStyle>
+	<params>
+      <entry>
+        <string>defaultHeight</string>
+        <string>80</string>
+      </entry>
+    </params>
+  </parameters>
+  <container name="Panel" id="titlePane">
+    <extendWidgetInfo styleClass="dijitTitlePane"/>
+    <gridData heightHint="486" verticalAlignment="1" widthHint="571" heightType="AutoSize" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="titleArea">
+        <extendWidgetInfo styleClass="dijitTitlePaneTitle dijitOpen"/>
+        <gridData heightHint="25" verticalAlignment="1" heightType="FixedSize" widthType="Fill" relativeWidth="100" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightHint="25" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" styleClass="dijitTitlePaneTitleFocus" id="panel03">
+            <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData widthHint="10" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Image" id="image">
+                <extendWidgetInfo defaultWidth="7" defaultHeight="6" styleClass="dijitArrowNode"/>
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" styleClass="dijitTitlePaneTextNode" id="label" text="${title}">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+            </widget>
+            <gridLayout numColumns="2" maxCol="0" maxRow="0"/>
+          </container>
+          <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+        </widget>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightHint="21" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Panel" id="contentArea">
+      	<extendWidgetInfo styleClass="dijitTitlePaneContentOuter"/>
+        <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="dijit_layout_ContentPane" id="${id}_contentPane">
+            <extendWidgetInfo extendNodeId="containerNode" styleClass="dijitTitlePaneContentInner"/>
+            <gridData verticalAlignment="1" heightType="Fill" widthType="Fill" relativeWidth="100" relativeHeight="100" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <gridLayout numColumns="0"/>
+          </container>
+          <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+        </widget>
+        <gridLayout numColumns="1" maxCol="0" maxRow="0"/>
+      </container>
+      <gridLayout numColumns="0" maxCol="0" maxRow="0"/>
+    </widget>
+    <gridLayout numColumns="1" maxCol="0" maxRow="0" verticalSpacing="0"/>
+  </container>
+</ExtendWidget>

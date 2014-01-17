@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_initAccountsOp>
+
+	<operation id="G028_initAccountsOp" context="G028_initAccountsCtx01" implClass="com.ibm.btt.application.op.G028_InitAccountsOp"/>
+
+	<context id="G028_initAccountsCtx01" type="op">
+		<refKColl refId="G028_initAccountsRecord01"/>
+	</context>
+
+	<kColl id="G028_initAccountsRecord01">
+		<refData refId="accounts"/>
+	</kColl>
+
+	<iColl id="accounts" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+</G028_initAccountsOp>

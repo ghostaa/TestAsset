@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC2_Flow>
+
+
+	<htmlProcessor context="X072_UC2_Ctx" id="X072_UC2_Flow">
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X072_UC2"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_UC2.jsp" id="X072_UC2">
+			<transitions>
+				<htmlTransition id="X072_UC2.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X072_UC2_Ctx" type="op">
+		<refKColl refId="X072_UC2_Record"/>
+	</context>
+
+	<kColl id="X072_UC2_Record">
+		<refData refId="transferHistory"/>
+		<refData refId="paginationData" lazy="false"/>
+		<data id="errorMsgDate" refType="Date"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="X072_UC2_Table01_enableNext" refType="Boolean"/>
+		<data id="X072_UC2_Table01_enablePrevious" refType="Boolean"/>
+		<data id="X072_UC2_Table01_totalRowNumber" refType="Integer"/>
+		<data id="X072_UC2_Table01_rowsPerPage" refType="Integer"/>
+		<data id="X072_UC2_Table01_pageNumber" refType="Long"/>
+		<data id="X072_UC2_Table01_errMsg" refType="String"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="transferHistory">
+		<kColl id="history">
+			<data id="historyID" refType="Integer"/>
+			<data id="toAccount" refType="String"/>
+			<data id="transfer_date" refType="Date">
+				<param value="yyyy-MM-dd HH:mm:ss" id="pattern"/>
+			</data>
+			<data id="amount" refType="Currency"/>
+			<field id="comments"/>
+		</kColl>
+	</iColl>
+
+</X072_UC2_Flow>

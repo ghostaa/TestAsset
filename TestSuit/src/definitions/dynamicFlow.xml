@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Global switch for dynamic flow function -->
+<DynamicFlow enabled="true">
+	
+	<TargetFlow pattern="B002_sampleFlow" enabled="true">
+		<TargetState type="operation" pattern=".*">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="commonErrorFlow2" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling" chaneAll="false">
+				<Transition event="retry" stateId="triggerError"/>
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="operation" pattern=".*">
+			<DynamicState tagName="popupPageState" >
+				<Attr id="id" value="TestPopup" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="help" chaneAll="false" outputMapFmt="TestOp123.opEvt01_OutputFmt" >
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+	</TargetFlow>
+	
+	<TargetFlow pattern="B002_UC1Flow" enabled="true">
+		<!-- test .* for target state -->
+		<TargetState type="operation" pattern="B002_UC1_Op">
+			<!-- test subFlow as DynamicState-->
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="commonErrorFlow2" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_SubFlow" chaneAll="false" inputMapFmt="commonErrorFlow2_InputFmt">
+				<Transition event="retry" stateId="B002_UC1_0" pattern=""/>
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="operation" pattern="B002_UC1_Op">
+			<DynamicState tagName="operationState" >
+				<Attr id="id" value="TestOperation" />
+				<Attr id="type" value="operation" />
+				<Attr id="typeIdInfo" value="B002_CommonErrorOp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Operation" chaneAll="false" inputMapFmt="B002_CommonErrorOp_InputFmt" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="operation" pattern=".*">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="TestPage" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Page" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="operation" pattern=".*">
+			<DynamicState tagName="popupPageState" >
+				<Attr id="id" value="TestPopup" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Popup" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		 <TargetState type="operation" pattern=".*">
+			<DynamicState tagName="popupSubFlowState" >
+				<Attr id="id" value="TestPopupSubFlow" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="closable" value="true"/>
+				<Attr id="title" value="Hello World!"/>
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_PopupSubFlow" chaneAll="false" inputMapFmt="commonErrorFlow2-1_InputFmt">
+				<Transition event="retry" stateId="B002_UC1_0"/>
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState> 
+	</TargetFlow>
+	
+	<TargetFlow pattern="B002_UC2Flow" enabled="true">
+		<TargetState type="page" pattern="B002_UC2.*">
+			<!-- test subFlow as DynamicState-->
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="commonErrorFlow2" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_SubFlow" chaneAll="false" >
+				<Transition event="retry" stateId="B002_UC2_0" pattern=""/>
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="page" pattern="B002_UC2_0">
+			<DynamicState tagName="operationState" >
+				<Attr id="id" value="TestOperation" />
+				<Attr id="type" value="operation" />
+				<Attr id="typeIdInfo" value="B002_CommonErrorOp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Operation" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="page" pattern=".*">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="TestPage" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Page" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="page" pattern=".*">
+			<DynamicState tagName="popupPageState" >
+				<Attr id="id" value="TestPopup" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Popup" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="page" pattern=".*">
+			<DynamicState tagName="popupSubFlowState" >
+				<Attr id="id" value="TestPopupSubFlow" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="closable" value="true"/>
+				<Attr id="title" value="Hello World!"/>
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_PopupSubFlow" chaneAll="false" >
+				<Transition event="retry" stateId="B002_UC2_1"/>
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+	</TargetFlow>
+	
+	<TargetFlow pattern="B002_UC3Flow" enabled="true">
+		<TargetState type="subFlow" pattern="B002_UC3.*">
+			<!-- test subFlow as DynamicState-->
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="commonErrorFlow2" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_SubFlow" chaneAll="false" >
+				<Transition event="retry" stateId="B002_UC3_0" pattern=""/>
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="subFlow" pattern=".*UC3_Sub.*">
+			<DynamicState tagName="operationState" >
+				<Attr id="id" value="TestOperation" />
+				<Attr id="type" value="operation" />
+				<Attr id="typeIdInfo" value="B002_CommonErrorOp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Operation" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="subFlow" pattern=".*">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="TestPage" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Page" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="subFlow" pattern=".*">
+			<DynamicState tagName="popupPageState" >
+				<Attr id="id" value="TestPopup" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_Popup" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="subFlow" pattern=".*">
+			<DynamicState tagName="popupSubFlowState" >
+				<Attr id="id" value="TestPopupSubFlow" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="closable" value="true"/>
+				<Attr id="title" value="Hello World!"/>
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="errorHandling_PopupSubFlow" chaneAll="false" >
+				<Transition event="retry" stateId="B002_UC3_1"/>
+				<Transition event="exit" stateId="OK"/>
+				<Transition event="close" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+	</TargetFlow>
+	
+	<TargetFlow pattern="B002_UC4Flow" enabled="true">
+		<!-- test .* for target state -->
+		<TargetState type="condition" pattern="condition">
+			<!--  test subFlow as DynamicState-->
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="commonErrorFlow2" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="ErrorFlow2" />
+			</DynamicState>
+			<AfterExecution event="condEvt01" chaneAll="false">
+				<Transition event="retry" stateId="B002_UC4_0" pattern=""/>
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		<TargetState type="condition" pattern=".*">
+			<DynamicState tagName="operationState" >
+				<Attr id="id" value="TestOperation" />
+				<Attr id="type" value="operation" />
+				<Attr id="typeIdInfo" value="B002_CommonErrorOp" />
+			</DynamicState>
+			<AfterExecution event="condEvt" chaneAll="false">
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState> 
+		<TargetState type="condition" pattern=".*">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="TestPage" />
+				<Attr id="type" value="page" />
+				<Attr id="closable" value="true"/>
+				<Attr id="typeIdInfo" value="B002/B002_CommonErrorPage.jsp" />
+			</DynamicState>
+			<AfterExecution event="condEvt02" chaneAll="false" >
+				<Transition event="exit" stateId="OK"/>
+			</AfterExecution>
+		</TargetState>
+		
+	</TargetFlow>
+	
+	<TargetFlow pattern="SVT_8104_mainFlow" enabled="true">
+		<TargetState type="operation" pattern="B004ChartCurrentStockDayLineOp">
+			<DynamicState tagName="htmlState" >
+				<Attr id="id" value="svt8104errorFlow" />
+				<Attr id="type" value="subFlow" />
+				<Attr id="typeIdInfo" value="SVT_8104_errorFlow" />
+			</DynamicState>
+			<AfterExecution event="error" chaneAll="false">
+				<Transition event="back" stateId="SVT8104stockstock"/>
+			</AfterExecution>
+		</TargetState>
+	</TargetFlow>
+</DynamicFlow>

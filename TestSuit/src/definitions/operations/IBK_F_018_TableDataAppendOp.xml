@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_018_TableDataAppendOp>
+
+	<!--   -->
+	<operation id="IBK_F_018_TableDataAppendOp" context="IBK_F_018_TableDataAppendCtx" implClass="com.ibm.btt.application.op.TableDataAppendOp"/>
+
+	<context id="IBK_F_018_TableDataAppendCtx" type="op">
+		<refKColl refId="IBK_F_018_TableDataAppendRecord"/>
+	</context>
+
+	<kColl id="IBK_F_018_TableDataAppendRecord" dynamic="true">
+		<iColl id="SelectedList">
+			<refData refId="TableRecord" lazy="false"/>
+		</iColl>
+		<iColl id="TableList" size="10">
+			<refData refId="TableRecord" lazy="false"/>
+		</iColl>
+		<field id="hidden"/>
+	</kColl>
+
+	<kColl id="TableRecord">
+		<field id="A"/>
+		<field id="B"/>
+		<field id="C"/>
+	</kColl>
+
+</IBK_F_018_TableDataAppendOp>

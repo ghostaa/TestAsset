@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestTableScrollAndPercentSizeOp>
+
+	<operation id="TestTableScrollAndPercentSizeOp" context="TestTableScrollAndPercentSizeCtx" implClass="com.ibm.btt.application.op.Table"/>
+
+	<context id="TestTableScrollAndPercentSizeCtx" type="op">
+		<refKColl refId="TestTableScrollAndPercentSizeRecord"/>
+	</context>
+
+	<kColl id="TestTableScrollAndPercentSizeRecord" dynamic="true">
+		<iColl id="aList" size="5">
+			<kColl id="TestTableScrollAndPercentSize">
+				<field id="index"/>
+				<field id="cardNo"/>
+				<field id="amount"/>
+				<field id="ImageField"/>
+				<field id="Size"/>
+				<field id="Name"/>
+				<field id="Age"/>
+				<field id="Date"/>
+			</kColl>
+		</iColl>
+		<iColl id="aSelect" size="4">
+			<kColl id="Record">
+				<field id="labelField"/>
+				<field id="valueField"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</TestTableScrollAndPercentSizeOp>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_Numeric_Text2Table_EditableFlow>
+
+
+	<htmlProcessor context="X061_Numeric_Text2Table_EditableCtx" id="X061_Numeric_Text2Table_EditableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_InitNumericDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Num_Text2Table_Editable.jsp" id="X061_Num_Text2Table_Editable">
+			<transitions>
+				<htmlTransition id="X061_Num_Text2Table_Editable.viewEvt" targetState="X061_Num_Text2Table_Submit"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="X061_InitNumericDataOp" id="X061_InitNumericDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="X061_InitNumericDataOp.opEvt" outputMapFmt="X061_InitDateOp.opEvt_OutputFmt" targetState="X061_Num_Text2Table_Editable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Num_Text2Table_Submit.jsp" id="X061_Num_Text2Table_Submit">
+			<transitions>
+				<htmlTransition id="X061_Num_Text2Table_Submit.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="X061_Numeric_Text2Table_EditableCtx" type="op">
+		<refKColl refId="X061_Numeric_Text2Table_EditableRecord01"/>
+	</context>
+
+	<kColl id="X061_Numeric_Text2Table_EditableRecord01">
+		<iColl id="X061_TableList" size="10">
+			<refData refId="X061_NumericRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_NumericRecord" lazy="false"/>
+		<iColl id="TableListForSubmit" size="10">
+			<refData refId="X061_NumericRecord" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="X061_NumericRecord">
+		<data id="num_2" refType="Number">
+			<param value="3" id="html:decimalPlaces"/>
+			<param value="##,##,##.00" id="html:pattern"/>
+		</data>
+		<data id="float_2" refType="Float">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="num_1" refType="Number">
+			<param value="#.0000" id="default:pattern"/>
+		</data>
+		<data id="float_3" refType="Float">
+			<param value="3" id="html:decimalPlaces"/>
+		</data>
+		<data id="forCheckBox" refType="Boolean"/>
+		<data id="forRadio" refType="Boolean"/>
+	</kColl>
+
+	<fmtDef id="X061_InitDateOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="X061_TableList" to="X061_TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_Numeric_Text2Table_EditableFlow>

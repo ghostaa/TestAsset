@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_30_Test_XHTML_Index_Flow>
+
+
+	<htmlProcessor context="IBK_30_Test_XHTML_Index_Ctx01" id="IBK_30_Test_XHTML_Index_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_Test_XHTML_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_Test_XHTML_index.jsp" id="IBK_Test_XHTML_index">
+			<transitions>
+				<htmlTransition id="IBK_Test_XHTML_index.someWidget" targetState="IBK_30_Test_XHTML_Flow"/>
+				<htmlTransition id="IBK_Test_XHTML_index.TestingTable" targetState="TestTableCase"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="IBK_30_Test_XHTML_Flow" id="IBK_30_Test_XHTML_Flow" type="subFlow">
+			<transitions>
+				<htmlTransition id="IBK_30_Test_XHTML_Flow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState type="page" typeIdInfo="TestTableCase.jsp" id="TestTableCase"/>
+	</htmlProcessor>
+
+	<context id="IBK_30_Test_XHTML_Index_Ctx01" type="op">
+		<refKColl refId="IBK_30_Test_XHTML_Index_Record01"/>
+	</context>
+
+	<kColl id="IBK_30_Test_XHTML_Index_Record01">
+	</kColl>
+
+</IBK_30_Test_XHTML_Index_Flow>

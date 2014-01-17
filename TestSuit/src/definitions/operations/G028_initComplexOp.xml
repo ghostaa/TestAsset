@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_initComplexOp>
+
+	<operation id="G028_initComplexOp" context="G028_initComplexCtx01" implClass="com.ibm.btt.application.op.G028_InitComplexOp"/>
+
+	<context id="G028_initComplexCtx01" type="op">
+		<refKColl refId="G028_initComplexRecord01"/>
+	</context>
+
+	<kColl id="G028_initComplexRecord01">
+		<refData refId="complex_Accounts"/>
+	</kColl>
+
+	<kColl id="complex_Account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<kColl id="complex">
+			<kColl id="complex_0">
+				<field id="field_0"/>
+				<kColl id="complex_1">
+					<field id="field_1"/>
+					<kColl id="complex_2">
+						<field id="amount"/>
+						<data id="currency" refType="String"/>
+					</kColl>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<iColl id="complex_Accounts" size="10">
+		<refData refId="complex_Account" lazy="false"/>
+	</iColl>
+
+</G028_initComplexOp>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G016_UC_productList_Flow>
+
+
+	<htmlProcessor context="G016_UC_productList_Ctx" id="G016_UC_productList_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G016_prepareDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<operationState typeIdInfo="G016_prepareDataOp" id="G016_prepareDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="G016_prepareDataOp.opEvt" outputMapFmt="G016_prepareDataOp.opEvt_OutputFmt" targetState="G016UCG016_UC_Index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G016/UC/G016_UC_Index.jsp" id="G016UCG016_UC_Index">
+			<transitions>
+				<htmlTransition id="G016UCG016_UC_Index.UC2" targetState="G016UCUC2G016_UC2"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC3" targetState="G016UCUC3G016_UC3"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC5" targetState="G016UCUC5G016_UC5"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC7" targetState="G016UCUC7G016_UC7"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC8" targetState="G016UCUC8G016_UC8"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC9" targetState="G016UCUC9G016_UC9"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC10" targetState="G016UCUC10G016_UC10"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC11" targetState="G016UCUC11G016_UC11"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC12" targetState="G016UCUC12G016_UC12"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC13_1" targetState="G016UCUC13G016_UC13_1"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC13_2" targetState="G016UCUC13G016_UC13_2"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC1" targetState="G016UCUC1G016_UC1"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_AUTO" targetState="G016UCUC14G016_UC14_auto"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_FIXED" targetState="G016UCUC14G016_UC14_fixed"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_Relative" targetState="G016UCUC14G016_UC14_Relative"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_Full" targetState="G016UCUC14G016_UC14_Full"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_Auto_in_group" targetState="G016UCUC14G016_UC14_auto_group"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_fixed_in_group" targetState="G016UCUC14G016_UC14_fixed_group"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC14_Relative_in_group" targetState="G016UCUC14G016_UC14_relative_group"/>
+				<htmlTransition id="G016UCG016_UC_Index.UC4" targetState="G016UCUC4G016_UC4"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC2/G016_UC2.jsp" id="G016UCUC2G016_UC2"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC3/G016_UC3.jsp" id="G016UCUC3G016_UC3"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC5/G016_UC5.jsp" id="G016UCUC5G016_UC5"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC7/G016_UC7.jsp" id="G016UCUC7G016_UC7"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC8/G016_UC8.jsp" id="G016UCUC8G016_UC8"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC9/G016_UC9.jsp" id="G016UCUC9G016_UC9"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC10/G016_UC10.jsp" id="G016UCUC10G016_UC10"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC11/G016_UC11.jsp" id="G016UCUC11G016_UC11"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC12/G016_UC12.jsp" id="G016UCUC12G016_UC12"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC13/G016_UC13_1.jsp" id="G016UCUC13G016_UC13_1"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC13/G016_UC13_2.jsp" id="G016UCUC13G016_UC13_2"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC1/G016_UC1.jsp" id="G016UCUC1G016_UC1">
+			<transitions>
+				<htmlTransition id="G016UCUC1G016_UC1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_auto.jsp" id="G016UCUC14G016_UC14_auto"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_fixed.jsp" id="G016UCUC14G016_UC14_fixed"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_Relative.jsp" id="G016UCUC14G016_UC14_Relative"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_Full.jsp" id="G016UCUC14G016_UC14_Full"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_auto_group.jsp" id="G016UCUC14G016_UC14_auto_group"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_fixed_group.jsp" id="G016UCUC14G016_UC14_fixed_group"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC14/G016_UC14_relative_group.jsp" id="G016UCUC14G016_UC14_relative_group"/>
+
+		<htmlState type="page" typeIdInfo="G016/UC/UC4/G016_UC4.jsp" id="G016UCUC4G016_UC4"/>
+	</htmlProcessor>
+
+	<context id="G016_UC_productList_Ctx" type="op">
+		<refKColl refId="G016_UC_productList_Record"/>
+	</context>
+
+	<kColl id="G016_UC_productList_Record">
+		<iColl id="products">
+			<kColl id="product">
+				<treeModel id="G016_UC_productList_TreeModel">
+				</treeModel>
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+				<data id="ProductId" refType="Integer"/>
+				<iColl id="Countrys">
+					<kColl id="Country">
+						<field id="CountryName"/>
+						<data id="CountryNameNumber" refType="Integer"/>
+					</kColl>
+				</iColl>
+				<data id="CountrySelction" refType="String"/>
+				<data id="CountrySelctionNumber" refType="Integer"/>
+				<field id="ProductSpecialName"/>
+				<refData refId="ForTableTest"/>
+				<kColl id="fileUpload">
+				</kColl>
+				<treeModel id="G016_UC_productList_TreeModel02">
+				</treeModel>
+			</kColl>
+		</iColl>
+		<data id="Image" refType="String"/>
+		<field id="LabelValue"/>
+		<iColl id="products01" size="2">
+			<kColl id="product01">
+				<field id="G016_UC_productList_Field" value="test "/>
+			</kColl>
+		</iColl>
+		<iColl id="products02" size="0">
+			<kColl id="product01">
+				<field id="G016_UC_productList_Field" value="test "/>
+			</kColl>
+		</iColl>
+		<iColl id="productsGroup1">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<iColl id="productsGroup2">
+			<kColl id="G016_prepareDataRecord01">
+				<field id="ProductImageURL"/>
+				<data id="ProductName" refType="String"/>
+				<field id="RequiredPoints"/>
+			</kColl>
+		</iColl>
+		<kColl id="G016_UC_productList_Record01">
+			<treeModel id="G016_UC_productList_TreeModel01">
+			</treeModel>
+		</kColl>
+	</kColl>
+
+	<iColl id="ForTableTest">
+		<kColl id="ForTableTestRecord">
+			<field id="A"/>
+			<field id="B"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="G016_prepareDataOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="products" to="products" append="false"/>
+			<map from="Image" to="Image"/>
+			<map from="LabelValue" to="LabelValue"/>
+			<map from="productsGroup1" to="productsGroup1" append="false"/>
+			<map from="productsGroup2" to="productsGroup2" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G016_UC_productList_Flow>

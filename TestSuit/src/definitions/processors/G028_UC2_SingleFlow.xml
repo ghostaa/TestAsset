@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_UC2_SingleFlow>
+
+
+	<htmlProcessor context="G028_UC2_SingleCtx" id="G028_UC2_SingleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028_initAccountsOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_UC2_single.jsp" id="G028G028_UC2_single">
+			<transitions>
+				<htmlTransition id="G028G028_UC2_single.ajax" targetState="G028/G028_Result_single-1"/>
+				<htmlTransition id="G028G028_UC2_single.ok" targetState="G028/G028_Result_single-3"/>
+				<htmlTransition id="G028G028_UC2_single.submitPop" targetState="G028G028_Result_single-2"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G028_initAccountsOp" id="G028_initAccountsOp" type="operation">
+			<transitions>
+				<htmlTransition id="G028_initAccountsOp.ok" outputMapFmt="initAccountsOp.ok_OutputFmt" targetState="G028G028_UC2_single"/>
+			</transitions>
+		</operationState>
+
+		<popupPageState type="page" typeIdInfo="G028/G028_Result_single.jsp" id="G028/G028_Result_single-1" closable="false">
+			<transitions>
+				<htmlTransition id="G028/G028_Result_single-1.viewEvt" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="G028/G028_Result_single.jsp" id="G028G028_Result_single-2" closable="false">
+			<transitions>
+				<htmlTransition id="G028G028_Result_single-2.viewEvt" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_single.jsp" id="G028/G028_Result_single-3">
+			<transitions>
+				<htmlTransition id="G028/G028_Result_single-3.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_UC2_SingleCtx" type="op">
+		<refKColl refId="G028_UC2_SingleRecord01"/>
+	</context>
+
+	<kColl id="G028_UC2_SingleRecord01">
+		<refData refId="accounts"/>
+		<refData refId="selectedAccount" lazy="false"/>
+		<refData refId="formData" lazy="false"/>
+	</kColl>
+
+	<kColl id="selectedAccount_correct">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+	</kColl>
+
+	<kColl id="selectedAccount_E">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<field id="notInList"/>
+	</kColl>
+
+	<kColl id="selectedAccount_EF">
+		<field id="notInList"/>
+		<field id="notInList_1"/>
+	</kColl>
+
+	<kColl id="formData">
+		<field id="field1"/>
+		<data id="text_double" refType="Double"/>
+	</kColl>
+
+	<iColl id="accounts" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+	<kColl id="selectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+	</kColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="accounts" to="accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_UC2_SingleFlow>

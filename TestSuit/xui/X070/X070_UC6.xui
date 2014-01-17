@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="190,25,581,375" dataBinding="{'ctxType':'proc','ctxFile':'X070/X070_UC6_Flow','ctxName':'X070_UC6_Ctx'}" isRuleDirty="false">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="375" verticalAlignment="1" widthHint="581" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="311" verticalAlignment="1" widthHint="485" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="Verify sorting is disabled for columns with column span &gt; 1">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" paginationParams="{'timeout':'','operationNameForPagination':'','rowsPerPage':'25','directPagination':'false','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'','nextInputMapping':'','initialInputMapping':'','paginationWhenLoading':'false','previousInputMapping':'','directInputMapping':''}" dataNameForList="{'ctxType':'proc','ctxFile':'X070_UC1_Flow','ctxName':'X070_UC1_Ctx','dataName':'cashAcctList'}" sortEnabled="true" headerRows="2" id="table">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="2" level="1" rowSpan="1" widget="" width="60" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="name" canSort="true" sortOrder="Ascending" noresize="false" dataName="name" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="120" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="surname" canSort="true" sortOrder="Ascending" noresize="false" dataName="surname" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="3" level="1" rowSpan="1" widget="" width="180" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="balance" canSort="true" sortOrder="Unsorted" noresize="false" dataName="balance" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="2" rowSpan="1" widget="" width="180" rowCSS="" headerHAlign="16384" colSpan="2" hidden="false" text="branch_location" canSort="true" sortOrder="Descending" noresize="false" dataName="branch_location" relativeWidth="1" id="columnId3" repeat="false" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="2" level="2" rowSpan="1" widget="" width="180" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="branch_id" canSort="true" sortOrder="Unsorted" noresize="false" dataName="branch_id" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" action="flowEvent=viewEvt" id="link" text="another multi-header table for test">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

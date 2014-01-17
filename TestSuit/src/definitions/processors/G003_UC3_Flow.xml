@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G003_UC3_Flow>
+
+
+	<htmlProcessor context="G003_UC3_Ctx" id="G003_UC3_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G003_initial_2_Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G003/UC3/G003_UC3_index.jsp" id="G003UC3G003_UC3_index">
+			<transitions>
+				<htmlTransition id="G003UC3G003_UC3_index.alwaysEditableTrue" targetState="G003UC3G003_UC3_Edit_true"/>
+				<htmlTransition id="G003UC3G003_UC3_index.alwaysEditableFalse" targetState="G003UC3G003_UC3_Edit_false"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC3/G003_UC3_Edit_true.jsp" id="G003UC3G003_UC3_Edit_true">
+			<transitions>
+				<htmlTransition id="G003UC3G003_UC3_Edit_true.submit" targetState="G003UC3G003_UC3_result"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G003_initial_2_Op" id="G003_initial_2_Op" type="operation">
+			<transitions>
+				<htmlTransition id="G003_initial_2_Op.ok" outputMapFmt="G003_initial_Op.ok_OutputFmt" targetState="G003UC3G003_UC3_index"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G003/UC3/G003_UC3_result.jsp" id="G003UC3G003_UC3_result">
+			<transitions>
+				<htmlTransition id="G003UC3G003_UC3_result.viewEvt" targetState="OK"/>
+				<htmlTransition id="G003UC3G003_UC3_result.back to radio (alwaysEditing is true)" targetState="G003UC3G003_UC3_Edit_true"/>
+				<htmlTransition id="G003UC3G003_UC3_result.back to radio (alwaysEditing is false)" targetState="G003UC3G003_UC3_Edit_false"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/UC3/G003_UC3_Edit_false.jsp" id="G003UC3G003_UC3_Edit_false">
+			<transitions>
+				<htmlTransition id="G003UC3G003_UC3_Edit_false.submit" targetState="G003UC3G003_UC3_result"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G003_UC3_Ctx" type="op">
+		<refKColl refId="G003_UC3_Record01"/>
+	</context>
+
+	<kColl id="G003_UC3_Record01">
+		<iColl id="G003_test_List">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+		<iColl id="G003_test_List_result">
+			<refData refId="G003_test_Record01" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="G003_test_Record01">
+		<data id="task name" refType="String"/>
+		<data id="due date" refType="Date"/>
+		<data id="completed" refType="Boolean"/>
+		<data id="working" refType="String"/>
+	</kColl>
+
+	<fmtDef id="G003_initial_Op.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="G003_test_List" to="G003_test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G003_UC3_Flow>

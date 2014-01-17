@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestImageActionFlowOutputMappingFlow>
+
+
+	<htmlProcessor context="TestImageActionFlowOutputMappingCtx" id="TestImageActionFlowOutputMappingFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="TestImageOutputMapping"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestImageOutputMapping.jsp" id="TestImageOutputMapping">
+			<transitions>
+				<htmlTransition id="TestImageOutputMapping.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="TestImageActionFlowOutputMappingCtx" type="op">
+		<refKColl refId="TestImageActionRecord"/>
+	</context>
+
+	<kColl id="TestImageActionRecord">
+		<field id="name"/>
+		<field id="address"/>
+	</kColl>
+
+</TestImageActionFlowOutputMappingFlow>

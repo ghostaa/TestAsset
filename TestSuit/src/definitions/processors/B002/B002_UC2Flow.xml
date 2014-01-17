@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_UC2Flow>
+
+
+	<htmlProcessor context="B002_UC2Ctx" id="B002_UC2Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC2_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC2_1.jsp" id="B002_UC2_1">
+			<transitions>
+				<htmlTransition id="B002_UC2_1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC2_0.jsp" id="B002_UC2_0">
+			<transitions>
+				<htmlTransition id="B002_UC2_0.viewEvt" targetState="B002_UC2_1"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B002_UC2Ctx" type="op">
+		<refKColl refId="B002_UC2Record"/>
+	</context>
+
+	<kColl id="B002_UC2Record">
+		<field id="stateFlag"/>
+	</kColl>
+
+</B002_UC2Flow>

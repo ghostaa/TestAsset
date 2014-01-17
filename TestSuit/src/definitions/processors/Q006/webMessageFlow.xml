@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webMessageFlow>
+
+
+	<htmlProcessor context="webMessageCtx" id="webMessageFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q006webmsg"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="Q006/webmsg.jsp" id="Q006webmsg">
+			<transitions>
+				<htmlTransition id="Q006webmsg.exit" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="webMessageCtx" type="op" parent="sessionCtx">
+		<refKColl refId="webMessageRecord"/>
+		<refService refId="webMsgService" alias="webMsgService" type="com"/>
+	</context>
+
+	<kColl id="webMessageRecord" dynamic="true">
+		<field id="userID" value="user02"/>
+	</kColl>
+
+</webMessageFlow>

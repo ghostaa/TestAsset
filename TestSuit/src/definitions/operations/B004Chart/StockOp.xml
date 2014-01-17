@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StockOp>
+
+	<operation id="StockOp" context="StockCtx" implClass="com.ibm.btt.application.op.B004.StockOp"/>
+
+	<context id="StockCtx" type="op">
+		<refKColl refId="StockRecord"/>
+	</context>
+
+	<kColl id="StockRecord">
+		<iColl id="StockList">
+			<kColl id="StockRecord01">
+				<data id="open" refType="Float"/>
+				<data id="close" refType="Float"/>
+				<data id="high" refType="Float"/>
+				<data id="low" refType="Float"/>
+				<data id="mid" refType="Float"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</StockOp>

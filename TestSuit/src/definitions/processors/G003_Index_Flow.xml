@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G003_Index_Flow>
+
+
+	<htmlProcessor context="G003_Index_Ctx" id="G003_Index_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G003G003_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G003/G003_index.jsp" id="G003G003_index">
+			<transitions>
+				<htmlTransition id="G003G003_index.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="G003_Index_Ctx" type="op">
+		<refKColl refId="G003_Index_Record"/>
+	</context>
+
+	<kColl id="G003_Index_Record">
+	</kColl>
+
+</G003_Index_Flow>

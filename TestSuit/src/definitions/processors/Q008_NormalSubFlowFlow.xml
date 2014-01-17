@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_NormalSubFlowFlow>
+
+
+	<htmlProcessor context="Q008_NormalSubFlowCtx" id="Q008_NormalSubFlowFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NormalSubPageNormalSubPageNoOne"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="NormalSubPage/NormalSubPageNoOne.jsp" id="NormalSubPageNormalSubPageNoOne">
+			<transitions>
+				<htmlTransition id="NormalSubPageNormalSubPageNoOne.viewEvt" targetState="condition"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="NormalSubPage/NormalSubPageNoTwo.jsp" id="NormalSubPageNormalSubPageNoTwo" closable="false" title="">
+			<transitions>
+				<htmlTransition id="NormalSubPageNormalSubPageNoTwo.viewEvt" targetState="NormalSubFlowOp"/>
+			</transitions>
+		</popupPageState>
+
+		<operationState typeIdInfo="NormalSubFlowOp" id="NormalSubFlowOp" type="operation">
+			<transitions>
+				<htmlTransition id="NormalSubFlowOp.opEvt" targetState="NormalSubPageNormalSubPageNoThree"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="NormalSubPage/NormalSubPageNoThree.jsp" id="NormalSubPageNormalSubPageNoThree">
+			<transitions>
+				<htmlTransition id="NormalSubPageNormalSubPageNoThree.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<conditionState id="condition" defaultEvent="default" type="condition">
+			<transitions>
+				<htmlTransition id="condition.default" targetState="NormalSubPageNormalSubPageNoTwo"/>
+				<htmlTransition id="condition.condEvt" targetState="NormalSubPageNormalSubPageNoFour"/>
+			</transitions>
+			<conditions>
+				<condition expression="NormalSubFlowField == 'Value'" event="condEvt" />
+			</conditions>
+		</conditionState>
+
+		<htmlState type="page" typeIdInfo="NormalSubPage/NormalSubPageNoFour.jsp" id="NormalSubPageNormalSubPageNoFour">
+			<transitions>
+				<htmlTransition id="NormalSubPageNormalSubPageNoFour.viewEvt" targetState="NormalSubPageNormalSubPageNoThree"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="NormalSubFlowOp" context="Q008_NormalSubFlowCtx" implClass="com.ibm.btt.sample.operation.LaunchOperation"/>
+
+	<context id="Q008_NormalSubFlowCtx" type="op">
+		<refKColl refId="Q008_NormalSubFlowRecord"/>
+	</context>
+
+	<kColl id="Q008_NormalSubFlowRecord">
+		<field id="NormalSubFlowField" value="Value"/>
+		<iColl id="NormalSubFlowList">
+			<kColl id="NormalSubFlowRecord01">
+				<field id="NormalSubFlowField01"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</Q008_NormalSubFlowFlow>

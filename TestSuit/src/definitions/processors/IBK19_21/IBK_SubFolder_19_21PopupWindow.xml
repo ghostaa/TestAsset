@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_SubFolder_19_21PopupWindow>
+
+
+	<htmlProcessor context="IBK_SubFolder_19_21PopupWindowCtx" id="IBK_SubFolder_19_21PopupWindow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="createDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_page.jsp" id="req19_21">
+			<transitions>
+				<htmlTransition id="req19_21.size" targetState="req19_21Size"/>
+				<htmlTransition id="req19_21.position" targetState="req19_21Position"/>
+				<htmlTransition id="req19_21.closeBox" targetState="req19_21CloseBox"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBK_Subfolder_19_21PopupWindowOp" id="createDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="createDataOp.creadata" outputMapFmt="createDataOp.creadata_OutputFmt" targetState="req19_21"/>
+			</transitions>
+		</operationState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Size.jsp" id="req19_21Size" closable="true" height="400" width="600">
+			<transitions>
+				<htmlTransition id="req19_21Size.size1" targetState="req19_21Size1"/>
+				<htmlTransition id="req19_21Size.size2" targetState="req19_21Size2"/>
+				<htmlTransition id="req19_21Size.size3" targetState="req19_21Size3"/>
+				<htmlTransition id="req19_21Size.back" targetState="req19_21"/>
+				<htmlTransition id="req19_21Size.close" targetState="req19_21"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Size1.jsp" id="req19_21Size1" closable="false" height="100" width="0">
+			<transitions>
+				<htmlTransition id="req19_21Size1.exit" targetState="OK"/>
+				<htmlTransition id="req19_21Size1.back" targetState="req19_21Size"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Size2.jsp" id="req19_21Size2" closable="false" height="500" width="500">
+			<transitions>
+				<htmlTransition id="req19_21Size2.exit" targetState="OK"/>
+				<htmlTransition id="req19_21Size2.back" targetState="req19_21Size"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Size3.jsp" id="req19_21Size3" closable="false" height="800" width="500">
+			<transitions>
+				<htmlTransition id="req19_21Size3.exit" targetState="OK"/>
+				<htmlTransition id="req19_21Size3.back" targetState="req19_21Size"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Position.jsp" id="req19_21Position" closable="true" height="400" left="20" top="30" width="600">
+			<transitions>
+				<htmlTransition id="req19_21Position.position2" targetState="req19_21Position2"/>
+				<htmlTransition id="req19_21Position.position3" targetState="req19_21Position3"/>
+				<htmlTransition id="req19_21Position.position1" targetState="req19_21Position1"/>
+				<htmlTransition id="req19_21Position.back" targetState="req19_21"/>
+				<htmlTransition id="req19_21Position.close" targetState="req19_21"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Position2.jsp" id="req19_21Position2" closable="false" left="50" top="50">
+			<transitions>
+				<htmlTransition id="req19_21Position2.back" targetState="req19_21Position"/>
+				<htmlTransition id="req19_21Position2.exit" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Position3.jsp" id="req19_21Position3" closable="false" left="50" top="500">
+			<transitions>
+				<htmlTransition id="req19_21Position3.back" targetState="req19_21Position"/>
+				<htmlTransition id="req19_21Position3.exit" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21Position1.jsp" id="req19_21Position1" closable="false" left="0" top="0">
+			<transitions>
+				<htmlTransition id="req19_21Position1.exit" targetState="OK"/>
+				<htmlTransition id="req19_21Position1.back" targetState="req19_21Position"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21CloseBox.jsp" id="req19_21CloseBox" closable="true" height="400" width="600">
+			<transitions>
+				<htmlTransition id="req19_21CloseBox.back" targetState="req19_21"/>
+				<htmlTransition id="req19_21CloseBox.true" targetState="req19_21CloseBox1"/>
+				<htmlTransition id="req19_21CloseBox.false" targetState="req19_21CloseBox2"/>
+				<htmlTransition id="req19_21CloseBox.close" targetState="req19_21"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21CloseBox1.jsp" id="req19_21CloseBox1" closable="true">
+			<transitions>
+				<htmlTransition id="req19_21CloseBox1.close" targetState="req19_21CloseBox"/>
+				<htmlTransition id="req19_21CloseBox1.exit" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_19_21PopupWindow/req19_21CloseBox2.jsp" id="req19_21CloseBox2" closable="false">
+			<transitions>
+				<htmlTransition id="req19_21CloseBox2.back" targetState="req19_21CloseBox"/>
+				<htmlTransition id="req19_21CloseBox2.exit" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="IBK_SubFolder_19_21PopupWindowCtx" type="op">
+		<refKColl refId="IBK_SubFolder_19_21PopupWindowRecord"/>
+	</context>
+
+	<kColl id="IBK_SubFolder_19_21PopupWindowRecord">
+		<data id="nickname" refType="String"/>
+		<iColl id="usernameList">
+			<kColl id="User">
+				<data id="username" refType="String"/>
+			</kColl>
+		</iColl>
+		<data id="username" refType="String"/>
+	</kColl>
+
+	<fmtDef id="createDataOp.creadata_OutputFmt">
+		<mapperConverterExpression>
+			<map from="usernameList.*.username" to="usernameList.*.username" append="false"/>
+			<map from="nickname" to="nickname"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</IBK_SubFolder_19_21PopupWindow>

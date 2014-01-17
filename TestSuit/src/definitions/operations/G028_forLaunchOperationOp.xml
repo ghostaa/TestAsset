@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_forLaunchOperationOp>
+
+	<operation id="G028_forLaunchOperationOp" context="G028_forLaunchOperationCtx01" implClass="com.ibm.btt.application.op.G028_ForLaunchOperationOp"/>
+
+	<context id="G028_forLaunchOperationCtx01" type="op">
+		<refKColl refId="G028_forLaunchOperationRecord01"/>
+	</context>
+
+	<kColl id="G028_forLaunchOperationRecord01">
+		<refData refId="accounts"/>
+		<refData refId="selectedAccount" lazy="false"/>
+		<refData refId="formData" lazy="false"/>
+		<refData refId="selectedAccounts"/>
+	</kColl>
+
+	<iColl id="accounts" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+	<kColl id="formData">
+		<field id="field1"/>
+		<data id="text_double" refType="Double"/>
+	</kColl>
+
+	<kColl id="selectedAccount">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+	<iColl id="selectedAccounts">
+		<refData refId="selectedAccount" lazy="false"/>
+	</iColl>
+
+</G028_forLaunchOperationOp>

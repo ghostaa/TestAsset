@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_G021G021_UC2_inbed.xml>
+<operation id="xval_G021$G021_UC2_inbed" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form_xValidations" name="form_xValidations"/>
+
+</operation>
+<fmtDef id="form_xValidations">
+	<xValConditions>
+		<condition  expression="functs_BTTStringFunctions.length(AllBTTWgtData$dataForTextBox) &gt;= 6"/>
+		<condition  expression="functs_BTTStringFunctions.compare(functs_BTTStringFunctions.subString(AllBTTWgtData$dataForCombo, 0, 2), functs_BTTStringFunctions.subString(AllBTTWgtData$dataForSelectList, 0, 2)) == 0"/>
+		<condition  expression="AllBTTWgtData$dataForCheckbox == true"/>
+	</xValConditions>
+</fmtDef>
+
+</xval_G021G021_UC2_inbed.xml>

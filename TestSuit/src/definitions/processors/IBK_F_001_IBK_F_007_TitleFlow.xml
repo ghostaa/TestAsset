@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_001_IBK_F_007_TitleFlow>
+
+
+	<htmlProcessor context="IBK_F_001_IBK_F_007_TitleCtx" id="IBK_F_001_IBK_F_007_TitleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="NormalPageTitle"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="IBK_F_001_IBK_F_007_Title/NormalPageTitle.jsp" id="NormalPageTitle">
+			<transitions>
+				<htmlTransition id="NormalPageTitle.viewEvt" targetState="TheNLSNorNormalPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="IBK_F_001_IBK_F_007_Title/TheNLSNorNormalPage.jsp" id="TheNLSNorNormalPage">
+			<transitions>
+				<htmlTransition id="TheNLSNorNormalPage.viewEvt" targetState="NormalPopupPageTitle"/>
+			</transitions>
+		</htmlState>
+
+		<popupPageState type="page" typeIdInfo="IBK_F_001_IBK_F_007_Title/NormalPopupPageTitle.jsp" id="NormalPopupPageTitle" closable="false" title="The PopupPage Title">
+			<transitions>
+				<htmlTransition id="NormalPopupPageTitle.viewEvt" targetState="TheNLSPopupPageTitle"/>
+			</transitions>
+		</popupPageState>
+
+		<popupPageState type="page" typeIdInfo="IBK_F_001_IBK_F_007_Title/TheNLSPopupPageTitle.jsp" id="TheNLSPopupPageTitle" closable="false" title="%nls.bttsample/Welcome_To_Btt_Sample">
+			<transitions>
+				<htmlTransition id="TheNLSPopupPageTitle.viewEvt" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="IBK_F_001_IBK_F_007_TitleCtx" type="op">
+		<refKColl refId="IBK_F_001_IBK_F_007_TitleRecord"/>
+	</context>
+
+	<kColl id="IBK_F_001_IBK_F_007_TitleRecord">
+		<field id="TitleField01"/>
+		<field id="TitleField02"/>
+		<field id="TitleField03"/>
+	</kColl>
+
+</IBK_F_001_IBK_F_007_TitleFlow>

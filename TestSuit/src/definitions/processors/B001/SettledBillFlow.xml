@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SettledBillFlow>
+
+
+	<htmlProcessor context="SettledBillCtx" id="SettledBillFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="SettledBillOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<popupPageState type="page" typeIdInfo="B001/SettledBill.jsp" id="queryCreditCardSettledBill" closable="true" title="" top="20">
+			<transitions>
+				<htmlTransition id="queryCreditCardSettledBill.search" targetState="queryCreditCardSettledBill"/>
+				<htmlTransition id="queryCreditCardSettledBill.close" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+
+		<operationState typeIdInfo="SettledBillOp" id="SettledBillOp" type="operation">
+			<transitions>
+				<htmlTransition id="SettledBillOp.opEvt" targetState="queryCreditCardSettledBill"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="SettledBillOp" implClass="com.ibm.btt.test.util.InitOtherSettledInfoOp"/>
+
+	<context id="SettledBillCtx" type="op">
+		<refKColl refId="SettledBillRecord"/>
+	</context>
+
+	<kColl id="SettledBillRecord">
+		<refData refId="SettledBillList"/>
+		<refData refId="SearchCondition" lazy="false"/>
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="Bill" lazy="false"/>
+		<refData refId="SettledBillList01"/>
+		<refData refId="SettledBillList02"/>
+		<data id="RowNum" refType="Integer"/>
+	</kColl>
+
+	<kColl id="Bill">
+		<data id="AcctNo" refType="String"/>
+		<data id="ShortAcctNo" refType="String"/>
+		<data id="TradeDate" refType="Date"/>
+		<data id="BookDate" refType="Date"/>
+		<data id="TradeType" refType="String"/>
+		<data id="CurType" refType="String"/>
+		<data id="Amount" refType="Double"/>
+		<data id="Comments" refType="String"/>
+	</kColl>
+
+	<iColl id="SettledBillList">
+		<refData refId="Bill" lazy="false"/>
+	</iColl>
+
+	<kColl id="SearchCondition">
+		<data id="CurType" refType="String"/>
+		<data id="TimePeriod" refType="String"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="SettledBill_table_enableNext" refType="Boolean"/>
+		<data id="SettledBill_table_enablePrevious" refType="Boolean"/>
+		<data id="SettledBill_table_totalRowNumber" refType="Integer"/>
+		<data id="SettledBill_table_rowsPerPage" refType="Integer"/>
+		<data id="SettledBill_table_pageNumber" refType="Long"/>
+		<data id="SettledBill_table_errMsg" refType="String"/>
+	</kColl>
+
+	<iColl id="SettledBillList01">
+		<kColl id="SettledBillRecord01">
+			<data id="BillDate" refType="Date"/>
+			<data id="PaymentDueDate" refType="Date"/>
+			<data id="CurBillNeedPay" refType="Double"/>
+			<data id="MinBill" refType="Double"/>
+		</kColl>
+	</iColl>
+
+	<iColl id="SettledBillList02">
+		<kColl id="SettledBillRecord02">
+			<data id="LastBillBalance" refType="Double"/>
+			<data id="CurBillAlreadyPay" refType="Double"/>
+			<data id="NewAddBill" refType="Double"/>
+			<data id="Withdrawl" refType="Double"/>
+			<data id="Interest" refType="Double"/>
+			<data id="CurBillBalance" refType="Double"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="queryCreditCardUnsettledBill.search_InputFmt">
+		<mapperConverterExpression>
+			<map from="SearchCondition" to="SearchCondition"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="QueryUnsettledBillOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="SearchCondition" to="SearchCondition"/>
+			<map from="UnsettledBillList" to="UnsettledBillList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</SettledBillFlow>

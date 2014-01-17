@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_testFlow1>
+
+
+	<htmlProcessor context="IBK_testFlow1Ctx01" id="IBK_testFlow1">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="IBK_testOperationOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="IBK_testpage1.jsp" id="mypage">
+			<transitions>
+				<htmlTransition id="mypage.ok" targetState="IBK_printContextOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="IBK_testOperationOp" id="IBK_testOperationOp" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_testOperationOp.ok" targetState="mypage"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_printContextOp" id="IBK_printContextOp" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_printContextOp.ok" targetState="OK"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="IBK_testFlow1Ctx01" type="op" parent="sessionCtx">
+		<refKColl refId="IBK_testFlow1Record01"/>
+	</context>
+
+	<kColl id="IBK_testFlow1Record01" dynamic="true">
+		<iColl id="sampleList">
+			<refData refId="Account" lazy="false"/>
+		</iColl>
+		<data id="selectedData" refType="String"/>
+		<data id="selectedData2" refType="String"/>
+		<data id="selectedData3" refType="String"/>
+		<data id="selectedData4" refType="String"/>
+	</kColl>
+
+	<kColl id="Account">
+		<data id="ID" refType="String"/>
+		<data id="VALUE" refType="String"/>
+		<data id="TEXT" refType="String"/>
+	</kColl>
+
+</IBK_testFlow1>

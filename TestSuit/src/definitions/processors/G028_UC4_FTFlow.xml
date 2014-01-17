@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_UC4_FTFlow>
+
+
+	<htmlProcessor context="G028_UC4_FTCtx" id="G028_UC4_FTFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028G028_UC4_FT_single"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_UC4_FT_single.jsp" id="G028G028_UC4_FT_single">
+			<transitions>
+				<htmlTransition id="G028G028_UC4_FT_single.ok" targetState="G028_Result_single"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_single_link.jsp" id="G028_Result_single">
+			<transitions>
+				<htmlTransition id="G028_Result_single.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_UC4_FTCtx" type="op">
+		<refKColl refId="G028_UC4_FTRecord01"/>
+	</context>
+
+	<kColl id="G028_UC4_FTRecord01">
+		<refData refId="accounts"/>
+		<refData refId="selectedAccount" lazy="false"/>
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="accounts_01"/>
+	</kColl>
+
+	<iColl id="accounts" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+	</kColl>
+
+	<kColl id="selectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="G028_UC4_FT_single_table_enableNext" refType="Boolean"/>
+		<data id="G028_UC4_FT_single_table_enablePrevious" refType="Boolean"/>
+		<data id="G028_UC4_FT_single_table_totalRowNumber" refType="Integer"/>
+		<data id="G028_UC4_FT_single_table_errMsg" refType="String"/>
+		<data id="G028_UC4_FT_single_table_pageNumber" refType="Long"/>
+		<field id="G028_UC4_FT_single_table_pageEvent"/>
+		<data id="G028_UC4_FT_single_table_rowsPerPage" refType="Integer"/>
+		<data id="G028_UC4_FT_single_table01_enableNext" refType="Boolean"/>
+		<data id="G028_UC4_FT_single_table01_enablePrevious" refType="Boolean"/>
+		<data id="G028_UC4_FT_single_table01_totalRowNumber" refType="Integer"/>
+		<data id="G028_UC4_FT_single_table01_errMsg" refType="String"/>
+		<data id="G028_UC4_FT_single_table01_pageNumber" refType="Long"/>
+		<field id="G028_UC4_FT_single_table01_pageEvent"/>
+		<data id="G028_UC4_FT_single_table01_rowsPerPage" refType="Integer"/>
+	</kColl>
+
+	<iColl id="accounts_01" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="accounts" to="accounts" append="false"/>
+			<map fromExpression="1" to="currentPageNum"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_UC4_FTFlow>

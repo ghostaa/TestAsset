@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_F_018_TableDataAppendUC3SubFlow>
+
+
+	<htmlProcessor context="IBK_F_018_TableDataAppendUC3SubCtx" id="IBK_F_018_TableDataAppendUC3SubFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" outputMapFmt="initial.start_OutputFmt" targetState="TableEdit"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="IBK_F_018/TableEdit.jsp" id="TableEdit">
+			<transitions>
+				<htmlTransition id="TableEdit.OK" targetState="OK"/>
+				<htmlTransition id="TableEdit.Select" targetState="TableEdit"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="IBK_F_018_TableDataAppendUC3SubCtx" type="op">
+		<refKColl refId="IBK_F_018_TableDataAppendUC3SubRecord"/>
+	</context>
+
+	<kColl id="IBK_F_018_TableDataAppendUC3SubRecord">
+		<iColl id="TableList" size="1">
+			<refData refId="TableRecord" lazy="false"/>
+		</iColl>
+		<refData refId="TableRecord" lazy="false" alias="selectedRecord"/>
+	</kColl>
+
+	<kColl id="TableRecord">
+		<field id="name" value="King"/>
+		<field id="account" value="111222333"/>
+		<data id="age" value="29" refType="Integer"/>
+	</kColl>
+
+	<fmtDef id="initial.start_OutputFmt">
+		<mapperConverterExpression>
+			<map fromExpression="&apos;Henry&apos;" to="selectedRecord.name"/>
+			<map fromExpression="&apos;1234567890&apos;" to="selectedRecord.account"/>
+			<map fromExpression="35" to="selectedRecord.age"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</IBK_F_018_TableDataAppendUC3SubFlow>

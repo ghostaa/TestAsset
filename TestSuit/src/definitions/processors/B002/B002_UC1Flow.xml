@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_UC1Flow>
+
+
+	<htmlProcessor context="B002_UC1Ctx" id="B002_UC1Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B002_UC1_0"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC1_1.jsp" id="B002_UC1_1">
+			<transitions>
+				<htmlTransition id="B002_UC1_1.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="B002_UC1_Op" id="B002_UC1_Op" outputMapFmt="B002_UC1_Op_OutputFmt" type="operation">
+			<transitions>
+				<htmlTransition id="B002_UC1_Op.opEvt" outputMapFmt="B002_UC1_Op_OutputFmt" targetState="B002_UC1_1"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="B002/B002_UC1_0.jsp" id="B002_UC1_0">
+			<transitions>
+				<htmlTransition id="B002_UC1_0.ok" targetState="B002_UC1_Op"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B002_UC1Ctx" type="op">
+		<refKColl refId="B002_UC1Record"/>
+	</context>
+
+	<kColl id="B002_UC1Record">
+		<field id="stateFlag"/>
+		<field id="flowErrorMessage"/>
+	</kColl>
+
+	<fmtDef id="B002_UC1_Op_OutputFmt">
+		<mapperConverterExpression>
+			<map from="opErrorMessage" to="flowErrorMessage"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="commonErrorFlow2_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="flowHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="B002_CommonErrorOp_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="opHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="commonErrorFlow2-1_InputFmt">
+		<mapperConverterExpression>
+			<map from="flowErrorMessage" to="flowHandleError"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</B002_UC1Flow>

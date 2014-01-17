@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_Complex_SingleFlow>
+
+
+	<htmlProcessor context="G028_Complex_SingleCtx" id="G028_Complex_SingleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G028_initComplexOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Complex_single.jsp" id="G028/G028_Complex_single">
+			<transitions>
+				<htmlTransition id="G028/G028_Complex_single.ok" targetState="G028/G028_Result_single_complex"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G028_initComplexOp" id="G028_initComplexOp" type="operation">
+			<transitions>
+				<htmlTransition id="G028_initComplexOp.ok" outputMapFmt="initAccountsOp.ok_OutputFmt" targetState="G028/G028_Complex_single"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="G028/G028_Result_single_complex.jsp" id="G028/G028_Result_single_complex">
+			<transitions>
+				<htmlTransition id="G028/G028_Result_single_complex.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G028_Complex_SingleCtx" type="op">
+		<refKColl refId="G028_Complex_SingleRecord01"/>
+	</context>
+
+	<kColl id="G028_Complex_SingleRecord01">
+		<refData refId="complex_Accounts"/>
+		<refData refId="complex_SelectedAccount" lazy="false"/>
+		<refData refId="complex_SelectedAccount_KLess" lazy="false"/>
+		<refData refId="complex_SelectedAccount_KMore" lazy="false"/>
+		<refData refId="account" lazy="false"/>
+		<refData refId="complex_SelectedAccounts"/>
+	</kColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+	<kColl id="complex_Account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<kColl id="complex">
+			<kColl id="complex_0">
+				<field id="field_0"/>
+				<kColl id="complex_1">
+					<field id="field_1"/>
+					<kColl id="complex_2">
+						<field id="amount"/>
+						<data id="currency" refType="String"/>
+					</kColl>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<iColl id="complex_Accounts" size="10">
+		<refData refId="complex_Account" lazy="false"/>
+	</iColl>
+
+	<iColl id="complex_SelectedAccounts">
+		<refData refId="complex_SelectedAccount" lazy="false"/>
+	</iColl>
+
+	<kColl id="complex_SelectedAccount">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<kColl id="complex">
+			<kColl id="complex_0">
+				<field id="field_0"/>
+				<kColl id="complex_1">
+					<field id="field_1"/>
+					<kColl id="complex_2">
+						<field id="amount"/>
+						<data id="currency" refType="String"/>
+					</kColl>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<kColl id="complex_SelectedAccount_KLess">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<kColl id="complex">
+			<kColl id="complex_0">
+				<kColl id="complex_1">
+					<kColl id="complex_2">
+						<field id="amount"/>
+					</kColl>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<kColl id="complex_SelectedAccount_KMore">
+		<field id="idx"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<kColl id="complex">
+			<kColl id="complex_0">
+				<field id="field_0"/>
+				<field id="field_01"/>
+				<kColl id="complex_1">
+					<field id="field_1"/>
+					<field id="field_11"/>
+					<kColl id="complex_2">
+						<field id="field2"/>
+						<field id="amount"/>
+						<data id="currency" refType="String"/>
+					</kColl>
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="initAccountsOp.ok_OutputFmt">
+		<mapperConverterExpression>
+			<map from="complex_Accounts" to="complex_Accounts" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G028_Complex_SingleFlow>

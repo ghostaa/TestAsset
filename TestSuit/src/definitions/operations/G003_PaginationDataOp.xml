@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G003_PaginationDataOp>
+
+	<operation id="G003_PaginationDataOp" context="G003_PaginationDataCtx01" implClass="com.ibm.btt.application.op.G003_PaginationDataOp"/>
+
+	<context id="G003_PaginationDataCtx01" type="op">
+		<refKColl refId="G003_PaginationDataRecord01"/>
+	</context>
+
+	<kColl id="G003_PaginationDataRecord01">
+		<refData refId="paginationData" lazy="false"/>
+		<refData refId="G003_test_List"/>
+	</kColl>
+
+	<kColl id="paginationData">
+		<data id="enableNext" refType="Boolean"/>
+		<data id="enablePrevious" refType="Boolean"/>
+		<data id="totalRowNumber" value="100" refType="Integer"/>
+		<data id="errMsg" refType="String"/>
+		<data id="pageNumber" value="1" refType="Integer"/>
+		<field id="pageEvent"/>
+		<data id="rowsPerPage" value="10" refType="Integer"/>
+	</kColl>
+
+	<iColl id="G003_test_List" size="10">
+		<refData refId="G003_test_Record01" lazy="false"/>
+	</iColl>
+
+	<kColl id="G003_test_Record01">
+		<data id="task name" refType="String"/>
+		<data id="due date" refType="Date"/>
+		<data id="completed" refType="Boolean"/>
+		<data id="working" refType="Boolean"/>
+	</kColl>
+
+</G003_PaginationDataOp>

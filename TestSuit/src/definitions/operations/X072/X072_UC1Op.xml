@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC1Op>
+
+	<operation id="X072_UC1Op" context="X072_UC1OpCtx" implClass="com.ibm.btt.application.op.X072.X072_UC1Op"/>
+
+	<context id="X072_UC1OpCtx" type="op">
+		<refKColl refId="X072_UC1OpRecord"/>
+	</context>
+
+	<kColl id="X072_UC1OpRecord">
+		<field id="Op_fstr"/>
+		<data id="Op_date" refType="Date">
+			<param value="yyyy-MM-dd" id="pattern"/>
+		</data>
+		<refData refId="kColl1" lazy="false"/>
+		<refData refId="iColl1"/>
+	</kColl>
+
+	<kColl id="kColl1">
+		<field id="fstr" value="hello"/>
+		<data id="num" value="80" refType="Number"/>
+		<data id="testDate" value="2013-08-06" refType="Date"/>
+	</kColl>
+
+	<iColl id="iColl1" size="10">
+		<refData refId="kColl1" lazy="false"/>
+	</iColl>
+
+</X072_UC1Op>

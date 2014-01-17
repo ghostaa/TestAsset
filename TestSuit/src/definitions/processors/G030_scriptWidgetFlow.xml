@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G030_scriptWidgetFlow>
+
+
+	<htmlProcessor context="G030_scriptWidgetCtx" id="G030_scriptWidgetFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidgetList.jsp" id="G030_scriptWidgetG030_scriptWidgetList">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_1" targetState="G030_scriptWidgetG030_scriptWidget_1"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_2" targetState="G030_scriptWidgetG030_scriptWidget_2"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_3" targetState="G030_scriptWidgetG030_scriptWidget_3"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_4" targetState="G030_scriptWidgetG030_scriptWidget_4"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_refresh" targetState="G030_scriptWidgetG030_scriptWidget_counter"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_ECA_text" targetState="G030_scriptWidgetG030_scriptWwidget_ECA_text"/>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidgetList.scriptWidget_table" targetState="tableOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_1.jsp" id="G030_scriptWidgetG030_scriptWidget_1">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_1.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_2.jsp" id="G030_scriptWidgetG030_scriptWidget_2">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_2.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_3.jsp" id="G030_scriptWidgetG030_scriptWidget_3">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_3.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_4.jsp" id="G030_scriptWidgetG030_scriptWidget_4">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_4.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_counter.jsp" id="G030_scriptWidgetG030_scriptWidget_counter">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_counter.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_ECA_text.jsp" id="G030_scriptWidgetG030_scriptWwidget_ECA_text">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWwidget_ECA_text.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="G030_scriptWidget/G030_scriptWidget_table.jsp" id="G030_scriptWidgetG030_scriptWidget_table">
+			<transitions>
+				<htmlTransition id="G030_scriptWidgetG030_scriptWidget_table.back" targetState="G030_scriptWidgetG030_scriptWidgetList"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="tableOp" id="tableOp" type="operation">
+			<transitions>
+				<htmlTransition id="tableOp.ok" targetState="G030_scriptWidgetG030_scriptWidget_table"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<context id="G030_scriptWidgetCtx" type="op">
+		<refKColl refId="G030_scriptWidgetRecord"/>
+	</context>
+
+	<kColl id="G030_scriptWidgetRecord">
+		<refData refId="tableList"/>
+	</kColl>
+
+	<iColl id="tableList">
+		<kColl id="table">
+			<field id="A"/>
+			<field id="B"/>
+			<field id="C"/>
+		</kColl>
+	</iColl>
+
+</G030_scriptWidgetFlow>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="203,78,1351,1108" dataBinding="{'ctxType':'proc','ctxFile':'G030_scriptWidgetFlow','ctxName':'G030_scriptWidgetCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G030_scriptWidget_table.js'}">
+  <styles/>
+  <container name="Panel" layoutStyle="block" id="cpnl">
+    <gridData heightHint="1108" verticalAlignment="1" widthHint="1351" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Table" dataNameForList="tableList" styleClass="tableStyle tableStyle1" id="wtbl">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="A" noresize="false" dataName="A" relativeWidth="1" id="A" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="B" noresize="false" dataName="B" relativeWidth="1" id="B" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+        <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="200" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="C" noresize="false" dataName="C" relativeWidth="1" id="C" repeat="true" headerVAlign="16384">
+          <tableColumnAlignment>16384</tableColumnAlignment>
+        </column>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Button" id="button" buttonType="button" text="Button">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <widget name="Link" action="flowEvent=back" id="link" text="back">
+        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      </widget>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="2"/>
+    <hiddenWidget name="Script" content="var num0=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;0&quot;);
+var num1=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;1&quot;);
+var num2=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;2&quot;);
+var num3=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;3&quot;);
+
+var num5=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;5&quot;);
+var num6=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;6&quot;);
+var num7=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;7&quot;);
+var num8=dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).getCellValueByIndex(&quot;0&quot;,&quot;8&quot;);
+
+var num4=num0+num1+num2+num3;
+var num9=num5+num6+num7+num8;
+
+dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).setCellValueByIndex(&quot;0&quot;,&quot;4&quot;,num4);
+
+dijit.byId(&quot;G030_scriptWidget_table_wtbl&quot;).setCellValueByIndex(&quot;0&quot;,&quot;9&quot;,num9);
+
+" id="Script01"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button" event="onClick"/>
+      </events>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="Script01">
+          <function name="execute"/>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false"/>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

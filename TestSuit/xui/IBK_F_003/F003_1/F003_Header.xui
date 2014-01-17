@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="71,26,1019,570" dataBinding="{'ctxType':'proc','ctxFile':'IBK_F003/F003_Header_Flow','ctxName':'F003_Header_Ctx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'G001_UC7.js'}">
+  <styles>
+    <css file="../../../WebContent/css/testGridEnhancement.css"/>
+  </styles>
+  <container name="Panel" id="panel">
+    <gridData heightHint="570" verticalAlignment="1" widthHint="1019" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="550" verticalAlignment="1" widthHint="910" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightHint="228" widthHint="100" heightType="RelativeSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="5" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="transfer history:">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightHint="228" heightType="RelativeSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="5" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" paginationParams="{'timeout':'10000','operationNameForPagination':'GetTransferHistoryPaginationOp','rowsPerPage':'10','directPagination':'true','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'normalOutputMapping','nextInputMapping':'','initialInputMapping':'initialInputMapping','paginationWhenLoading':'true','previousInputMapping':'','directInputMapping':'directInputMapping'}" dataNameForList="transferHistory" sortEnabled="true" rowCSS="[{&quot;forr&quot;:[3,5],&quot;name&quot;:&quot;blue&quot;}, {&quot;forr&quot;:[&quot;H&quot;],&quot;name&quot;:&quot;font-style&quot;}, {&quot;forr&quot;:[&quot;R&quot;],&quot;name&quot;:&quot;font-Georgia&quot;}, {&quot;forr&quot;:[&quot;E&quot;],&quot;name&quot;:&quot;h-align-left&quot;}, {&quot;forr&quot;:[&quot;H&quot;],&quot;name&quot;:&quot;h-align-right&quot;}, {&quot;forr&quot;:[5,8],&quot;name&quot;:&quot;redblue&quot;}]" id="Table01" columnReordering="true" multiRowHeader="true">
+            <gridData autoSize="false" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="120" rowCSS="[{&quot;forr&quot;:[4],&quot;name&quot;:&quot;font-style&quot;}, {&quot;forr&quot;:[4],&quot;name&quot;:&quot;red&quot;}]" headerHAlign="16384" colSpan="1" hidden="false" text="HistoryID" noresize="false" dataName="historyID" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="160" showTooltip="true" rowCSS="[{&quot;forr&quot;:[&quot;E&quot;],&quot;name&quot;:&quot;font-style&quot;}, {&quot;forr&quot;:[&quot;O&quot;],&quot;name&quot;:&quot;border-style&quot;}]" headerHAlign="16384" colSpan="1" hidden="false" tooltipPosition="below" columnTooltip="toAccount" text="To Account" noresize="false" dataName="toAccount" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" text="Amount" noresize="false" dataName="amount" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="Transfer Time" noresize="false" dataName="transfer_date" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="100" rowCSS="" headerHAlign="16384" colSpan="1" text="Comments" noresize="false" dataName="comments" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="2"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <title></title>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

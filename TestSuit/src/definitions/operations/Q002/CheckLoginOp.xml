@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CheckLoginOp>
+
+	<operation id="CheckLoginOp" context="CheckLoginCtx" implClass="com.ibm.btt.application.op.Q002.CheckLoginOp"/>
+
+	<context id="CheckLoginCtx" type="op">
+		<refKColl refId="CheckLoginRecord"/>
+	</context>
+
+	<kColl id="CheckLoginRecord">
+		<kColl id="User">
+			<data id="UserName" refType="String"/>
+			<data id="UserPassword" refType="String"/>
+		</kColl>
+	</kColl>
+
+</CheckLoginOp>

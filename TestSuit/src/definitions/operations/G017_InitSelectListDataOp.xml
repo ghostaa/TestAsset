@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G017_InitSelectListDataOp>
+
+	<operation id="G017_InitSelectListDataOp" context="G017_InitSelectListDataCtx01" implClass="com.ibm.btt.application.op.G017_SelectListDataOp"/>
+
+	<context id="G017_InitSelectListDataCtx01" type="op">
+		<refKColl refId="G017_SelectListRecord"/>
+	</context>
+
+	<kColl id="G017_SelectListRecord">
+		<iColl id="AccountInfoList" size="10">
+			<refData refId="AccountInfoRecord"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="AccountInfoRecord">
+		<data id="AccountNo" refType="Integer"/>
+		<data id="AccountName" refType="String"/>
+	</kColl>
+
+</G017_InitSelectListDataOp>

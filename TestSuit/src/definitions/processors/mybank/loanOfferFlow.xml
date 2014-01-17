@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loanOfferFlow>
+
+
+	<htmlProcessor context="loanOfferCtx" id="loanOfferFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="mybank_loan_offer_01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="mybank/mybank_final.jsp"/>
+
+		<htmlState type="page" typeIdInfo="mybank/mybank_loan_offer_01.jsp" id="mybank_loan_offer_01">
+			<transitions>
+				<htmlTransition id="mybank_loan_offer_01.submit" targetState="mybank_load_offer_02"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="mybank/mybank_load_offer_02.jsp" id="mybank_load_offer_02">
+			<transitions>
+				<htmlTransition id="mybank_load_offer_02.back" targetState="mybank_loan_offer_01"/>
+				<htmlTransition id="mybank_load_offer_02.submit" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="loanOfferCtx" type="op">
+		<refKColl refId="loanOfferRecord"/>
+	</context>
+
+	<kColl id="loanOfferRecord">
+		<data id="borrowAmount" refType="Currency"/>
+		<data id="termLength" refType="Number"/>
+	</kColl>
+
+</loanOfferFlow>

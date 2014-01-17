@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestMultiSelectFlow>
+
+
+	<htmlProcessor context="TestMultiSelectCtx" id="TestMultiSelectFlow">
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="MultiSelectOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestMultiSelect.jsp" id="MultiSelectTestMultiSelect">
+			<transitions>
+				<htmlTransition id="MultiSelectTestMultiSelect.submit" targetState="TestMultiSelectResult"/>
+				<htmlTransition id="MultiSelectTestMultiSelect.ECA" targetState="TestMultiSelectECA"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="MultiSelectOp" id="MultiSelectOp" type="operation">
+			<transitions>
+				<htmlTransition id="MultiSelectOp.opEvt" outputMapFmt="MultiSelectOp.opEvt_OutputFmt" targetState="MultiSelect"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestCheckedMultiSelect.jsp" id="TestCheckMultiSelect">
+			<transitions>
+				<htmlTransition id="TestCheckMultiSelect.ECA" targetState="TestCheckedMultiSelectECA"/>
+				<htmlTransition id="TestCheckMultiSelect.viewEvt01" targetState="TestMultiSelectResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/MultiSelect.jsp" id="MultiSelect">
+			<transitions>
+				<htmlTransition id="MultiSelect.TestCheckMultiSelect" targetState="TestCheckMultiSelect"/>
+				<htmlTransition id="MultiSelect.TestMultiSelect" targetState="MultiSelectTestMultiSelect"/>
+				<htmlTransition id="MultiSelect.TestEnhancedMultiSelect" targetState="TestEnhancedMultiSelect"/>
+				<htmlTransition id="MultiSelect.viewEvt" targetState="newXuiFile01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestEnhancedMultiSelect.jsp" id="TestEnhancedMultiSelect">
+			<transitions>
+				<htmlTransition id="TestEnhancedMultiSelect.viewEvt" targetState="TestMultiSelectResult"/>
+				<htmlTransition id="TestEnhancedMultiSelect.ECA" targetState="TestEnhancedMultiSelectECA"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestMultiSelectResult.jsp" id="TestMultiSelectResult">
+			<transitions>
+				<htmlTransition id="TestMultiSelectResult.back" targetState="MultiSelect"/>
+				<htmlTransition id="TestMultiSelectResult.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestCheckedMultiSelectECA.jsp" id="TestCheckedMultiSelectECA">
+			<transitions>
+				<htmlTransition id="TestCheckedMultiSelectECA.viewEvt" targetState="TestCheckMultiSelect"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestEnhancedMultiSelectECA.jsp" id="TestEnhancedMultiSelectECA">
+			<transitions>
+				<htmlTransition id="TestEnhancedMultiSelectECA.viewEvt" targetState="TestEnhancedMultiSelect"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/TestMultiSelectECA.jsp" id="TestMultiSelectECA">
+			<transitions>
+				<htmlTransition id="TestMultiSelectECA.viewEvt" targetState="MultiSelectTestMultiSelect"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="WidgetTest/XUISetDisabledReadOnly.jsp" id="newXuiFile01"/>
+	</htmlProcessor>
+
+	<context id="TestMultiSelectCtx" type="op">
+		<refKColl refId="TestMultiSelectRecord03"/>
+	</context>
+
+	<kColl id="TestMultiSelectRecord03">
+		<iColl id="TestMultiSelectList">
+			<kColl id="TestMultiSelectRecord01">
+				<field id="FieldForLabel"/>
+				<field id="FieldForValue"/>
+				<field id="FieldForSelect"/>
+				<field id="FieldForDisable"/>
+			</kColl>
+		</iColl>
+		<iColl id="TestMultiSelectResultList">
+			<kColl id="TestMultiSelectRecord02">
+				<field id="ResultLabel"/>
+				<field id="ResultValue"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="MultiSelectOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="TestMultiSelectList" to="TestMultiSelectList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</TestMultiSelectFlow>

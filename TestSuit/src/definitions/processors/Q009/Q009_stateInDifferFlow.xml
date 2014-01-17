@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_stateInDifferFlow>
+
+
+	<htmlProcessor context="Q009_stateInDifferCtx" id="Q009_stateInDifferFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_stateInDifferFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_stateInDifferFlow.jsp" id="Q009Q009_stateInDifferFlow">
+			<transitions>
+				<htmlTransition id="Q009Q009_stateInDifferFlow.update" targetState="Q009Q009_onlySubPageFlow"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="Q009_onlySubPageFlow" id="Q009Q009_onlySubPageFlow" type="subFlow">
+			<transitions>
+				<htmlTransition id="Q009Q009_onlySubPageFlow.OK" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q009_stateInDifferCtx" type="op">
+		<refKColl refId="Q009_stateInDifferRecord"/>
+	</context>
+
+	<kColl id="Q009_stateInDifferRecord">
+	</kColl>
+
+</Q009_stateInDifferFlow>

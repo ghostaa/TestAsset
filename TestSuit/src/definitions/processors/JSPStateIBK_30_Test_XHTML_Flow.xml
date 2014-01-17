@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSPStateIBK_30_Test_XHTML_Flow>
+
+
+	<htmlProcessor context="JSPStateIBK_30_Test_XHTML_Ctx" id="JSPStateIBK_30_Test_XHTML_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CreateDataForWidgetOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<operationState typeIdInfo="CreateDataForWidgetOp" id="CreateDataForWidgetOp" type="operation">
+			<transitions>
+				<htmlTransition id="CreateDataForWidgetOp.opEvt" outputMapFmt="CreateDataForWidgetOp.opEvt_OutputFmt" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="LaunchOp" id="LaunchOp" type="operation">
+			<transitions>
+				<htmlTransition id="LaunchOp.ok" targetState="OK"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="ShowAllWidght.jsp" id="ShowAllWidght">
+			<transitions>
+				<htmlTransition id="ShowAllWidght.launchOp" targetState="LaunchOp"/>
+				<htmlTransition id="ShowAllWidght.finalPage" targetState="OK"/>
+				<htmlTransition id="ShowAllWidght.viewEvt" outputMapFmt="ShowAllWidght.viewEvt_OutputFmt01" targetState="ShowSubmitResult"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="ShowSubmitResult.jsp" id="ShowSubmitResult">
+			<transitions>
+				<htmlTransition id="ShowSubmitResult.back" targetState="ShowAllWidght"/>
+				<htmlTransition id="ShowSubmitResult.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="JSPStateIBK_30_Test_XHTML_Ctx" type="op">
+		<refKColl refId="JSPStateIBK_30_Test_XHTML_Record"/>
+	</context>
+
+	<kColl id="JSPStateIBK_30_Test_XHTML_Record">
+		<data id="TestString" refType="String"/>
+		<iColl id="Select_List">
+			<kColl id="IBK_30_Test_XHTML_Record01">
+				<field id="CityName"/>
+				<field id="CityValue"/>
+			</kColl>
+		</iColl>
+		<iColl id="Combo_List" size="3">
+			<kColl id="IBK_30_Test_XHTML_Record02">
+				<field id="CountryName"/>
+			</kColl>
+		</iColl>
+		<data id="TestImage" refType="String"/>
+		<data id="RichTextEditorData" refType="String"/>
+		<data id="SexData" refType="Integer"/>
+		<data id="CheckBoxData" refType="Boolean"/>
+		<data id="TextData" refType="Integer"/>
+		<data id="TestDataForReadOnly" refType="String"/>
+		<data id="TextData2" refType="String"/>
+		<data id="PasswordData" refType="String"/>
+		<data id="Select_DataName_result" refType="String"/>
+		<data id="Select_UrlList_result" refType="String"/>
+		<data id="Combo_UrlList_result" refType="String"/>
+		<data id="Combo_DataName_result" refType="String"/>
+		<data id="TextAreaData" refType="String"/>
+		<data id="StringForHiddenField" refType="String"/>
+		<kColl id="userFiles">
+			<iColl id="receivedFiles">
+				<refData refId="file"/>
+			</iColl>
+			<refData refId="file"/>
+			<field id="handler" value="sampleFileHandler"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<fmtDef id="CreateDataForWidgetOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ShowAllWidght.viewEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ShowAllWidght.viewEvt_OutputFmt01">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</JSPStateIBK_30_Test_XHTML_Flow>

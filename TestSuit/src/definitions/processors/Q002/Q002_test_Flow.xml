@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q002_test_Flow>
+
+
+	<htmlProcessor context="Q002_test_Ctx" id="Q002_test_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q-002Q002_index"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/MainPage.jsp" id="Q-002MainPage">
+			<transitions>
+				<htmlTransition id="Q-002MainPage.login" inputMapFmt="Q-002MainPage.login_InputFmt" targetState="Q002CheckLoginOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CheckLoginOp" id="Q002CheckLoginOp" type="operation">
+			<transitions>
+				<htmlTransition id="Q002CheckLoginOp.pass" targetState="Q-002LoginSuccess"/>
+				<htmlTransition id="Q002CheckLoginOp.fail" targetState="Q-002LoginFail"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="Q-002/LoginSuccess.jsp" id="Q-002LoginSuccess"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/LoginFail.jsp" id="Q-002LoginFail"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/Q002_index.jsp" id="Q-002Q002_index">
+			<transitions>
+				<htmlTransition id="Q-002Q002_index.mainpage" targetState="Q-002MainPage"/>
+				<htmlTransition id="Q-002Q002_index.eca" targetState="Q-002ECAQ002_ECA_test"/>
+				<htmlTransition id="Q-002Q002_index.allwidget" targetState="Q002_test_Op"/>
+				<htmlTransition id="Q-002Q002_index.test visible" targetState="Q-002ECAQ002_ECA_Visible_01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q-002/ECA/Q002_ECA_test.jsp" id="Q-002ECAQ002_ECA_test"/>
+
+		<htmlState type="page" typeIdInfo="Q-002/Widgets/testIncludeAllWidget.jsp" id="Q-002WidgetstestIncludeAllWidget"/>
+
+		<operationState typeIdInfo="Q002_test_Op" id="Q002_test_Op" type="operation">
+			<transitions>
+				<htmlTransition id="Q002_test_Op.opEvt" targetState="Q-002WidgetstestIncludeAllWidget"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="Q-002/ECA/Q002_ECA_Visible_01.jsp" id="Q-002ECAQ002_ECA_Visible_01">
+			<transitions>
+				<htmlTransition id="Q-002ECAQ002_ECA_Visible_01.login" inputMapFmt="Q-002MainPage.login_InputFmt" targetState="Q002CheckLoginOp"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<operation id="Q002_test_Op" implClass="com.ibm.btt.application.op.Q002.AllWidgetInit"/>
+
+	<context id="Q002_test_Ctx" type="op">
+		<refKColl refId="Q002_test_Record"/>
+	</context>
+
+	<kColl id="Q002_test_Record">
+		<kColl id="User">
+			<data id="UserName" value="aa" refType="String"/>
+			<data id="UserPassword" value="aa" refType="String"/>
+		</kColl>
+		<kColl id="allWidgetRecord">
+			<data id="gender" refType="Integer"/>
+			<kColl id="level">
+				<data id="level1" refType="Boolean"/>
+				<data id="level2" refType="Boolean"/>
+			</kColl>
+			<data id="image" refType="String"/>
+			<iColl id="combo" size="5">
+				<kColl id="record">
+					<field id="comboValue"/>
+					<field id="comboLabel"/>
+				</kColl>
+			</iColl>
+			<iColl id="select" size="5">
+				<kColl id="record">
+					<field id="selectValue"/>
+					<field id="selectLabel"/>
+				</kColl>
+			</iColl>
+			<field id="richtext"/>
+			<field id="textArea"/>
+			<field id="hiddenField"/>
+			<iColl id="MultiSelect" size="10">
+				<kColl id="record">
+					<field id="FieldForLabel"/>
+					<field id="FieldForSelect"/>
+					<field id="FieldForDisable"/>
+					<field id="FieldForValue"/>
+				</kColl>
+			</iColl>
+			<field id="errorMessage"/>
+			<iColl id="table" size="10">
+				<kColl id="record">
+					<field id="column1"/>
+					<field id="column2"/>
+					<field id="column3"/>
+				</kColl>
+			</iColl>
+			<treeModel id="root">
+			</treeModel>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="Q-002MainPage.login_InputFmt">
+		<mapperConverterExpression>
+			<map from="User" to="User"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</Q002_test_Flow>

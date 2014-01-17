@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+
+	<import file="table_data.xml"/>
+
+	<!--Data collection for the branch context-->
+	<kColl id="branchData" dynamic="true">
+		<field id="BranchId"/>
+	</kColl>
+
+	<kColl id="sessionData" dynamic="true">
+		<data id="locale" value="ko
+ko
+ko" refType="String"/>
+		<refData refId="myPages" lazy="false"/>
+	</kColl>
+
+	<kColl id="myPages">
+		<iColl id="availablePortlets" size="0">
+			<kColl id="portlet">
+				<data id="instanceClosable" description="Is the instance of this portlet closable ?" refType="Boolean"/>
+				<data id="title" description="The portlet title" refType="String"/>
+				<data id="url" description="The url to retrieve content from" refType="String"/>
+				<data id="content" description="The portlet content html" refType="String"/>
+			</kColl>
+		</iColl>
+		<iColl id="defaultPortletsContainer" size="0">
+			<kColl id="column">
+				<data id="index" refType="Integer"/>
+				<data id="width" refType="Double"/>
+			</kColl>
+		</iColl>
+		<iColl id="deployedPortlets" size="0">
+			<kColl id="portlet">
+				<data id="closable" description="Is the instance of this portlet closable ?" refType="Boolean"/>
+				<data id="title" description="The portlet title" refType="String"/>
+				<data id="url" description="The url to retrieve content from" refType="String"/>
+				<data id="content" description="The portlet content html" refType="String"/>
+				<data id="open" refType="Boolean"/>
+				<data id="columnId" refType="Integer"/>
+				<data id="rowId" refType="Integer"/>
+			</kColl>
+		</iColl>
+		<iColl id="currentPortletsContainer" size="0">
+			<kColl id="column">
+				<data id="index" refType="Integer"/>
+				<data id="width" refType="Double"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</data.xml>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G028_CreatePaginationData01Op>
+
+	<operation id="G028_CreatePaginationData01Op" context="G028_CreatePaginationData01Ctx01" implClass="com.ibm.btt.application.op.G028_CreatePaginationData01"/>
+
+	<context id="G028_CreatePaginationData01Ctx01" type="op">
+		<refKColl refId="G028_CreatePaginationData01Record01"/>
+	</context>
+
+	<kColl id="G028_CreatePaginationData01Record01">
+		<kColl id="paginationData_01">
+			<data id="enableNext_01" refType="Boolean"/>
+			<data id="enablePrevious_01" refType="Boolean"/>
+			<data id="totalRowNumber_01" value="100" refType="Integer"/>
+			<data id="errMsg_01" refType="String"/>
+			<data id="pageNumber_01" value="1" refType="Integer"/>
+			<field id="pageEvent_01"/>
+			<data id="rowsPerPage_01" value="10" refType="Integer"/>
+		</kColl>
+		<refData refId="accounts_01"/>
+	</kColl>
+
+	<iColl id="accounts_01" size="10">
+		<refData refId="account" lazy="false"/>
+	</iColl>
+
+	<kColl id="account">
+		<field id="idx"/>
+		<field id="acctNum"/>
+		<field id="name"/>
+		<data id="balance" refType="Float">
+			<param value="2" id="default:decimalPlaces"/>
+		</data>
+		<data id="urlForLink" value="http://www.baidu.com" refType="String"/>
+		<data id="isOk" refType="Boolean"/>
+	</kColl>
+
+</G028_CreatePaginationData01Op>

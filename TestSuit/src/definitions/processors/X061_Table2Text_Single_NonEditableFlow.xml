@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_Table2Text_Single_NonEditableFlow>
+
+
+	<htmlProcessor context="X061_Table2Text_Single_NonEditableCtx" id="X061_Table2Text_Single_NonEditableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X061_InitDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Table2Text_Single_NonEditable.jsp" id="X061_Table2Text_Single_NonEditable">
+			<transitions>
+				<htmlTransition id="X061_Table2Text_Single_NonEditable.viewEvt" targetState="X061X061_Table2Text_ForSubmit"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="X061_InitDataOp" id="X061_InitDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="X061_InitDataOp.opEvt" outputMapFmt="X061_InitDateOp.opEvt_OutputFmt" targetState="X061_Table2Text_Single_NonEditable"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="X061/X061_Table2Text_ForSubmit.jsp" id="X061X061_Table2Text_ForSubmit">
+			<transitions>
+				<htmlTransition id="X061X061_Table2Text_ForSubmit.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="X061_Table2Text_Single_NonEditableCtx" type="op">
+		<refKColl refId="X061_Table2Text_Single_NonEditableRecord01"/>
+	</context>
+
+	<kColl id="X061_Table2Text_Single_NonEditableRecord01">
+		<iColl id="X061_TableList">
+			<refData refId="X061_DataRecord" lazy="false"/>
+		</iColl>
+		<refData refId="X061_DataRecord" lazy="false"/>
+	</kColl>
+
+	<kColl id="X061_DataRecord">
+		<data id="date_slash" refType="Date">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="date_bar" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+		<data id="calendar_bar" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="num_1" refType="Number">
+			<param value="1" id="html:decimalPlaces"/>
+		</data>
+		<data id="num_2" refType="Number">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="float_2" refType="Float">
+			<param value="2" id="html:decimalPlaces"/>
+		</data>
+		<data id="float_3" refType="Float">
+			<param value="3" id="html:decimalPlaces"/>
+		</data>
+		<data id="currency_cny" refType="Currency">
+			<param value="CNY" id="currency"/>
+		</data>
+		<data id="currency_usd" refType="Currency">
+			<param value="USD" id="currency"/>
+		</data>
+	</kColl>
+
+	<fmtDef id="X061_InitDateOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="X061_TableList" to="X061_TableList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X061_Table2Text_Single_NonEditableFlow>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="208,171,689,300" dataBinding="{'ctxType':'proc','ctxFile':'nonEditableTableFlow','ctxName':'nonEditableTableCtx'}" isRuleDirty="false">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="300" verticalAlignment="1" widthHint="689" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="205" verticalAlignment="1" widthHint="617" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData heightHint="32" verticalAlignment="1" widthHint="313" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Link" action="flowEvent=returnToNonEditableTable" id="link" text=" non-editable table">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Label" id="label" text=" -&gt; non-editable table in group">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="2"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Group" id="group" text="Group">
+            <gridData heightHint="163" verticalAlignment="1" widthHint="609" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Table" dataNameForList="nonEditableAccountList" dataName="AccountInfo" id="table" selectionRequired="true" selectionMode="single">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="left" columnTooltip="AccountName" text="%nls.testtable/AccountName" noresize="false" dataName="AccountName" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="left" columnTooltip="TradeTime" text="%nls.testtable/TradeTime" noresize="false" dataName="TradeTime" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" columnTooltip="MaximumAmount" text="%nls.testtable/MaximumAmount" noresize="false" dataName="MaximumAmount" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="below" columnTooltip="AccountOpeningDate" text="%nls.testtable/AccountOpeningDate" noresize="false" dataName="AccountOpeningDate" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="above" columnTooltip="AccountBlance" text="%nls.testtable/AccountBlance" noresize="false" dataName="AccountBlance" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" text="%nls.testtable/Rate" noresize="false" dataName="Rate" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="right" columnTooltip="Usable" text="%nls.testtable/Usable" noresize="false" dataName="Usable" relativeWidth="1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData heightHint="33" verticalAlignment="1" widthHint="222" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" action="flowEvent=to group popup page" id="button" text="to group popup page">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" action="flowEvent=to pane page" id="button01" text="to pane page">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="2"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B002_sampleFlow>
+
+
+	<htmlProcessor context="B002_sampleCtx" id="B002_sampleFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="triggerError"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="B002/B002_finalPage.jsp"/>
+
+		<operationState typeIdInfo="B002_SampleOp" id="TestOp123" type="operation">
+			<transitions>
+				<htmlTransition id="TestOp123.ok" targetState="OK"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="B002/triggerError.jsp" id="triggerError">
+			<transitions>
+				<htmlTransition id="triggerError.ok" targetState="TestOp123"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B002_sampleCtx" type="op" parent="sessionCtx">
+		<refKColl refId="B002_sampleRecord"/>
+	</context>
+
+	<kColl id="B002_sampleRecord" dynamic="true">
+		<field id="errorFlag"/>
+	</kColl>
+
+	<fmtDef id="TestOp123.opEvt_InputFmt">
+		<mapperConverterExpression>
+			<map from="errorFlag" to="ErrorField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="TestOp123.opEvt_InputFmt01">
+		<mapperConverterExpression>
+			<map from="errorFlag" to="ErrorField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="TestOp123.opEvt01_OutputFmt">
+		<mapperConverterExpression>
+			<map from="B002_SampleField" to="errorFlag"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</B002_sampleFlow>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G017_SelectListFlow>
+
+
+	<htmlProcessor context="G017_SelectListCtx" id="G017_SelectListFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="G017_InitSelectListDataOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="G017/G017_SelectList.jsp" id="G017_SelectList">
+			<transitions>
+				<htmlTransition id="G017_SelectList.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="G017_InitSelectListDataOp" id="G017_InitSelectListDataOp" type="operation">
+			<transitions>
+				<htmlTransition id="G017_InitSelectListDataOp.opEvt" outputMapFmt="G017_InitSelectListDataOp.opEvt_OutputFmt" targetState="G017_SelectList"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="G017_SelectListOp" context="G017_SelectListCtx" implClass="com.ibm.btt.application.op.G017_SelectListDataOp"/>
+
+	<context id="G017_SelectListCtx" type="op">
+		<refKColl refId="G017_SelectListRecord01"/>
+	</context>
+
+	<kColl id="G017_SelectListRecord01">
+		<iColl id="AccountInfoList" size="10">
+			<refData refId="AccountInfoRecord"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="AccountInfoRecord">
+		<data id="AccountNo" refType="Integer"/>
+		<data id="AccountName" refType="String"/>
+	</kColl>
+
+	<fmtDef id="G017_InitSelectListDataOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="AccountInfoList" to="AccountInfoList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</G017_SelectListFlow>

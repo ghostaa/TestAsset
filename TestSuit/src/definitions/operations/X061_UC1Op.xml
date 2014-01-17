@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X061_UC1Op>
+
+	<operation id="X061_UC1Op" context="X061_UC1Ctx" implClass="com.ibm.btt.application.op.X061_UC1Op"/>
+
+	<context id="X061_UC1Ctx" type="op">
+		<refKColl refId="X061Flow01Record"/>
+	</context>
+
+	<kColl id="X061Flow01Record">
+		<iColl id="TableList" size="10">
+			<refData refId="TableRefRecord" lazy="false"/>
+		</iColl>
+		<data id="CalendarTextbox" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="CalendarLable" refType="XMLGregorianCalendar"/>
+		<data id="CalendarTextbox02" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+	<kColl id="TableRefRecord">
+		<data id="Date_slash" refType="Date">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="Calendar_bar" refType="XMLGregorianCalendar">
+			<param value="dd-MM-yyyy" id="pattern"/>
+		</data>
+		<data id="Calendar_slash" refType="XMLGregorianCalendar">
+			<param value="dd/MM/yyyy" id="pattern"/>
+		</data>
+	</kColl>
+
+</X061_UC1Op>

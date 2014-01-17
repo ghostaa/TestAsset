@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q008_TableFlow>
+
+
+	<htmlProcessor context="Q008_TableCtx" id="Q008_TableFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="InitTable"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="InitTable.jsp" id="InitTable">
+			<transitions>
+				<htmlTransition id="InitTable.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="Q008_TableCtx" type="op">
+		<refKColl refId="Q008_TableRecord"/>
+	</context>
+
+	<kColl id="Q008_TableRecord">
+		<refData refId="PaginationData" lazy="false"/>
+		<iColl id="TableList" size="10">
+			<kColl id="Table">
+				<field id="FirstColumn"/>
+				<field id="SecondColumn"/>
+				<field id="ThirdColumn"/>
+			</kColl>
+		</iColl>
+		<kColl id="SingleTableData">
+			<field id="FirstDataSingle"/>
+			<field id="SecondtDataSingle"/>
+			<field id="ThirdtDataSingle"/>
+		</kColl>
+		<iColl id="MutipleTableData">
+			<kColl id="Table">
+				<field id="FirstDataMutiple"/>
+				<field id="SecondDataMutiple"/>
+				<field id="ThirdDataMutiple"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="PaginationData">
+		<data id="InitTable_table_enableNext" refType="Boolean"/>
+		<data id="InitTable_table_enablePrevious" refType="Boolean"/>
+		<data id="InitTable_table_totalRowNumber" refType="Integer"/>
+		<data id="InitTable_table_pageNumber" refType="Long"/>
+		<data id="InitTable_table_rowsPerPage" refType="Integer"/>
+		<data id="InitTable_table_errMsg" refType="String"/>
+		<field id="InitTable_table_pageEvent"/>
+	</kColl>
+
+</Q008_TableFlow>

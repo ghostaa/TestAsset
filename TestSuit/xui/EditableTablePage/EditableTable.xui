@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="74,164,1163,497" dataBinding="{'ctxType':'proc','ctxFile':'editableTableFlow','ctxName':'editableTableCtx'}" isRuleDirty="false" extraInfo="{'lastGeneratedRuleFile':'EditableTable.js'}">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="497" verticalAlignment="1" widthHint="1163" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="489" verticalAlignment="1" widthHint="1009" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="editable table">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" dataNameForList="EditableAccountList" dataName="selectAccountList" id="table" selectionRequired="true" selectionMode="multiple">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" editable="true" level="1" rowSpan="1" widget="TextBox" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="left" columnTooltip="AccountName" text="%nls.testtable/AccountName" noresize="false" dataName="AccountName" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="Select" rowSpan="1" level="1" labelField="" showTooltip="true" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="left" text="%nls.testtable/TradeTime" columnTooltip="TradeTime" dataNameForList="" noresize="false" dataName="TradeTime" urlForList="listFiles/tradeTimeForSelect.js" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="right" columnTooltip="TradeTime" text="%nls.testtable/TradeTimeValue" noresize="false" dataName="TradeTime" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="Select" rowSpan="1" level="1" labelField="labelField" showTooltip="true" width="80" valueField="valueField" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="below" text="%nls.testtable/AccountType" columnTooltip="AccountType" dataNameForList="AccountTypeForSelect" noresize="false" dataName="AccountType" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="above" columnTooltip="AccountType" text="%nls.testtable/AccountTypeValue" noresize="false" dataName="AccountType" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" level="1" rowSpan="1" widget="TextBox" width="100" showTooltip="false" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="below" columnTooltip="AccountOpeningDate" text="%nls.testtable/AccountOpeningDate" noresize="false" dataName="AccountOpeningDate" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" level="1" rowSpan="1" widget="TextBox" width="80" showTooltip="false" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="above" columnTooltip="AccountBlance" text="%nls.testtable/AccountBlance" noresize="false" dataName="AccountBlance" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="ComboBox" rowSpan="1" level="1" labelField="" showTooltip="true" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" text="%nls.testtable/Rate" columnTooltip="Rate" dataNameForList="" noresize="false" dataName="Rate" urlForList="listFiles/rateForCombo.js" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="true" widget="ComboBox" rowSpan="1" level="1" labelField="labelField" width="80" valueField="" rowCSS="" headerHAlign="16384" colSpan="1" text="%nls.testtable/Localtion" dataNameForList="LocaltionForComboBox" noresize="false" dataName="Localtion" urlForList="" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" unCheckedValue="false" editable="true" widget="CheckBox" rowSpan="1" level="1" width="80" alwaysEditing="false" rowCSS="" headerHAlign="16384" colSpan="1" checkedValue="true" text="%nls.testtable/Usable" noresize="false" dataName="Usable" titleStyle="text" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="false" level="1" rowSpan="1" widget="LabelFromList" width="80" rowCSS="" headerHAlign="16384" colSpan="1" text="%nls.testtable/accountAttribution" noresize="false" dataName="accountAttribution" urlForList="listFiles/accountAttribution.js" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" editable="false" level="1" rowSpan="1" widget="Image" width="80" showTooltip="true" rowCSS="" headerHAlign="16384" colSpan="1" tooltipPosition="right" columnTooltip="ImageField" text="%nls.testtable/Image" noresize="false" dataName="ImageField" relativeWidth="1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData heightHint="354" verticalAlignment="1" widthHint="389" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData heightHint="346" verticalAlignment="1" widthHint="381" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Group" id="group" text="Test in group">
+                    <gridData heightHint="111" verticalAlignment="1" widthHint="351" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Link" action="flowEvent=LinkToGroup" id="link" text="Link to 'table in group' page">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Link" action="flowEvent=group popup" id="link02" text="Link to popup page">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <container name="Panel" id="panel04">
+                        <gridData heightHint="33" verticalAlignment="1" widthHint="323" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <widget name="Button" action="flowEvent=submit to group page" id="button" text="submit to group page">
+                            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          </widget>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <widget name="Button" action="flowEvent=submit to group popup page" id="button02" text="submit to group popup page">
+                            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          </widget>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <gridLayout numColumns="2"/>
+                      </container>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" id="button04" buttonType="button" text="Hidden AccountType">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Group" id="group01" text="Test inTabbedpane">
+                    <gridData heightHint="111" verticalAlignment="1" widthHint="341" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Link" action="flowEvent=LinkToPane" id="link01" text="Link to 'table in TabbedPane' page">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Link" action="flowEvent=pane popup" id="link04" text="Link to popup page">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <widget name="PlaceHolder">
+                      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <container name="Panel" id="panel05">
+                        <gridData heightHint="33" verticalAlignment="1" widthHint="313" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <widget name="Button" action="flowEvent=submit to pane page" id="button01" text="submit to pane page">
+                            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          </widget>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <widget name="Button" action="flowEvent=submit to pane popup page" id="button03" text="submit to pane popup page">
+                            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          </widget>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <gridLayout numColumns="2"/>
+                      </container>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Panel" id="panel03">
+                    <gridData heightHint="59" verticalAlignment="1" widthHint="221" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <container name="Group" id="group02" text="Test in 'manipulate table'">
+                        <gridData heightHint="51" verticalAlignment="1" widthHint="213" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                        <widget name="PlaceHolder">
+                          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          <widget name="Link" action="flowEvent=manipulatetable" id="link03" text="Link to 'manipulate table' page (frozen column in table)">
+                            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                          </widget>
+                          <gridLayout numColumns="0"/>
+                        </widget>
+                        <gridLayout numColumns="1"/>
+                      </container>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <container name="Group" id="group03" text="Test selection and bombo box">
+                    <gridData heightHint="51" verticalAlignment="1" widthHint="260" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                    <widget name="PlaceHolder">
+                      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      <widget name="Link" action="flowEvent=selection and combo box" id="link05" text="Link to 'selection and combo box' page">
+                        <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                      </widget>
+                      <gridLayout numColumns="0"/>
+                    </widget>
+                    <gridLayout numColumns="1"/>
+                  </container>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightHint="20" horizontalAlignment="4" verticalAlignment="4" widthHint="20" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="3"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="1"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules>
+    <rule name="ecaRule">
+      <events>
+        <event widget="button04" event="onClick"/>
+      </events>
+      <condition>
+        <value type="widgetFunction" widget="table">
+          <function name="isColumnVisible">
+            <parameter>
+              <value type="constant" constant="'3'"/>
+            </parameter>
+          </function>
+        </value>
+      </condition>
+      <trueActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="hideColumn">
+            <parameter>
+              <value type="constant" constant="'3'"/>
+            </parameter>
+          </function>
+        </action>
+      </trueActions>
+      <falseActions stopEventPagination="false">
+        <action type="widgetFunction" widget="table">
+          <function name="showColumn">
+            <parameter>
+              <value type="constant" constant="'3'"/>
+            </parameter>
+          </function>
+        </action>
+      </falseActions>
+    </rule>
+  </rules>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

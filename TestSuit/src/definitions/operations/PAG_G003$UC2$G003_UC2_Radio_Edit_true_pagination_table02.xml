@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAG_G003UC2G003_UC2_Radio_Edit_true_pagination_table02>
+
+	<operation id="PAG_G003$UC2$G003_UC2_Radio_Edit_true_pagination_table02" context="PAG_G003$UC2$G003_UC2_Radio_Edit_true_pagination_table02Ctx" implClass="com.ibm.btt.cs.ajax.DefaultPaginationOp">
+		<refFormat refId="initialInputMapping" name="initialInputMapping"/>
+		<refFormat refId="nextInputMapping" name="nextInputMapping"/>
+		<refFormat refId="previousInputMapping" name="previousInputMapping"/>
+		<refFormat refId="normalOutputMapping" name="normalOutputMapping"/>
+		<refFormat refId="errorOutputMapping" name="errorOutputMapping"/>
+	</operation>
+
+	<context id="PAG_G003$UC2$G003_UC2_Radio_Edit_true_pagination_table02Ctx" type="op">
+		<refKColl refId="PAG_G003$UC2$G003_UC2_Radio_Edit_true_pagination_table02Record"/>
+	</context>
+
+	<kColl id="PAG_G003$UC2$G003_UC2_Radio_Edit_true_pagination_table02Record">
+		<kColl id="tableProperties">
+			<field id="tableId" value="table02"/>
+			<field id="dataName"/>
+			<field id="dataNameForList" value="G003_test_List"/>
+			<field id="rowsPerPage" value="10"/>
+			<field id="operationNameForPagination" value="G003_PaginationDataOp"/>
+			<field id="directPagination" value="false"/>
+			<!-- this four fields corresponds to four columns on table -->
+			<field id="tableColumnIDs" value="task name,due date,completed,working"/>
+		</kColl>
+		<kColl id="pageRequest">
+			<!-- candidate value should be "initial", "next", "prev", "page" -->
+			<field id="pageEvent"/>
+			<field id="pageNumber"/>
+			<field id="sortData"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+		</kColl>
+		<kColl id="pageReply">
+			<field id="totalRowNumber"/>
+			<field id="enableNext"/>
+			<field id="enablePrevious"/>
+			<field id="errMsg"/>
+			<!-- for extension on project-level, product do not handle -->
+			<field id="customData"/>
+			<!-- the technical operation will set data into iColl, filtering through the tableColumnIDs -->
+			<iColl id="items">
+				<field id="dummy"/>
+			</iColl>
+		</kColl>
+	</kColl>
+
+	<fmtDef id="initialInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="100" to="paginationData.totalRowNumber"/>
+			<map fromExpression="10" to="paginationData.rowsPerPage"/>
+			<map fromExpression="1" to="paginationData.pageNumber"/>
+			<map from="G003_test_List" to="G003_test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="nextInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="paginationData$G003_UC2_Radio_Edit_true_pagination_table02_pageNumber + 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="previousInputMapping">
+		<mapperConverterExpression>
+			<map fromExpression="paginationData$G003_UC2_Radio_Edit_true_pagination_table02_pageNumber - 1" to="paginationData.pageNumber"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="normalOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.enableNext" to="paginationData.G003_UC2_Radio_Edit_true_pagination_table02_enableNext"/>
+			<map from="paginationData.enablePrevious" to="paginationData.G003_UC2_Radio_Edit_true_pagination_table02_enablePrevious"/>
+			<map from="paginationData.pageNumber" to="paginationData.G003_UC2_Radio_Edit_true_pagination_table02_pageNumber"/>
+			<map from="G003_test_List" to="G003_test_List" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="errorOutputMapping">
+		<mapperConverterExpression>
+			<map from="paginationData.errMsg" to="paginationData.G003_UC2_Radio_Edit_true_pagination_table02_errMsg"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</PAG_G003UC2G003_UC2_Radio_Edit_true_pagination_table02>

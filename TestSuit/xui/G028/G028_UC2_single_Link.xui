@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="208,59,601,302" dataBinding="{'ctxType':'proc','ctxFile':'G028_UC2_SingleLinkFlow','ctxName':'G028_UC2_SingleLinkCtx'}" isRuleDirty="false">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="302" verticalAlignment="1" widthHint="601" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData heightHint="260" verticalAlignment="1" widthHint="581" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="test column filtering for a table with single row selection">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Table" dataNameForList="accounts" dataName="selectedAccount" id="table" selectionMode="single">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="name" noresize="false" dataName="name" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="balance" noresize="false" dataName="balance" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Link" width="80" dataNameForRow="" linkText="" rowCSS="" flowEvent="ok" dataNameForClickable="" dataNameForLink="" dataName="name" renderMode="text" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" headerHAlign="16384" dataNameForColumn="" hidden="false" colSpan="1" text="link column flow event" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Button" width="80" dataNameForRow="" linkText="this is a button" rowCSS="" flowEvent="ok" dataNameForClickable="" dataNameForLink="" dataName="" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" dataNameForColumn="" hidden="false" colSpan="1" headerHAlign="16384" text="button column flow event" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Link" width="80" dataNameForRow="" linkText="" rowCSS="" flowEvent="" dataNameForClickable="" dataNameForLink="urlForLink" dataName="urlForLink" renderMode="text" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" headerHAlign="16384" dataNameForColumn="" hidden="false" colSpan="1" text="link column url" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+            <column tooltip="" level="1" rowSpan="1" widget="Button" width="80" dataNameForRow="" linkText="" rowCSS="" flowEvent="" dataNameForClickable="" dataNameForLink="urlForLink" dataName="name" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384" widthType="FixedSize" sortPriority="1" editable="false" dataNameForColumn="" hidden="false" colSpan="1" headerHAlign="16384" text="button column url" dataNameForTooltip="" newWindow="false" noresize="false">
+              <tableColumnAlignment>16384</tableColumnAlignment>
+            </column>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=ok" id="button" text="Button">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="1"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

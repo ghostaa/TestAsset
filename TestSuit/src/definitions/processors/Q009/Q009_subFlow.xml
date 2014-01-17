@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Q009_subFlow>
+
+
+	<htmlProcessor context="Q009_subCtx" id="Q009_subFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="Q009Q009_subFlow01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_subFlow01.jsp" id="Q009Q009_subFlow01">
+			<transitions>
+				<htmlTransition id="Q009Q009_subFlow01.next" targetState="Q009Q009_subFlow02"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="Q009/Q009_subFlow02.jsp" id="Q009Q009_subFlow02">
+			<transitions>
+				<htmlTransition id="Q009Q009_subFlow02.exit" targetState="OK"/>
+				<htmlTransition id="Q009Q009_subFlow02.back" targetState="Q009Q009_subFlow01"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="Q009_subCtx" type="op">
+		<refKColl refId="Q009_subRecord"/>
+	</context>
+
+	<kColl id="Q009_subRecord">
+	</kColl>
+
+</Q009_subFlow>

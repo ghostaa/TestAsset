@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IBK_30_Test_XHTML_Flow>
+
+
+	<htmlProcessor context="IBK_30_Test_XHTML_Ctx" id="IBK_30_Test_XHTML_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CreateDataForWidgetOp"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="ShowAllWidght.jsp" id="ShowAllWidght">
+			<transitions>
+				<htmlTransition id="ShowAllWidght.viewEvt" outputMapFmt="ShowAllWidght.viewEvt_OutputFmt" targetState="ShowSubmitResult"/>
+				<htmlTransition id="ShowAllWidght.launchOp" targetState="LaunchOp"/>
+				<htmlTransition id="ShowAllWidght.viewEvt01" targetState="ShowAllWidght-1"/>
+				<htmlTransition id="ShowAllWidght.finalPage" targetState="finalPage"/>
+				<htmlTransition id="ShowAllWidght.ch" targetState="IBK_30_Test_XHTML_CH_Op"/>
+				<htmlTransition id="ShowAllWidght.en" targetState="IBK_30_Test_XHTML_EN_Op"/>
+				<htmlTransition id="ShowAllWidght.ko" targetState="IBK_30_Test_XHTML_KO_Op"/>
+				<htmlTransition id="ShowAllWidght.sp" targetState="IBK_30_Test_XHTML_SP_Op"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="CreateDataForWidgetOp" id="CreateDataForWidgetOp" type="operation">
+			<transitions>
+				<htmlTransition id="CreateDataForWidgetOp.opEvt" outputMapFmt="CreateDataForWidgetOp.opEvt_OutputFmt" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="ShowSubmitResult.jsp" id="ShowSubmitResult">
+			<transitions>
+				<htmlTransition id="ShowSubmitResult.viewEvt" targetState="OK"/>
+				<htmlTransition id="ShowSubmitResult.back" targetState="ShowAllWidght"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="LaunchOp" id="LaunchOp" type="operation">
+			<transitions>
+				<htmlTransition id="LaunchOp.ok" targetState="OK"/>
+			</transitions>
+		</operationState>
+
+		<popupPageState type="page" typeIdInfo="ShowAllWidght.jsp" id="ShowAllWidght-1" closable="false"/>
+
+		<htmlState type="page" typeIdInfo="finalPage.jsp" id="finalPage"/>
+
+		<operationState typeIdInfo="IBK_30_Test_XHTML_CH_Op" id="IBK_30_Test_XHTML_CH_Op" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_30_Test_XHTML_CH_Op.ok" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_30_Test_XHTML_EN_Op" id="IBK_30_Test_XHTML_EN_Op" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_30_Test_XHTML_EN_Op.ok" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_30_Test_XHTML_KO_Op" id="IBK_30_Test_XHTML_KO_Op" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_30_Test_XHTML_KO_Op.ok" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="IBK_30_Test_XHTML_SP_Op" id="IBK_30_Test_XHTML_SP_Op" type="operation">
+			<transitions>
+				<htmlTransition id="IBK_30_Test_XHTML_SP_Op.ok" targetState="ShowAllWidght"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="IBK_30_Test_XHTML_EN_Op" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_En_Op"/>
+
+	<operation id="IBK_30_Test_XHTML_CH_Op" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocaleOp"/>
+
+	<operation id="IBK_30_Test_XHTML_KO_Op" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_Ko_Op"/>
+
+	<operation id="IBK_30_Test_XHTML_SP_Op" implClass="com.ibm.btt.test.IBK_F_007.op.IBK_F_007_SetAppLocale_Sp_Op"/>
+
+	<context id="IBK_30_Test_XHTML_Ctx" type="op">
+		<refKColl refId="IBK_30_Test_XHTML_Record03"/>
+	</context>
+
+	<kColl id="IBK_30_Test_XHTML_Record03">
+		<data id="TestString" refType="String"/>
+		<iColl id="Select_List">
+			<kColl id="IBK_30_Test_XHTML_Record01">
+				<field id="CityName"/>
+				<field id="CityValue"/>
+			</kColl>
+		</iColl>
+		<iColl id="Combo_List" size="3">
+			<kColl id="IBK_30_Test_XHTML_Record02">
+				<field id="CountryName"/>
+			</kColl>
+		</iColl>
+		<data id="TestImage" refType="String"/>
+		<data id="RichTextEditorData" refType="String"/>
+		<data id="SexData" refType="Integer"/>
+		<data id="CheckBoxData" refType="Boolean"/>
+		<data id="TextData" refType="Integer"/>
+		<data id="TestDataForReadOnly" refType="String"/>
+		<data id="TextData2" refType="String"/>
+		<data id="PasswordData" refType="String"/>
+		<data id="Select_DataName_result" refType="String"/>
+		<data id="Select_UrlList_result" refType="String"/>
+		<data id="Combo_UrlList_result" refType="String"/>
+		<data id="Combo_DataName_result" refType="String"/>
+		<data id="TextAreaData" refType="String"/>
+		<data id="StringForHiddenField" refType="String"/>
+		<kColl id="userFiles">
+			<iColl id="receivedFiles">
+				<refData refId="file"/>
+			</iColl>
+			<refData refId="file"/>
+			<field id="handler" value="sampleFileHandler"/>
+		</kColl>
+	</kColl>
+
+	<kColl id="file">
+		<field id="name"/>
+		<field id="size"/>
+		<field id="fileId"/>
+	</kColl>
+
+	<fmtDef id="CreateDataForWidgetOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ShowAllWidght.viewEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</IBK_30_Test_XHTML_Flow>

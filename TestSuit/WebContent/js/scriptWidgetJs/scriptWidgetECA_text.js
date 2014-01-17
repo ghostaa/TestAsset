@@ -1,0 +1,1 @@
+dijit.byId("G030_scriptWidget_ECA_text_text01").set('value', param0);

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X070_InitDataOp>
+
+	<operation id="X070_InitDataOp" context="X070_InitDataCtx" implClass="com.ibm.btt.application.op.X070.X070_InitDataOp"/>
+
+	<context id="X070_InitDataCtx" type="op">
+		<refKColl refId="X070_InitDataRecord"/>
+	</context>
+
+	<kColl id="X070_InitDataRecord">
+		<refData refId="cashAcctList"/>
+	</kColl>
+
+	<!-- Data for transfer history -->
+	<iColl id="cashAcctList">
+		<kColl id="cashAcct">
+			<data id="name" refType="String"/>
+			<data id="surname" refType="String"/>
+			<data id="balance" refType="Double"/>
+			<field id="branch_location"/>
+			<field id="branch_id"/>
+		</kColl>
+	</iColl>
+
+</X070_InitDataOp>

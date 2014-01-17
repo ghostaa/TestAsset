@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xval_G021G021G021_UC2_repetitive.xml>
+<operation id="xval_G021$G021$G021_UC2_repetitive" implClass="com.ibm.btt.base.BTTServerOperation">
+      <refFormat refId="form_{index}_xValidations" name="form_{index}_xValidations"/>
+
+</operation>
+<fmtDef id="form_{index}_xValidations">
+	<xValConditions repeatAt="accountList">
+		<condition  expression="functs_BTTStringFunctions.length(accountList${index}$number) == 21"/>
+	</xValConditions>
+</fmtDef>
+
+</xval_G021G021G021_UC2_repetitive.xml>

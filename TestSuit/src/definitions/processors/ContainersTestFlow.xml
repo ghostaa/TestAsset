@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContainersTestFlow>
+
+
+	<htmlProcessor context="ContainersTestCtx" id="ContainersTestFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="distribution"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="page"/>
+
+		<htmlState type="page" typeIdInfo="FormAndPanel/FormTable.jsp" id="FormTable">
+			<transitions>
+				<htmlTransition id="FormTable.viewEvt" targetState="distribution"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="FormAndPanel/FormBlock.jsp" id="FormBlock">
+			<transitions>
+				<htmlTransition id="FormBlock.viewEvt" targetState="distribution"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="FormAndPanel/PanelBlock.jsp" id="PanelBlock">
+			<transitions>
+				<htmlTransition id="PanelBlock.viewEvt" targetState="distribution"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="FormAndPanel/PanelTable.jsp" id="PanelTable">
+			<transitions>
+				<htmlTransition id="PanelTable.viewEvt" targetState="distribution"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="FormAndPanel/distribution.jsp" id="distribution">
+			<transitions>
+				<htmlTransition id="distribution.formBlock" targetState="FormBlock"/>
+				<htmlTransition id="distribution.formTable" targetState="FormTable"/>
+				<htmlTransition id="distribution.panelTable" targetState="PanelTable"/>
+				<htmlTransition id="distribution.panelBlock" targetState="PanelBlock"/>
+				<htmlTransition id="distribution.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="ContainersTestCtx" type="op">
+		<refKColl refId="ContainersTestRecord01"/>
+	</context>
+
+	<kColl id="ContainersTestRecord">
+		<iColl id="ContainersTestList" size="2">
+			<refData refId="ContainersTestRecord01" lazy="false"/>
+		</iColl>
+	</kColl>
+
+	<kColl id="ContainersTestRecord01">
+		<data id="id" value="11" refType="Integer"/>
+		<data id="name" value="Wang Wu" refType="String"/>
+	</kColl>
+
+</ContainersTestFlow>

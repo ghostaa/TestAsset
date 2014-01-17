@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X072_UC4_Flow>
+
+
+	<htmlProcessor context="X072_UC4_Ctx" id="X072_UC4_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="X072_UC4Op"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="X072/X072_UC4.jsp" id="X072_UC4">
+			<transitions>
+				<htmlTransition id="X072_UC4.toOp" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<operationState typeIdInfo="X072_UC4Op" id="X072_UC4Op" type="operation">
+			<transitions>
+				<htmlTransition id="X072_UC4Op.opEvt" targetState="X072_UC4"/>
+			</transitions>
+		</operationState>
+	</htmlProcessor>
+
+	<operation id="X072_UC4_Op" implClass="com.ibm.btt.application.op.X072.X072_UC4_01Op"/>
+
+	<context id="X072_UC4_Ctx" type="op">
+		<refKColl refId="X072_UC4_Record"/>
+	</context>
+
+	<kColl id="X072_UC4_Record">
+		<refData refId="customer" lazy="false"/>
+		<refData refId="children"/>
+	</kColl>
+
+	<kColl id="customer">
+		<field id="name"/>
+		<data id="birth" refType="Date"/>
+		<iColl id="children" size="2">
+			<kColl id="childData">
+				<field id="name"/>
+				<data id="birth" refType="Date"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<iColl id="children" size="2">
+		<kColl id="childData">
+			<field id="name"/>
+			<data id="birth" refType="Date"/>
+		</kColl>
+	</iColl>
+
+	<fmtDef id="X072_UC1.submit_OutputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+			<map from="date" to="fstr"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1Op_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Op_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1_SubFlow_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="Sub_date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC1-1_InputFmt">
+		<mapperConverterExpression>
+			<map from="fstr" to="date"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="X072_UC4Op.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="customer" to="customer"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</X072_UC4_Flow>

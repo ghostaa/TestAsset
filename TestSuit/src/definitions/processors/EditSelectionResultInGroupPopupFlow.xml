@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EditSelectionResultInGroupPopupFlow>
+
+
+	<htmlProcessor context="EditSelectionResultInGroupPopupCtx01" id="EditSelectionResultInGroupPopupFlow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="EditSelectionResultPageEditSelectionResultInGroupPage"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="back" id="OK" type="final"/>
+
+		<popupPageState type="page" typeIdInfo="EditSelectionResultPage/EditSelectionResultInGroupPage.jsp" id="EditSelectionResultPageEditSelectionResultInGroupPage">
+			<transitions>
+				<htmlTransition id="EditSelectionResultPageEditSelectionResultInGroupPage.back" targetState="OK"/>
+			</transitions>
+		</popupPageState>
+	</htmlProcessor>
+
+	<context id="EditSelectionResultInGroupPopupCtx01" type="op">
+		<refKColl refId="EditSelectionResultInGroupPopupRecord01"/>
+	</context>
+
+	<kColl id="EditSelectionResultInGroupPopupRecord01">
+		<refData refId="AccountInfoList" alias="selectAccountList"/>
+		<refData refId="AccountInfoRecord" alias="AccountInfo"/>
+		<refData refId="AccountTypeForSelect"/>
+		<refData refId="LocaltionForComboBox"/>
+	</kColl>
+
+</EditSelectionResultInGroupPopupFlow>

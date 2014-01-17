@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B004_Context_Flow>
+
+
+	<htmlProcessor context="B004_Context_Ctx" id="B004_Context_Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B004ChartAnnualStatementOp"/>
+			</transitions>
+		</htmlState>
+
+		<operationState typeIdInfo="AnnualStatementOp" id="B004ChartAnnualStatementOp" type="operation">
+			<transitions>
+				<htmlTransition id="B004ChartAnnualStatementOp.opEvt" outputMapFmt="AnnualStatementOp.opEvt_OutputFmt" targetState="B004ChartStockOp"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="StockOp" id="B004ChartStockOp" type="operation">
+			<transitions>
+				<htmlTransition id="B004ChartStockOp.opEvt" outputMapFmt="StockOp.opEvt_OutputFmt" targetState="B004ChartTableListOp"/>
+			</transitions>
+		</operationState>
+
+		<operationState typeIdInfo="TableListOp" id="B004ChartTableListOp" type="operation">
+			<transitions>
+				<htmlTransition id="B004ChartTableListOp.opEvt" outputMapFmt="TableListOp.opEvt_OutputFmt" targetState="B004ChartContextTestContext"/>
+			</transitions>
+		</operationState>
+
+		<htmlState type="page" typeIdInfo="B004Chart/Context/TestContext.jsp" id="B004ChartContextTestContext">
+			<transitions>
+				<htmlTransition id="B004ChartContextTestContext.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+	</htmlProcessor>
+
+	<context id="B004_Context_Ctx" type="op">
+		<refKColl refId="B004_Context_Record"/>
+	</context>
+
+	<kColl id="B004_Context_Record">
+		<iColl id="AnnualStatementList">
+			<kColl id="AnnualStatementRecord01">
+				<field id="month"/>
+				<data id="profit" refType="Float"/>
+				<field id="tooltip"/>
+				<data id="weight" refType="Integer"/>
+				<field id="size"/>
+			</kColl>
+		</iColl>
+		<iColl id="StockList">
+			<kColl id="StockRecord01">
+				<data id="open" refType="Float"/>
+				<data id="close" refType="Float"/>
+				<data id="high" refType="Float"/>
+				<data id="low" refType="Float"/>
+				<data id="mid" refType="Float"/>
+			</kColl>
+		</iColl>
+		<iColl id="listFL">
+			<kColl id="TableListRecord01">
+				<field id="id"/>
+				<field id="label"/>
+				<field id="amount"/>
+				<field id="size"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<fmtDef id="AnnualStatementOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="AnnualStatementList" to="AnnualStatementList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="StockOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="StockList" to="StockList" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="TableListOp.opEvt_OutputFmt">
+		<mapperConverterExpression>
+			<map from="listFL" to="listFL" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+</B004_Context_Flow>

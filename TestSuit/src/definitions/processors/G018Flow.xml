@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<G018Flow>
+
+
+	<htmlProcessor context="G018Ctx01" id="G018Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="CopyFromTableToDIV"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final" finalPage="finalPage.jsp"/>
+
+		<htmlState type="page" typeIdInfo="MixedContainer.jsp" id="MixedContainer">
+			<transitions>
+				<htmlTransition id="MixedContainer.viewEvt" targetState="OK"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="SameNameOverrideEvenThoughFromDiffererntProject.jsp" id="SameNameOverrideEvenThoughFromDiffererntProject">
+			<transitions>
+				<htmlTransition id="SameNameOverrideEvenThoughFromDiffererntProject.viewEvt" targetState="MixedContainer"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="CopyFromTableToDIVExistCombine.jsp" id="CopyFromTableToDIV">
+			<transitions>
+				<htmlTransition id="CopyFromTableToDIV.viewEvt" targetState="SameNameOverrideEvenThoughFromDiffererntProject"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="G018Ctx01" type="op" parent="sessionCtx">
+		<refKColl refId="G018Record01"/>
+	</context>
+
+	<kColl id="G018Record01" dynamic="true">
+	</kColl>
+
+</G018Flow>

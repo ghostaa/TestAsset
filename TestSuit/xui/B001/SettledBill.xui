@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="GB18030"?>
+<XUI xmlns="http://btt.cn.ibm.com/xui/2.0" bounds="48,12,783,515" dataBinding="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx'}" isRuleDirty="false">
+  <styles/>
+  <container name="Panel" id="panel">
+    <gridData heightHint="515" verticalAlignment="1" widthHint="783" heightType="AutoSize" widthType="AutoSize" relativeWidth="0" relativeHeight="0" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+    <widget name="PlaceHolder">
+      <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+      <container name="Form" id="form">
+        <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+        <widget name="PlaceHolder">
+          <gridData widthHint="187" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label04" text="Selected Row Num">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" dataName="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx','dataName':'RowNum'}" id="label05" text="Label">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData widthHint="187" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label" text="%nls.testb001/queryUnsettledBill">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightHint="40" horizontalAlignment="3" widthHint="187" heightType="FixedSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label01" text="%nls.testb001/Bill_CurType">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightHint="40" heightType="FixedSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Combo" dataName="{'ctxType':'proc','ctxFile':'B001/UnsettledBillFlow','ctxName':'UnsettledBillCtx','dataName':'SearchCondition.CurType'}" typeAhead="false" urlForList="listFiles/curType.js" id="combo">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="3" widthHint="187" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Label" id="label03" text="%nls.testb001/Time_Period">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="SelectList" dataName="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx','dataName':'SearchCondition.TimePeriod'}" urlForList="listFiles/timePeriod.js" id="selectList">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalAlignment="2" widthHint="187" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <widget name="Button" action="flowEvent=search" id="button" text="%nls.testb001/Confirm">
+            <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          </widget>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <widget name="PlaceHolder">
+          <gridData horizontalSpan="2" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+          <container name="Panel" id="panel01">
+            <gridData heightHint="80" verticalAlignment="1" widthHint="663" heightType="AutoSize" widthType="FixedSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+            <widget name="PlaceHolder">
+              <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx','dataName':'SettledBillList01'}" id="table01">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Bill_Date" canSort="false" noresize="false" dataName="BillDate" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/PaymentDueDate" canSort="false" noresize="false" dataName="PaymentDueDate" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/CurBillNeedPay" canSort="false" noresize="false" dataName="CurBillNeedPay" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/MinBill" canSort="false" noresize="false" dataName="MinBill" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Table" dataNameForList="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx','dataName':'SettledBillList02'}" id="table02">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/LastBillBalance" canSort="false" noresize="false" dataName="LastBillBalance" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/CurBillAlreadyPay" canSort="false" noresize="false" dataName="CurBillAlreadyPay" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/NewAddBill" canSort="false" noresize="false" dataName="NewAddBill" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Withdrawl" canSort="false" noresize="false" dataName="Withdrawl" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Interest" canSort="false" noresize="false" dataName="Interest" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/CurBillBalance" canSort="false" noresize="false" dataName="CurBillBalance" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <widget name="Table" paginationParams="{'operationNameForPagination':'B001\/QuerySettledBillOp','timeout':'8000','directPagination':'true','rowsPerPage':'10','paginationType':'default','errorOutputMapping':'','normalOutputMapping':'normalOutputMapping','nextInputMapping':'','paginationWhenLoading':'true','initialInputMapping':'initialInputMapping','previousInputMapping':'','directInputMapping':'directInputMapping'}" dataNameForList="{'ctxType':'proc','ctxFile':'B001/SettledBillFlow','ctxName':'SettledBillCtx','dataName':'SettledBillList'}" isPageable="true" id="table">
+                <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Short_AcctNo" canSort="false" noresize="false" dataName="ShortAcctNo" relativeWidth="1" id="columnId0" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/TradeDate" canSort="false" noresize="false" dataName="TradeDate" relativeWidth="1" id="columnId1" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/BookDate" canSort="false" noresize="false" dataName="BookDate" relativeWidth="1" id="columnId2" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/TradeType" canSort="false" noresize="false" dataName="TradeType" relativeWidth="1" id="columnId3" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Trade_CurType" canSort="false" noresize="false" dataName="CurType" relativeWidth="1" id="columnId4" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Amount" canSort="false" noresize="false" dataName="Amount" relativeWidth="1" id="columnId5" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+                <column widthType="FixedSize" sortPriority="1" level="1" rowSpan="1" widget="" width="80" rowCSS="" headerHAlign="16384" colSpan="1" hidden="false" text="%nls.testb001/Comments" canSort="false" noresize="false" dataName="Comments" relativeWidth="1" id="columnId6" repeat="true" headerVAlign="16384">
+                  <tableColumnAlignment>16384</tableColumnAlignment>
+                </column>
+              </widget>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <widget name="PlaceHolder">
+              <gridData horizontalAlignment="2" horizontalSpan="3" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+              <container name="Panel" id="panel02">
+                <gridData verticalAlignment="1" heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" id="button02" buttonType="button" text="%nls.testb001/print">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" id="button03" buttonType="button" text="%nls.testb001/download">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <widget name="PlaceHolder">
+                  <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  <widget name="Button" action="flowEvent=close" id="button01" text="%nls.testb001/Close">
+                    <gridData heightType="AutoSize" widthType="AutoSize" relativeWidth="-1" relativeHeight="-1" inlineStyle="{}" horizontalIndentType="FixedSize"/>
+                  </widget>
+                  <gridLayout numColumns="0"/>
+                </widget>
+                <gridLayout numColumns="5"/>
+              </container>
+              <gridLayout numColumns="0"/>
+            </widget>
+            <gridLayout numColumns="3"/>
+          </container>
+          <gridLayout numColumns="0"/>
+        </widget>
+        <gridLayout numColumns="2"/>
+      </container>
+      <gridLayout numColumns="0"/>
+    </widget>
+    <gridLayout numColumns="1"/>
+  </container>
+  <rules/>
+  <groups/>
+  <vrules/>
+  <useECALoader>false</useECALoader>
+  <versionNo>0</versionNo>
+</XUI>

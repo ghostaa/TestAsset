@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B003_UC1Flow>
+
+
+	<htmlProcessor context="B003_UC1Ctx" id="B003_UC1Flow">
+		<htmlState id="initial" type="initial">
+			<transitions>
+				<htmlTransition id="initial.start" targetState="B003_UC1_1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState typeIdInfo="OK" id="OK" type="final"/>
+
+		<htmlState type="page" typeIdInfo="B003/B003_UC1_1.jsp" id="B003_UC1_1">
+			<transitions>
+				<htmlTransition id="B003_UC1_1.viewEvt" targetState="OK"/>
+				<htmlTransition id="B003_UC1_1.viewEvt01" targetState="B003_UC1"/>
+			</transitions>
+		</htmlState>
+
+		<htmlState type="page" typeIdInfo="B003/B003_UC1_2.jsp" id="B003_UC1">
+			<transitions>
+				<htmlTransition id="B003_UC1.back" targetState="B003_UC1_1"/>
+				<htmlTransition id="B003_UC1.end" targetState="OK"/>
+			</transitions>
+		</htmlState>
+	</htmlProcessor>
+
+	<context id="B003_UC1Ctx" type="op">
+		<refKColl refId="B003_UC1Record"/>
+	</context>
+
+	<kColl id="B003_UC1Record">
+		<iColl id="B003_UC1List">
+			<kColl id="B003_UC1Record01">
+				<field id="B003_UC1Field" value="hello world"/>
+				<data id="B003_UC1Data" value="test" refType="String"/>
+			</kColl>
+		</iColl>
+	</kColl>
+
+</B003_UC1Flow>

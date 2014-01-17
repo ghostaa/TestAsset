@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction:WorkProduct xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:transaction="http://btt.cn.ibm.com/transaction" xmi:id="_NjwOEGw4EeK3jelEulx--A">
+  <context xmi:type="transaction:ContextCategory" xmi:id="_NjwOEmw4EeK3jelEulx--A">
+    <contexts xmi:type="transaction:Context" xmi:id="_R7mYEGw4EeK3jelEulx--A" tag="context" id="FillDummyDataCtx">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_R7mYEWw4EeK3jelEulx--A" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_R7mYEmw4EeK3jelEulx--A" name="type" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_R7mYE2w4EeK3jelEulx--A" name="addToDynamicKColl" type="java.lang.Boolean"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_R7mYFGw4EeK3jelEulx--A" name="parent" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_R7mYFWw4EeK3jelEulx--A" key="_R7mYEmw4EeK3jelEulx--A" value="op"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_R7mYFmw4EeK3jelEulx--A" key="_R7mYEWw4EeK3jelEulx--A" value="FillDummyDataCtx"/>
+      <refElement xmi:type="transaction:RefKColl" xmi:id="_dsunUGw5EeK3jelEulx--A" tag="refKColl">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_dsunUWw5EeK3jelEulx--A" name="refId" required="true" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_eKFRsGw5EeK3jelEulx--A" key="_dsunUWw5EeK3jelEulx--A" value="FillDummyDataRecord"/>
+      </refElement>
+    </contexts>
+  </context>
+  <data xmi:type="transaction:DataCategory" xmi:id="_NjwOE2w4EeK3jelEulx--A">
+    <dataElements xmi:type="transaction:KeyedCollection" xmi:id="_PnLeYGw4EeK3jelEulx--A" tag="kColl" id="FillDummyDataRecord">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PnLeYWw4EeK3jelEulx--A" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PnLeYmw4EeK3jelEulx--A" name="description" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PnLeY2w4EeK3jelEulx--A" name="direction" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_PnLeZGw4EeK3jelEulx--A" name="dynamic" type="java.lang.Boolean"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PnLeZWw4EeK3jelEulx--A" key="_PnLeY2w4EeK3jelEulx--A" value="both"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_PnLeZmw4EeK3jelEulx--A" key="_PnLeYWw4EeK3jelEulx--A" value="FillDummyDataRecord"/>
+      <elements xmi:type="transaction:DataField" xmi:id="_QHqVQGw4EeK3jelEulx--A" tag="field" id="Nouse">
+        <attributes xmi:type="transaction:Attribute" xmi:id="_QHqVQWw4EeK3jelEulx--A" name="id" required="true" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_QHqVQmw4EeK3jelEulx--A" name="description" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_QHqVQ2w4EeK3jelEulx--A" name="direction" type="java.lang.String"/>
+        <attributes xmi:type="transaction:Attribute" xmi:id="_QHqVRGw4EeK3jelEulx--A" name="value" type="java.lang.String"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_QHqVRWw4EeK3jelEulx--A" key="_QHqVQ2w4EeK3jelEulx--A" value="both"/>
+        <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_RSnsgGw4EeK3jelEulx--A" key="_QHqVQWw4EeK3jelEulx--A" value="Nouse"/>
+      </elements>
+    </dataElements>
+  </data>
+  <format xmi:type="transaction:FormatCategory" xmi:id="_NjwOFGw4EeK3jelEulx--A"/>
+  <operation xmi:type="transaction:OperationCategory" xmi:id="_NjwOFWw4EeK3jelEulx--A">
+    <operations xmi:type="transaction:Operation" xmi:id="_UmXVMGw4EeK3jelEulx--A" tag="operation" id="FillDummyDataOp">
+      <attributes xmi:type="transaction:Attribute" xmi:id="_UmXVMWw4EeK3jelEulx--A" name="id" required="true" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_UmXVMmw4EeK3jelEulx--A" name="context" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_UmXVM2w4EeK3jelEulx--A" name="implClass" type="java.lang.String"/>
+      <attributes xmi:type="transaction:Attribute" xmi:id="_UmXVNGw4EeK3jelEulx--A" name="xVal" type="java.lang.String"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UmXVNWw4EeK3jelEulx--A" key="_UmXVM2w4EeK3jelEulx--A" value="ibk.r7.op.MultiSelectPageOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_UmXVNmw4EeK3jelEulx--A" key="_UmXVMWw4EeK3jelEulx--A" value="FillDummyDataOp"/>
+      <values xmi:type="transaction:AttributeToStringMapEntry" xmi:id="_bk-3sGw5EeK3jelEulx--A" key="_UmXVMmw4EeK3jelEulx--A" value="FillDummyDataCtx"/>
+    </operations>
+  </operation>
+  <service xmi:type="transaction:ServiceCategory" xmi:id="_NjwOFmw4EeK3jelEulx--A"/>
+  <globalTag xmi:type="transaction:Taggable" xmi:id="_NjwOF2w4EeK3jelEulx--A"/>
+</transaction:WorkProduct>
