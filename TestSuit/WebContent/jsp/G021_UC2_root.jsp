@@ -148,7 +148,7 @@ dojo.addOnLoad(function(){
 <bttdojo:form id="G021_UC2_root_form" errorPage="G021_UC2_root.jsp">
   <table>
     <tr>
-      <td colspan="2" align="left" valign="middle" style="width:500px;vertical-align:middle;">
+      <td colspan="2" align="left" valign="middle" style="width:500px;height:20px;vertical-align:middle;">
         <bttdojo:label id="G021_UC2_root_label08" text="Please input the following information:" width="100%" height="100%" textWrap="false"/>
       </td>
       <td align="left" valign="middle" style="vertical-align:middle;">
