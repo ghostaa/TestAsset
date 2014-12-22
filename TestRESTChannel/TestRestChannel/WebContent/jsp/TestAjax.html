@@ -1,0 +1,63 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $("#b01").click(function(){
+
+ 		 htmlobj=$.ajax({ 
+			url: "http://localhost:8080/TestRestChannel/rest/operations/restChannelsOp", 
+			type: "POST",
+			success: function(data, status, xhr){
+				console.log(data, status, xhr);
+				 $("#myDiv").html("response result:"+data.stringDataOp);
+			}
+ 		});
+	});
+  $("#b02").click(function(){
+
+ 		 htmlobj=$.ajax({ 
+			url: "http://localhost:8080/TestRestChannel/rest/operations/restChannelsOp", 
+			type: "POST",
+			contentType:"application/json",
+			data: "{stringDataOp:'bca'}",
+			success: function(data, status, xhr){
+				console.log(data, status, xhr);
+				 $("#myDiv").html("response result:"+data.stringDataOp);
+			}
+ 		});
+	});
+  $("#b03").click(function(){
+
+ 		 htmlobj=$.ajax({ 
+			url: "http://localhost:8080/TestRestChannel/rest/operations/restChannelsOp", 
+			type: "POST",
+			contentType:"application/json",
+			data: "{stringDataOp:'bca'}",
+			success: function(data, status, xhr){
+				console.log(data, status, xhr);
+				 $("#myDiv").html("response result:"+data);
+			}
+ 		});
+	});
+
+});
+
+
+
+
+</script>
+</head>
+
+<body>
+<div>console will show whole json object</div>
+<button id="b01" type="button">get 'stringDataOp' default value</button>
+<button id="b02" type="button">Change 'stringDataOp' value to 'abc''</button>
+<button id="b03" type="button">get json object of all values</button>
+
+<div id="myDiv"><h2>Test BTT REST channel</h2></div>
+</body>
+
+</html> 
