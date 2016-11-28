@@ -437,7 +437,11 @@ public class TestFlowResourceData extends TestFlowResourceBase {
 			ClientResponse responseGet = resourceGet.get();
 			if (responseGet.getStatusCode()==404) {
 				String res=	responseGet.getEntity(String.class);
-				assertEquals("", res);
+				if(TestResourceBase.current_server==Server.LIBERTY){
+					assertEquals(null,res);
+				}else{
+					assertEquals("",res);
+				}
 			}else {
 				fail("Response Status Code : " + response.getStatusCode());
 			}

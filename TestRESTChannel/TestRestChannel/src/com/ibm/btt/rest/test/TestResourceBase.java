@@ -15,10 +15,11 @@ import org.apache.wink.json4j.JSONObject;
 import org.junit.BeforeClass;
 
 public class TestResourceBase {
+	static Enum current_server = Server.LIBERTY;
+	protected static String port="9080";
 	protected static RestClient client;
 	protected static String cookieString;
-
-	protected static final String baseUrl = "http://localhost:8080/TestRestChannel/rest";
+	protected static final String baseUrl = "http://localhost:"+ port +"/TestRestChannel/rest";
 	protected static final String establishSessionUrl = "/session/establish";
 	
 	@BeforeClass
@@ -38,6 +39,9 @@ public class TestResourceBase {
 		MultivaluedMap<String, String> headers = response.getHeaders();
 		List<String> cookieParams = headers.get("Set-Cookie");
 		cookieString = StringUtils.join(cookieParams, "; ");
+		//Liberty feature is webprofile6,need to replace path in cookies
+//		cookieString=cookieString.replace("Path=/", "");
+		System.out.println(cookieString);
 		log(cookieString);
 	}
 	protected static void log(Object msg) {
